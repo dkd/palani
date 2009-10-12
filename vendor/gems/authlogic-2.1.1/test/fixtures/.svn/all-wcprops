@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/fixtures
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/fixtures/users.yml
+END
+employees.yml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/fixtures/employees.yml
+END
+companies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/fixtures/companies.yml
+END
+projects.yml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/fixtures/projects.yml
+END

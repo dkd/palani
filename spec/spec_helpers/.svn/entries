@@ -1,0 +1,52 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/spec/spec_helpers
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-22T13:45:45.253705Z
+51714
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+authentication_spec_helper.rb
+file
+
+
+
+
+2009-09-13T20:30:12.000000Z
+211ba04d1c7cba87cf58ace87528adda
+2009-09-22T13:45:45.253705Z
+51714
+dkd-sprenger
+
+controller_spec_helper.rb
+file
+
+
+
+
+2009-09-13T19:57:30.000000Z
+1b29adc203dbe751d63c2895cf3cd523
+2009-09-22T13:45:45.253705Z
+51714
+dkd-sprenger
+

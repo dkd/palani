@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/rails_generators/lockdown/templates/app/views/users
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/rails_generators/lockdown/templates/app/views/users/show.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/rails_generators/lockdown/templates/app/views/users/new.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/rails_generators/lockdown/templates/app/views/users/index.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/rails_generators/lockdown/templates/app/views/users/edit.html.erb
+END

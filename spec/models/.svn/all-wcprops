@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/dkd/!svn/ver/52371/palani/trunk/spec/models
+END
+user_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/dkd/!svn/ver/52371/palani/trunk/spec/models/user_group_spec.rb
+END
+content_page_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/52838/palani/trunk/spec/models/content_page_spec.rb
+END
+user_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/dkd/!svn/ver/52217/palani/trunk/spec/models/user_spec.rb
+END
+content_element_text_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/52224/palani/trunk/spec/models/content_element_text_spec.rb
+END
+user_session_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/51717/palani/trunk/spec/models/user_session_spec.rb
+END
+content_element_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/dkd/!svn/ver/51717/palani/trunk/spec/models/content_element_spec.rb
+END
+notice_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/dkd/!svn/ver/52217/palani/trunk/spec/models/notice_spec.rb
+END
+content_element_image_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/52224/palani/trunk/spec/models/content_element_image_spec.rb
+END
+content_element_html_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/52224/palani/trunk/spec/models/content_element_html_spec.rb
+END
+permission_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/dkd/!svn/ver/52798/palani/trunk/spec/models/permission_group_spec.rb
+END
+page_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/dkd/!svn/ver/52217/palani/trunk/spec/models/page_spec.rb
+END

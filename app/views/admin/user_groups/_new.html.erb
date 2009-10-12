@@ -1,0 +1,21 @@
+<%= render_notifications %>
+<%= render_actions %>
+<div class="standard_form">
+  <h2><%= t('.headline') -%></h2>
+<% remote_form_for [:admin, @user_group] do |f|  %>
+  <fieldset>
+		<%= f.label :name, t('.name')+':' %>
+		<%= f.text_field :name %>
+	</fieldset>
+	<fieldset>
+	  <%= f.label :permissions, t('.permissions')+':' %>
+	  <div id="permissions">
+	  <%= render :partial => "permissions" %>
+	  </div>
+	</fieldset>
+	<fieldset>
+	<%= label_tag "" %>
+	<%= f.submit t('add'), :class => "submit" %>
+	</fielset>
+<% end %>
+</div>

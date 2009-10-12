@@ -1,0 +1,9 @@
+<ul id="navigation">
+	<%- for menu_item in menu_items do -%>
+		<%- if menu_item[:current]==true -%>
+			<li><%= link_to t('.'+menu_item[:name]), menu_item[:link_to], :class => "current" -%></li>
+		<%- else -%>
+			<li><%= link_to t('.'+menu_item[:name]), menu_item[:link_to] -%></li>
+		<%- end -%>
+	<%- end -%>
+</ul>

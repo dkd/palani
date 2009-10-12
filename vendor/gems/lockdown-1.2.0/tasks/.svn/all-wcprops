@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks
+END
+zentest.rake
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/zentest.rake
+END
+ann.rake
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/ann.rake
+END
+bones.rake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/bones.rake
+END
+post_load.rake
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/post_load.rake
+END
+rdoc.rake
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/rdoc.rake
+END
+git.rake
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/git.rake
+END
+spec.rake
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/spec.rake
+END
+gem.rake
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/gem.rake
+END
+test.rake
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/test.rake
+END
+setup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/setup.rb
+END
+rubyforge.rake
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/rubyforge.rake
+END
+notes.rake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/notes.rake
+END
+svn.rake
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/tasks/svn.rake
+END

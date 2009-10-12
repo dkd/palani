@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/crypto_provider_test
+END
+aes256_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/crypto_provider_test/aes256_test.rb
+END
+bcrypt_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/crypto_provider_test/bcrypt_test.rb
+END
+sha1_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/crypto_provider_test/sha1_test.rb
+END
+sha512_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/test/crypto_provider_test/sha512_test.rb
+END

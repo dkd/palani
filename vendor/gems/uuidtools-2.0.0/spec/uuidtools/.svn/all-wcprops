@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/spec/uuidtools
+END
+mac_address_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/spec/uuidtools/mac_address_spec.rb
+END
+uuid_parsing_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/spec/uuidtools/uuid_parsing_spec.rb
+END
+utility_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/spec/uuidtools/utility_spec.rb
+END
+uuid_creation_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/spec/uuidtools/uuid_creation_spec.rb
+END

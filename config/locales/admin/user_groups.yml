@@ -1,0 +1,24 @@
+en:
+  admin:
+    user_groups:
+      new:
+        headline: Add usergroup
+        name: Name
+        permissions: Permissions
+      edit:
+        headline: Edit usergroup
+        name: Name
+      permissions:
+        content: Content
+        create_content: Insert content
+        edit_content: Edit content
+        delete_content: Delete content
+        edit_profile: Edit settings
+        users: Users
+        create_user: Insert user
+        edit_user: Edit user
+        delete_user: Delete user
+        help: Help
+        faq_help: FAQ
+        community_help: Community
+        administration: Administration

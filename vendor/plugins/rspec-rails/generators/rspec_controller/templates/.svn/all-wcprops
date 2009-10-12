@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/generators/rspec_controller/templates
+END
+helper_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/generators/rspec_controller/templates/helper_spec.rb
+END
+view_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/generators/rspec_controller/templates/view_spec.rb
+END
+controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/generators/rspec_controller/templates/controller_spec.rb
+END

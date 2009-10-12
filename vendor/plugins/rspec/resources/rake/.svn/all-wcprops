@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/resources/rake
+END
+failing_examples_with_html.rake
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/resources/rake/failing_examples_with_html.rake
+END
+examples.rake
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/resources/rake/examples.rake
+END
+examples_with_rcov.rake
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/resources/rake/examples_with_rcov.rake
+END
+verify_rcov.rake
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/resources/rake/verify_rcov.rake
+END

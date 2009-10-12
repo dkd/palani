@@ -1,0 +1,31 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/generators
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-22T13:45:16.602971Z
+51713
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+acts_as_taggable_on_migration
+dir
+

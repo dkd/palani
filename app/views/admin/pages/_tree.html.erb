@@ -1,0 +1,96 @@
+<script type="text/javascript">
+  
+  function handleDrop(e) {
+    var position = e.point;
+
+    if (e.dropNode.attributes.attributes.mode!="new") {         // Drop existing page in tree
+      jQuery.ajax({
+          data : 'drop_id='+e.target.id+'&drag_id='+e.dropNode.id+'&position='+position,
+          type : 'post', 
+          url : '<%= url_for move_admin_pages_path %>',
+          async : true
+      });
+    } else {                                                    // Drop new page
+      var doktype = e.dropNode.attributes.attributes.type;
+      jQuery.ajax({
+          data : 'drop_id='+e.target.id+'&type='+doktype+'&position='+position,
+          dataType :'json',
+          type : 'post', 
+          url : '<%= url_for admin_pages_path %>',
+          async : false,
+          success: function(data, status) {
+            e.dropNode = new Ext.tree.TreeNode(data.text);
+          }
+      });
+    }
+    return e;
+  }
+  
+  Ext.onReady(function(){
+
+      var tree = new Ext.tree.TreePanel({
+          useArrows: true,
+          autoScroll: true,
+          animate: true,
+          enableDD: true,
+          ddGroup: 'treeDD',
+          containerScroll: true,
+          border: false,
+          rootVisible: false,
+          // auto create TreeLoader
+          dataUrl: '<%= url_for tree_admin_pages_path(:format => :json) %>',
+
+          root: {
+              nodeType: 'async',
+              text: 'Palani',
+              draggable: false,
+              id: 0
+          }
+      });
+      
+      tree.on('beforenodedrop', function(e){
+        e = handleDrop(e);
+        return true;
+      });
+      
+      tree.on('click', function(e){
+        alert("hier dann content-elemente aufrufen");
+      });
+      
+      // render the tree
+      tree.render('tree-div');
+      tree.getRootNode().expand();
+      
+      var dragPage = new Ext.dd.DragSource('page_create', {
+            ddGroup: 'treeDD',
+            getTreeNode: function () {
+              return new Ext.tree.TreeNode({
+                        text: '<%= t("new_page") %>',
+                        id: 'dummy',
+                        icon: '/images/icons/page_add.png',
+                        attributes: { mode: 'new', type: 'ContentPage'}
+                      });
+            }
+      });
+      
+      var drop = new Ext.dd.DropTarget('trash_can', {
+            ddGroup: 'treeDD', 
+            overClass: 'hover',
+            notifyDrop: function(dd, e, data){
+              if (data.node) {
+                jQuery.ajax({
+                    data : '_method=delete',
+                    type : 'post', 
+                    url : '<%= url_for admin_pages_path %>/'+data.node.id,
+                    async : true
+                });
+                data.node.remove();
+              }
+
+            }
+      });
+      
+  });
+</script>
+<div id="tree-div">
+</div>

@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/dkd/!svn/ver/50228/palani/trunk/app/views/admin/user_sessions
+END
+_login.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/dkd/!svn/ver/50228/palani/trunk/app/views/admin/user_sessions/_login.html.erb
+END

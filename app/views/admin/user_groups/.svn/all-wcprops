@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/dkd/!svn/ver/52373/palani/trunk/app/views/admin/user_groups
+END
+_right_col.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/52373/palani/trunk/app/views/admin/user_groups/_right_col.html.erb
+END
+_edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52809/palani/trunk/app/views/admin/user_groups/_edit.html.erb
+END
+_new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/52809/palani/trunk/app/views/admin/user_groups/_new.html.erb
+END
+_index_box.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/52655/palani/trunk/app/views/admin/user_groups/_index_box.html.erb
+END
+_permissions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/dkd/!svn/ver/52608/palani/trunk/app/views/admin/user_groups/_permissions.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52143/palani/trunk/app/views/admin/user_groups/index.html.erb
+END

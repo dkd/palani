@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/features/expectations
+END
+expect_error.feature
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/features/expectations/expect_error.feature
+END
+expect_change.feature
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/features/expectations/expect_change.feature
+END

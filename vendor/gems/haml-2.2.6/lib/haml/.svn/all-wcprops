@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml
+END
+html.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/html.rb
+END
+engine.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/engine.rb
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/version.rb
+END
+shared.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/shared.rb
+END
+exec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/exec.rb
+END
+helpers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/helpers.rb
+END
+template.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/template.rb
+END
+util.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/util.rb
+END
+filters.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/filters.rb
+END
+error.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/error.rb
+END
+buffer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/buffer.rb
+END
+precompiler.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/lib/haml/precompiler.rb
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers
+END
+render_template_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/render_template_spec.rb
+END
+have_text_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/have_text_spec.rb
+END
+errors_on_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/errors_on_spec.rb
+END
+should_change_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/should_change_spec.rb
+END
+ar_be_valid_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/ar_be_valid_spec.rb
+END
+include_text_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/include_text_spec.rb
+END
+redirect_to_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/redirect_to_spec.rb
+END
+assert_select_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/matchers/assert_select_spec.rb
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks
+END
+rubyforge.rake
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/rubyforge.rake
+END
+benchmark.rake
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/benchmark.rake
+END
+metrics.rake
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/metrics.rake
+END
+rdoc.rake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/rdoc.rake
+END
+git.rake
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/git.rake
+END
+spec.rake
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/spec.rake
+END
+clobber.rake
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/clobber.rake
+END
+gem.rake
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/uuidtools-2.0.0/tasks/gem.rake
+END

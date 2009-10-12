@@ -1,0 +1,2 @@
+class ContentPage < Page
+end

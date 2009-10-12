@@ -1,0 +1,32 @@
+en:
+  admin:
+    users:
+      index:
+        add: Add user
+        add_usergroup: Add usergroup
+      edit:
+        headline: Edit user
+      new:
+        headline: Add User
+      form: &LABELS_DE
+        user: Username
+        surname: Surname
+        name: Name
+        email: E-Mail
+        backend_language: Language
+        new_password: Password
+        confirm_new_password: Confirm password
+        is_admin: Admin?
+        user_groups: Usergroups
+        new:
+          new_password: Password
+          confirm_new_password: Confirm password
+          submit_text: Add
+        edit:
+          new_password: New password
+          confirm_new_password: Confirm new password
+          submit_text: Edit
+    administration:
+      edit_own_profile:
+        <<: *LABELS_DE
+        headline: Edit settings

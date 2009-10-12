@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/dkd/!svn/ver/52131/palani/trunk/spec/controllers/admin
+END
+user_groups_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/52562/palani/trunk/spec/controllers/admin/user_groups_controller_spec.rb
+END
+pages_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/52562/palani/trunk/spec/controllers/admin/pages_controller_spec.rb
+END
+users_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/52562/palani/trunk/spec/controllers/admin/users_controller_spec.rb
+END
+administration_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/dkd/!svn/ver/52562/palani/trunk/spec/controllers/admin/administration_controller_spec.rb
+END
+help_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/51718/palani/trunk/spec/controllers/admin/help_controller_spec.rb
+END
+user_sessions_controller_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/dkd/!svn/ver/52562/palani/trunk/spec/controllers/admin/user_sessions_controller_spec.rb
+END

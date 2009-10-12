@@ -1,0 +1,139 @@
+8
+
+dir
+52561
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor/plugins/jrails
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+CHANGELOG
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+645349264852c9c4e866f2a00505eeeb
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+LICENSE
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+2b1a93ab1707acabad9133671e16237d
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+README.rdoc
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+a78603904177c8fe9897ae56f02a80e6
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+Rakefile
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+1e686d1cfe93efdac148a53a7707e4db
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+VERSION.yml
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+6de80dcc63299c6f9e5beb77b7ba5c82
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+bin
+dir
+
+init.rb
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+bccffa0f7762fb652771b3d1ee27062b
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+install.rb
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+d18f3ec8916a5bdb85974499c4707fc3
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+javascripts
+dir
+
+jrails.gemspec
+file
+
+
+
+
+2009-10-02T12:19:19.000000Z
+1a3c6c7a6e2839a2b11079a166cc179a
+2009-10-02T12:44:32.018545Z
+52561
+dkd-sprenger
+
+lib
+dir
+
+rails
+dir
+
+tasks
+dir
+

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/lockdown-1.3.1/rails_generators/lockdown/templates/db/migrate
+END
+create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/lockdown-1.3.1/rails_generators/lockdown/templates/db/migrate/create_users.rb
+END
+create_profiles.rb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/lockdown-1.3.1/rails_generators/lockdown/templates/db/migrate/create_profiles.rb
+END
+create_admin_user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/lockdown-1.3.1/rails_generators/lockdown/templates/db/migrate/create_admin_user.rb
+END
+create_permissions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/lockdown-1.3.1/rails_generators/lockdown/templates/db/migrate/create_permissions.rb
+END
+create_user_groups.rb
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/lockdown-1.3.1/rails_generators/lockdown/templates/db/migrate/create_user_groups.rb
+END

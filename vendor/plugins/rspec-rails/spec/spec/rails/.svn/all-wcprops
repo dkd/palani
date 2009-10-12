@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails
+END
+spec_server_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/spec_server_spec.rb
+END
+sample_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/sample_spec.rb
+END
+spec_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/spec_spec.rb
+END
+sample_modified_fixture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/sample_modified_fixture.rb
+END

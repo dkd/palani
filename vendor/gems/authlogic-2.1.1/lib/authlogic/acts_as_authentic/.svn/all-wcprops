@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic
+END
+logged_in_status.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/logged_in_status.rb
+END
+session_maintenance.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/session_maintenance.rb
+END
+validations_scope.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/validations_scope.rb
+END
+single_access_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/single_access_token.rb
+END
+password.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/password.rb
+END
+base.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/base.rb
+END
+login.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/login.rb
+END
+restful_authentication.rb
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/restful_authentication.rb
+END
+perishable_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/perishable_token.rb
+END
+email.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/email.rb
+END
+persistence_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/persistence_token.rb
+END
+magic_columns.rb
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic/acts_as_authentic/magic_columns.rb
+END

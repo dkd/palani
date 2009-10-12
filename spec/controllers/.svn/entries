@@ -1,0 +1,43 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/spec/controllers
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-28T08:57:53.814186Z
+52131
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+admin
+dir
+
+pages_controller_spec.rb
+file
+
+
+
+
+2009-09-23T16:11:56.000000Z
+1eb2db2c0f1ff969f95863405a640404
+2009-09-25T13:44:39.482626Z
+52079
+dkd-sprenger
+

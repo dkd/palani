@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/LICENSE
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/CHANGELOG
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/install.rb
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/init.rb
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/Rakefile
+END
+VERSION.yml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/VERSION.yml
+END
+README.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/README.rdoc
+END
+jrails.gemspec
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/dkd/!svn/ver/52561/palani/trunk/vendor/plugins/jrails/jrails.gemspec
+END

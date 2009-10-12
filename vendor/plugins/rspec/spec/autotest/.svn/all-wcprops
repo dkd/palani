@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/autotest
+END
+discover_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/autotest/discover_spec.rb
+END
+rspec_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/autotest/rspec_spec.rb
+END
+autotest_matchers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/autotest/autotest_matchers.rb
+END
+failed_results_re_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/autotest/failed_results_re_spec.rb
+END
+autotest_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/autotest/autotest_helper.rb
+END

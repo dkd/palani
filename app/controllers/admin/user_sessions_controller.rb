@@ -1,0 +1,46 @@
+class Admin::UserSessionsController < ApplicationController
+  
+  skip_before_filter :require_user, :only => [:new, :create]
+  after_filter :set_lockdown_values, :only => :create
+
+  layout 'welcome'
+  
+  def new
+    if current_user
+      redirect_to admin_pages_path
+    else
+      @user_session = UserSession.new
+      render :partial => "login", :layout => true
+    end
+  end
+
+  def create
+    if current_user
+      redirect_to admin_pages_path
+    else
+      @user_session = UserSession.new(params[:user_session])
+      if @user_session.save
+        flash.now[:notice] = 'succesful_login'
+        redirect_to admin_pages_path
+      else
+        render :partial => "login", :layout => true
+      end
+    end
+  end
+
+  def destroy
+    current_user_session.destroy
+    reset_lockdown_session
+    flash.now[:notice] = 'succesful_logout'
+    redirect_back_or_default root_path
+  end
+  
+  private
+  
+  def set_lockdown_values
+    if user = @user_session.user
+      add_lockdown_session_values(user)
+    end
+  end
+  
+end

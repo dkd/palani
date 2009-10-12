@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/repos/dkd/!svn/ver/52371/palani/trunk/spec
+END
+rcov.opts
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/dkd/!svn/ver/45728/palani/trunk/spec/rcov.opts
+END
+spec.opts
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/dkd/!svn/ver/45728/palani/trunk/spec/spec.opts
+END
+spec_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/dkd/!svn/ver/51715/palani/trunk/spec/spec_helper.rb
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/dkd/!svn/ver/51734/palani/trunk/app/views/admin/general
+END
+_notifications.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/52812/palani/trunk/app/views/admin/general/_notifications.html.erb
+END
+_multi_select.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/52774/palani/trunk/app/views/admin/general/_multi_select.html.erb
+END

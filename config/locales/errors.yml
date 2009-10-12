@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: Please select a username.
+              too_short: The given username is too short.
+      template:
+        header: Error

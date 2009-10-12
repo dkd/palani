@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter
+END
+text_mate_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/text_mate_formatter.rb
+END
+nested_text_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/nested_text_formatter.rb
+END
+html_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/html_formatter.rb
+END
+no_op_method_missing.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/no_op_method_missing.rb
+END
+failing_example_groups_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/failing_example_groups_formatter.rb
+END
+failing_examples_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/failing_examples_formatter.rb
+END
+base_text_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/base_text_formatter.rb
+END
+silent_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/silent_formatter.rb
+END
+specdoc_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/specdoc_formatter.rb
+END
+profile_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/profile_formatter.rb
+END
+progress_bar_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/progress_bar_formatter.rb
+END
+base_formatter.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/base_formatter.rb
+END
+snippet_extractor.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner/formatter/snippet_extractor.rb
+END

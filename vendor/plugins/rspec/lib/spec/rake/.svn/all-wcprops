@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/rake
+END
+spectask.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/rake/spectask.rb
+END
+verify_rcov.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/rake/verify_rcov.rb
+END

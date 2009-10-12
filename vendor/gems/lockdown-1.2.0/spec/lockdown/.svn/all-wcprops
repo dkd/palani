@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/spec/lockdown
+END
+database_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/spec/lockdown/database_spec.rb
+END
+session_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/spec/lockdown/session_spec.rb
+END
+rules_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/spec/lockdown/rules_spec.rb
+END
+permission_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/spec/lockdown/permission_spec.rb
+END
+system_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/dkd/!svn/ver/50217/palani/trunk/vendor/gems/lockdown-1.2.0/spec/lockdown/system_spec.rb
+END

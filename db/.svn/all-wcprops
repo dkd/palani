@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/repos/dkd/!svn/ver/52225/palani/trunk/db
+END
+seeds.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/dkd/!svn/ver/52218/palani/trunk/db/seeds.rb
+END
+development_structure.sql
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/dkd/!svn/ver/51159/palani/trunk/db/development_structure.sql
+END
+test.sqlite3
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/dkd/!svn/ver/45734/palani/trunk/db/test.sqlite3
+END
+schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/dkd/!svn/ver/52596/palani/trunk/db/schema.rb
+END
+development.sqlite3
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/dkd/!svn/ver/45734/palani/trunk/db/development.sqlite3
+END

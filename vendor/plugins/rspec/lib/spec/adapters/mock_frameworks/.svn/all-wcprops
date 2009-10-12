@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/adapters/mock_frameworks
+END
+flexmock.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/adapters/mock_frameworks/flexmock.rb
+END
+rr.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/adapters/mock_frameworks/rr.rb
+END
+rspec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/adapters/mock_frameworks/rspec.rb
+END
+mocha.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/adapters/mock_frameworks/mocha.rb
+END

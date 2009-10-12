@@ -1,0 +1,163 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor/gems/haml-2.2.6
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+.specification
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+42ec8a2cc148aa13ca25ffef44556156
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+.yardopts
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+372a27f69d66e18a86f6b77a4f5c1582
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+CONTRIBUTING
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+84c50d7f1e08dd01e37f244ad3aad67b
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+MIT-LICENSE
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+7b4116c6fe6fc48f87c966aed38760bf
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+README.md
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+ad4764ec39a18b45db1df49f4d9d3250
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+REVISION
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+c3b600e0165ed1ae90626eab4899bdd8
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+Rakefile
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+17486b28ea0ae710933442a4f6d0e14b
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+VERSION
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+637f63cb64aacdd960b9059136c4ca69
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+VERSION_NAME
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+4ed083f9f8306002c26d1f8d5a16cc6c
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+bin
+dir
+
+extra
+dir
+
+init.rb
+file
+
+
+
+
+2009-09-29T06:59:25.000000Z
+41f3bb54eb5a56b5b83b04b2532c4ab7
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+lib
+dir
+
+rails
+dir
+
+test
+dir
+

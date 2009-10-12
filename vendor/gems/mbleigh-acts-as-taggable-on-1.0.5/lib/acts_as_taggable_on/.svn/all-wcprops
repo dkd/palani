@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on
+END
+tags_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on/tags_helper.rb
+END
+tag.rb
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on/tag.rb
+END
+acts_as_tagger.rb
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on/acts_as_tagger.rb
+END
+tag_list.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on/tag_list.rb
+END
+tagging.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on/tagging.rb
+END
+acts_as_taggable_on.rb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/dkd/!svn/ver/51713/palani/trunk/vendor/gems/mbleigh-acts-as-taggable-on-1.0.5/lib/acts_as_taggable_on/acts_as_taggable_on.rb
+END

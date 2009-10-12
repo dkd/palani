@@ -1,0 +1,6 @@
+de:
+  admin:
+    user_sessions:
+      login:
+        user: Username
+        password: Passwort

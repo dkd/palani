@@ -1,0 +1,42 @@
+<%= javascript_include_tag "extjs/examples/ux/ItemSelector" %>
+<%= javascript_include_tag "extjs/examples/ux/MultiSelect" %>
+<script type="text/javascript">
+Ext.onReady(function(){
+    
+    var store = new Ext.data.JsonStore({
+      url: '<%= remote_url -%>',
+      root: 'root',
+      fields: <%= fields.to_json %>
+    });
+    
+    store.load();
+    
+    var msForm = new Ext.form.FormPanel({
+        renderTo: 'multiselect',
+        items:[{
+            xtype: 'multiselect',
+            name: '<%= name %>',
+            width: 310,
+            height: 200,
+            allowBlank: true,
+            store: store,
+            valueField: "<%= valueField %>",
+            displayField: "<%= showField %>",
+            tbar:[{
+                text: '<%= t("clear_select") %>',
+                handler: function(){
+	                msForm.getForm().findField('<%= name %>').reset();
+	            }
+        }],
+        ddReorder: true
+        }],
+        tbar:[]
+    });
+    
+    store.on("load", function() {
+      msForm.getForm().findField('<%= name %>').setValue("<%= selected_values %>");
+    });
+    
+});
+</script>
+<div id="multiselect"></div>

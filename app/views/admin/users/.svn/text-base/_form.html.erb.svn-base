@@ -1,0 +1,63 @@
+<% remote_form_for [:admin, user] do |f| %>
+	  	
+	<fieldset>
+		<%= f.label :username, t('.user')+':' %>
+		<%= f.text_field :username %>
+	</fieldset>
+	
+	<fieldset>
+		<%= f.label :surname, t('.surname')+':' %>
+		<%= f.text_field :surname %>
+	</fieldset>
+	
+	<fieldset>
+		<%= f.label :name, t('.name')+':' %>
+		<%= f.text_field :name %>
+	</fieldset>
+	
+	<fieldset>
+		<%= f.label :email, t('.email')+':' %>
+		<%= f.text_field :email %>
+	</fieldset>
+	
+	<fieldset>
+		<%= f.label :backend_language, t('.backend_language')+':' %>
+		<%= f.select :backend_language, options_for_select(@backend_languages,@user.backend_language) %>
+	</fieldset>
+	
+	<% if current_user_is_admin?  %>
+	<fieldset>
+		<%= f.label :is_admin, t('.is_admin') %>
+		<%= check_box_tag "user[user_group_ids][]", admin_user_group.id,  @user.user_groups.include?(admin_user_group), :class => "checkbox" %>
+	</fieldset>
+	<% end  %>
+	
+	<fieldset>
+	  <%= f.label :backend_language, t('.user_groups')+':' %>
+	  <%= render_multi_select(
+	    url_for( :controller => "admin/user_groups", :action => "index", :format => "json"  ),
+	    [{ :name => "name", :mapping => "user_group.name"  },
+	     { :name => "id", :mapping => "user_group.id"  }],
+	    { :showField => "name", :valueField => "id", :name => "user_groups", :selected_values => user.user_group_ids.join(",") }
+	  ) %>
+	</fieldset>
+	
+	<%- if @user==current_user || current_user_is_admin? -%>
+	  
+	  <fieldset>
+	  <%= f.label :password, t(".#{context}.new_password")+':' %>
+	  <%= f.password_field :password %>
+	  </fieldset>
+	  
+	  <fieldset>
+	  <%= f.label :password, t(".#{context}.confirm_new_password")+':' %>
+	  <%= f.password_field :password_confirmation %>
+	  </fieldset>  	
+	<%- end -%>
+	
+	<fieldset>
+	<%= label_tag "" %>
+	<%= f.submit t(".#{context}.submit_text"), :class => "submit" %>
+	</fielset>
+	
+<% end %>

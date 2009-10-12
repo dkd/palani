@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec
+END
+History.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/History.rdoc
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/init.rb
+END
+Upgrade.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/Upgrade.rdoc
+END
+Manifest.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/Manifest.txt
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/Rakefile
+END
+.autotest
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/.autotest
+END
+TODO.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/TODO.txt
+END
+.document
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/.document
+END
+Ruby1.9.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/Ruby1.9.rdoc
+END
+README.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/README.rdoc
+END
+cucumber.yml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/cucumber.yml
+END
+License.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/License.txt
+END

@@ -1,0 +1,97 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/config
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-30T12:29:11.753019Z
+52374
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+application.yml
+file
+
+
+
+
+2009-09-25T16:43:40.000000Z
+2f6f9f3e65d07028d0687f530202b8a9
+2009-09-28T08:58:54.928756Z
+52134
+dkd-sprenger
+
+boot.rb
+file
+
+
+
+
+2009-09-05T07:49:38.000000Z
+cfce6ac16974777a93c14be034b2fdec
+2009-09-13T18:13:21.560247Z
+51160
+dkd-sprenger
+
+database.yml
+file
+
+
+
+
+2009-09-08T18:14:41.000000Z
+a84ab420b5d19b94fa1a549ec1d0ecc8
+2009-09-13T18:13:21.560247Z
+51160
+dkd-sprenger
+
+environment.rb
+file
+
+
+
+
+2009-09-29T06:59:18.000000Z
+6336aa39389337842a39b3d39726b776
+2009-09-29T07:58:12.436083Z
+52219
+dkd-sprenger
+
+environments
+dir
+
+initializers
+dir
+
+locales
+dir
+
+routes.rb
+file
+52841
+
+
+
+2009-10-06T11:20:44.000000Z
+46877e395a74660b85f7a30f3594ef74
+2009-10-06T12:13:32.336438Z
+52841
+dkd-sprenger
+

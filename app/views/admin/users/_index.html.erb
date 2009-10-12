@@ -1,0 +1,11 @@
+<%= render_notifications %>
+<%= render_actions [{ :name => t('.add'), :link_to => new_admin_user_path, :class => "add" },
+                    { :name => t('.add_usergroup'), :link_to => new_admin_user_group_path, :class => "add" }] %>
+<%= render_ext_grids(
+		"show_all_users",
+		"/admin/users.json",
+		[ { :name => 'username', :data_index => 'user.username', :width => 100 },
+		  { :name => 'surname', :data_index => 'user.surname', :width => 100 },
+		  { :name => 'name', :data_index => 'user.name', :width => 100 },
+		  { :name => 'actions', :data_index => 'user.actions', :width => 100 } ],
+		{ :auto_expand => "username" }) %>

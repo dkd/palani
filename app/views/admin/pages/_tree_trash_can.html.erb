@@ -1,0 +1,11 @@
+<br />
+<br />
+<br />
+<div id="trash_can">
+  <%= image_tag "trash_can.gif", :height => "100px" %>
+</div>
+<%= drop_receiving_element :trash_can,
+        :hoverclass => 'hover',
+        :url => { :controller => 'admin/pages', :action => 'destroy'},
+        :before => "new Effect.Appear('mask', {to:0.5, duration:0.5});"
+%>

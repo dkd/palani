@@ -1,0 +1,40 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor/gems/lockdown-1.2.0/rails_generators/lockdown/templates/app/views
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-08-28T07:45:01.059850Z
+50217
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+permissions
+dir
+
+sessions
+dir
+
+user_groups
+dir
+
+users
+dir
+

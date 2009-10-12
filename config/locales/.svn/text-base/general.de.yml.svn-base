@@ -1,0 +1,21 @@
+de:
+  add: Hinzufügen
+  edit: Editieren
+  delete: Löschen
+  hide: x
+  changes_saved_succesfully: Ihre Änderungen wurden erfolgreich gespeichert.
+  succesful_login: Sie haben sich erfolgreich eingeloggt.
+  check_your_input: Bitte überprüfen Sie Ihre Eingabe.
+  german: Deutsch
+  english: Englisch
+  user_groups: Benutzergruppen
+  notices: Notizen
+  tags: Tags
+  enter_your_search: Bitte geben Sie Ihre Suche ein..
+  back: Zurück
+  actions: Aktionen
+  close: Schließen
+  loading: Laden..
+  added_succesfully: The record has been inserted succesfully.
+  deleted_succesfully: The record has been deleted succesfully.
+  clear_select: Auswahl löschen

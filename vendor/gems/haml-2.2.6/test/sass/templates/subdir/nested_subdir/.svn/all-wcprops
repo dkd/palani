@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/test/sass/templates/subdir/nested_subdir
+END
+nested_subdir.sass
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/test/sass/templates/subdir/nested_subdir/nested_subdir.sass
+END
+_nested_partial.sass
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/dkd/!svn/ver/52216/palani/trunk/vendor/gems/haml-2.2.6/test/sass/templates/subdir/nested_subdir/_nested_partial.sass
+END

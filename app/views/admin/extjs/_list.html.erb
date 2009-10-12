@@ -1,0 +1,28 @@
+<script type="text/javascript">
+Ext.onReady(function(){
+    
+    Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
+
+    // create the data store
+    var store = new Ext.data.JsonStore({
+		url: '<%= remote_url -%>',
+		root: 'root',
+        fields: <%= fields.collect{ |f| { :name => f[:data_index] } }.to_json -%>
+    });
+
+    store.load();
+
+    // create the Grid
+    var grid = new Ext.grid.GridPanel({
+        store: store,
+        columns: <%= fields.collect{ |f| { :id => f[:name], :header => t('.'+f[:name]) , :width => f[:width], :name => f[:data_index], 
+											 :dataIndex => f[:data_index], :sortable => true } }.to_json -%>,
+        stripeRows: true,
+		    autoExpandColumn: '<%= auto_expand -%>',
+		    autoHeight: true,
+        title:"<%= t('.'+title) -%>"
+    });
+    grid.render('grids');
+});
+</script>
+<div id="grids"></div>

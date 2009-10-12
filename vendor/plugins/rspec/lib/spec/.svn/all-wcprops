@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/version.rb
+END
+matchers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/matchers.rb
+END
+example.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/example.rb
+END
+mocks.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/mocks.rb
+END
+expectations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/expectations.rb
+END
+deprecation.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/deprecation.rb
+END
+ruby.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/ruby.rb
+END
+autorun.rb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/autorun.rb
+END
+dsl.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/dsl.rb
+END
+runner.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/lib/spec/runner.rb
+END

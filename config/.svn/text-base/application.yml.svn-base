@@ -1,0 +1,17 @@
+defaults: &defaults
+  core:
+  backend:
+    languages:
+      de: german
+      en: english
+  frontend:
+  website:
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

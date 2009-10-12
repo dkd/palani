@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/dkd/!svn/ver/48917/palani/trunk/vendor/plugins/acts_as_tree/test
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/dkd/!svn/ver/48917/palani/trunk/vendor/plugins/acts_as_tree/test/database.yml
+END
+abstract_unit.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/repos/dkd/!svn/ver/48917/palani/trunk/vendor/plugins/acts_as_tree/test/abstract_unit.rb
+END
+acts_as_tree_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/48917/palani/trunk/vendor/plugins/acts_as_tree/test/acts_as_tree_test.rb
+END
+schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/48917/palani/trunk/vendor/plugins/acts_as_tree/test/schema.rb
+END

@@ -1,0 +1,10 @@
+class Admin::PagesController < ApplicationController
+  
+  def index
+  end
+  
+  def tree
+    render :json => Page.find_all_by_parent_id(params[:node]).collect{|p| { :text => p.title, :id => p.id, :cls => p.type, :leaf => false } }
+  end
+  
+end

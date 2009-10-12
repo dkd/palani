@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner
+END
+spec.opts
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/spec.opts
+END
+heckle_runner_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/heckle_runner_spec.rb
+END
+example_group_runner_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/example_group_runner_spec.rb
+END
+spec_parser_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/spec_parser_spec.rb
+END
+failed.txt
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/failed.txt
+END
+output_one_time_fixture_runner.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/output_one_time_fixture_runner.rb
+END
+heckler_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/heckler_spec.rb
+END
+output_one_time_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/output_one_time_spec.rb
+END
+reporter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/reporter_spec.rb
+END
+class_and_argument_parser_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/class_and_argument_parser_spec.rb
+END
+noisy_backtrace_tweaker_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/noisy_backtrace_tweaker_spec.rb
+END
+empty_file.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/empty_file.txt
+END
+spec_spaced.opts
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/spec_spaced.opts
+END
+spec_drb.opts
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/spec_drb.opts
+END
+drb_command_line_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/drb_command_line_spec.rb
+END
+options_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/options_spec.rb
+END
+examples.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/examples.txt
+END
+command_line_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/command_line_spec.rb
+END
+option_parser_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/option_parser_spec.rb
+END
+quiet_backtrace_tweaker_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/quiet_backtrace_tweaker_spec.rb
+END
+output_one_time_fixture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/output_one_time_fixture.rb
+END
+configuration_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/configuration_spec.rb
+END

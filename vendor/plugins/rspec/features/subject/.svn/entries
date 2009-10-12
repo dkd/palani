@@ -1,0 +1,52 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor/plugins/rspec/features/subject
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-06-02T13:41:11.063289Z
+45728
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+explicit_subject.feature
+file
+
+
+
+
+2009-07-23T11:26:42.000000Z
+50ff181d021e5a2b1fa3a60b30c16ae7
+2009-06-02T13:41:11.063289Z
+45728
+dkd-sprenger
+
+implicit_subject.feature
+file
+
+
+
+
+2009-07-23T11:26:42.000000Z
+bb7b55cbbac028d13b4b94a1a7ded6e8
+2009-06-02T13:41:11.063289Z
+45728
+dkd-sprenger
+

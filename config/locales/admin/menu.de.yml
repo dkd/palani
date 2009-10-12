@@ -1,0 +1,15 @@
+de:
+  admin:
+    menu:
+      main_menu:
+        pages: Inhalt
+        administration: Administration
+        extensions: Erweiterungen
+        help: Hilfe
+      sub_menu:
+        edit_profile: Einstellungen bearbeiten
+        list_users: Benutzer verwalten
+        community: Community
+        first_steps: Erste Schritte
+        faq: Häufig gestellte Fragen
+    

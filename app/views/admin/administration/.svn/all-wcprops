@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/repos/dkd/!svn/ver/52141/palani/trunk/app/views/admin/administration
+END
+_right_col.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/dkd/!svn/ver/52140/palani/trunk/app/views/admin/administration/_right_col.html.erb
+END
+_edit_own_profile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/dkd/!svn/ver/52605/palani/trunk/app/views/admin/administration/_edit_own_profile.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/repos/dkd/!svn/ver/52605/palani/trunk/app/views/admin/administration/index.html.erb
+END

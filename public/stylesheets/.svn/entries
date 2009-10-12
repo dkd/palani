@@ -1,0 +1,82 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/public/stylesheets
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-29T07:46:57.305876Z
+52213
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+.sass-cache
+dir
+
+application.css
+file
+52839
+
+
+
+2009-10-06T11:57:45.000000Z
+b855f40d84167323457350ec9bdd3f4f
+2009-10-06T12:13:09.484937Z
+52839
+dkd-sprenger
+
+boxes.css
+file
+52650
+
+
+
+2009-10-03T10:21:56.000000Z
+59f4bd038a5b8f61a0805a7039ee5f8d
+2009-10-05T07:33:25.400817Z
+52650
+dkd-sprenger
+
+forms.css
+file
+52716
+
+
+
+2009-10-05T12:05:43.000000Z
+ede30419d5be809670df11c41aa5b6bc
+2009-10-05T12:34:36.517006Z
+52716
+dkd-sprenger
+
+sass
+dir
+
+welcome.css
+file
+
+
+
+
+2009-09-29T07:46:34.000000Z
+5c11a49cf8c56774fbec0fe616d5172c
+2009-09-29T07:46:57.305876Z
+52213
+dkd-sprenger
+

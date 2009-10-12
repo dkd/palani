@@ -1,0 +1,34 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-29T07:50:35.263157Z
+52216
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+gems
+dir
+
+plugins
+dir
+

@@ -1,0 +1,31 @@
+<%= javascript_include_tag "sortable0.45" %>
+<ul id="sortable">
+  <li id="sort1">
+    <div class="box">
+      <h3 id="handle_sort1"><%= t('notices') -%> <a href="#"><%= t('hide')  %></a></h3>
+      <ul>
+        <li><a href="#"><%= t('add') -%></a></li>
+        <li>Super System...</li>
+        <li>Ja, die Seite ist megacool.</li>
+      </ul>
+    </div>
+  </li>
+  <li id="sort2">
+    <div class="box">
+      <h3 id="handle_sort2"><%= t('tags') -%> <a href="#"><%= t('hide')  %></a></h3>
+      <ul>
+        <li><a href="#"><%= t('add') -%></a></li>
+        <li>#Rails</li>
+        <li>#Ruby</li>
+        <li>#ExtJs</li>
+        <li>#BDD</li>
+      </ul>
+    </div>
+  </li>
+</ul>
+<script type="text/javascript">  
+  var sortable1 = new Ext.ux.Sortable({
+  			container : 'sortable',
+  			handles : true
+  		});
+</script>

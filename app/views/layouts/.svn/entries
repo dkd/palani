@@ -1,0 +1,52 @@
+8
+
+dir
+52565
+https://scm.dkd.de/repos/dkd/palani/trunk/app/views/layouts
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-09-30T12:28:57.409171Z
+52373
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+application.html.erb
+file
+52604
+
+
+
+2009-10-06T09:36:58.000000Z
+a36f0fad2436f21ba26b3e5f8c59af32
+2009-10-02T16:27:13.927369Z
+52604
+dkd-sprenger
+
+welcome.html.erb
+file
+
+
+
+
+2009-09-29T07:32:56.000000Z
+29c0284c4f12883dc634710f01a0230b
+2009-09-29T07:59:05.709526Z
+52222
+dkd-sprenger
+

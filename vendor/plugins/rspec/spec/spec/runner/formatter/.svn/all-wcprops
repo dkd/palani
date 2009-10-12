@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter
+END
+snippet_extractor_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/snippet_extractor_spec.rb
+END
+failing_examples_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/failing_examples_formatter_spec.rb
+END
+text_mate_formatted-1.8.7.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/text_mate_formatted-1.8.7.html
+END
+html_formatted-1.8.6-jruby.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.8.6-jruby.html
+END
+html_formatted-1.8.5.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.8.5.html
+END
+text_mate_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/text_mate_formatter_spec.rb
+END
+html_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatter_spec.rb
+END
+base_text_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/base_text_formatter_spec.rb
+END
+html_formatted-1.8.4.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.8.4.html
+END
+html_formatted-1.8.5-jruby.html
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.8.5-jruby.html
+END
+html_formatted-1.9.1.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.9.1.html
+END
+nested_text_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/nested_text_formatter_spec.rb
+END
+failing_example_groups_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/failing_example_groups_formatter_spec.rb
+END
+html_formatted-1.8.7.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.8.7.html
+END
+progress_bar_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/progress_bar_formatter_spec.rb
+END
+base_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/base_formatter_spec.rb
+END
+specdoc_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/specdoc_formatter_spec.rb
+END
+text_mate_formatted-1.8.6.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/text_mate_formatted-1.8.6.html
+END
+text_mate_formatted-1.8.4.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/text_mate_formatted-1.8.4.html
+END
+text_mate_formatted-1.9.1.html
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/text_mate_formatted-1.9.1.html
+END
+html_formatted-1.8.6.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/html_formatted-1.8.6.html
+END
+profile_formatter_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec/spec/spec/runner/formatter/profile_formatter_spec.rb
+END

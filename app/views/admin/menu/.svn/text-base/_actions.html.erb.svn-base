@@ -1,0 +1,8 @@
+<div id="actions">
+<%= t('actions') -%>: 
+<ul>
+<% for action in actions  %>
+  <%= link_to_remote action[:name], { :url => action[:link_to], :method => "get" }, :class => action[:class] %>
+<% end  %>
+</ul>
+</div>

@@ -1,0 +1,24 @@
+de:
+  admin:
+    user_groups:
+      new: &LABELS
+        headline: Benutzergruppe hinzufügen
+        name: Name
+        permissions: Berechtigungen
+      edit:
+        <<: *LABELS
+        headline: Benutzergruppe editieren
+      permissions:
+        content: Inhalt
+        create_content: Inhalt einfügen
+        edit_content: Inhalt editieren
+        delete_content: Inhalt löschen
+        edit_profile: Einstellungen bearbeiten
+        users: Benutzer
+        create_user: Benutzer hinzufügen
+        edit_user: Benutzer editieren
+        delete_user: Benutzer löschen
+        help: Hilfe
+        faq_help: FAQ
+        community_help: Community
+        administration: Administration

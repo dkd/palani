@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/LICENSE
+END
+CHANGELOG.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/CHANGELOG.rdoc
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/.gitignore
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/init.rb
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/Rakefile
+END
+VERSION.yml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/VERSION.yml
+END
+.specification
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/.specification
+END
+README.rdoc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/README.rdoc
+END
+settingslogic.gemspec
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/dkd/!svn/ver/52129/palani/trunk/vendor/gems/settingslogic-2.0.3/settingslogic.gemspec
+END

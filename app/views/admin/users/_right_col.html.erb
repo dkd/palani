@@ -1,0 +1,5 @@
+<%- if current_user_is_admin? -%>
+  <%= render_ext_panel([
+    { :title => t('user_groups'), :html => render(:partial => "/admin/user_groups/index_box") }
+    ]) %>
+<%- end -%>

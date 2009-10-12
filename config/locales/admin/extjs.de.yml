@@ -1,0 +1,9 @@
+de:
+  admin:
+    extjs:
+      list:
+        username: Username
+        surname: Vorname
+        name: Nachname
+        actions: Aktionen
+        show_all_users: Benutzer verwalten

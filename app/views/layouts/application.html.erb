@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Palani 0.2 | A CMS based on RubyOnRails</title>
+	
+	<%= stylesheet_link_tag "application" %>
+	<%= stylesheet_link_tag "../javascripts/extjs/resources/css/ext-all-notheme" %>
+	<%= stylesheet_link_tag "../javascripts/extjs/resources/css/xtheme-palani" %>
+	<%= stylesheet_link_tag "../javascripts/extjs/examples/grid/grid-examples" %>
+	<%= stylesheet_link_tag "forms" %>
+	<%= stylesheet_link_tag "boxes" %>
+  
+  <%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag "extjs/adapter/jquery/ext-jquery-adapter" %>
+	<%= javascript_include_tag "extjs/ext-all" %>
+	<link rel="shortcut icon" href="/favicon.ico" />
+</head>
+
+<body>
+
+	<div id="header">
+	  <div id="spinner">
+	    <%= image_tag "spinner.gif" %> <span><%= t("loading") %></span>
+    </div>
+		<ul>
+			<li id="time"><%= current_time %></li>
+			<li>| <%= t('.logged_in_as') -%> <i><%= current_user.surname + " " + current_user.name -%></i></li>
+			<li>| <%= link_to "Logout", logout_path -%></li>
+		</ul>
+		
+		<form id="search" action="#" method="post">
+		  <input type="text" value="<%= t('enter_your_search') -%>">
+		</form>
+		
+	</div>
+	
+	<%= render_main_menu(params[:controller]) %>
+	
+	<div id="content">
+		<%= yield %>
+	</div>
+	
+</body>
+</html>

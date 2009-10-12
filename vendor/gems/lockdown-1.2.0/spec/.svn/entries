@@ -1,0 +1,79 @@
+8
+
+dir
+52375
+https://scm.dkd.de/repos/dkd/palani/trunk/vendor/gems/lockdown-1.2.0/spec
+https://scm.dkd.de/repos/dkd
+
+
+
+2009-08-28T07:45:01.059850Z
+50217
+dkd-sprenger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+282f3966-95a0-11db-a1a1-410dc79e6349
+
+lockdown
+dir
+
+lockdown_spec.rb
+file
+
+
+
+
+2009-08-27T19:19:38.000000Z
+afe3eb3c336997383c4f36531b37076c
+2009-08-28T07:45:01.059850Z
+50217
+dkd-sprenger
+
+rcov.opts
+file
+
+
+
+
+2009-08-27T19:19:38.000000Z
+772b0cfe7fa927784004b2daaddf6062
+2009-08-28T07:45:01.059850Z
+50217
+dkd-sprenger
+
+spec.opts
+file
+
+
+
+
+2009-08-27T19:19:38.000000Z
+42fe6dbdfb2e69da25293fdcf4f948fa
+2009-08-28T07:45:01.059850Z
+50217
+dkd-sprenger
+
+spec_helper.rb
+file
+
+
+
+
+2009-08-27T19:19:38.000000Z
+25c02d661c18b8e51be91e2eba376964
+2009-08-28T07:45:01.059850Z
+50217
+dkd-sprenger
+

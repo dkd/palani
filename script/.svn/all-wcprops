@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/repos/dkd/!svn/ver/50217/palani/trunk/script
+END
+cucumber
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/dkd/!svn/ver/50217/palani/trunk/script/cucumber
+END
+autospec
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/dkd/!svn/ver/45728/palani/trunk/script/autospec
+END
+console
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/dkd/!svn/ver/45720/palani/trunk/script/console
+END
+about
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/dkd/!svn/ver/45720/palani/trunk/script/about
+END
+spec
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/dkd/!svn/ver/45728/palani/trunk/script/spec
+END
+spec_server
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/dkd/!svn/ver/45728/palani/trunk/script/spec_server
+END
+destroy
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/dkd/!svn/ver/45720/palani/trunk/script/destroy
+END
+dbconsole
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/dkd/!svn/ver/45720/palani/trunk/script/dbconsole
+END
+runner
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/dkd/!svn/ver/45720/palani/trunk/script/runner
+END
+generate
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/dkd/!svn/ver/45720/palani/trunk/script/generate
+END
+server
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/dkd/!svn/ver/45720/palani/trunk/script/server
+END
+plugin
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/dkd/!svn/ver/45720/palani/trunk/script/plugin
+END

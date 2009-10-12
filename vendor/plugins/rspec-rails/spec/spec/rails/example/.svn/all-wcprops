@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example
+END
+shared_routing_example_group_examples.rb
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/shared_routing_example_group_examples.rb
+END
+view_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/view_example_group_spec.rb
+END
+helper_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/helper_example_group_spec.rb
+END
+controller_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/controller_example_group_spec.rb
+END
+cookies_proxy_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/cookies_proxy_spec.rb
+END
+example_group_factory_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/example_group_factory_spec.rb
+END
+assigns_hash_proxy_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/assigns_hash_proxy_spec.rb
+END
+controller_isolation_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/controller_isolation_spec.rb
+END
+test_unit_assertion_accessibility_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/test_unit_assertion_accessibility_spec.rb
+END
+error_handling_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/error_handling_spec.rb
+END
+model_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/model_example_group_spec.rb
+END
+configuration_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/configuration_spec.rb
+END
+routing_example_group_spec.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/repos/dkd/!svn/ver/45728/palani/trunk/vendor/plugins/rspec-rails/spec/spec/rails/example/routing_example_group_spec.rb
+END
