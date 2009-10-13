@@ -1,94 +1,0 @@
-8
-
-dir
-52375
-https://scm.dkd.de/repos/dkd/palani/trunk/vendor/gems/authlogic-2.1.1/lib/authlogic
-https://scm.dkd.de/repos/dkd
-
-
-
-2009-08-28T07:45:01.059850Z
-50217
-dkd-sprenger
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-282f3966-95a0-11db-a1a1-410dc79e6349
-
-acts_as_authentic
-dir
-
-authenticates_many
-dir
-
-controller_adapters
-dir
-
-crypto_providers
-dir
-
-i18n.rb
-file
-
-
-
-
-2009-08-27T19:19:37.000000Z
-c2c4f236e66974d613644ddaa8435510
-2009-08-28T07:45:01.059850Z
-50217
-dkd-sprenger
-
-random.rb
-file
-
-
-
-
-2009-08-27T19:19:37.000000Z
-360de020d87ebdd4b386e9c08210be81
-2009-08-28T07:45:01.059850Z
-50217
-dkd-sprenger
-
-regex.rb
-file
-
-
-
-
-2009-08-27T19:19:37.000000Z
-d19b373d073afc14164cab33c6257edb
-2009-08-28T07:45:01.059850Z
-50217
-dkd-sprenger
-
-session
-dir
-
-test_case
-dir
-
-test_case.rb
-file
-
-
-
-
-2009-08-27T19:19:37.000000Z
-d9b7266ffb8d3d1a32d3408f4535d98e
-2009-08-28T07:45:01.059850Z
-50217
-dkd-sprenger
-

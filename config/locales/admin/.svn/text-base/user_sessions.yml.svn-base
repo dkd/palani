@@ -1,6 +1,0 @@
-en:
-  admin:
-    user_sessions:
-      login:
-        user: Username
-        password: Password

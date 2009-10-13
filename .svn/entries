@@ -1,112 +1,0 @@
-8
-
-dir
-52375
-https://scm.dkd.de/repos/dkd/palani/trunk
-https://scm.dkd.de/repos/dkd
-
-
-
-2009-09-30T12:30:08.564337Z
-52375
-dkd-sprenger
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-282f3966-95a0-11db-a1a1-410dc79e6349
-
-README
-file
-
-
-
-
-2009-07-23T11:25:58.000000Z
-0cdf56769f20a2b73a929ac3ba633152
-2009-06-02T13:10:15.529562Z
-45720
-dkd-sprenger
-
-Rakefile
-file
-
-
-
-
-2009-07-23T11:25:53.000000Z
-17f2f134da4cd31ea095d5868ca89e86
-2009-06-02T13:10:15.529562Z
-45720
-dkd-sprenger
-
-app
-dir
-
-config
-dir
-
-credits.txt
-file
-52592
-
-
-
-2009-10-02T15:23:05.000000Z
-0008d7ff53546f3db4d1fcef1e73b79c
-2009-10-02T16:24:17.478291Z
-52592
-dkd-sprenger
-
-cucumber.yml
-file
-
-
-
-
-2009-09-05T07:42:29.000000Z
-0132c39eb0b1efe5181043a3c2ad9501
-2009-09-13T17:52:49.730701Z
-51149
-dkd-sprenger
-
-db
-dir
-
-doc
-dir
-
-features
-dir
-
-lib
-dir
-
-log
-dir
-
-public
-dir
-
-script
-dir
-
-spec
-dir
-
-tmp
-dir
-
-vendor
-dir
-

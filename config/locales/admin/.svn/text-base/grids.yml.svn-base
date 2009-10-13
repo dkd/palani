@@ -1,9 +1,0 @@
-en:
-  admin:
-    grids:
-      list:
-        username: Username
-        surname: Surname
-        name: Name
-        actions: Actions
-        show_all_users: Administrate users

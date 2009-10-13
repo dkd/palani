@@ -1,49 +1,0 @@
-8
-
-dir
-52375
-https://scm.dkd.de/repos/dkd/palani/trunk/vendor/gems
-https://scm.dkd.de/repos/dkd
-
-
-
-2009-09-29T07:50:35.263157Z
-52216
-dkd-sprenger
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-282f3966-95a0-11db-a1a1-410dc79e6349
-
-authlogic-2.1.1
-dir
-
-haml-2.2.6
-dir
-
-lockdown-1.2.0
-dir
-
-lockdown-1.3.1
-dir
-
-mbleigh-acts-as-taggable-on-1.0.5
-dir
-
-settingslogic-2.0.3
-dir
-
-uuidtools-2.0.0
-dir
-

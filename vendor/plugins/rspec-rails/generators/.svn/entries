@@ -1,52 +1,0 @@
-8
-
-dir
-52375
-https://scm.dkd.de/repos/dkd/palani/trunk/vendor/plugins/rspec-rails/generators
-https://scm.dkd.de/repos/dkd
-
-
-
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-282f3966-95a0-11db-a1a1-410dc79e6349
-
-rspec
-dir
-
-rspec_controller
-dir
-
-rspec_default_values.rb
-file
-
-
-
-
-2009-07-23T11:26:03.000000Z
-928782a5861a701b8b3753747cd547c4
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-
-rspec_model
-dir
-
-rspec_scaffold
-dir
-

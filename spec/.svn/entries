@@ -1,82 +1,0 @@
-8
-
-dir
-52375
-https://scm.dkd.de/repos/dkd/palani/trunk/spec
-https://scm.dkd.de/repos/dkd
-
-
-
-2009-09-30T12:28:21.117302Z
-52371
-dkd-sprenger
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-282f3966-95a0-11db-a1a1-410dc79e6349
-
-controllers
-dir
-
-fixtures
-dir
-
-helpers
-dir
-
-models
-dir
-
-rcov.opts
-file
-
-
-
-
-2009-07-23T11:25:58.000000Z
-55fe73f43f74d4403124e54fb71bf05a
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-
-spec.opts
-file
-
-
-
-
-2009-07-23T11:25:58.000000Z
-3672575ff6c720793771fbf9af771c50
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-
-spec_helper.rb
-file
-
-
-
-
-2009-09-13T20:30:59.000000Z
-8ddbcdc941d970777aa39c9496d6c641
-2009-09-22T13:45:59.966069Z
-51715
-dkd-sprenger
-
-spec_helpers
-dir
-
-views
-dir
-
