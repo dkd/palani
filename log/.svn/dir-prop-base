@@ -1,9 +1,0 @@
-K 10
-svn:ignore
-V 50
-development.log
-test.log
-cucumber.log
-mongrel.log
-
-END

@@ -1,61 +1,0 @@
-8
-
-dir
-52375
-https://scm.dkd.de/repos/dkd/palani/trunk/vendor/plugins/rspec-rails/spec
-https://scm.dkd.de/repos/dkd
-
-
-
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-282f3966-95a0-11db-a1a1-410dc79e6349
-
-autotest
-dir
-
-rails_suite.rb
-file
-
-
-
-
-2009-07-23T11:26:05.000000Z
-029097babada80902e1ad73733dd96c4
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-
-resources
-dir
-
-spec
-dir
-
-spec_helper.rb
-file
-
-
-
-
-2009-07-23T11:26:13.000000Z
-e192b5e82a2f345bf2102a7d7bc1f2a5
-2009-06-02T13:41:11.063289Z
-45728
-dkd-sprenger
-

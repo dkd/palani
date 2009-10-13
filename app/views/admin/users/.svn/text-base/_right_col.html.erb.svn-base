@@ -1,3 +1,0 @@
-<%- if current_user_is_admin? -%>
-  <%= render :partial => "/admin/user_groups/index_box" -%>
-<%- end -%>

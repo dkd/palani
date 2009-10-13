@@ -1,9 +1,0 @@
-<ul id="administration_sub_menu">
-	<%- for menu_item in menu_items do -%>
-		<%- if menu_item[:current]==true -%>
-			<li><%= link_to_remote t('.'+menu_item[:name]), { :url => menu_item[:link_to], :method => :get }, :class => "current" -%></li>
-		<%- else -%>
-			<li><%= link_to_remote t('.'+menu_item[:name]), :url => menu_item[:link_to], :method => :get -%></li>
-		<%- end -%>
-	<%- end -%>
-</ul>
