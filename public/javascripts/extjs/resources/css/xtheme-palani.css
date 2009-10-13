@@ -1659,37 +1659,38 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	border: none !important;
 }
 
-#panel .x-column .x-portlet {
+.x-column .x-portlet {
 	margin-bottom: 10px !important;
 }
 
-#panel .x-panel-tl .x-panel-header {
+.x-panel-tl .x-panel-header {
 	color: #FFF;
 }
 
-#panel .x-panel-tr,
-#panel .x-panel-tl,
-#panel .x-panel-tc {
+.x-panel-tr,
+.x-panel-tl,
+.x-panel-tc {
 	background-image: none;
 	background-color: #FF4F4F;
 }
 
-#panel .x-panel-ml,
-#panel .x-panel-mr,
-#panel .x-panel-mc,
-#panel .x-panel-bl,
-#panel .x-panel-br,
-#panel .x-panel-bc {
+.x-panel-ml,
+.x-panel-mr,
+.x-panel-mc,
+.x-panel-bl,
+.x-panel-br,
+.x-panel-bc {
 	background: none;
 }
 
-#panel .x-portlet .x-panel-bwrap {
+.x-portlet .x-panel-bwrap {
 	border-color: #FF4F4F;
 	border-style: solid;
 	border-width: 0 2px 2px;
+	padding: 5px;
 }
 
-#panel .x-panel-tl {
+.x-panel-tl {
 	border: none;
 }
 
@@ -1705,4 +1706,26 @@ body.x-body-masked .x-window-plain .x-window-mc {
 
 #panel .x-panel-collapsed .x-tool-toggle {
 	background-image: url(../../../../images/icons/down.png) !important;
+}
+
+.x-panel-dd-spacer {
+	border-color: #FF4F4F;
+	margin-bottom: 10px;
+}
+
+.x-panel-ghost {
+	background: none;
+	border: 2px solid #FF4F4F;
+}
+
+.x-panel-header-text {
+	padding-left: 5px;
+}
+
+.x-panel-ghost ul {
+	border-color:#FFF;
+}
+
+.x-panel-ghost .x-tool {
+	display: none;
 }
