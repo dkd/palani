@@ -1644,12 +1644,59 @@ body.x-body-masked .x-window-plain .x-window-mc {
  * Multiselect
  */
 
+#multiselect .x-toolbar {
+	background: none;
+	border-top: 0;
+	width: 304px;
+}
+
+#multiselect .x-btn-over .x-btn-tl, 
+#multiselect .x-btn-over .x-btn-tr,
+#multiselect .x-btn-over .x-btn-tc,
+#multiselect .x-btn-over .x-btn-ml,
+#multiselect .x-btn-over .x-btn-mr,
+#multiselect .x-btn-over .x-btn-mc,
+#multiselect .x-btn-over .x-btn-bl,
+#multiselect .x-btn-over .x-btn-br,
+#multiselect .x-btn-over .x-btn-bc {
+	background: none !important;
+}
+
+#multiselect .x-btn-over em {
+	border-bottom: 1px solid #666;
+}
+
+#multiselect .x-fieldset {
+	border: 2px solid #CCC;
+}
+
 #multiselect .x-panel-tbar {
-		border: none !important;
+	border: none !important;
 }
 
 #multiselect .x-form-element {
-		padding: 0 !important;
+	padding: 0 !important;
+}
+
+#multiselect .x-fieldset-tbar .x-toolbar {
+	background: none;
+	border: none;
+	display: block;
+}
+
+#multiselect .x-btn button {
+	color: #666;
+	font-size: 100%;
+	height: auto;
+}
+
+#multiselect .x-list-body dt em {
+	padding: 5px;
+}
+
+#multiselect .x-list-selected {
+	background-color: #FF4F4F;
+	color: #FFF;
 }
 
 /**
