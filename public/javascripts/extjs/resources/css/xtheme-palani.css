@@ -1662,3 +1662,33 @@ body.x-body-masked .x-window-plain .x-window-mc {
 #panel .x-column .x-portlet {
 	margin-bottom: 10px !important;
 }
+
+#panel .x-panel-tl .x-panel-header {
+	color: #FFF;
+}
+
+#panel .x-panel-tr,
+#panel .x-panel-tl,
+#panel .x-panel-tc {
+	background-image: none;
+	background-color: #FF4F4F;
+}
+
+#panel .x-panel-ml,
+#panel .x-panel-mr,
+#panel .x-panel-mc,
+#panel .x-panel-bl,
+#panel .x-panel-br,
+#panel .x-panel-bc {
+	background: none;
+}
+
+#panel .x-portlet .x-panel-bwrap {
+	border-color: #FF4F4F;
+	border-style: solid;
+	border-width: 0 2px 2px;
+}
+
+#panel .x-panel-tl {
+	border: none;
+}
