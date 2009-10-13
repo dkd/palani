@@ -8,5 +8,6 @@ class ContentElement < ActiveRecord::Base
   validates_presence_of :type
   
   acts_as_taggable_on :tags
+  acts_as_paranoid
   
 end

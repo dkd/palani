@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
                       :message => 'invalid_email_adress'
   
   acts_as_authentic
+  acts_as_paranoid
   
   named_scope :grid_data, :select => 'id,username,surname,name'
   

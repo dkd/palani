@@ -9,14 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091002135748) do
+ActiveRecord::Schema.define(:version => 20091013114430) do
 
   create_table "content_element_htmls", :force => true do |t|
     t.integer  "content_element_id"
     t.text     "html"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "deleted"
   end
 
   create_table "content_element_images", :force => true do |t|
@@ -27,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.string   "image_alternative_text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "deleted"
   end
 
   create_table "content_element_texts", :force => true do |t|
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "deleted"
   end
 
   create_table "content_elements", :force => true do |t|
@@ -47,13 +44,13 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.datetime "starttime"
     t.datetime "endtime"
     t.integer  "sort",        :default => 0
-    t.boolean  "deleted",     :default => false
     t.boolean  "hidden",      :default => true
     t.integer  "column"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tags"
     t.integer  "element_id"
+    t.datetime "deleted_at"
   end
 
   create_table "notices", :force => true do |t|
@@ -62,9 +59,9 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.text     "text"
     t.string   "element_type"
     t.integer  "element_id"
-    t.boolean  "deleted",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   create_table "pages", :force => true do |t|
@@ -73,7 +70,6 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.datetime "starttime"
     t.datetime "endtime"
     t.integer  "sorting"
-    t.boolean  "deleted",          :default => false
     t.boolean  "hidden",           :default => true
     t.boolean  "hidden_in_menu",   :default => false
     t.string   "subtitle"
@@ -92,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.string   "layout"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deleted_at"
   end
 
   create_table "permission_groups", :force => true do |t|
@@ -133,7 +130,6 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "deleted",    :default => false
   end
 
   create_table "user_groups_users", :id => false, :force => true do |t|
@@ -157,11 +153,11 @@ ActiveRecord::Schema.define(:version => 20091002135748) do
     t.datetime "last_login_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "persistence_token",                    :null => false
+    t.string   "persistence_token",                   :null => false
     t.string   "current_login_ip"
     t.datetime "current_login_at"
-    t.boolean  "deleted",           :default => false
     t.string   "backend_language",  :default => "en"
+    t.datetime "deleted_at"
   end
 
 end

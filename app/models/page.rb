@@ -11,6 +11,7 @@ class Page < ActiveRecord::Base
   
   acts_as_tree :order => "sorting"
   acts_as_taggable_on :tags
+  acts_as_paranoid
   
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
