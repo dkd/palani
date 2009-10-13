@@ -31,7 +31,7 @@ class Page < ActiveRecord::Base
     drop_page.sorting += 1 if is_below
     sorting = drop_page.sorting
     
-    pages = Page.not_deleted.having_sorting_bigger_than(drop_page.sorting).find_all_by_parent_id(drop_page.parent_id)
+    pages = Page.having_sorting_bigger_than(drop_page.sorting).find_all_by_parent_id(drop_page.parent_id)
     pages.each{ |page| page.update_attributes :sorting => page.sorting+1 }
     update_attributes :sorting => sorting
   end

@@ -1,0 +1,8 @@
+.svn
+**/.svn
+.DS_STORE
+.project
+.loadpath
+tmp/**/*
+log/**/*
+doc/**/*

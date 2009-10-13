@@ -62,7 +62,7 @@ class Admin::UsersController < ApplicationController
         end
       }
       format.json {
-          users = User.not_deleted.grid_data
+          users = User.grid_data
           users.each { |u| u[:actions] = u.actions }
           render :json => { :root => users }
       }

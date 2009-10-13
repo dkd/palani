@@ -4,7 +4,7 @@ class Admin::PagesController < ApplicationController
   end
   
   def tree
-    render :json => Page.not_deleted.find_all_by_parent_id(params[:node]).collect{|p| { :text => p.title, :id => p.id, :cls => p.type, :leaf => false, :icon => p.icon, :href => "/admin/pages/5/show", :allowDrag => true, :allowDrop => true, :draggable => true, :expanded => p.is_leaf? , :attributes => { :mode => "move" } } }
+    render :json => Page.find_all_by_parent_id(params[:node]).collect{|p| { :text => p.title, :id => p.id, :cls => p.type, :leaf => false, :icon => p.icon, :href => "/admin/pages/5/show", :allowDrag => true, :allowDrop => true, :draggable => true, :expanded => p.is_leaf? , :attributes => { :mode => "move" } } }
   end
   
   def refresh

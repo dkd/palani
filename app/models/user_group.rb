@@ -5,7 +5,7 @@ class UserGroup < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
   
-  named_scope :not_deleted, :conditions =>  ["name <> ?","Administrators"]
+  named_scope :active, :conditions =>  ["name <> ?","Administrators"]
   named_scope :json_data, :select => 'id,name'
   
 	def all_users
