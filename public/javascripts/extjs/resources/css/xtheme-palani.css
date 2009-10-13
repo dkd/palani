@@ -1692,3 +1692,17 @@ body.x-body-masked .x-window-plain .x-window-mc {
 #panel .x-panel-tl {
 	border: none;
 }
+
+#panel .x-tool-close {
+	background-image: url(../../../../images/icons/close.png);
+	background-position: 0 0;
+}
+
+#panel .x-tool-toggle {
+	background-image: url(../../../../images/icons/up.png);
+	background-position: 0 0;
+}
+
+#panel .x-panel-collapsed .x-tool-toggle {
+	background-image: url(../../../../images/icons/down.png) !important;
+}
