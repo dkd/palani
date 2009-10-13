@@ -6,8 +6,4 @@ describe ContentPage do
     
   end
   
-  context "gets deleted" do
-    
-  end
-  
 end

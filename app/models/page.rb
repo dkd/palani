@@ -12,12 +12,7 @@ class Page < ActiveRecord::Base
   acts_as_tree :order => "sorting"
   acts_as_taggable_on :tags
   
-  named_scope :not_deleted, :conditions => { :deleted => false }, :order => "sorting"
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
-  
-  def delete
-    update_attributes :deleted => true
-  end
   
   def text
     title

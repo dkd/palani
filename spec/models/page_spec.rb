@@ -54,19 +54,5 @@ describe Page do
     @destination = Page.find(:first, @page.shortcut_page_id)
     @destination.should_not be_blank
   end
-  
-  context "gets deleted" do
-  
-    it"that gets deleted, should not get deleted physically" do
-      @page.delete
-      @page.should be_present
-    end
-    
-    it"that gets deleted, should have the flag deleted" do
-      @page.delete
-      @page.deleted.should be_true
-    end
-
-  end
 
 end

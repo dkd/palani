@@ -12,7 +12,4 @@ class Notice < ActiveRecord::Base
     self.element_type = "element.to_s"
   end
   
-  def delete
-    self.update_attributes( :deleted => true )
-  end
 end

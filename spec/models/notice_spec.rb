@@ -9,20 +9,6 @@ describe Notice do
   before(:each) do
     @notice = Notice.new( :title => "Test", :text => "yes.")
   end
-  
-  context "gets deleted" do
-  
-    it "should still exist after deleting" do
-      @notice.delete
-      @notice.should be_present
-    end
-    
-    it "should have the deleted flag set after deleting" do
-      @notice.delete
-      @notice.deleted.should be_true
-    end
-
-  end
 
   describe "validations" do
     

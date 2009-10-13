@@ -15,12 +15,7 @@ class User < ActiveRecord::Base
   
   acts_as_authentic
   
-  named_scope :not_deleted, :conditions => { :deleted => false }
   named_scope :grid_data, :select => 'id,username,surname,name'
-  
-  def delete
-    self.update_attributes( :deleted => true )
-  end
   
   def actions
     links = link_to_remote( image_tag("icons/edit.png") , 

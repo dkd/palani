@@ -3,10 +3,4 @@ class ContentElementHtml < ActiveRecord::Base
   
   validates_associated :content_element
   
-  named_scope :not_deleted, :conditions => { :deleted => false }
-  
-  def delete
-    self.update_attributes( :deleted => true )
-  end
-  
 end

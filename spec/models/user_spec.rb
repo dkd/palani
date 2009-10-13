@@ -12,20 +12,6 @@ describe User do
     @user.user_groups << @user_group
   end
   
-  context "gets deleted" do
-  
-    it "should still exist after deleting" do
-      @user.delete
-      @user.should be_present
-    end
-    
-    it "should have the deleted flag set after deleting" do
-      @user.delete
-      @user.deleted.should be_true
-    end
-    
-  end
-  
   it "should belong to at least one usergroup" do
     @user.user_groups.should_not be_empty
   end

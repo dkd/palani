@@ -19,20 +19,6 @@ describe ContentElement do
     
   end
   
-  context "gets deleted" do
-  
-    it"that gets deleted, should not get deleted physically" do
-      @content_element.delete
-      @content_element.should_not be_blank
-    end
-    
-    it"that gets deleted, should have the flag deleted" do
-      @content_element.delete
-      @content_element.deleted.should be_true
-    end
-  
-  end
-  
   it"should have a Content Element, if its type is not 'ContentElement'"
 
 end

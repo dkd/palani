@@ -19,18 +19,4 @@ describe ContentElementHtml do
     
   end
   
-  context "gets deleted" do
-  
-    it"that gets deleted, should not get deleted physically" do
-      @content_element.delete
-      @content_element.should be_present
-    end
-    
-    it"that gets deleted, should have the flag deleted" do
-      @content_element.delete
-      @content_element.deleted.should be_true
-    end
-  
-  end
-  
 end
