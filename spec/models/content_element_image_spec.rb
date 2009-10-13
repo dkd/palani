@@ -8,14 +8,16 @@ describe ContentElementImage do
   
   describe "validations" do
     
-    it "that has an image url should be valid" do
+    it "should be valid with an image url" do
       @content_element.should be_valid
     end
 
-    it "that has no image url should not be valid" do
-      @content_element.image_url = ""
+    it "should not be valid without an image url" do
+      @content_element.image_url = nil
       @content_element.should_not be_valid
     end
+    
+    it "should belong to a ContentElement"
     
   end
   

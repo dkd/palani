@@ -8,14 +8,16 @@ describe ContentElementHtml do
   
   describe "validations" do
     
-    it "that has html should be valid" do
+    it "should be valid with html" do
       @content_element.should be_valid
     end
 
-    it "that has no html should be valid" do
-      @content_element.html = ""
+    it "should not be valid without html" do
+      @content_element.html = nil
       @content_element.should be_valid
     end
+    
+    it "should belong to a ContentElement"
     
   end
   

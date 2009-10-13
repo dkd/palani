@@ -15,6 +15,7 @@ class Page < ActiveRecord::Base
   
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
+  # text is needed by extjs
   def text
     title
   end

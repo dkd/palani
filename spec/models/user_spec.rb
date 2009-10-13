@@ -12,24 +12,25 @@ describe User do
     @user.user_groups << @user_group
   end
   
-  it "should belong to at least one usergroup" do
-    @user.user_groups.should_not be_empty
-  end
-  
-  it "should not have no backend language" do
-    @user.backend_language.should_not be_nil
+  context "actions" do
+    it "should return something" do
+      @user.actions.should_not be_empty
+    end
+
+    it "should return a string" do
+      @user.actions.should be_a String
+    end
   end
   
   describe "named scopes" do
     
-    it "should have a named scope called deleted"
-    it "should have a named scope called grid_data"
+    it "should have a named scope called `grid_data`"
     
   end
   
   describe "validations" do
     
-    it "should be valid with a username, a password and a salt" do
+    it "should be valid with a username, a set backend language, a password and a salt" do
       @user.should be_valid
     end
 
@@ -44,6 +45,11 @@ describe User do
       @user.should_not be_valid
     end
     
+    it "should not be valid without a backend language" do
+      @user.backend_language = ""
+      @user.should_not be_valid
+    end
+    
     it "should have a password and the correct confirmation" do
       @user.should be_valid
       @user.password = "another_test"
@@ -55,11 +61,18 @@ describe User do
       @user.should be_valid
     end
 
-    it "should have no invalid email adress" do
+    it "should not have an email adress without a @" do
       @user.email = "hallo123"
       @user.should_not be_valid
+    end
+    
+    it "should not have an email adress without a tld" do
       @user.email = "test@testing"
       @user.should_not be_valid
+      
+    end
+    
+    it "should not have an email adress without a host" do
       @user.email = "test@.de"
       @user.should_not be_valid
     end

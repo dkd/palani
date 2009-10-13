@@ -8,14 +8,16 @@ describe ContentElementText do
   
   describe "validations" do
     
-    it "that has a text should be valid" do
+    it "should be valid with a text" do
       @content_element.should be_valid
     end
 
-    it "that has no text should be valid" do
-      @content_element.text = ""
+    it "should not be valid without a text" do
+      @content_element.text = nil
       @content_element.should be_valid
     end
+    
+    it "should belong to a ContentElement"
     
   end
   

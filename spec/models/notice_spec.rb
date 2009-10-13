@@ -9,26 +9,30 @@ describe Notice do
   before(:each) do
     @notice = Notice.new( :title => "Test", :text => "yes.")
   end
+  
+  context "that gets deleted" do
+    
+    it "should not get deleted physically" do
+      @notice.delete
+      @notice.should_not be_nil
+    end
+    
+  end
 
   describe "validations" do
     
     it "should belong to a user"
     it "should belong to a page or content element"
     
-    it "should be valid with a title and a text" do
-      @notice.title = "Test"
-      @notice.element = @page
-      @notice.should be_valid
-    end
-    
-    it "should only be valid with a title" do
-      @notice.title = ""
+    it "should not be valid without a title" do
+      @notice.title = nil
       @notice.should_not be_valid
-      @notice.title = "Test"
-      @notice.should be_valid
     end
     
-    it "should belong to a element"
+    it "should not be valid without an element" do
+      @notice.element_id = nil
+      @notice.should_not be_valid
+    end
     
   end
   

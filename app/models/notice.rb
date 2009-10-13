@@ -7,10 +7,5 @@ class Notice < ActiveRecord::Base
   
   acts_as_taggable_on :tags
   acts_as_paranoid
-  
-  def element=(element)
-    self.element_id = element.id
-    self.element_type = "element.to_s"
-  end
 
 end

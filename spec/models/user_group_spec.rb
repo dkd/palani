@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe UserGroup do
   
   before(:each) do
-    @user_group = UserGroup.new( :name => "Admins" )
+    @user_group = UserGroup.create( :name => "Admins" )
   end
   
   describe "validations" do
@@ -26,10 +26,23 @@ describe UserGroup do
     
   end
   
-  describe "all_users" do
+  context "all_users" do
     
-    it "should return only User objects"
-    it "should return only users, that belong to this usergroup"
+    it "should return an Array" do
+      @user_group.all_users.should be_an Array
+    end
+    
+    it "should return only User objects" do
+      @user_group.all_users.each { |user|
+        user.should be_an User
+      }
+    end
+    
+    it "should return only users, that belong to this usergroup" do
+      @user_group.all_users.each { |user|
+        user.user_groups.should include @user_group
+      }
+    end
     
   end
   
