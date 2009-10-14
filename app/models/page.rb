@@ -13,6 +13,7 @@ class Page < ActiveRecord::Base
   acts_as_taggable_on :tags
   acts_as_paranoid
   
+  named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
   # text is needed by extjs
