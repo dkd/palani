@@ -54,7 +54,7 @@
           id:'menu',
           items: [{
             id:'new',
-            handler:testHandler,
+            handler:newSiteHandler,
             icon:'/images/icons/page_add.png',
             cls:'new',
             text:'<%= t("new_page") %>'
@@ -78,6 +78,18 @@
             text: '<%= t("delete") %>'
           }]
       });
+      
+      function newSiteHandler() {
+        var n = sm.getSelectedNode();
+        if(n){
+          jQuery.ajax({
+              data : 'page_id='+n.id,
+              type : 'get',
+              url : '<%= url_for new_admin_page_path %>',
+              async : true
+          });
+        }
+      }
       
       function deleteHandler() {
         var n = sm.getSelectedNode();

@@ -19,6 +19,20 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  def new
+    @partial_file = "new"
+    respond_to do |format|
+      format.html {
+        render :action => :index
+      }
+      format.js {
+        render :update do |page|
+          page['middle_col'].replace_html :partial => @partial_file
+        end
+      }
+    end
+  end
+  
   # if no position is given, or position is not above or append, the node will be moved below
   def create
     page = ContentPage.new :title => t("new_page")
