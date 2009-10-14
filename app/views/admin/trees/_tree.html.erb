@@ -27,7 +27,29 @@
   }  
   
   Ext.onReady(function(){
-    
+
+      var tree = new Ext.tree.TreePanel({
+          useArrows: true,
+          autoScroll: true,
+          animate: true,
+          enableDD: true,
+          ddGroup: 'treeDD',
+          containerScroll: true,
+          border: false,
+          rootVisible: false,
+          // auto create TreeLoader
+          dataUrl: '<%= url_for tree_admin_trees_path(:format => :json) %>',
+
+          root: {
+              nodeType: 'async',
+              text: 'Palani',
+              draggable: false,
+              id: 0
+          }
+      });
+      
+      var sm = tree.getSelectionModel();
+      
       var Menu = new Ext.menu.Menu({
           id:'menu',
           items: [{
@@ -50,12 +72,26 @@
             text:'<%= t("paste") %>' 
           },{
             id:'remove',
-            handler:testHandler,
+            handler:deleteHandler,
             icon:'/images/icons/page_delete.png',
             cls:'delete',
             text: '<%= t("delete") %>'
           }]
       });
+      
+      function deleteHandler() {
+        var n = sm.getSelectedNode();
+        if(n){
+        	tree.getSelectionModel().selectPrevious();
+        	n.parentNode.removeChild(n);
+        	jQuery.ajax({
+              data : '_method=delete',
+              type : 'post', 
+              url : '<%= url_for admin_pages_path %>/'+n.id,
+              async : true
+          });
+        }
+      }
 
       function testHandler() {
         alert("test");
@@ -66,26 +102,6 @@
         Menu.items.get('paste').disable();
         Menu.showAt(e.getXY());
       }
-
-      var tree = new Ext.tree.TreePanel({
-          useArrows: true,
-          autoScroll: true,
-          animate: true,
-          enableDD: true,
-          ddGroup: 'treeDD',
-          containerScroll: true,
-          border: false,
-          rootVisible: false,
-          // auto create TreeLoader
-          dataUrl: '<%= url_for tree_admin_trees_path(:format => :json) %>',
-
-          root: {
-              nodeType: 'async',
-              text: 'Palani',
-              draggable: false,
-              id: 0
-          }
-      });
       
       tree.on('contextmenu', prepareMenu);
       
