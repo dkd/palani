@@ -83,9 +83,10 @@
         var n = sm.getSelectedNode();
         if(n){
           jQuery.ajax({
-              data : 'page_id='+n.id,
+              dataType : 'script',
+              data : 'id='+n.id,
               type : 'get',
-              url : '<%= url_for new_admin_page_path %>',
+              url : '<%= url_for new_select_position_admin_pages_path %>',
               async : true
           });
         }

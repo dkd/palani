@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :admin do |admin|
       admin.resources :administration, :collection => { :edit_profile => :get  }
-      admin.resources :pages, :collection =>  { :move => :get }
+      admin.resources :pages, :collection =>  { :move => :get, :new_select_position => :get }
       admin.resources :help, :collection => { :faq => :get, :community => :get }
       admin.resources :trees, :collection => { :tree => :post, :refresh => :get  }
       admin.resources :users

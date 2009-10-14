@@ -1,0 +1,8 @@
+en:
+  admin:
+    pages:
+      new_select_position:
+        headline: "Please select a position for the page, you want to insert"
+        above: "Above <strong>{{sitename}}</strong>"
+        inside: "As child of <strong>{{sitename}}</strong>"
+        below: "Below <strong>{{sitename}}</strong>"

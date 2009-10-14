@@ -19,17 +19,15 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  def new_select_position
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
+    end
+  end
+  
   def new
-    @partial_file = "new"
-    respond_to do |format|
-      format.html {
-        render :action => :index
-      }
-      format.js {
-        render :update do |page|
-          page['middle_col'].replace_html :partial => @partial_file
-        end
-      }
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "new"
     end
   end
   

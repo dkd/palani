@@ -1,0 +1,8 @@
+de:
+  admin:
+    pages:
+      new_select_position:
+        headline: "Bitte wählen Sie eine Position für die Seite, die Sie einfügen möchten, aus."
+        above: "Über der Seite <strong>{{sitename}}</strong>"
+        inside: "Als Kind der Seite <strong>{{sitename}}</strong>"
+        below: "Unter der Seite <strong>{{sitename}}</strong>"
