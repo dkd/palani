@@ -1,0 +1,4 @@
+<div id="tree-actions">
+  <%= image_tag "icons/page_add.png", :id => "page_create", :title => "Content Page" %>
+  <%= link_to_remote image_tag("icons/page_refresh.png"), { :url => refresh_admin_trees_path, :method => :get } %>
+</div>

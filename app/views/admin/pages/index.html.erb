@@ -1,13 +1,14 @@
 <div id="left_col">
-  <%= render :partial => "tree_actions" %>
+  <%= render :partial => "/admin/trees/actions" %>
   <div id="tree">
-	  <%= render :partial => "tree" %>
+	  <%= render :partial => "/admin/trees/tree" %>
 	</div>
-	<%= render :partial => "tree_trash_can" %>
+	<%= render :partial => "/admin/trees/trash_can" %>
 </div>
 
 <div id="middle_col">
   <%= render_notifications %>
+  <%= render :partial => @partial_file, :locals => @locals, :layout => false %>
 </div>
 
 <div id="right_col">

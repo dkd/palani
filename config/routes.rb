@@ -2,12 +2,13 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :admin do |admin|
       admin.resources :administration, :collection => { :edit_profile => :get  }
-      admin.resources :welcome
-      admin.resources :user_sessions
-      admin.resources :pages, :collection =>  { :tree => :post, :refresh => :get, :move => :get }
+      admin.resources :pages, :collection =>  { :move => :get }
       admin.resources :help, :collection => { :faq => :get, :community => :get }
+      admin.resources :trees, :collection => { :tree => :post, :refresh => :get  }
       admin.resources :users
       admin.resources :user_groups
+      admin.resources :user_sessions
+      admin.resources :welcome
   end
 
   map.root :controller => "admin/user_sessions", :action => "new"
