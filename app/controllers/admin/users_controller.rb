@@ -3,17 +3,9 @@ class Admin::UsersController < ApplicationController
   before_filter :setup
   
   def new
-    respond_to do |format|      
-      @user = User.new
-      @partial_file = "new"
-      format.html {
-          render :action => :index
-      }
-      format.js {
-        render :update do |page|
-          page['middle_col'].replace_html :partial => @partial_file
-        end
-      }
+    @user = User.new
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "new"
     end
   end
   
@@ -37,16 +29,8 @@ class Admin::UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
-    respond_to do |format|
-      @partial_file = "edit"
-      format.html {
-        render :action => "index"
-      }
-      format.js {
-        render :update do |page|
-          page['middle_col'].replace_html :partial => @partial_file
-        end
-      }
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "edit"
     end
   end
   

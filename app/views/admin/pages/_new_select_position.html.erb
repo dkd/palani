@@ -1,6 +1,8 @@
-<h3><%= t('.headline') %></h3>
-<ul>
-  <li><%= t('.above', :sitename => page.title) -%></li>
-  <li><%= t('.inside', :sitename => page.title) %></li>
-  <li><%= t('.below', :sitename => page.title) %></li>
+<div id="choose-position">
+  <h3><%= t('.headline') %></h3>
+  <ul>
+    <li><%= link_to t('.above', :sitename => page.title), new_admin_page_path %></li>
+    <li><%= t('.inside', :sitename => page.title) %></li>
+    <li><%= t('.below', :sitename => page.title) %></li>
 </ul>
+</div>

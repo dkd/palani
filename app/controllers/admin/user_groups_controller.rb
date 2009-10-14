@@ -12,16 +12,8 @@ class Admin::UserGroupsController < ApplicationController
   
   def new
     @user_group = UserGroup.new
-    @partial_file = "new"
-    respond_to do |format|
-      format.html {
-        render :action => "index"
-      }
-      format.js {
-        render :update do |page|
-          page['middle_col'].replace_html :partial => @partial_file
-        end
-      }
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "new"
     end
   end
   
@@ -52,16 +44,8 @@ class Admin::UserGroupsController < ApplicationController
   
   def edit
     @user_group = UserGroup.find(params[:id])
-    @partial_file = "edit"
-    respond_to do |format|
-      format.html {
-        render :action => "index"
-      }
-      format.js {
-        render :update do |page|
-          page['middle_col'].replace_html :partial => @partial_file
-        end
-      }
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "edit"
     end
   end
   
