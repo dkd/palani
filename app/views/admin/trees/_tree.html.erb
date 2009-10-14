@@ -24,9 +24,48 @@
       });
     }
     return e;
-  }
+  }  
   
   Ext.onReady(function(){
+    
+      var Menu = new Ext.menu.Menu({
+          id:'menu',
+          items: [{
+            id:'new',
+            handler:testHandler,
+            icon:'/images/icons/page_add.png',
+            cls:'new',
+            text:'<%= t("new_page") %>'
+          },{
+            id:'copy',
+            handler:testHandler,
+            icon:'/images/icons/page_copy.png',
+            cls:'copy',
+            text:'<%= t("copy") %>' 
+          },{
+            id:'paste',
+            handler:testHandler,
+            icon:'/images/icons/page_paste.png',
+            cls:'paste',
+            text:'<%= t("paste") %>' 
+          },{
+            id:'remove',
+            handler:testHandler,
+            icon:'/images/icons/page_delete.png',
+            cls:'delete',
+            text: '<%= t("delete") %>'
+          }]
+      });
+
+      function testHandler() {
+        alert("test");
+      }
+
+      function prepareMenu(node, e){
+        node.select();
+        Menu.items.get('paste').disable();
+        Menu.showAt(e.getXY());
+      }
 
       var tree = new Ext.tree.TreePanel({
           useArrows: true,
@@ -47,6 +86,8 @@
               id: 0
           }
       });
+      
+      tree.on('contextmenu', prepareMenu);
       
       tree.on('beforenodedrop', function(e){
         e = handleDrop(e);

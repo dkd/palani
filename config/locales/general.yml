@@ -1,6 +1,9 @@
 en:
   add: Add
   edit: Edit
+  copy: Copy
+  paste: Paste
+  cut: Cut
   delete: Delete
   hide: x
   changes_saved_succesfully: Your changes have been saved succesfully.

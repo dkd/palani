@@ -1,6 +1,9 @@
 de:
   add: Hinzufügen
   edit: Editieren
+  copy: Kopieren
+  paste: Einfügen
+  cut: Ausschneiden
   delete: Löschen
   hide: x
   changes_saved_succesfully: Ihre Änderungen wurden erfolgreich gespeichert.
