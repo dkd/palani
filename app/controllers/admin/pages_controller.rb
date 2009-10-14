@@ -13,20 +13,25 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  # if no position is given, or position is not above or append, the node will be moved below
   def create
     page = ContentPage.new :title => t("new_page")
     drop_page = Page.find(params[:drop_id])
     page.parent_id = drop_page.parent_id
     
-    if params[:position]=="above"
-      page.update_sorting drop_page
-    else
-      page.update_sorting drop_page, true
+    case params[:position]
+      when "above"
+        page.update_sorting drop_page
+      when "append"
+        page.parent_id = params[:drop_id]
+      else
+        page.update_sorting drop_page, true
     end
     
+    page.sorting ||= 1
     page.save
     
-    render :json => { :text => page.title, :id => page.id, :cls => page.type, :leaf => true  }
+    render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, :expanded => true  }
   end
   
   def destroy
@@ -36,18 +41,22 @@ class Admin::PagesController < ApplicationController
     render :json => { :deleted => true }
   end
   
+  # if no position is given, or position is not above or append, the node will be moved below
   def move
     page = Page.find(params[:drag_id])
     drop_page = Page.find(params[:drop_id])
     page.update_attributes :parent_id => drop_page.parent_id
     
-    if params[:position]=="above"
-      page.update_sorting drop_page
-    else
-      page.update_sorting drop_page, true
+    case params[:position]
+      when "above"
+        page.update_sorting drop_page
+      when "append"
+        page.update_attributes :parent_id => drop_page.id
+      else
+        page.update_sorting drop_page, true
     end
     
-    render :json => { :deleted => true }
+    render :json => { :moved => true }
   end
   
 end
