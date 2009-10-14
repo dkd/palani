@@ -3,13 +3,14 @@ class Admin::PagesController < ApplicationController
   def index
   end
   
-  def tree
-    render :json => Page.sorted.find_all_by_parent_id(params[:node]).collect{|p| { :text => p.title, :id => p.id, :cls => p.type, :leaf => false, :icon => p.icon, :href => "/admin/pages/5/show", :allowDrag => true, :allowDrop => true, :draggable => true, :expanded => p.is_leaf? , :attributes => { :mode => "move" } } }
-  end
-  
-  def refresh
-    render :update do |page|
-      page['tree'].replace_html :partial => "tree"
+  def show
+    respond_to do |format|
+      format.html
+      format.js {
+        render :update do |page|
+          page['middle_col'].replace_html "test"
+        end
+      }
     end
   end
   
@@ -31,7 +32,7 @@ class Admin::PagesController < ApplicationController
     page.sorting ||= 1
     page.save
     
-    render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, :expanded => true  }
+    render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, :expanded => true, :allowDrag => true, :allowDrop => true, :draggable => true  }
   end
   
   def destroy
@@ -39,6 +40,16 @@ class Admin::PagesController < ApplicationController
     page.delete
     
     render :json => { :deleted => true }
+  end
+  
+  def tree
+    render :json => Page.sorted.find_all_by_parent_id(params[:node]).collect{|p| { :text => p.title, :id => p.id, :cls => p.type, :leaf => false, :icon => p.icon, :allowDrag => true, :allowDrop => true, :draggable => true, :expanded => p.is_leaf? , :attributes => { :mode => "move" } } }
+  end
+  
+  def refresh
+    render :update do |page|
+      page['tree'].replace_html :partial => "tree"
+    end
   end
   
   # if no position is given, or position is not above or append, the node will be moved below
