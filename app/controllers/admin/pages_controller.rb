@@ -25,6 +25,23 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  def update
+    @page = Page.find(params[:id])
+    
+    if @page.update_attributes(params[:page])
+      flash.now[:notice] = 'added_succesfully'
+      @partial_file = "show"
+    else
+      flash.now[:error] = 'check_your_input'
+      @partial_file = "new"
+    end
+    
+    render :update do |page|
+      page['tree'].replace_html :partial => "/admin/trees/tree"
+      page['middle_col'].replace_html :partial => @partial_file
+    end
+  end
+  
   def new
     @page = Page.new :title => t("new_page")
     drop_page = Page.find(params[:id])
