@@ -26,7 +26,24 @@ class Admin::PagesController < ApplicationController
   end
   
   def new
+    @page = Page.new :title => t("new_page")
+    drop_page = Page.find(params[:id])
+    @page.parent_id = drop_page.parent_id
+    
+    case params[:position]
+      when "above"
+        @page.update_sorting drop_page
+      when "append"
+        @page.parent_id = drop_page.id
+      else
+        @page.update_sorting drop_page, true
+    end
+    
+    @page.sorting ||=1
+    @page.save
+    
     render :update do |page|
+      page['tree'].replace_html :partial => "admin/trees/tree"
       page['middle_col'].replace_html :partial => "new"
     end
   end

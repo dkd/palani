@@ -1,0 +1,23 @@
+<% remote_form_for [:admin, page] do |f| %>
+	  	
+	<fieldset>
+		<%= f.label :title, t('.title')+':' %>
+		<%= f.text_field :title %>
+	</fieldset>
+	
+	<fieldset>
+	  <%= f.label :hidden, t('.hidden') %>
+		<%= f.check_box :hidden %>
+	</fieldset>
+	
+	<fieldset>
+	  <%= f.label :hidden_in_menu, t('.hidden_in_menu') %>
+		<%= f.check_box :hidden_in_menu %>
+	</fieldset>
+	
+	<fieldset>
+	  <%= label_tag "" %>
+	  <%= f.submit t(".#{context}.submit_text"), :class => "submit" %>
+	</fielset>
+	
+<% end %>

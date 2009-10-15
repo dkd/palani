@@ -1,8 +1,16 @@
 en:
   admin:
     pages:
+      new:
+        headline: Add new page
       new_select_position:
         headline: "Please select a position for the page, you want to insert"
         above: "Above <strong>{{sitename}}</strong>"
         inside: "As child of <strong>{{sitename}}</strong>"
         below: "Below <strong>{{sitename}}</strong>"
+      form:
+        title: Titel
+        hidden: Versteckt?
+        hidden_in_menu: In der Navigation versteckt?
+        new:
+          submit_text: Add

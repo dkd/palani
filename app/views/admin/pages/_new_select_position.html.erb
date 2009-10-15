@@ -1,8 +1,11 @@
 <div id="choose-position">
   <h3><%= t('.headline') %></h3>
   <ul>
-    <li><%= link_to t('.above', :sitename => page.title), new_admin_page_path %></li>
-    <li><%= t('.inside', :sitename => page.title) %></li>
-    <li><%= t('.below', :sitename => page.title) %></li>
+    <li><%= link_to_remote t('.above', :sitename => page.title), 
+                          :url => { :controller => "admin/pages", :action => "new", :id => page.id, :position => "above" } %></li>
+    <li><%= link_to_remote t('.inside', :sitename => page.title),
+                          :url => { :controller => "admin/pages", :action => "new", :id => page.id, :position => "append" } %></li>
+    <li><%= link_to_remote t('.below', :sitename => page.title),
+                          :url => { :controller => "admin/pages", :action => "new", :id => page.id, :position => "below" } %></li>
 </ul>
 </div>

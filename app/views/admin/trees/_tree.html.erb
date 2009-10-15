@@ -60,13 +60,13 @@
             text:'<%= t("new_page") %>'
           },{
             id:'copy',
-            handler:testHandler,
+            handler:copyHandler,
             icon:'/images/icons/page_copy.png',
             cls:'copy',
             text:'<%= t("copy") %>' 
           },{
             id:'paste',
-            handler:testHandler,
+            handler:pasteHandler,
             icon:'/images/icons/page_paste.png',
             cls:'paste',
             text:'<%= t("paste") %>' 
@@ -89,6 +89,20 @@
               url : '<%= url_for new_select_position_admin_pages_path %>',
               async : true
           });
+        }
+      }
+      
+      function copyHandler() {
+        var n = sm.getSelectedNode();
+        if(n){
+          Menu.items.get('paste').enable();
+        }
+      }
+      
+      function pasteHandler() {
+        var n = sm.getSelectedNode();
+        if(n){
+          
         }
       }
       
