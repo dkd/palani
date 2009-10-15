@@ -2,5 +2,27 @@
 <%= render_actions %>
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
-  <%= render :partial => "form", :locals => { :page => @page, :context => "new" } %>
+  <% remote_form_for [:admin, @page] do |f| %>
+
+  	<fieldset>
+  		<%= f.label :title, t('.title')+':' %>
+  		<%= f.text_field :title %>
+  	</fieldset>
+
+  	<fieldset>
+  	  <%= f.label :hidden, t('.hidden') %>
+  		<%= f.check_box :hidden, :class => "checkbox" %>
+  	</fieldset>
+
+  	<fieldset>
+  	  <%= f.label :hidden_in_menu, t('.hidden_in_menu') %>
+  		<%= f.check_box :hidden_in_menu, :class => "checkbox" %>
+  	</fieldset>
+
+  	<fieldset>
+  	  <%= label_tag "" %>
+  	  <%= f.submit t(".submit_text"), :class => "submit" %>
+  	</fielset>
+
+  <% end %>
 </div>
