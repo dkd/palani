@@ -29,7 +29,7 @@ class Admin::PagesController < ApplicationController
     end
   end
   
-  # if no position is given, or position is not above or append, the node will be moved below
+  # if no position is given or position is not above or append, the node will be moved below
   def create
     page = ContentPage.new :title => t("new_page")
     page.update_sorting Page.find(params[:drop_id]), params[:position]
