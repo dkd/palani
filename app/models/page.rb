@@ -16,7 +16,7 @@ class Page < ActiveRecord::Base
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
-  # text is needed by extjs
+  # text attribute is needed by extjs
   def text
     title
   end
@@ -30,13 +30,17 @@ class Page < ActiveRecord::Base
     self.children.empty?
   end
   
-  def update_sorting(drop_page, is_below = false)
-    drop_page.sorting += 1 if is_below
-    sorting = drop_page.sorting
-    
-    pages = Page.having_sorting_bigger_than(drop_page.sorting).find_all_by_parent_id(drop_page.parent_id)
-    pages.each{ |page| page.update_attributes :sorting => page.sorting+1 }
-    update_attributes :sorting => sorting
+  def update_sorting(drop_page, position)
+    if position=="append"
+      update_attributes :parent_id => drop_page.id, :sorting => 1
+    else
+      drop_page.sorting += 1 if position=="below"
+      sorting = drop_page.sorting
+      
+      pages = Page.having_sorting_bigger_than(drop_page.sorting).find_all_by_parent_id(drop_page.parent_id)
+      pages.each{ |page| page.update_attributes :sorting => page.sorting+1 }
+      update_attributes :parent_id => drop_page.parent_id, :sorting => sorting
+    end
   end
   
   private

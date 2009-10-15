@@ -44,20 +44,7 @@ class Admin::PagesController < ApplicationController
   
   def new
     @page = Page.new :title => t("new_page")
-    drop_page = Page.find(params[:id])
-    @page.parent_id = drop_page.parent_id
-    
-    case params[:position]
-      when "above"
-        @page.update_sorting drop_page
-      when "append"
-        @page.parent_id = drop_page.id
-      else
-        @page.update_sorting drop_page, true
-    end
-    
-    @page.sorting ||=1
-    @page.save
+    @page.update_sorting Page.find(params[:id]), params[:position]
     
     render :update do |page|
       page['tree'].replace_html :partial => "admin/trees/tree"
@@ -68,20 +55,7 @@ class Admin::PagesController < ApplicationController
   # if no position is given, or position is not above or append, the node will be moved below
   def create
     page = ContentPage.new :title => t("new_page")
-    drop_page = Page.find(params[:drop_id])
-    page.parent_id = drop_page.parent_id
-    
-    case params[:position]
-      when "above"
-        page.update_sorting drop_page
-      when "append"
-        page.parent_id = params[:drop_id]
-      else
-        page.update_sorting drop_page, true
-    end
-    
-    page.sorting ||= 1
-    page.save
+    page.update_sorting Page.find(params[:drop_id]), params[:position]
     
     render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, :expanded => true, :allowDrag => true, :allowDrop => true, :draggable => true  }
   end
@@ -96,17 +70,7 @@ class Admin::PagesController < ApplicationController
   # if no position is given, or position is not above or append, the node will be moved below
   def move
     page = Page.find(params[:drag_id])
-    drop_page = Page.find(params[:drop_id])
-    page.update_attributes :parent_id => drop_page.parent_id
-    
-    case params[:position]
-      when "above"
-        page.update_sorting drop_page
-      when "append"
-        page.update_attributes :parent_id => drop_page.id
-      else
-        page.update_sorting drop_page, true
-    end
+    page.update_sorting Page.find(params[:drop_id]), params[:position]
     
     render :json => { :moved => true }
   end
