@@ -120,10 +120,6 @@
         }
       }
 
-      function testHandler() {
-        alert("test");
-      }
-
       function prepareMenu(node, e){
         node.select();
         Menu.items.get('paste').disable();
@@ -148,7 +144,6 @@
       
       // render the tree
       tree.render('tree-div');
-      tree.getRootNode().expand();
       
       var dragPage = new Ext.dd.DragSource('page_create', {
             ddGroup: 'treeDD',

@@ -181,3 +181,17 @@ a.add {
   margin: 10px 0; }
   #actions ul, #actions li {
     display: inline; }
+
+#choose-position {
+  padding: 10px; }
+  #choose-position ul {
+    margin-top: 10px; }
+    #choose-position ul li {
+      padding: 5px;
+      margin-left: 10px; }
+      #choose-position ul li a {
+        text-decoration: none; }
+        #choose-position ul li a img {
+          margin-right: 7px; }
+        #choose-position ul li a strong {
+          font-weight: bold; }
