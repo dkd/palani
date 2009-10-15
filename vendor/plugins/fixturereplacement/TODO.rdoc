@@ -1,0 +1,22 @@
+
+== Bugs
+
+- Allow 'extend FixtureReplacement' as well as 'include FixtureReplacement'
+- Two levels down of inherited fixture bug
+
+== Features
+
+- Validate fixtures.  Steal any other good ideas from FactoryGirl, Fixjour, Machinist, etc.
+- Support SEQUEL & Datamapper.  Make it ORM independent
+
+== Code Cleanup
+
+- Remove ugly method_added hack
+
+== ETC
+
+- Store old version 2 README
+- Update website info
+- Update with github info
+- Register Lighthouse project
+- Remove TODOs from Rubyforge tracker (http://rubyforge.org/tracker/?group_id=4556)
