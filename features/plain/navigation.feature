@@ -10,20 +10,25 @@ Feature: Navigation
     When I go to the homepage
     Then I should see "Content"
     And I should see "Administration"
-    And I should see "Extensions"
     And I should see "Help"
   
   @rendering
   Scenario: See the administration sub navigation
     Given a logged in user
     When I go to the administration page
-    Then I should see "Edit settings"
+    Then I should see "Content"
+    And I should see "Administration"
+    And I should see "Help"
+    And I should see "Edit settings"
     And I should see "Administrate users"
   
   @rendering
   Scenario: See the help sub navigation
     Given a logged in user
     When I go to the help page
-    Then I should see "First steps"
+    Then I should see "Content"
+    And I should see "Administration"
+    And I should see "Help"
     And I should see "Community"
     And I should see "Frequently asked questions"
+    And I should see "First steps"
