@@ -12,5 +12,6 @@ de:
         title: Titel
         hidden: Versteckt?
         hidden_in_menu: In der Navigation versteckt?
-        new:
-          submit_text: Hinzufügen
+        submit_text: Hinzufügen
+      show:
+        edit: Seite bearbeiten

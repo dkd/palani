@@ -30,6 +30,7 @@ class Page < ActiveRecord::Base
     self.children.empty?
   end
   
+  # updates the sorting of pages after adding or moving a page
   def update_sorting(drop_page, position)
     if position=="append"
       update_attributes :parent_id => drop_page.id, :sorting => 1

@@ -9,8 +9,9 @@ en:
         inside: "As child of <strong>{{sitename}}</strong>"
         below: "Below <strong>{{sitename}}</strong>"
       form:
-        title: Titel
-        hidden: Versteckt?
-        hidden_in_menu: In der Navigation versteckt?
-        new:
-          submit_text: Add
+        title: Title
+        hidden: Hidden?
+        hidden_in_menu: Hidden in menu?
+        submit_text: Add
+      show:
+        edit: Edit page
