@@ -1,8 +1,5 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
+  helper :all
   helper_method :current_user_session, :current_user, :logged_in?, :current_user_is_admin?
   
   before_filter :set_backend_language
@@ -20,11 +17,13 @@ class ApplicationController < ActionController::Base
       I18n.locale = current_user.backend_language if (current_user && current_user.backend_language)
     end
     
+    # returns the session of the currently logged in user
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
     end
     
+    # returns the currently logged in user
     def current_user
       return @current_user if defined?(@current_user)
       @current_user = current_user_session && current_user_session.record
@@ -34,14 +33,6 @@ class ApplicationController < ActionController::Base
       unless current_user
         store_location
         redirect_to new_admin_user_session_url
-        false
-      end
-    end
-
-    def require_no_user
-      if current_user
-        store_location
-        redirect_to root_path
         false
       end
     end

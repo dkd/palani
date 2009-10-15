@@ -5,9 +5,9 @@ defaults: &defaults
       content_page:
         icon: "/images/icons/page_green.png"
       shortcut:
-        icon: ""
+        icon: "/images/icons/page_green.png"
       external_url:
-        icon: ""
+        icon: "/images/icons/page_green.png"
     languages:
       de: german
       en: english

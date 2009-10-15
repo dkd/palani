@@ -4,8 +4,7 @@ class Admin::UserGroupsController < ApplicationController
     respond_to do |format|
       format.html
       format.json {
-        user_groups = UserGroup.json_data
-        render :json => { :root => user_groups }
+        render :json => { :root => UserGroup.json_data }
       }
     end
   end
@@ -34,8 +33,8 @@ class Admin::UserGroupsController < ApplicationController
   end
   
   def destroy
-    @user_group = UserGroup.find(params[:id])
-    @user_group.destroy
+    user_group = UserGroup.find(params[:id])
+    user_group.destroy
     
     render :update do |page|
       page['right_col'].replace_html render_right_col

@@ -19,10 +19,23 @@ class Admin::PagesController < ApplicationController
     end
   end
   
-  def new_select_position
+  def new
+    @page = Page.new :title => t("new_page")
+    @page.update_sorting Page.find(params[:id]), params[:position]
+    
     render :update do |page|
-      page['middle_col'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
+      page['tree'].replace_html :partial => "admin/trees/tree"
+      page['middle_col'].replace_html :partial => "new"
     end
+  end
+  
+  # if no position is given, or position is not above or append, the node will be moved below
+  def create
+    page = ContentPage.new :title => t("new_page")
+    page.update_sorting Page.find(params[:drop_id]), params[:position]
+    
+    render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, 
+                      :expanded => true, :allowDrag => true, :allowDrop => true, :draggable => true  }
   end
   
   def update
@@ -42,29 +55,17 @@ class Admin::PagesController < ApplicationController
     end
   end
   
-  def new
-    @page = Page.new :title => t("new_page")
-    @page.update_sorting Page.find(params[:id]), params[:position]
-    
-    render :update do |page|
-      page['tree'].replace_html :partial => "admin/trees/tree"
-      page['middle_col'].replace_html :partial => "new"
-    end
-  end
-  
-  # if no position is given, or position is not above or append, the node will be moved below
-  def create
-    page = ContentPage.new :title => t("new_page")
-    page.update_sorting Page.find(params[:drop_id]), params[:position]
-    
-    render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, :expanded => true, :allowDrag => true, :allowDrop => true, :draggable => true  }
-  end
-  
   def destroy
     page = Page.find(params[:id])
     page.delete
     
     render :json => { :deleted => true }
+  end
+  
+  def new_select_position
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
+    end
   end
   
   # if no position is given, or position is not above or append, the node will be moved below

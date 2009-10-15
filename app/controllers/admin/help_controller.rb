@@ -4,11 +4,9 @@ class Admin::HelpController < ApplicationController
   end
   
   def community
-    render :action => :index
   end
   
   def faq
-    render :action => :index
   end
   
 end

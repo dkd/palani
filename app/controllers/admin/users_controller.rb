@@ -23,10 +23,6 @@ class Admin::UsersController < ApplicationController
     end
   end
   
-  def show
-    @user = current_user
-  end
-  
   def edit
     @user = User.find(params[:id])
     render :update do |page|

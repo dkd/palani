@@ -15,16 +15,14 @@ module Admin::RenderHelper
     render :partial => "admin/menu/main_menu", :locals => { :menu_items => menu_items }
   end
   
-  def render_actions(actions = [])
-    #actions << { :name => t("back"), :link_to => :back, :general => true }
-    
+  # renders the action links
+  def render_actions(actions = [])    
     render :partial => "admin/menu/actions", :locals => { :actions => actions } unless actions.empty?
   end
   
   # renders the grid module of ExtJS and creates a new grid
-  # the title will be shown on top of the grids
-  # the fields will be user for creating the grid and for loading data from the json
-  # the url will be automatically generated from the current controller and action, format: JSON
+  # the title is shown on top of the grids
+  # the fields are used for creating the grid and for loading data from the json
   def render_ext_grids(title, url, fields, options = {})
     render :partial => "admin/extjs/list", :locals => {
                           :remote_url => url,
@@ -33,7 +31,7 @@ module Admin::RenderHelper
                           :auto_expand => options[:auto_expand] }
   end
   
-  # renders a Ext.panel object containing several items that can be sorted by drag an drop
+  # renders an Ext.panel object containing several items that can be sorted by drag an drop
   # each item should have a title and a html part
   def render_ext_panel(items = [])
     items.each { |item| item[:html] = item[:html].gsub(/"/,'\"').gsub(/\n/,'') }
@@ -53,7 +51,12 @@ module Admin::RenderHelper
     render :partial => "admin/general/notifications"
   end
   
-  # renders a multi select box
+  # renders an ExtJS multi select box
+  # options:
+  # * valueField - defines which JSON attribute contains the selections value
+  # * showField - defines which JSON attribute contains the shown selection name
+  # * name - is the multiselects name
+  # * selected_values - is used for preselecting any values
   def render_multi_select(remote_url, fields, options = {})
     render :partial => "admin/general/multi_select", :locals => {
                         :remote_url => remote_url,
