@@ -27,6 +27,8 @@ class Permission < ActiveRecord::Base
   
   private
   
+  # if the permission does not belong to any permission group,
+  # it will belong to 'others'
   def check_group
     self.permission_group ||= PermissionGroup.find_by_name("others")
   end

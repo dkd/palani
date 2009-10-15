@@ -1,4 +1,5 @@
 class UserGroup < ActiveRecord::Base
+
   has_and_belongs_to_many :permissions
   has_and_belongs_to_many :users
 
@@ -16,4 +17,5 @@ class UserGroup < ActiveRecord::Base
 			and user_groups_users.user_group_id = #{self.id}
     SQL
 	end
+
 end

@@ -31,7 +31,12 @@ class Page < ActiveRecord::Base
   end
   
   # updates the sorting of pages after adding or moving a page
+  # possible positions are
+  # * above
+  # * append
+  # * below
   def update_sorting(drop_page, position)
+    # if the page gets appended by another, it will get sorting=1
     if position=="append"
       update_attributes :parent_id => drop_page.id, :sorting => 1
     else
@@ -40,6 +45,7 @@ class Page < ActiveRecord::Base
       
       pages = Page.having_sorting_bigger_than(drop_page.sorting).find_all_by_parent_id(drop_page.parent_id)
       pages.each{ |page| page.update_attributes :sorting => page.sorting+1 }
+      
       update_attributes :parent_id => drop_page.parent_id, :sorting => sorting
     end
   end

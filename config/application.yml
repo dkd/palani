@@ -1,6 +1,13 @@
 defaults: &defaults
   core:
   backend:
+    pages:
+      content_page:
+        icon: "/images/icons/page_green.png"
+      shortcut:
+        icon: ""
+      external_url:
+        icon: ""
     languages:
       de: german
       en: english
