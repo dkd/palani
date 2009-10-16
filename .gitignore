@@ -4,6 +4,6 @@
 .project
 .loadpath
 tmp/**/*
-log/test.log
-log/development.log
+log/*
+log/**/*
 doc/**/*
