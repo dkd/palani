@@ -4,7 +4,7 @@ class Admin::UserGroupsController < ApplicationController
     respond_to do |format|
       format.html
       format.json {
-        render :json => { :root => UserGroup.json_data }
+        render :json => { :root => UserGroup.active.json_data }
       }
     end
   end
