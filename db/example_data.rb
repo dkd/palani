@@ -15,6 +15,8 @@ module FixtureReplacement
     u.user_groups           << create_user_group
   end
 
+  puts "test"
+  
   #create_user
 
 end
