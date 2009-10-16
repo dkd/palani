@@ -9,7 +9,11 @@ describe Admin::UserGroupsHelper do
       @user_group = admin_user_group
     end
     
-    it "should return a user group with the name 'Administrators'" do
+    it "should return a usergroup object" do
+      @user_group.should be_a UserGroup
+    end
+    
+    it "should return a usergroup with the name 'Administrators'" do
       @user_group.name.should eql("Administrators")
     end
     
