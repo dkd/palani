@@ -18,11 +18,16 @@ de:
         <<: *LABELS
         general_options: Allgemeines
         type_settings: Einstellungen
+        template: Template
         meta_informations: Meta-Informationen
         access: Zugriff
         submit_text: Editieren
         type: Seitentyp
         navigation_title: Navigationstitel
+        author: Autor
+        description: Beschreibung
+        starttime: Startzeit
+        endtime: Endzeit
         types:
           content_page: Inhaltsseite
           shortcut: Verweis

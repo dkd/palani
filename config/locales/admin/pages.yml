@@ -18,10 +18,15 @@ en:
         <<: *LABELS
         general_options: General options
         type_settings: Settings
+        template: Template
         meta_informations: Meta informations
         access: Access
         submit_text: Edit
         type: Page type
+        author: Author
+        description: Description
+        starttime: Starttime
+        endtime: Endtime
         types:
           content_page: Content Page
           shortcut: Shortcut

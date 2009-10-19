@@ -236,11 +236,41 @@ a.add
           font-weight: bold
 
 #edit_page
-  .submit
-    font-size: 90%
-    width: 100px
+  form
+  
+    fieldset
+      clear: both
+      padding: 2px 0
+
+    label, input, select
+      padding: 3px
+
+    label
+      float: left
+      padding-top: 5px
+      width: 230px
+
+    select, input
+      font-size: 90%
+      width: 300px
+
+    select
+      width: 313px
+
+    .submit
+      font-size: 90%
+      width: 100px
+    
+    .checkbox
+      width: 20px
+  div
+    display: none
+    margin: 15px 0
+  div.current
+    display: block
   .simple_tabs
     li
+      cursor: pointer
       display: inline
       margin-right: 10px
     .current

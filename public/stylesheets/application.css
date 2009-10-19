@@ -196,10 +196,32 @@ a.add {
         #choose-position ul li a strong {
           font-weight: bold; }
 
-#edit_page .submit {
+#edit_page form fieldset {
+  clear: both;
+  padding: 2px 0; }
+#edit_page form label, #edit_page form input, #edit_page form select {
+  padding: 3px; }
+#edit_page form label {
+  float: left;
+  padding-top: 5px;
+  width: 230px; }
+#edit_page form select, #edit_page form input {
+  font-size: 90%;
+  width: 300px; }
+#edit_page form select {
+  width: 313px; }
+#edit_page form .submit {
   font-size: 90%;
   width: 100px; }
+#edit_page form .checkbox {
+  width: 20px; }
+#edit_page div {
+  display: none;
+  margin: 15px 0; }
+#edit_page div.current {
+  display: block; }
 #edit_page .simple_tabs li {
+  cursor: pointer;
   display: inline;
   margin-right: 10px; }
 #edit_page .simple_tabs .current {
