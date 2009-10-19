@@ -3,14 +3,78 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Page do
   
   before(:each) do
-    @page = Page.new( :title => "New page", :type => "ContentPage", :sorting => 1 )
+    @page = Page.create!( :title => "New page", :type => "ContentPage", :sorting => 1 )
   end
   
-  context "that gets deleted" do
+  describe "that gets deleted" do
     
     it "should not get deleted physically" do
       @page.delete
       @page.should_not be_nil
+    end
+    
+  end
+  
+  describe "that gets dropped" do
+    
+    before(:each) do
+      @drop_page = Page.create!( :title => "Drop page", :type => "ContentPage", :sorting => 3 )
+    end
+    
+    context "above another page" do
+      
+      before(:each) do
+        @page.update_sorting @drop_page, "above"
+      end
+      
+      it "should have a sorting greater than or equals 1" do
+        @page.sorting.should be >= 1
+      end
+      
+      it "should have the others parent page as parent" do
+        @page.parent_id.should equal @drop_page.parent_id
+      end
+      
+      it "should have a smaller sorting than the other page after dropping" do
+        @page.sorting.should be <= @drop_page.sorting
+      end
+      
+    end
+    
+    context "into another page" do
+      
+      before(:each) do
+        @page.update_sorting @drop_page, "append"
+      end
+      
+      it "should have the other page as parent" do
+        @page.parent_id.should equal @drop_page.id
+      end
+      
+      it "should have sorting=1" do
+        @page.sorting.should equal 1
+      end
+      
+    end
+    
+    context "below another page" do
+      
+      before(:each) do
+        @page.update_sorting @drop_page, "below"
+      end
+      
+      it "should have a sorting greater than or equals 1" do
+        @page.sorting.should be >= 1
+      end
+      
+      it "should have the others parent page as parent" do
+        @page.parent_id.should equal @drop_page.parent_id
+      end
+      
+      it "should have a greater sorting than the other page after dropping" do
+        @page.sorting.should be >= @drop_page.sorting
+      end
+      
     end
     
   end
