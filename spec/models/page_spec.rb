@@ -15,6 +15,19 @@ describe Page do
     
   end
   
+  describe "that appends another page" do
+    
+    before(:each) do
+      @appending_page = Page.create!( :title => "Appending page", :type => "ContentPage", :sorting => 2  )
+      @page.update_sorting @appending_page, "append"
+    end
+    
+    it "should be no leaf" do
+      @appending_page.is_leaf?.should be false
+    end
+    
+  end
+  
   describe "that gets dropped" do
     
     before(:each) do
