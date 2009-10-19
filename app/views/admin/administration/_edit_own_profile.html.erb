@@ -2,7 +2,7 @@
 <%= render_actions %>
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
-  <% remote_form_for @user, :url => { :controller => "admin/administration/users" } do |f| %>
+  <% form_for @user, :url => { :controller => "admin/administration/users" } do |f| %>
   	  	
   	<fieldset>
   		<%= f.label :username, t('.user')+':' %>

@@ -3,15 +3,12 @@ class Admin::AdministrationController < ApplicationController
   
   def update
     if @user.update_attributes(params[:user])
-      flash.now[:notice] = 'changes_saved_succesfully'
-      render :update do |page|
-        page['middle_col'].replace_html :partial => "edit_own_profile"
-      end
+      flash[:notice] = 'changes_saved_succesfully'
+      # redirect to reload locales
+      redirect_to edit_profile_admin_administration_path
     else
       flash.now[:error] = 'check_your_input'
-      render :update do |page|
-        page['middle_col'].replace_html :partial => "edit_own_profile"
-      end
+      render :action => :edit_profile
     end
   end
   
@@ -21,7 +18,7 @@ class Admin::AdministrationController < ApplicationController
       format.js {
         render :update do |page|
           page['left_col'].replace_html render_administration_sub_menu("edit_profile")
-          page['middle_col'].replace_html :partial => "edit_own_profile"
+          page['middle_col'].replace_html :partial => @partial_file
         end
       }
     end
@@ -36,6 +33,7 @@ private
   def setup
     @backend_languages = { t('german') => "de", t('english') => "en"  }
     @user = current_user
+    @partial_file = "edit_own_profile"
   end
   
 end
