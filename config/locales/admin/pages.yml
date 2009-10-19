@@ -6,7 +6,7 @@ en:
         above: "Above <strong>{{sitename}}</strong>"
         inside: "As child of <strong>{{sitename}}</strong>"
         below: "Below <strong>{{sitename}}</strong>"
-      new:
+      new: &LABELS
         headline: Add new page
         title: Title
         hidden: Hidden?
@@ -14,3 +14,14 @@ en:
         submit_text: Add
       show:
         edit: Edit page
+      edit:
+        <<: *LABELS
+        general_options: General options
+        type_settings: Settings
+        meta_informations: Meta informations
+        access: Access
+        submit_text: Edit
+        type: Page type
+        types:
+          content_page: Content Page
+          shortcut: Shortcut

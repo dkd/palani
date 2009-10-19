@@ -195,3 +195,12 @@ a.add {
           margin-right: 7px; }
         #choose-position ul li a strong {
           font-weight: bold; }
+
+#edit_page .submit {
+  font-size: 90%;
+  width: 100px; }
+#edit_page .simple_tabs li {
+  display: inline;
+  margin-right: 10px; }
+#edit_page .simple_tabs .current {
+  font-weight: bold; }

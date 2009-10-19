@@ -1,0 +1,39 @@
+<div id="edit_page">
+  <% form_for @page, :url => admin_page_path(@page) do |f| %>
+    <ul class="simple_tabs">
+      <li class="current"><%= t(".general_options") %></li>
+      <li><%= t(".type_settings") %></li>
+      <li><%= t(".meta_informations") %></li>
+      <li><%= t(".access") %></li>
+    </ul>
+    <div id="general_options">
+      <fieldset>
+        <%= f.label :title, t(".title")+":" %>
+        <%= f.text_field :title %>
+      </fieldset>
+      <fieldset>
+        <%= f.label :type, t(".type")+":" %>
+        <%= f.select :type, options_for_select(page_types, @page.type) %>
+      </fieldset>
+      <fieldset>
+    	  <%= f.label :hidden, t('.hidden') %>
+    		<%= f.check_box :hidden, :class => "checkbox" %>
+    	</fieldset>
+    	<fieldset>
+    	  <%= f.label :hidden_in_menu, t('.hidden_in_menu') %>
+    		<%= f.check_box :hidden_in_menu, :class => "checkbox" %>
+    	</fieldset>
+    	<fieldset>
+        <%= f.label :navigation_title, t(".navigation_title")+":" %>
+        <%= f.text_field :navigation_title %>
+      </fieldset>
+    </div>
+    <div id="type_settings">
+    </div>
+    <div id="meta_informations">
+    </div>
+    <div id="access">
+    </div>
+    <%= f.submit t(".submit_text"), :class => "submit" %>
+  <% end %>
+</div>
