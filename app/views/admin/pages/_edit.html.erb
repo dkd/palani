@@ -1,13 +1,13 @@
 <div id="edit_page">
   <% form_for @page, :url => admin_page_path(@page) do |f| %>
     <ul class="simple_tabs">
-      <li id="show_general_options" class="current"><%= t(".general_options") %></li>
-      <li id="show_type_settings"><%= t(".type_settings") %></li>
-      <li id="show_template"><%= t(".template") %></li>
-      <li id="show_meta_informations"><%= t(".meta_informations") %></li>
-      <li id="show_access"><%= t(".access") %></li>
+      <li class="current"><%= t(".general_options") %></li>
+      <li><%= t(".type_settings") %></li>
+      <li><%= t(".template") %></li>
+      <li><%= t(".meta_informations") %></li>
+      <li><%= t(".access") %></li>
     </ul>
-    <div id="general_options" class="current">
+    <div class="tab_content current">
       <fieldset>
         <%= f.label :title, t(".title")+":" %>
         <%= f.text_field :title %>
@@ -29,25 +29,39 @@
         <%= f.text_field :navigation_title %>
       </fieldset>
     </div>
-    <div id="type_settings">
-    </div>
-    <div id="meta_informations">
+    <div id="type_settings" class="tab_content">
       <fieldset>
-        <%= f.label :author, t(".author") %>
+        <%= f.label :subtitle, t(".subtitle") %>
+        <%= f.text_field :subtitle %>
+      </fieldset>
+    </div>
+    <div class="tab_content">
+    </div>
+    <div class="tab_content">
+      <fieldset>
+        <%= f.label :author, t(".author")+":" %>
         <%= f.text_field :author %>
       </fieldset>
       <fieldset>
-        <%= f.label :description, t(".description") %>
-        <%= f.text_area :description %>
+        <%= f.label :author_email, t(".author_email")+":" %>
+        <%= f.text_field :author_email %>
+      </fieldset>
+      <fieldset>
+        <%= f.label :abstract, t(".abstract")+":" %>
+        <%= f.text_area :abstract, :rows => 8 %>
+      </fieldset>
+      <fieldset>
+        <%= f.label :description, t(".description")+":" %>
+        <%= f.text_area :description, :rows => 8 %>
       </fieldset>
     </div>
-    <div id="access">
+    <div class="tab_content">
       <fieldset>
-        <%= f.label :starttime, t(".starttime") %>
+        <%= f.label :starttime, t(".starttime")+":" %>
         <%= f.text_field :starttime %>
       </fieldset>
       <fieldset>
-        <%= f.label :endtime, t(".endtime") %>
+        <%= f.label :endtime, t(".endtime")+":" %>
         <%= f.text_field :endtime %>
       </fieldset>
     </div>

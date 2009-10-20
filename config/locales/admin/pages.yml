@@ -23,10 +23,14 @@ en:
         access: Access
         submit_text: Edit
         type: Page type
+        navigation_title: Navigationstitel
         author: Author
+        author_email: Authors E-Mail
+        abstract: Abstract
         description: Description
         starttime: Starttime
         endtime: Endtime
+        subtitle: Subtitle
         types:
           content_page: Content Page
           shortcut: Shortcut

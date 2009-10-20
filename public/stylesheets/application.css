@@ -210,6 +210,10 @@ a.add {
   width: 300px; }
 #edit_page form select {
   width: 313px; }
+#edit_page form textarea {
+  font-size: 120%;
+  padding: 5px;
+  width: 300px; }
 #edit_page form .submit {
   font-size: 90%;
   width: 100px; }

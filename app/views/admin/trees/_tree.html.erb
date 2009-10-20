@@ -59,6 +59,12 @@
             cls:'new',
             text:'<%= t("new_page") %>'
           },{
+            id:'show',
+            handler:showSiteHandler,
+            icon:'/images/icons/page_go.png',
+            cls:'show',
+            text:'<%= t("show") %>'
+          },{
             id:'copy',
             handler:copyHandler,
             icon:'/images/icons/page_copy.png',
@@ -90,6 +96,10 @@
               async : true
           });
         }
+      }
+      
+      function showSiteHandler() {
+        
       }
       
       function copyHandler() {

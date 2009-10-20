@@ -25,9 +25,12 @@ de:
         type: Seitentyp
         navigation_title: Navigationstitel
         author: Autor
+        author_email: Autor E-Mail
+        abstract: Kurzbeschreibung
         description: Beschreibung
         starttime: Startzeit
         endtime: Endzeit
+        subtitle: Untertitel
         types:
           content_page: Inhaltsseite
           shortcut: Verweis

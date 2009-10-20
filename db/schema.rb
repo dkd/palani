@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091013114430) do
+ActiveRecord::Schema.define(:version => 20091020153435) do
 
   create_table "content_element_htmls", :force => true do |t|
     t.integer  "content_element_id"
@@ -75,20 +75,18 @@ ActiveRecord::Schema.define(:version => 20091013114430) do
     t.string   "subtitle"
     t.string   "navigation_title"
     t.text     "description"
-    t.text     "keywords"
     t.text     "abstract"
     t.string   "author"
-    t.string   "author_email"
     t.string   "target"
     t.string   "type",             :default => "ContentPage"
     t.integer  "shortcut_page_id"
     t.string   "shortcut_mode"
     t.string   "ext_url"
     t.integer  "created_by"
-    t.string   "layout"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
+    t.string   "author_email"
   end
 
   create_table "permission_groups", :force => true do |t|
