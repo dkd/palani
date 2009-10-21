@@ -91,11 +91,6 @@ a.add {
     color: #FFF;
     padding: 10px;
     text-decoration: none; }
-    #navigation a:visited {
-      background-color: #FF4F4F;
-      color: #FFF;
-      padding: 10px;
-      text-decoration: none; }
   #navigation .current, #navigation a:hover {
     background-color: #FF3333; }
 
