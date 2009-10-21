@@ -6,6 +6,34 @@ describe Page do
     @page = Page.create!( :title => "New page", :type => "ContentPage", :sorting => 1 )
   end
   
+  describe "interface" do
+    
+    context "icon" do
+      
+      it "should exist" do
+        File.exists?(RAILS_ROOT+"/public"+@page.icon).should be_true
+      end
+      
+      it "should be named page" do
+        File.basename(RAILS_ROOT+"/public"+@page.icon).should eql "page.png"
+      end
+      
+    end
+    
+    context "edit_content" do
+    
+      it "should return anything" do
+        @page.edit_content.should_not be_nil
+      end
+    
+      it "should return an hash" do
+        @page.edit_content.should be_a Hash
+      end
+    
+    end
+    
+  end
+  
   describe "that gets deleted" do
     
     it "should not get deleted physically" do
@@ -128,10 +156,6 @@ describe Page do
     @page.save
     @page.children.create( :title => "Child", :type => "ContentPage" )
     @page.is_leaf?.should be_false
-  end
-  
-  it "should have a valid icon" do
-    File.exists?(RAILS_ROOT+"/public"+@page.icon).should be_true
   end
 
 end

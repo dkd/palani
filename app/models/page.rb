@@ -22,7 +22,12 @@ class Page < ActiveRecord::Base
   end
   
   def icon
-    "/images/icons/page_green.png"
+    "/images/icons/pages/#{self.class.to_s.underscore}.png"
+  end
+  
+  # returns the input fields and labels, that should be displayed in the "settings" tab, as an hash
+  def edit_content
+    {}
   end
   
   # a leaf does not have any children
