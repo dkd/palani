@@ -17,7 +17,7 @@ en:
       edit:
         <<: *LABELS
         general_options: General options
-        type_settings: Settings
+        type_settings: Properties
         template: Template
         meta_informations: Meta informations
         access: Access

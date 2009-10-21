@@ -17,7 +17,7 @@ de:
       edit:
         <<: *LABELS
         general_options: Allgemeines
-        type_settings: Einstellungen
+        type_settings: Eigenschaften
         template: Template
         meta_informations: Meta-Informationen
         access: Zugriff
