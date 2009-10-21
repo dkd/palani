@@ -18,7 +18,7 @@ development:
   password:
   host: 127.0.0.1
   encoding: utf8
-  collation: utf8_general_ci  
+  collation: utf8_general_ci
   
 
 # Warning: The database defined as 'test' will be erased and
@@ -45,3 +45,7 @@ production:
 
 cucumber:
   <<: *TEST
+  
+selenium:
+  <<: *TEST
+  
