@@ -1,0 +1,7 @@
+<% for field in fields %>
+  <div class="clear">
+    <label><%= t("admin.pages.#{type}.#{field[:label]}")  %></label>
+    <%= render :partial => "admin/pages/edit/#{field[:field_type]}", 
+               :locals => { :name => field[:label] , :type => type, :value => field[:value], :options => (field[:options] || {}) } %>
+  </div>
+<% end %>

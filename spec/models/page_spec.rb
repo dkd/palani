@@ -20,14 +20,14 @@ describe Page do
       
     end
     
-    context "edit_content" do
+    context "edit_fields" do
     
       it "should return anything" do
-        @page.edit_content.should_not be_nil
+        @page.edit_fields.should_not be_nil
       end
     
       it "should return an hash" do
-        @page.edit_content.should be_a Hash
+        @page.edit_fields.should be_an Array
       end
     
     end

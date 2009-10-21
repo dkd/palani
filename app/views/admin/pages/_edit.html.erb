@@ -37,8 +37,8 @@
     </div>
     <div id="type_settings" class="tab_content">
       <fieldset>
-        <%= f.label :subtitle, t(".subtitle") %>
-        <%= f.text_field :subtitle %>
+        <legend><%= t(".special_type_settings") %></legend>
+        <%= render_settings @page %>
       </fieldset>
     </div>
     <div class="tab_content">

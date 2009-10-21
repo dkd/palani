@@ -24,14 +24,14 @@ describe ContentPage do
       
     end
     
-    context "edit_content" do
+    context "edit_fields" do
     
       it "should return anything" do
-        @content_page.edit_content.should_not be_nil
+        @content_page.edit_fields.should_not be_nil
       end
     
       it "should return an hash" do
-        @content_page.edit_content.should be_a Hash
+        @content_page.edit_fields.should be_an Array
       end
     
     end

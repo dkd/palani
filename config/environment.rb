@@ -54,7 +54,7 @@ Rails::Initializer.run do |config|
   # All files from config/locales/*.rb,yml are added automatically.
   # add config/locales/admin to the load path
   config.i18n.load_path << Dir[ File.join(RAILS_ROOT, 'config', 'locales', 'admin', '*.{rb,yml}') ]
-  config.i18n.load_path << Dir[ File.join(RAILS_ROOT, 'config', 'locales', 'admin', 'administration', '*.{rb,yml}') ]
+  config.i18n.load_path << Dir[ File.join(RAILS_ROOT, 'config', 'locales', 'admin', 'pages', '*.{rb,yml}') ]
   config.i18n.default_locale = :de
 
 
