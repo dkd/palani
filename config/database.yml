@@ -38,10 +38,9 @@ production:
   database: palani_production
   username: root
   password: 
-  host: localhost
+  host: 127.0.0.1
   encoding: utf8
-  collation: utf8_general_ci  
-  port: 3306
+  collation: utf8_general_ci
 
 cucumber:
   <<: *TEST
