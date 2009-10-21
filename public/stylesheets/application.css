@@ -196,7 +196,7 @@ a.add {
         #choose-position ul li a strong {
           font-weight: bold; }
 
-#edit_page form fieldset {
+#edit_page form div.clear {
   clear: both;
   padding: 2px 0; }
 #edit_page form label, #edit_page form input, #edit_page form select {
@@ -214,12 +214,19 @@ a.add {
   font-size: 120%;
   padding: 5px;
   width: 300px; }
+#edit_page form fieldset {
+  border: 2px solid #CCC;
+  clear: none;
+  margin-bottom: 10px;
+  padding: 10px; }
+#edit_page form legend {
+  padding: 0 4px; }
 #edit_page form .submit {
   font-size: 90%;
   width: 100px; }
 #edit_page form .checkbox {
   width: 20px; }
-#edit_page div {
+#edit_page div.tab_content {
   display: none;
   margin: 15px 0; }
 #edit_page div.current {

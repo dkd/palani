@@ -31,6 +31,9 @@ de:
         starttime: Startzeit
         endtime: Endzeit
         subtitle: Untertitel
+        page_settings: Seiteneigenschaften
+        visibility: Sichtbarkeit
+        access_time: Zugriffszeit
         types:
           content_page: Inhaltsseite
           shortcut: Verweis

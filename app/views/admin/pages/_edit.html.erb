@@ -9,25 +9,31 @@
     </ul>
     <div class="tab_content current">
       <fieldset>
-        <%= f.label :title, t(".title")+":" %>
-        <%= f.text_field :title %>
+        <legend><%= t(".page_settings") %></legend>
+        <div class="clear">
+          <%= f.label :title, t(".title")+":" %>
+          <%= f.text_field :title %>
+        </div>
+        <div class="clear">
+          <%= f.label :type, t(".type")+":" %>
+          <%= f.select :type, options_for_select(page_types, @page.type) %>
+        </div>
+        <div class="clear">
+          <%= f.label :navigation_title, t(".navigation_title")+":" %>
+          <%= f.text_field :navigation_title %>
+        </div>
       </fieldset>
       <fieldset>
-        <%= f.label :type, t(".type")+":" %>
-        <%= f.select :type, options_for_select(page_types, @page.type) %>
-      </fieldset>
-      <fieldset>
-    	  <%= f.label :hidden, t(".hidden") %>
-    		<%= f.check_box :hidden, :class => "checkbox" %>
+        <legend><%= t(".visibility") %></legend>
+        <div class="clear">
+    	    <%= f.label :hidden, t(".hidden") %>
+    		  <%= f.check_box :hidden, :class => "checkbox" %>
+    		</div>
+    		<div class="clear">
+    		  <%= f.label :hidden_in_menu, t(".hidden_in_menu") %>
+    		  <%= f.check_box :hidden_in_menu, :class => "checkbox" %>
+    		</div>
     	</fieldset>
-    	<fieldset>
-    	  <%= f.label :hidden_in_menu, t(".hidden_in_menu") %>
-    		<%= f.check_box :hidden_in_menu, :class => "checkbox" %>
-    	</fieldset>
-    	<fieldset>
-        <%= f.label :navigation_title, t(".navigation_title")+":" %>
-        <%= f.text_field :navigation_title %>
-      </fieldset>
     </div>
     <div id="type_settings" class="tab_content">
       <fieldset>
@@ -39,30 +45,42 @@
     </div>
     <div class="tab_content">
       <fieldset>
-        <%= f.label :author, t(".author")+":" %>
-        <%= f.text_field :author %>
+        <legend><%= t(".author") %></legend>
+        <div class="clear">
+          <%= f.label :author, t(".author")+":" %>
+          <%= f.text_field :author %>
+        </div>
+        <div class="clear">
+          <%= f.label :author_email, t(".author_email")+":" %>
+          <%= f.text_field :author_email %>
+        </div>
       </fieldset>
       <fieldset>
-        <%= f.label :author_email, t(".author_email")+":" %>
-        <%= f.text_field :author_email %>
+        <legend><%= t(".abstract") %></legend>
+        <div class="clear">
+          <%= f.label :abstract, t(".abstract")+":" %>
+          <%= f.text_area :abstract, :rows => 8 %>
+        </div>
       </fieldset>
       <fieldset>
-        <%= f.label :abstract, t(".abstract")+":" %>
-        <%= f.text_area :abstract, :rows => 8 %>
-      </fieldset>
-      <fieldset>
-        <%= f.label :description, t(".description")+":" %>
-        <%= f.text_area :description, :rows => 8 %>
+        <legend><%= t(".description") %></legend>
+        <div class="clear">
+          <%= f.label :description, t(".description")+":" %>
+          <%= f.text_area :description, :rows => 8 %>
+        </div>
       </fieldset>
     </div>
     <div class="tab_content">
       <fieldset>
-        <%= f.label :starttime, t(".starttime")+":" %>
-        <%= f.text_field :starttime %>
-      </fieldset>
-      <fieldset>
-        <%= f.label :endtime, t(".endtime")+":" %>
-        <%= f.text_field :endtime %>
+        <legend><%= t(".access_time") %></legend>
+        <div class="clear">
+          <%= f.label :starttime, t(".starttime")+":" %>
+          <%= f.text_field :starttime %>
+        </div>
+        <div class="clear">
+          <%= f.label :endtime, t(".endtime")+":" %>
+          <%= f.text_field :endtime %>
+        </div>
       </fieldset>
     </div>
     <%= f.label "" %>

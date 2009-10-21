@@ -31,6 +31,9 @@ en:
         starttime: Starttime
         endtime: Endtime
         subtitle: Subtitle
+        page_settings: Page settings
+        visibility: Visibility
+        access_time: Access time
         types:
           content_page: Content Page
           shortcut: Shortcut

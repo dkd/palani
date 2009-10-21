@@ -238,7 +238,7 @@ a.add
 #edit_page
   form
   
-    fieldset
+    div.clear
       clear: both
       padding: 2px 0
 
@@ -262,13 +262,22 @@ a.add
       padding: 5px
       width: 300px
     
+    fieldset
+      border: 2px solid #CCC
+      clear: none
+      margin-bottom: 10px
+      padding: 10px
+
+    legend
+      padding: 0 4px
+    
     .submit
       font-size: 90%
       width: 100px
     
     .checkbox
       width: 20px
-  div
+  div.tab_content
     display: none
     margin: 15px 0
   div.current
