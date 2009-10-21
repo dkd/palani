@@ -4,6 +4,8 @@ config.gem 'rspec-rails', :lib => false
 config.gem 'rspec', :lib => false 
 config.gem 'cucumber' 
 config.gem 'webrat'
+config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+
 
 config.i18n.default_locale = :en
 
