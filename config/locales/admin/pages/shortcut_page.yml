@@ -1,0 +1,11 @@
+en:
+  admin:
+    pages:
+      shortcut_page:
+        mode: Mode
+        external_page: External URL
+        internal_page: Internal Page
+        first_subpage: First subpage
+        random_subpage: Random subpage
+        url: URL
+        page: Page

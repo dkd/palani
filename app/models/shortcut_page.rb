@@ -5,6 +5,8 @@
 # * random subpage
 class ShortcutPage < Page
   
+  #include I18n
+  
   validates_presence_of :shortcut_page_id, :if => :is_internal_shortcut
   validates_format_of :ext_url,
                       :with => /^(ftp|http|https)[:]\/\/([\w]+(\.[\w]+){0,})[.](\w{2,})([:][0-9]{1,5}|)$/i,
@@ -28,7 +30,12 @@ class ShortcutPage < Page
   # * text_area
   # returns the input fields and labels, that should be displayed in the "settings" tab, as an hash
   def edit_fields
-    [ { :label => "subtitle", :field_type => "text_field", :value => subtitle } ]
+    [ { :label => "mode", :field_type => "select_box", 
+        :value => { :options => { I18n.t('admin.pages.shortcut_page.external_page') => "external_page", I18n.t('admin.pages.shortcut_page.internal_page') => "internal_page", 
+                                  I18n.t('admin.pages.shortcut_page.first_subpage') => "first_subpage", I18n.t('admin.pages.shortcut_page.random_subpage') => "random_subpage"  } , 
+        :selected => mode } },
+      { :label => "url", :field_type => "text_field", :value => ext_url },
+      { :label => "page", :field_type => "text_field", :value => shortcut_page_id }]
   end
   
   private
