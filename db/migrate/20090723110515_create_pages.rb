@@ -19,7 +19,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :target
       t.string :type, :default => "ContentPage"
       t.integer :shortcut_page_id
-      t.string :shortcut_mode
+      t.string :shortcut_mode, :default => "first_subpage"
       t.string :ext_url
       t.integer :created_by
       t.string :layout

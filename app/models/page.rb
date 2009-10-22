@@ -1,9 +1,6 @@
 class Page < ActiveRecord::Base
   
-  before_create :check_title
-  
   has_many :content_elements
-  has_many :notices
   
   validates_presence_of :title
   validates_presence_of :type
@@ -16,11 +13,13 @@ class Page < ActiveRecord::Base
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
-  # text attribute is needed by extjs
+  # alias for title - needed for ExtJS
   def text
     title
   end
   
+  # returns the icon of the specific page type
+  # can be overwritten in the kind class
   def icon
     "/images/icons/pages/#{self.class.to_s.underscore}.png"
   end
@@ -63,12 +62,6 @@ class Page < ActiveRecord::Base
       
       update_attributes :parent_id => drop_page.parent_id, :sorting => sorting
     end
-  end
-  
-  private
-  
-  # check if there is already a page with the same title on the same level
-  def check_title
   end
   
 end

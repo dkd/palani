@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20091020153435) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.integer  "parent_id",        :default => 1,             :null => false
+    t.integer  "parent_id",        :default => 1,               :null => false
     t.datetime "starttime"
     t.datetime "endtime"
     t.integer  "sorting"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20091020153435) do
     t.string   "target"
     t.string   "type",             :default => "ContentPage"
     t.integer  "shortcut_page_id"
-    t.string   "shortcut_mode"
+    t.string   "shortcut_mode",    :default => "first_subpage"
     t.string   "ext_url"
     t.integer  "created_by"
     t.datetime "created_at"
