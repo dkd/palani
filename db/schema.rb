@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20091020153435) do
     t.text     "description"
     t.text     "abstract"
     t.string   "author"
+    t.string   "author_email"
     t.string   "target"
     t.string   "type",             :default => "ContentPage"
     t.integer  "shortcut_page_id"
@@ -86,7 +87,6 @@ ActiveRecord::Schema.define(:version => 20091020153435) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.string   "author_email"
   end
 
   create_table "permission_groups", :force => true do |t|

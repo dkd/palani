@@ -11,6 +11,9 @@ module NavigationHelpers
     when /the homepage/
       '/'
     
+    when /the pages page/
+      '/admin/pages'
+    
     when /the administration page/
       '/admin/administration'
       
@@ -19,9 +22,9 @@ module NavigationHelpers
       
     when /the new user page/
       '/admin/users/new'
-      
+    
     when /the new usergroup page/
-      '/admin/user_groups/new'
+      '/admin/user_3groups/new'
       
     when /the help page/
       '/admin/help'

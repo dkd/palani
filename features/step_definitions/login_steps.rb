@@ -1,5 +1,7 @@
 Given /^a valid user$/ do
-  @user = User.new( :username => "admin", :password => "test" )
+  @user = Factory.create(:user, :name => "admin", :password => "test", :password_confirmation => "test", :backend_language => "en")
+  @user_group = Factory.create(:user_group, :name => "Administrators")
+  @user.user_groups << @user_group
 end
 
 When /^I put his username and correct password into the form$/ do

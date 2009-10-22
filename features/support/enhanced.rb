@@ -1,22 +1,18 @@
+ENV["RAILS_ENV"] = "test"
+# see http://wiki.github.com/aslakhellesoy/cucumber/setting-up-selenium for help
+require 'spec/expectations'
+require 'selenium'
+require 'webrat'
+
+#Cucumber::Rails.use_transactional_fixtures = false
+Cucumber::Rails::World.use_transactional_fixtures = false 
+ 
 Webrat.configure do |config|
   config.mode = :selenium
-  config.application_environment = :selenium
+  # Selenium defaults to using the selenium environment. Use the following to override this.
+  config.application_environment = :test
 end
-
-Cucumber::Rails::World.use_transactional_fixtures = false
-
-require "database_cleaner"
-DatabaseCleaner.clean_with :truncation
+ 
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 DatabaseCleaner.strategy = :truncation
-
-Before do
-  DatabaseCleaner.start
-end
-
-After do
-  DatabaseCleaner.clean
-end
-
-# this is necessary to have webrat "wait_for" the response body to be available
-# when writing steps that match against the response body returned by selenium
-World(Webrat::Selenium::Matchers)

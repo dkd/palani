@@ -6,7 +6,7 @@ Feature: Navigation
   
   @rendering
   Scenario: See the main navigation
-    Given a logged in user
+    Given a logged in admin
     When I go to the homepage
     Then I should see "Content"
     And I should see "Administration"
@@ -14,7 +14,7 @@ Feature: Navigation
   
   @rendering
   Scenario: See the administration sub navigation
-    Given a logged in user
+    Given a logged in admin
     When I go to the administration page
     Then I should see "Content"
     And I should see "Administration"
@@ -24,7 +24,7 @@ Feature: Navigation
   
   @rendering
   Scenario: See the help sub navigation
-    Given a logged in user
+    Given a logged in admin
     When I go to the help page
     Then I should see "Content"
     And I should see "Administration"

@@ -31,7 +31,7 @@ test: &TEST
   password: 
   host: 127.0.0.1
   encoding: utf8
-  collation: utf8_general_ci  
+  collation: utf8_general_ci
   
 production:
   adapter: mysql
@@ -47,4 +47,3 @@ cucumber:
   
 selenium:
   <<: *TEST
-  

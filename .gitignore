@@ -7,3 +7,4 @@ tmp/**/*
 log/*
 log/**/*
 doc/**/*
+public/images/icons/.DS_Store

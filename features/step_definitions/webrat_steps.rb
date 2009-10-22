@@ -13,6 +13,9 @@ end
 
 When /^I press "([^\"]*)"$/ do |button|
   click_button(button)
+  if Webrat.configuration.mode == :selenium
+      selenium.wait_for_page_to_load
+  end
 end
 
 When /^I follow "([^\"]*)"$/ do |link|
