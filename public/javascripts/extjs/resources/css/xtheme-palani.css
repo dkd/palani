@@ -1776,3 +1776,7 @@ body.x-body-masked .x-window-plain .x-window-mc {
 .x-panel-ghost .x-tool {
 	display: none;
 }
+
+#panel .x-panel-header-text {
+	cursor: pointer !important;
+}

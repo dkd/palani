@@ -1,5 +1,5 @@
 <div id="edit_page">
-  <% form_for @page, :url => admin_page_path(@page) do |f| %>
+  <% remote_form_for :page, @page, :url => admin_page_path(@page), :html => { :method => :put } do |f| %>
     <ul class="simple_tabs">
       <li class="current"><%= t(".general_options") %></li>
       <li><%= t(".type_settings") %></li>

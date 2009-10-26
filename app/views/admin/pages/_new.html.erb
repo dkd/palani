@@ -2,7 +2,7 @@
 <%= render_actions %>
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
-  <% remote_form_for [:admin, @page] do |f| %>
+  <% remote_form_for [:admin, @page], :url => update_new_admin_page_path(@page) do |f| %>
 
   	<fieldset>
   		<%= f.label :title, t('.title')+':' %>

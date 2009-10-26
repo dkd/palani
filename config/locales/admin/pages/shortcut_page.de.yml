@@ -2,10 +2,10 @@ de:
   admin:
     pages:
       shortcut_page:
-        mode: Modus
+        shortcut_mode: Modus
         external_page: Externe URL
         internal_page: Interne URL
         first_subpage: Erste Unterseite
         random_subpage: "Zufällig Unterseite"
-        url: URL
-        page: Seite
+        ext_url: URL
+        shortcut_page_id: Seite

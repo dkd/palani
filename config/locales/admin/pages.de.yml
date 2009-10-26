@@ -12,7 +12,7 @@ de:
         hidden: Versteckt?
         hidden_in_menu: In der Navigation versteckt?
         submit_text: Hinzufügen
-      show:
+      administration:
         edit: Seite bearbeiten
       edit:
         <<: *LABELS

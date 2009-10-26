@@ -12,7 +12,7 @@ en:
         hidden: Hidden?
         hidden_in_menu: Hidden in menu?
         submit_text: Add
-      show:
+      administration:
         edit: Edit page
       edit:
         <<: *LABELS

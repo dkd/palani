@@ -43,6 +43,23 @@ class Admin::PagesController < ApplicationController
     
     if @page.update_attributes(params[:page])
       flash.now[:notice] = 'added_succesfully'
+      render :update do |page|
+        page['tree'].replace_html :partial => "/admin/trees/tree"
+        page['middle_col'].replace_html :partial => "show"
+      end
+    else
+      flash.now[:error] = 'check_your_input'
+      render :update do |page|
+        page['middle_col'].replace_html :partial => "administration"
+      end
+    end
+  end
+  
+  def update_new
+    @page = Page.find(params[:id])
+    
+    if @page.update_attributes(params[:page])
+      flash.now[:notice] = 'added_succesfully'
       @partial_file = "show"
     else
       flash.now[:error] = 'check_your_input'
