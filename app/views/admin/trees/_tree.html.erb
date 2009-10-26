@@ -39,7 +39,6 @@
           rootVisible: false,
           // auto create TreeLoader
           dataUrl: '<%= url_for tree_admin_trees_path(:format => :json) %>',
-
           root: {
               nodeType: 'async',
               text: 'Palani',
@@ -184,6 +183,8 @@
 
             }
       });
+      
+      tree.expandAll();
       
   });
 </script>

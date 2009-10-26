@@ -16,6 +16,10 @@ $(document).ready(function(){
 		
 	});
 	
+	$("#page_dummy_type").bind("change", function() {
+			$("#edit_page_form").submit();
+	});
+	
 	if($("#page_shortcut_mode")) {
 		
 		$("#page_shortcut_mode").bind("change", function() {

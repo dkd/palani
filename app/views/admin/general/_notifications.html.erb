@@ -1,10 +1,12 @@
-<%- if flash[:error] -%>
-  <div id="error">
-    <%= t(flash[:error]) %> <%= link_to_function t("close"), '$("#error").fade()' %>
-  </div>
-<%- end -%>
-<%- if flash[:notice] -%>
-  <div id="notice">
-    <%= t(flash[:notice]) %> <%= link_to_function t("close"), '$("#notice").fade()' %>
-  </div>
-<%- end -%>
+<div id="notifications">
+  <%- if flash[:error] -%>
+    <div id="error">
+      <%= t(flash[:error]) %> <%= link_to_function t("close"), '$("#error").fade()' %>
+    </div>
+  <%- end -%>
+  <%- if flash[:notice] -%>
+    <div id="notice">
+      <%= t(flash[:notice]) %> <%= link_to_function t("close"), '$("#notice").fade()' %>
+    </div>
+  <%- end -%>
+</div>

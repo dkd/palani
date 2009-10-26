@@ -34,7 +34,8 @@ de:
         page_settings: Seiteneigenschaften
         visibility: Sichtbarkeit
         access_time: Zugriffszeit
-        special_type_settings: Seitentyp-Eigenschaften
+        settings:
+          special_type_settings: Seitentyp-Eigenschaften
         types:
           content_page: Inhaltsseite
           shortcut: Verweis

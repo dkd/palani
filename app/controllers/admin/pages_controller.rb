@@ -42,10 +42,9 @@ class Admin::PagesController < ApplicationController
     @page = Page.find(params[:id])
     
     if @page.update_attributes(params[:page])
-      flash.now[:notice] = 'added_succesfully'
+      flash.now[:notice] = 'changes_saved_succesfully'
       render :update do |page|
-        page['tree'].replace_html :partial => "/admin/trees/tree"
-        page['middle_col'].replace_html :partial => "show"
+        page['notifications'].replace_html render_notifications
       end
     else
       flash.now[:error] = 'check_your_input'
@@ -77,6 +76,16 @@ class Admin::PagesController < ApplicationController
     page.delete
     
     render :json => { :deleted => true }
+  end
+  
+  def render_type_settings
+    @page = Page.find(params[:id])
+    @page[:type] = params[:type]
+    @page.save
+    @page = Page.find(params[:id])
+    render :update do |page|
+      page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }
+    end
   end
   
   def new_select_position

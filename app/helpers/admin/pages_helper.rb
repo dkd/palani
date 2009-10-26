@@ -2,7 +2,7 @@ module Admin::PagesHelper
   
   def page_types
     { t('.types.content_page') => "ContentPage",
-      t('.types.shortcut') => "Shortcut"  }
+      t('.types.shortcut') => "ShortcutPage"  }
   end
   
   def render_settings(page)

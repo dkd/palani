@@ -1,5 +1,5 @@
 <div id="edit_page">
-  <% remote_form_for :page, @page, :url => admin_page_path(@page), :html => { :method => :put } do |f| %>
+  <% remote_form_for :page, @page, :url => admin_page_path(@page), :html => { :id => "edit_page_form", :method => :put } do |f| %>
     <ul class="simple_tabs">
       <li class="current"><%= t(".general_options") %></li>
       <li><%= t(".type_settings") %></li>
@@ -16,7 +16,7 @@
         </div>
         <div class="clear">
           <%= f.label :type, t(".type")+":" %>
-          <%= f.select :type, options_for_select(page_types, @page.type) %>
+          <%= f.select :dummy_type, options_for_select(page_types, @page.type) %>
         </div>
         <div class="clear">
           <%= f.label :navigation_title, t(".navigation_title")+":" %>
@@ -36,10 +36,7 @@
     	</fieldset>
     </div>
     <div id="type_settings" class="tab_content">
-      <fieldset>
-        <legend><%= t(".special_type_settings") %></legend>
         <%= render_settings @page %>
-      </fieldset>
     </div>
     <div class="tab_content">
     </div>

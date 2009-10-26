@@ -13,6 +13,15 @@ class Page < ActiveRecord::Base
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
+
+  def dummy_type=(type)
+    self[:type] = type
+  end
+  
+  def dummy_type
+    type
+  end
+  
   # alias for title - needed for ExtJS
   def text
     title

@@ -34,7 +34,8 @@ en:
         page_settings: Page settings
         visibility: Visibility
         access_time: Access time
-        special_type_settings: Pagetype properties
+        settings:
+          special_type_settings: Pagetype properties
         types:
           content_page: Content Page
           shortcut: Shortcut
