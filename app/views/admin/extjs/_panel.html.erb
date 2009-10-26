@@ -26,7 +26,8 @@
                       title: '<%= item[:title] %>',
                       tools: tools,
                       html: "<%= item[:html] %>",
-                      collapsed: <%= item[:collapsed] ? "true" : "false" %>
+                      collapsed: <%= item[:collapsed] ? "true" : "false" %>,
+                      titleCollapse: true
                   },
                   <% end %>]
               }]
