@@ -1,7 +1,7 @@
 defaults: &defaults
   core:
   backend:
-    pages:
+    pages:      
       content_page:
         icon: "/images/icons/page_green.png"
       shortcut:
@@ -9,8 +9,8 @@ defaults: &defaults
       external_url:
         icon: "/images/icons/page_green.png"
     languages:
-      de: german
-      en: english
+      german: de
+      english: en
   frontend:
   website:
 

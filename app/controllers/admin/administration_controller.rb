@@ -31,7 +31,6 @@ class Admin::AdministrationController < ApplicationController
 private
   
   def setup
-    @backend_languages = { t('german') => "de", t('english') => "en"  }
     @user = current_user
     @partial_file = "edit_own_profile"
   end

@@ -22,7 +22,7 @@
 	
 	<fieldset>
 		<%= f.label :backend_language, t('.backend_language')+':' %>
-		<%= f.select :backend_language, options_for_select(@backend_languages,@user.backend_language) %>
+		<%= f.select :backend_language, options_for_select(backend_languages,@user.backend_language) %>
 	</fieldset>
 	
 	<% if current_user_is_admin?  %>

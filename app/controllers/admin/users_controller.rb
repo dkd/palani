@@ -1,7 +1,5 @@
 class Admin::UsersController < ApplicationController
-  
-  before_filter :setup
-  
+
   def new
     @user = User.new
     render :update do |page|
@@ -72,12 +70,6 @@ class Admin::UsersController < ApplicationController
     render :update do |page|
       page['middle_col'].replace_html :partial => "index"
     end
-  end
-  
-  private
-  
-  def setup
-    @backend_languages = { t('german') => "de", t('english') => "en"  }
   end
   
 end
