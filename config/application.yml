@@ -2,12 +2,8 @@ defaults: &defaults
   core:
   backend:
     pages:      
-      content_page:
-        icon: "/images/icons/page_green.png"
-      shortcut:
-        icon: "/images/icons/page_green.png"
-      external_url:
-        icon: "/images/icons/page_green.png"
+      content_page: ContentPage
+      shortcut: ShortcutPage
     languages:
       german: de
       english: en

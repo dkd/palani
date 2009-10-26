@@ -8,7 +8,7 @@ module ApplicationHelper
   # returns all backend languages, that are defined in config/application.yml
   def backend_languages
     languages = Settings.backend.languages.to_a
-    languages.each { |r| r[0] = t(r[0]) }
+    languages.each { |r| r[0] = t "backend_languages."+r[0] }
   end
   
 end

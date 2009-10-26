@@ -9,8 +9,6 @@ en:
   changes_saved_succesfully: Your changes have been saved succesfully.
   succesful_login: You have been logged in succesfully.
   check_your_input: Please check your input.
-  german: German
-  english: English
   user_groups: Usergroups
   notices: Notices
   tags: Tags
@@ -24,3 +22,7 @@ en:
   clear_select: Clear selection
   new_page: New page
   show: Show
+  backend_languages:
+    german: German
+    english: English
+    
