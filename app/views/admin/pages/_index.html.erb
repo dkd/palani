@@ -1,2 +1,20 @@
-<%= render_notifications %>
-Willkommen!
+<div id="welcome_page">
+  <h2><%= t("admin.welcome.headline") %></h2>
+  <%= t("admin.welcome.teaser") %>
+  <ul>
+    <li>
+      <h4><%= t("admin.menu.main_menu.pages") %></h4>
+      <%= t("admin.welcome.content_description") %>
+    </li>
+    <li>
+      <h4><%= t("admin.menu.main_menu.administration") %></h4>
+      <%= t("admin.welcome.administration_description") %>
+    </li>
+    <li>
+      <h4><%= t("admin.menu.main_menu.help") %></h4>
+      <%= t("admin.welcome.help_description") %>
+    </li>
+  </ul>
+  
+  <%= t("admin.welcome.footer") %>
+</div>

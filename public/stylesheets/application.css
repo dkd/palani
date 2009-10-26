@@ -234,3 +234,13 @@ a.add {
   margin-right: 10px; }
 #edit_page .simple_tabs .current {
   font-weight: bold; }
+
+#welcome_page {
+  padding: 10px 0; }
+  #welcome_page h2 {
+    font-size: 115%;
+    margin-bottom: 10px; }
+  #welcome_page ul {
+    margin: 10px 0 40px 0; }
+    #welcome_page ul li {
+      margin: 10px 0; }
