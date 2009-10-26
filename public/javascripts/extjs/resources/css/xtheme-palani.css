@@ -1780,3 +1780,12 @@ body.x-body-masked .x-window-plain .x-window-mc {
 #panel .x-panel-header-text {
 	cursor: pointer !important;
 }
+
+#panel .x-portal-column {
+	padding: 0 !important;
+	width: 100% !important;
+}
+
+#panel .x-portal-column .x-portlet {
+	width: 100% !important;
+}
