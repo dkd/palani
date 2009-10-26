@@ -13,7 +13,7 @@ class Admin::PagesController < ApplicationController
       }
       format.js {
         render :update do |page|
-          page['middle_col'].replace_html :partial => @partial_file
+          page['middle_content'].replace_html :partial => @partial_file
         end
       }
     end
@@ -25,7 +25,7 @@ class Admin::PagesController < ApplicationController
     
     render :update do |page|
       page['tree'].replace_html :partial => "admin/trees/tree"
-      page['middle_col'].replace_html :partial => "new"
+      page['middle_content'].replace_html :partial => "new"
     end
   end
   
@@ -49,7 +49,7 @@ class Admin::PagesController < ApplicationController
     else
       flash.now[:error] = 'check_your_input'
       render :update do |page|
-        page['middle_col'].replace_html :partial => "administration"
+        page['middle_content'].replace_html :partial => "administration"
       end
     end
   end
@@ -67,7 +67,7 @@ class Admin::PagesController < ApplicationController
     
     render :update do |page|
       page['tree'].replace_html :partial => "/admin/trees/tree"
-      page['middle_col'].replace_html :partial => @partial_file
+      page['middle_content'].replace_html :partial => @partial_file
     end
   end
   
@@ -84,12 +84,13 @@ class Admin::PagesController < ApplicationController
     @page = Page.find(params[:id])
     render :update do |page|
       page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }
+      page['simple_tabs_javascript'].replace_html :partial => "/admin/pages/edit/simple_tabs"
     end
   end
   
   def new_select_position
     render :update do |page|
-      page['middle_col'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
+      page['middle_content'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
     end
   end
   

@@ -219,6 +219,7 @@ a.add {
   padding: 0 4px; }
 #edit_page form .submit {
   font-size: 90%;
+  margin-left: 15px;
   width: 100px; }
 #edit_page form .checkbox {
   width: 20px; }
