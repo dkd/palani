@@ -80,8 +80,7 @@ class Admin::PagesController < ApplicationController
   
   def render_type_settings
     @page = Page.find(params[:id])
-    @page[:type] = params[:type]
-    @page.save
+    @page.update_attributes :dummy_type => params[:type]
     @page = Page.find(params[:id])
     render :update do |page|
       page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }

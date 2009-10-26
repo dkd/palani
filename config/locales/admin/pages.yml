@@ -34,6 +34,7 @@ en:
         page_settings: Page settings
         visibility: Visibility
         access_time: Access time
+        saved_type_succesfully: You have changed the page type succesfully.
         settings:
           special_type_settings: Pagetype properties
         types:

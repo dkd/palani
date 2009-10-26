@@ -64,18 +64,6 @@
             cls:'show',
             text:'<%= t("show") %>'
           },{
-            id:'copy',
-            handler:copyHandler,
-            icon:'/images/icons/page_copy.png',
-            cls:'copy',
-            text:'<%= t("copy") %>' 
-          },{
-            id:'paste',
-            handler:pasteHandler,
-            icon:'/images/icons/page_paste.png',
-            cls:'paste',
-            text:'<%= t("paste") %>' 
-          },{
             id:'remove',
             handler:deleteHandler,
             icon:'/images/icons/page_delete.png',
@@ -101,20 +89,6 @@
         
       }
       
-      function copyHandler() {
-        var n = sm.getSelectedNode();
-        if(n){
-          Menu.items.get('paste').enable();
-        }
-      }
-      
-      function pasteHandler() {
-        var n = sm.getSelectedNode();
-        if(n){
-          
-        }
-      }
-      
       function deleteHandler() {
         var n = sm.getSelectedNode();
         if(n){
@@ -131,7 +105,6 @@
 
       function prepareMenu(node, e){
         node.select();
-        Menu.items.get('paste').disable();
         Menu.showAt(e.getXY());
       }
       
