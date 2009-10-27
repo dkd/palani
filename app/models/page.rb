@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
   validates_presence_of :type
   validates_presence_of :sorting
   
-  acts_as_tree :order => "sorting"
+  acts_as_tree
   acts_as_taggable_on :tags
   acts_as_paranoid
   
@@ -50,7 +50,7 @@ class Page < ActiveRecord::Base
   
   # a leaf does not have any children
   def is_leaf?
-    self.children.empty?
+    true
   end
   
   # updates the sorting of pages after adding or moving a page
@@ -66,7 +66,7 @@ class Page < ActiveRecord::Base
       drop_page.sorting += 1 if position=="below"
       sorting = drop_page.sorting
       
-      pages = Page.having_sorting_bigger_than(drop_page.sorting).find_all_by_parent_id(drop_page.parent_id)
+      pages = Page.children_of(drop_page.parent_id).having_sorting_bigger_than(drop_page.sorting)
       pages.each{ |page| page.update_attributes :sorting => page.sorting+1 }
       
       update_attributes :parent_id => drop_page.parent_id, :sorting => sorting

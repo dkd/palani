@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091020153435) do
+ActiveRecord::Schema.define(:version => 20091027133328) do
 
   create_table "content_element_htmls", :force => true do |t|
     t.integer  "content_element_id"
@@ -87,7 +87,10 @@ ActiveRecord::Schema.define(:version => 20091020153435) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
+    t.string   "ancestry"
   end
+
+  add_index "pages", ["ancestry"], :name => "index_pages_on_ancestry"
 
   create_table "permission_groups", :force => true do |t|
     t.string   "name"

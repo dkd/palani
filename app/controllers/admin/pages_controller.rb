@@ -21,9 +21,9 @@ class Admin::PagesController < ApplicationController
   def new
     @page = Page.new :title => t("new_page")
     @page.update_sorting Page.find(params[:id]), params[:position]
+    @page.save
     
     render :update do |page|
-      page['tree'].replace_html :partial => "admin/trees/tree"
       page['middle_content'].replace_html :partial => "new"
     end
   end

@@ -3,7 +3,13 @@ class Admin::TreesController < ApplicationController
   # POST /admin/trees/tree                                                  AJAX
   #-----------------------------------------------------------------------------
   def tree
-    render :json => Page.sorted.find_all_by_parent_id(params[:node]).collect{|p| { 
+    if params[:node].to_i==0
+      @pages = Page.roots.sorted
+    else
+      @pages = Page.children_of(params[:node]).sorted
+    end
+    
+    render :json => @pages.collect{|p| { 
       :text => p.title, :id => p.id, :cls => p.type, :leaf => false, :icon => p.icon, 
       :allowDrag => true, :allowDrop => true, :draggable => true, :expanded => p.is_leaf?, 
       :attributes => { :mode => "move" } } }

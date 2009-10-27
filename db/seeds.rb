@@ -31,3 +31,5 @@ Permission.find(7).update_attributes :permission_group => @administration_group
 Permission.find(4).update_attributes :permission_group => @help_group
 Permission.find(6).update_attributes :permission_group => @help_group
 Permission.find(11).update_attributes :permission_group => @help_group
+
+Page.create :title => "Rootpage", :type => "ContentPage", :sorting => 1
