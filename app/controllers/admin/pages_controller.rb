@@ -37,8 +37,9 @@ class Admin::PagesController < ApplicationController
     page = ContentPage.new :title => t("new_page")
     page.update_sorting Page.find(params[:drop_id]), params[:position]
     
-    render :json => { :text => page.title, :id => page.id, :icon => page.icon, :cls => page.type, :leaf => false, 
-                      :expanded => true, :allowDrag => true, :allowDrop => true, :draggable => true  }
+    render :json => { :text => page.title, :id => page.id, :icon => page.icon, 
+                      :cls => page.type, :leaf => false, :expanded => true, :allowDrag => true, 
+                      :allowDrop => true, :draggable => true  }
   end
   
   # PUT /admin/pages/:id                                                    AJAX
@@ -50,13 +51,15 @@ class Admin::PagesController < ApplicationController
       flash.now[:notice] = 'changes_saved_succesfully'
       render :update do |page|
         page['notifications'].replace_html render_notifications
-        page['middle_content'].replace_html :partial => "administration", :locals => { :collapsed => true  }
+        page['middle_content'].replace_html :partial => "administration", 
+                                            :locals => { :collapsed => true  }
       end
     else
       flash.now[:error] = 'check_your_input'
       render :update do |page|
         page['notifications'].replace_html render_notifications
-        page['middle_content'].replace_html :partial => "administration", :locals => { :collapsed => false }
+        page['middle_content'].replace_html :partial => "administration", 
+                                            :locals => { :collapsed => false }
       end
     end
   end
@@ -96,7 +99,8 @@ class Admin::PagesController < ApplicationController
     @page.update_attributes :dummy_type => params[:type]
     @page = Page.find(params[:id])
     render :update do |page|
-      page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }
+      page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", 
+                                         :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }
       page['simple_tabs_javascript'].replace_html :partial => "/admin/pages/edit/simple_tabs"
     end
   end
@@ -105,7 +109,8 @@ class Admin::PagesController < ApplicationController
   #-----------------------------------------------------------------------------
   def new_select_position
     render :update do |page|
-      page['middle_content'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
+      page['middle_content'].replace_html :partial => "new_select_position", 
+                                          :locals => { :page => Page.find(params[:id]) }
     end
   end
   
