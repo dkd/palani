@@ -45,11 +45,13 @@ class Admin::PagesController < ApplicationController
       flash.now[:notice] = 'changes_saved_succesfully'
       render :update do |page|
         page['notifications'].replace_html render_notifications
+        page['middle_content'].replace_html :partial => "administration", :locals => { :collapsed => true  }
       end
     else
       flash.now[:error] = 'check_your_input'
       render :update do |page|
-        page['middle_content'].replace_html :partial => "administration"
+        page['notifications'].replace_html render_notifications
+        page['middle_content'].replace_html :partial => "administration", :locals => { :collapsed => false }
       end
     end
   end
