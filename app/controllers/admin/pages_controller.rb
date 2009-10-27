@@ -1,24 +1,23 @@
 class Admin::PagesController < ApplicationController
-  
+
+  # GET /admin/pages
+  #-----------------------------------------------------------------------------
   def index
     @partial_file = "index"
   end
   
+  # GET /admin/pages/:id                                                    AJAX
+  #-----------------------------------------------------------------------------
   def show
     @partial_file = "show"
     @page = Page.find(params[:id])
-    respond_to do |format|
-      format.html {
-        render :action => :index
-      }
-      format.js {
-        render :update do |page|
-          page['middle_content'].replace_html :partial => @partial_file
-        end
-      }
+    render :update do |page|
+      page['middle_content'].replace_html :partial => @partial_file
     end
   end
-  
+
+  # GET /admin/pages/new                                                    AJAX
+  #-----------------------------------------------------------------------------
   def new
     @page = Page.new :title => t("new_page")
     @page.update_sorting Page.find(params[:id]), params[:position]
@@ -29,7 +28,11 @@ class Admin::PagesController < ApplicationController
     end
   end
   
-  # if no position is given or position is not above or append, the node will be moved below
+  # if no position is given or position is not above or append, the node will 
+  # be moved below
+  # 
+  # POST /admin/pages                                                       AJAX
+  #-----------------------------------------------------------------------------
   def create
     page = ContentPage.new :title => t("new_page")
     page.update_sorting Page.find(params[:drop_id]), params[:position]
@@ -38,6 +41,8 @@ class Admin::PagesController < ApplicationController
                       :expanded => true, :allowDrag => true, :allowDrop => true, :draggable => true  }
   end
   
+  # PUT /admin/pages/:id                                                    AJAX
+  #-----------------------------------------------------------------------------
   def update
     @page = Page.find(params[:id])
     
@@ -56,6 +61,8 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  # PUT /admin/pages/:id/update_new                                         AJAX
+  #-----------------------------------------------------------------------------
   def update_new
     @page = Page.find(params[:id])
     
@@ -73,6 +80,8 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  # DELETE /admin/pages/:id                                                 AJAX
+  #-----------------------------------------------------------------------------
   def destroy
     page = Page.find(params[:id])
     page.delete
@@ -80,6 +89,8 @@ class Admin::PagesController < ApplicationController
     render :json => { :deleted => true }
   end
   
+  # GET /admin/pages/render_type_settings                                   AJAX
+  #-----------------------------------------------------------------------------
   def render_type_settings
     @page = Page.find(params[:id])
     @page.update_attributes :dummy_type => params[:type]
@@ -90,13 +101,19 @@ class Admin::PagesController < ApplicationController
     end
   end
   
+  # GET /admin/pages/new_select_position                                    AJAX
+  #-----------------------------------------------------------------------------
   def new_select_position
     render :update do |page|
       page['middle_content'].replace_html :partial => "new_select_position", :locals => { :page => Page.find(params[:id]) }
     end
   end
   
-  # if no position is given, or position is not above or append, the node will be moved below
+  # if no position is given, or position is not above or append, the node will 
+  # be moved below
+  #
+  # GET /admin/pages/move                                                   AJAX
+  #-----------------------------------------------------------------------------
   def move
     page = Page.find(params[:drag_id])
     page.update_sorting Page.find(params[:drop_id]), params[:position]

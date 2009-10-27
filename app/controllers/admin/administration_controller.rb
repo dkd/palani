@@ -1,6 +1,8 @@
 class Admin::AdministrationController < ApplicationController
   before_filter :setup
   
+  # PUT /admin/administration/:id
+  #----------------------------------------------------------------------------
   def update
     if @user.update_attributes(params[:user])
       flash[:notice] = 'changes_saved_succesfully'
@@ -11,7 +13,10 @@ class Admin::AdministrationController < ApplicationController
       render :action => :edit_profile
     end
   end
-  
+
+  # GET /admin/administration/edit_profile
+  # GET /admin/administration/edit_profile                                AJAX
+  #----------------------------------------------------------------------------
   def edit_profile    
     respond_to do |format|
       format.html
@@ -24,6 +29,8 @@ class Admin::AdministrationController < ApplicationController
     end
   end
   
+  # GET /admin/administration
+  #----------------------------------------------------------------------------
   def index
     redirect_to admin_users_path
   end

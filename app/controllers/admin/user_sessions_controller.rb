@@ -4,7 +4,9 @@ class Admin::UserSessionsController < ApplicationController
   after_filter :set_lockdown_values, :only => :create
 
   layout 'welcome'
-  
+
+  # GET /admin/user_sessions/new
+  #-----------------------------------------------------------------------------  
   def new
     if current_user
       redirect_to admin_pages_path
@@ -14,6 +16,8 @@ class Admin::UserSessionsController < ApplicationController
     end
   end
 
+  # POST /admin/user_sessions
+  #-----------------------------------------------------------------------------
   def create
     if current_user
       redirect_to admin_pages_path
@@ -28,6 +32,8 @@ class Admin::UserSessionsController < ApplicationController
     end
   end
 
+  # DELETE /admin/user_sessions/:id
+  #-----------------------------------------------------------------------------
   def destroy
     current_user_session.destroy
     reset_lockdown_session

@@ -1,5 +1,7 @@
 class Admin::UsersController < ApplicationController
 
+  # GET /admin/users/new                                                    AJAX
+  #-----------------------------------------------------------------------------
   def new
     @user = User.new
     render :update do |page|
@@ -7,6 +9,8 @@ class Admin::UsersController < ApplicationController
     end
   end
   
+  # POST /admin/users                                                       AJAX
+  #-----------------------------------------------------------------------------
   def create
     params[:user][:user_group_ids] = params[:user_groups].split(",") if params[:user_groups]
     @user = User.new(params[:user])
@@ -21,6 +25,8 @@ class Admin::UsersController < ApplicationController
     end
   end
   
+  # GET /admin/users/:id/edit                                               AJAX
+  #-----------------------------------------------------------------------------
   def edit
     @user = User.find(params[:id])
     render :update do |page|
@@ -28,6 +34,10 @@ class Admin::UsersController < ApplicationController
     end
   end
   
+  # GET /admin/users
+  # GET /admin/users                                                        AJAX
+  # GET /admin/users.json
+  #-----------------------------------------------------------------------------
   def index
     respond_to do |format|
       @partial_file = "admin/users/index"
@@ -47,6 +57,8 @@ class Admin::UsersController < ApplicationController
     end
   end
   
+  # PUT /admin/users/:id                                                    AJAX
+  #-----------------------------------------------------------------------------
   def update
     @user = User.find(params[:id])
     params[:user][:user_group_ids] = params[:user_groups].split(",") if params[:user_groups]
@@ -61,7 +73,9 @@ class Admin::UsersController < ApplicationController
       page['middle_col'].replace_html :partial => @partial_file
     end
   end
-  
+
+  # DELETE /admin/users/:id                                                 AJAX
+  #-----------------------------------------------------------------------------
   def destroy
     user = User.find(params[:id])
     user.destroy
