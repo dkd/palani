@@ -50,7 +50,7 @@ class Page < ActiveRecord::Base
   
   # a leaf does not have any children
   def is_leaf?
-    true
+    children.empty?
   end
   
   # updates the sorting of pages after adding or moving a page
@@ -66,8 +66,8 @@ class Page < ActiveRecord::Base
       drop_page.sorting += 1 if position=="below"
       sorting = drop_page.sorting
       
-      pages = Page.children_of(drop_page.parent_id).having_sorting_bigger_than(drop_page.sorting)
-      pages.each{ |page| page.update_attributes :sorting => page.sorting+1 }
+      pages = drop_page.parent_id ? Page.children_of(drop_page.parent_id) : Page.roots
+      pages.having_sorting_bigger_than(drop_page.sorting).each{ |page| page.update_attributes :sorting => page.sorting+1 }
       
       update_attributes :parent_id => drop_page.parent_id, :sorting => sorting
     end

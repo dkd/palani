@@ -154,7 +154,8 @@ describe Page do
   
   it "should not be a leaf, if it has any children" do
     @page.save
-    @page.children.create( :title => "Child", :type => "ContentPage" )
+    @page.should be_valid
+    @page.children.create( :title => "Child", :type => "ContentPage", :sorting => 1 )
     @page.is_leaf?.should be_false
   end
 
