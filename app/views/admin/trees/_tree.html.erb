@@ -19,7 +19,12 @@
           url : '<%= url_for admin_pages_path %>',
           async : false,
           success: function(data, status) {
-            e.dropNode = new Ext.tree.TreeNode(data.text);
+            e.dropNode = new Ext.tree.TreeNode({
+                            text: data.text,
+                            id: data.id,
+                            cls: 'ContentPage',
+                            icon: data.icon,
+                        });
           }
       });
     }
@@ -54,12 +59,6 @@
       var Menu = new Ext.menu.Menu({
           id:'menu',
           items: [{
-            id:'new',
-            handler:newSiteHandler,
-            icon:'/images/icons/page_add.png',
-            cls:'new',
-            text:'<%= t("new_page") %>'
-          },{
             id:'show',
             handler:showSiteHandler,
             icon:'/images/icons/page_go.png',
@@ -73,19 +72,6 @@
             text: '<%= t("delete") %>'
           }]
       });
-      
-      function newSiteHandler() {
-        var n = sm.getSelectedNode();
-        if(n){
-          jQuery.ajax({
-              dataType : 'script',
-              data : 'id='+n.id,
-              type : 'get',
-              url : '<%= url_for new_admin_page_path %>',
-              async : true
-          });
-        }
-      }
       
       function showSiteHandler() {
         
