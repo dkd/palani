@@ -1,28 +1,7 @@
-<%= render_notifications %>
-<%= render_actions %>
-<div class ="standard_form">
-  <h2><%= t('.headline') -%></h2>
-  <% remote_form_for [:admin, @page], :url => update_new_admin_page_path(@page.id) do |f| %>
-
-  	<fieldset>
-  		<%= f.label :title, t('.title')+':' %>
-  		<%= f.text_field :title %>
-  	</fieldset>
-
-  	<fieldset>
-  	  <%= f.label :hidden, t('.hidden') %>
-  		<%= f.check_box :hidden, :class => "checkbox" %>
-  	</fieldset>
-
-  	<fieldset>
-  	  <%= f.label :hidden_in_menu, t('.hidden_in_menu') %>
-  		<%= f.check_box :hidden_in_menu, :class => "checkbox" %>
-  	</fieldset>
-
-  	<fieldset>
-  	  <%= label_tag "" %>
-  	  <%= f.submit t(".submit_text"), :class => "submit" %>
-  	</fielset>
-
-  <% end %>
+<%= render_ext_panel([
+    { :title => t(".edit"), :html => render(:partial => "edit"), :collapsed => false }
+  ]) %>
+<div id="simple_tabs_javascript">
+  <%= render :partial => "admin/pages/edit/simple_tabs" %>
 </div>
+<%= render :partial => "/admin/pages/tree/update_new_node", :locals => { :page => @page } %>

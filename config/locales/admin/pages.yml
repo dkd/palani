@@ -12,6 +12,7 @@ en:
         hidden: Hidden?
         hidden_in_menu: Hidden in menu?
         submit_text: Add
+        edit: Add page
       administration:
         edit: Edit page
       edit:

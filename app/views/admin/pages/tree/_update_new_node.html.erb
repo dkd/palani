@@ -1,0 +1,10 @@
+<script type="text/javascript">
+  tree.getNodeById(<%= page.parent_id %>).appendChild(new Ext.tree.TreeNode({
+              text: '<%= page.title %>',
+              id: '<%= page.id %>',
+              cls: 'ContentPage',
+              icon: '/images/icons/page_green.png',
+              attributes: { mode: 'new', type: 'ContentPage'}
+  }));
+  tree.getNodeById(<%= page.id %>).select();
+</script>

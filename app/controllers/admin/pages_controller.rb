@@ -20,7 +20,7 @@ class Admin::PagesController < ApplicationController
   #-----------------------------------------------------------------------------
   def new
     @page = Page.new :title => t("new_page")
-    @page.update_sorting Page.find(params[:id]), params[:position]
+    @page.update_sorting Page.find(params[:id]), "append"
     @page.save
     
     render :update do |page|
@@ -52,7 +52,7 @@ class Admin::PagesController < ApplicationController
       render :update do |page|
         page['notifications'].replace_html render_notifications
         page['middle_content'].replace_html :partial => "administration", 
-                                            :locals => { :collapsed => true  }
+                                            :locals => { :collapsed => true }
       end
     else
       flash.now[:error] = 'check_your_input'
@@ -78,7 +78,6 @@ class Admin::PagesController < ApplicationController
     end
     
     render :update do |page|
-      page['tree'].replace_html :partial => "/admin/trees/tree"
       page['middle_content'].replace_html :partial => @partial_file
     end
   end
@@ -102,15 +101,6 @@ class Admin::PagesController < ApplicationController
       page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", 
                                          :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }
       page['simple_tabs_javascript'].replace_html :partial => "/admin/pages/edit/simple_tabs"
-    end
-  end
-  
-  # GET /admin/pages/new_select_position                                    AJAX
-  #-----------------------------------------------------------------------------
-  def new_select_position
-    render :update do |page|
-      page['middle_content'].replace_html :partial => "new_select_position", 
-                                          :locals => { :page => Page.find(params[:id]) }
     end
   end
   

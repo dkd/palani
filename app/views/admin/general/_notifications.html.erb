@@ -1,12 +1,17 @@
 <div id="notifications">
   <%- if flash[:error] -%>
     <div id="error">
-      <%= t(flash[:error]) %> <%= link_to_function t("close"), '$("#error").fade()' %>
+      <%= t(flash[:error]) %>
     </div>
   <%- end -%>
   <%- if flash[:notice] -%>
     <div id="notice">
-      <%= t(flash[:notice]) %> <%= link_to_function t("close"), '$("#notice").fade()' %>
+      <%= t(flash[:notice]) %>
     </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        window.setTimeout("$('#notice').fade('slow')",1800);
+      });
+    </script>
   <%- end -%>
 </div>

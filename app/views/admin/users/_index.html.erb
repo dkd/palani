@@ -1,6 +1,5 @@
 <%= render_notifications %>
-<%= render_actions [{ :name => t('.add'), :link_to => new_admin_user_path, :class => "add" },
-                    { :name => t('.add_usergroup'), :link_to => new_admin_user_group_path, :class => "add" }] %>
+<%= render_actions [{ :name => t('.add'), :link_to => new_admin_user_path, :class => "add" }] %>
 <%= render_ext_grids(
 		"show_all_users",
 		"/admin/users.json",

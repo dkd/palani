@@ -26,9 +26,11 @@
     return e;
   }  
   
+  var tree;
+  
   Ext.onReady(function(){
 
-      var tree = new Ext.tree.TreePanel({
+      tree = new Ext.tree.TreePanel({
           useArrows: true,
           autoScroll: true,
           animate: true,
@@ -79,7 +81,7 @@
               dataType : 'script',
               data : 'id='+n.id,
               type : 'get',
-              url : '<%= url_for new_select_position_admin_pages_path %>',
+              url : '<%= url_for new_admin_page_path %>',
               async : true
           });
         }
@@ -156,8 +158,6 @@
 
             }
       });
-      
-      tree.expandAll();
       
   });
 </script>

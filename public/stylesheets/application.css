@@ -163,7 +163,10 @@ a.add {
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #63CC2B; }
+  background-color: #63CC2B;
+  position: absolute;
+  right: 0;
+  top: 25px; }
   #notice a {
     color: #FFF; }
 
