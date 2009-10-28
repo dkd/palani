@@ -14,15 +14,19 @@ class Permission < ActiveRecord::Base
 		SQL
   end
   
-  def self.for_user_groups
-    @permissions = Permission.all
-    @permissions.each { |p|
-      p.name = p.name.downcase.gsub(" ","_")
-      
-    }
-    # remove permissions with public access
-    @permissions.delete_if{ |p| p.name=="login" }
-    @permissions
+  class << self
+    
+    def for_user_groups
+      @permissions = Permission.all
+      @permissions.each { |p|
+        p.name = p.name.downcase.gsub(" ","_")
+
+      }
+      # remove permissions with public access
+      @permissions.delete_if{ |p| p.name=="login" }
+      @permissions
+    end
+    
   end
   
   private

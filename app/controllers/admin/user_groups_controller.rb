@@ -6,9 +6,7 @@ class Admin::UserGroupsController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.json {
-        render :json => { :root => UserGroup.active.json_data }
-      }
+      format.json { render :json => { :root => UserGroup.active.json_data } }
     end
   end
 
