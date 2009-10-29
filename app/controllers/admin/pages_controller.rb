@@ -34,11 +34,11 @@ class Admin::PagesController < ApplicationController
   # POST /admin/pages                                                       AJAX
   #-----------------------------------------------------------------------------
   def create
-    page = ContentPage.new :title => t("new_page")
-    page.update_sorting Page.find(params[:drop_id]), params[:position]
+    @page = ContentPage.new :title => t("new_page")
+    @page.update_sorting Page.find(params[:drop_id]), params[:position]
     
-    render :json => { :text => page.title, :id => page.id, :icon => page.icon, 
-                      :cls => page.type, :leaf => false, :expanded => true, :allowDrag => true, 
+    render :json => { :text => @page.title, :id => @page.id, :icon => @page.icon, 
+                      :cls => @page.type, :leaf => false, :expanded => true, :allowDrag => true, 
                       :allowDrop => true, :draggable => true  }
   end
   
@@ -110,8 +110,8 @@ class Admin::PagesController < ApplicationController
   # GET /admin/pages/move                                                   AJAX
   #-----------------------------------------------------------------------------
   def move
-    page = Page.find(params[:drag_id])
-    page.update_sorting Page.find(params[:drop_id]), params[:position]
+    @page = Page.find(params[:drag_id])
+    @page.update_sorting Page.find(params[:drop_id]), params[:position]
     
     render :json => { :moved => true }
   end

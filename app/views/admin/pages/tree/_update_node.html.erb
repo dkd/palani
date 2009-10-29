@@ -1,3 +1,5 @@
+<% unless title.empty? %>
 <script type="text/javascript">
   tree.getNodeById(<%= id %>).setText('<%= title %>');
 </script>
+<% end %>

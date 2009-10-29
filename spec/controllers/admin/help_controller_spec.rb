@@ -2,13 +2,13 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe Admin::HelpController do
 
+  before(:each) do
+    login_admin
+  end
+
   describe "actions" do
   
     describe "index" do
-      
-      before do
-         login_admin
-      end
       
       it "should not be accessible, if we are not authenticated" do
         public_user
@@ -30,10 +30,6 @@ describe Admin::HelpController do
     
     describe "community" do
       
-      before do
-        login_admin
-      end
-      
       it "should not be accessible, if we are not authenticated" do
         public_user
         get :community
@@ -53,10 +49,6 @@ describe Admin::HelpController do
     end
     
     describe "faq" do
-      
-      before do
-        login_admin
-      end
       
       it "should not be accessible, if we are not authenticated" do
         public_user
