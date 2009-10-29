@@ -16,7 +16,7 @@ describe Admin::UserGroupsController do
         response.should_not be_success
       end
       
-      it "should not be accessible, if we are authenticated" do
+      it "should be accessible, if we are authenticated" do
         get :index
         response.should be_success
       end
@@ -36,34 +36,57 @@ describe Admin::UserGroupsController do
         response.should_not be_success
       end
       
-      it "should not be accessible, if we are authenticated" do
+      it "should be accessible, if we are authenticated" do
         get :new
         response.should be_success
       end
       
-      it "should render the index view" do
+      it "should render the new view" do
         get :new
-        response.should render_template("index")
+        response.should render_template("new")
       end
       
     end
     
     describe "edit" do
       
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :edit
-        response.should_not be_success
+      before(:all) do
+        @user_group = UserGroup.find_or_create_by_name "Test"
       end
       
-      it "should not be accessible, if we are authenticated" do
-        get :edit
+      it "should be accessible, if we are authenticated" do
+        get :edit, :id => @user_group.id
         response.should be_success
       end
       
-      it "should render the index template(with edit partial)" do
-        get :edit
-        response.should render_template("index")
+      it "should render the edit view" do
+        get :edit, :id => @user_group.id
+        response.should render_template("edit")
+      end
+      
+      it "should not be accessible, if we are not authenticated" do
+        public_user
+        get :edit, :id => @user_group.id
+        response.should_not be_success
+      end
+      
+    end
+    
+    describe "destroy" do
+      
+      before(:all) do
+        @user_group = UserGroup.find_or_create_by_name "Test"
+      end
+      
+      it "should be accessible, if we are authenticated" do
+        delete :destroy, :id => @user_group.id
+        response.should be_success
+      end
+      
+      it "should not be accessible, if we are not authenticated" do
+        public_user
+        delete :destroy, :id => @user_group.id
+        response.should_not be_success
       end
       
     end

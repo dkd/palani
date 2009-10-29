@@ -4,8 +4,61 @@ describe Admin::UsersController do
   
   describe "actions" do
     
+    before(:all) do
+      UserGroup.find_or_create_by_name "Administrators"
+    end
+    
     before(:each) do
       login_admin
+    end
+    
+    describe "new" do
+      
+      it "should be accessible, if we are authenticated" do
+        get :new
+        response.should be_success
+      end
+      
+      it "should not be accessible, if we are not authenticated" do
+        public_user
+        get :new
+        response.should_not be_success
+      end
+      
+    end
+    
+    describe "create" do
+      
+      it "should not be accessible, if we are not authenticated" do
+        public_user
+        post :create
+        response.should_not be_success
+      end
+      
+    end
+    
+    describe "edit" do
+      
+      before(:all) do
+        @user = User.find_or_create_by_username "max", :backend_language => "en", :email => "max@power.hc", :password => "test", :password_confirmation => "test"
+      end
+      
+      it "should not be accessible, if we are not authenticated" do
+        public_user
+        get :edit, :id => @user.id
+        response.should_not be_success
+      end
+      
+      it "should be accessible, if we are authenticated" do
+        get :edit, :id => @user.id
+        response.should be_success
+      end
+      
+      it "should display the user having the id that is used as parameter" do
+        get :edit, :id => @user.id
+        controller.send(:instance_variable_get, :@user).id.should eql @user.id
+      end
+      
     end
     
     describe "index" do
@@ -16,54 +69,51 @@ describe Admin::UsersController do
         response.should_not be_success
       end
       
-      it "should not be accessible, if we are authenticated" do
+      it "should be accessible, if we are authenticated" do
         get :index
         response.should be_success
       end
       
-      it "should render the index view" do
+      it "should render the index partial" do
         get :index
-        response.should render_template("index")
+        controller.send(:instance_variable_get, :@partial_file).should eql "admin/users/index"
+      end
+      
+      context ".json" do
+        
+        before(:each) do
+          get :index, :format => "json"
+          @users = User.grid_data
+          @users.each { |u| u[:actions] = u.actions }
+        end
+        
+        it "should render the grid_data of User" do
+          controller.send(:instance_variable_get, :@users).should == @users
+        end
+        
+        it "should render valid json" do
+          response.body.should == { :root => @users }.to_json
+        end
+        
       end
       
     end
     
-    describe "new" do
+    describe "destroy" do
+      
+      before(:each) do
+        @user = User.find_or_create_by_username "max", :backend_language => "en", :email => "max@power.hc", :password => "test", :password_confirmation => "test"
+      end
       
       it "should not be accessible, if we are not authenticated" do
         public_user
-        get :new
+        delete :destroy, :id => @user.id
         response.should_not be_success
       end
       
-      it "should not be accessible, if we are authenticated" do
-        get :new
+      it "should be accessible, if we are authenticated" do
+        delete :destroy, :id => @user.id
         response.should be_success
-      end
-      
-      it "should render the index view" do
-        get :new
-        response.should render_template("index")
-      end
-      
-    end
-    
-    describe "edit" do
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :edit
-        response.should_not be_success
-      end
-      
-      it "should not be accessible, if we are authenticated" do
-        get :edit
-        response.should be_success
-      end
-      
-      it "should render the index template(with edit partial)" do
-        get :edit
-        response.should render_template("index")
       end
       
     end
