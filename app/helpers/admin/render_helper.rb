@@ -8,9 +8,7 @@ module Admin::RenderHelper
                     :link_to => edit_profile_admin_administration_path, :current => false }
     menu_items << { :name => "help", :controllers => ["admin/help"], :link_to => admin_help_index_path, :current => false }
     
-    for menu_item in menu_items do
-      menu_item[:current] = true if menu_item[:controllers].include? current_controller
-    end
+    menu_items.each { |m| m[:current] = true if m[:controllers].include?(current_controller) }
   
     render :partial => "admin/menu/main_menu", :locals => { :menu_items => menu_items }
   end

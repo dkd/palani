@@ -8,9 +8,7 @@ module Admin::HelpHelper
     menu_items << { :name => "faq", :actions => ["faq"], :link_to => faq_admin_help_path, :current => false }
     
     # check, which page is currently viewed
-    for menu_item in menu_items
-      menu_item[:current] = true if menu_item[:actions].include?(current_action)
-    end
+    menu_items.each { |m| m[:current] = true if m[:actions].include?(current_action) }
     
     render :partial => "admin/menu/sub_menu", :locals => { :menu_items => menu_items }
   end
