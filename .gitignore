@@ -8,3 +8,8 @@ log/*
 log/**/*
 doc/**/*
 public/images/icons/.DS_Store
+vendor/gems/cucumber-0.3.99/*
+vendor/gems/rspec-1.2.8/*
+vendor/gems/rspec-rails-1.2.7.1/*
+vendor/gems/thoughtbot-factory_girl-1.2.2/*
+vendor/gems/webrat-0.5.3/*
