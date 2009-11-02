@@ -13,11 +13,12 @@ class Page < ActiveRecord::Base
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
-
+  # is getting used, because type is a Rails keyword
   def dummy_type=(type)
     self[:type] = type
   end
   
+  # is getting used, because type is a Rails keyword
   def dummy_type
     type
   end

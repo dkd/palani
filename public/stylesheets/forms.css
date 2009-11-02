@@ -44,3 +44,7 @@
     #permissions fieldset legend {
       font-weight: bold;
       padding: 0 4px; }
+
+#multiselect form {
+  border: none !important;
+  padding: 0 !important; }

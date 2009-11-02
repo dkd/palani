@@ -1786,6 +1786,12 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	width: 100% !important;
 }
 
+.panel .x-panel-header-text img {
+	float: left;
+	margin-left: 2px;
+	margin-top: 1px;
+}
+
 .panel .x-portal-column .x-portlet {
 	width: 100% !important;
 }

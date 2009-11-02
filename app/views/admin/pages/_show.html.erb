@@ -2,5 +2,9 @@
 <%= render :partial => "administration", :locals => { :collapsed => true } %>
 </div>
 <div id="content_elements">
+<% if @page.type=="ShortcutPage" %>
+<%= t("admin.pages.shortcut_page.does_not_contain_content") %>
+<% else %>
 <%= render :partial => "admin/content_elements/index" %>
+<% end %>
 </div>
