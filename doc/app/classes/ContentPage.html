@@ -84,6 +84,13 @@
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000001">edit_fields</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -100,6 +107,71 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="#M000001" class="method-signature">
+          <span class="method-name">edit_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+the labels will be used as locale keys required attributes:
+</p>
+<ul>
+<li>label
+
+</li>
+<li>field_type
+
+</li>
+<li>value
+
+</li>
+</ul>
+<p>
+optional attributes:
+</p>
+<ul>
+<li>options
+
+</li>
+</ul>
+<p>
+available field types:
+</p>
+<ul>
+<li>text_field
+
+</li>
+<li>text_area
+
+</li>
+</ul>
+<p>
+returns the input fields and labels, that should be displayed in the
+&quot;settings&quot; tab, as an hash
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000001-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/content_page.rb, line 14</span>
+14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit_fields</span>
+15:     [ { <span class="ruby-identifier">:label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;subtitle&quot;</span>, <span class="ruby-identifier">:field_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;text_field&quot;</span>, <span class="ruby-identifier">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subtitle</span> } ]
+16:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

@@ -86,9 +86,12 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000010">delete</a>&nbsp;&nbsp;
+      <a href="#M000008">dummy_type</a>&nbsp;&nbsp;
+      <a href="#M000007">dummy_type=</a>&nbsp;&nbsp;
+      <a href="#M000011">edit_fields</a>&nbsp;&nbsp;
+      <a href="#M000010">icon</a>&nbsp;&nbsp;
       <a href="#M000012">is_leaf?</a>&nbsp;&nbsp;
-      <a href="#M000011">text</a>&nbsp;&nbsp;
+      <a href="#M000009">text</a>&nbsp;&nbsp;
       <a href="#M000013">update_sorting</a>&nbsp;&nbsp;
       </div>
     </div>
@@ -111,24 +114,134 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000010" class="method-detail">
-        <a name="M000010"></a>
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
 
         <div class="method-heading">
-          <a href="#M000010" class="method-signature">
-          <span class="method-name">delete</span><span class="method-args">()</span>
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">dummy_type</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 21</span>
+21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dummy_type</span>
+22:     <span class="ruby-identifier">type</span>
+23:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="#M000007" class="method-signature">
+          <span class="method-name">dummy_type=</span><span class="method-args">(type)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 17</span>
+17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dummy_type=</span>(<span class="ruby-identifier">type</span>)
+18:     <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">:type</span>] = <span class="ruby-identifier">type</span>
+19:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="#M000011" class="method-signature">
+          <span class="method-name">edit_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+the labels will be used as locale keys required attributes:
+</p>
+<ul>
+<li>label
+
+</li>
+<li>field_type
+
+</li>
+<li>value
+
+</li>
+</ul>
+<p>
+optional attributes:
+</p>
+<ul>
+<li>options
+
+</li>
+</ul>
+<p>
+available field types:
+</p>
+<ul>
+<li>text_field
+
+</li>
+<li>text_area
+
+</li>
+</ul>
+<p>
+returns the input fields and labels, that should be displayed in the
+&quot;settings&quot; tab, as an hash
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000011-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 47</span>
+47:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit_fields</span>
+48:     []
+49:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="#M000010" class="method-signature">
+          <span class="method-name">icon</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the <a href="Page.html#M000010">icon</a> of the specific page type
+can be overwritten in the kind class
+</p>
+          <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000010-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/page.rb, line 17</span>
-17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>
-18:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_attributes</span>( <span class="ruby-identifier">:deleted</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span> )
-19:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 32</span>
+32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon</span>
+33:     <span class="ruby-node">&quot;/images/icons/pages/#{self.class.to_s.underscore}.png&quot;</span>
+34:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -151,33 +264,36 @@ a leaf does not have any children
             onclick="toggleCode('M000012-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000012-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/page.rb, line 26</span>
-26:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_leaf?</span>
-27:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">empty?</span>
-28:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 52</span>
+52:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_leaf?</span>
+53:     <span class="ruby-identifier">children</span>.<span class="ruby-identifier">empty?</span>
+54:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000011" class="method-detail">
-        <a name="M000011"></a>
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
 
         <div class="method-heading">
-          <a href="#M000011" class="method-signature">
+          <a href="#M000009" class="method-signature">
           <span class="method-name">text</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+alias for title - needed for ExtJS
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000011-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000011-source">
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/page.rb, line 21</span>
-21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>
-22:     <span class="ruby-identifier">title</span>
-23:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 26</span>
+26:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>
+27:     <span class="ruby-identifier">title</span>
+28:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -188,23 +304,45 @@ a leaf does not have any children
 
         <div class="method-heading">
           <a href="#M000013" class="method-signature">
-          <span class="method-name">update_sorting</span><span class="method-args">(drop_page, is_below = false)</span>
+          <span class="method-name">update_sorting</span><span class="method-args">(drop_page, position)</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+updates the sorting of pages after adding or moving a page possible
+positions are
+</p>
+<ul>
+<li>above
+
+</li>
+<li>append
+
+</li>
+<li>below
+
+</li>
+</ul>
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000013-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000013-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/page.rb, line 30</span>
-30:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_sorting</span>(<span class="ruby-identifier">drop_page</span>, <span class="ruby-identifier">is_below</span> = <span class="ruby-keyword kw">false</span>)
-31:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_attributes</span> <span class="ruby-identifier">:sorting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">sorting</span>
-32:     <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">sorting</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">is_below</span>
-33:     
-34:     <span class="ruby-identifier">pages</span> = <span class="ruby-constant">Page</span>.<span class="ruby-identifier">find_all_by_parent_id_and_sorting</span>(<span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">parent_id</span>, <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">sorting</span>)
-35:     <span class="ruby-identifier">pages</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">update_attributes</span> <span class="ruby-identifier">:sorting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">sorting</span><span class="ruby-operator">+</span><span class="ruby-value">1</span> }
-36:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/page.rb, line 61</span>
+61:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_sorting</span>(<span class="ruby-identifier">drop_page</span>, <span class="ruby-identifier">position</span>)
+62:     <span class="ruby-comment cmt"># if the page gets appended by another, it will get sorting=1</span>
+63:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">position</span><span class="ruby-operator">==</span><span class="ruby-value str">&quot;append&quot;</span>
+64:       <span class="ruby-identifier">update_attributes</span> <span class="ruby-identifier">:parent_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">:sorting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+65:     <span class="ruby-keyword kw">else</span>
+66:       <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">sorting</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">position</span><span class="ruby-operator">==</span><span class="ruby-value str">&quot;below&quot;</span>
+67:       <span class="ruby-identifier">sorting</span> = <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">sorting</span>
+68:       
+69:       <span class="ruby-identifier">pages</span> = <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">parent_id</span> <span class="ruby-value">? </span><span class="ruby-constant">Page</span>.<span class="ruby-identifier">children_of</span>(<span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">parent_id</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Page</span>.<span class="ruby-identifier">roots</span>
+70:       <span class="ruby-identifier">pages</span>.<span class="ruby-identifier">having_sorting_bigger_than</span>(<span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">sorting</span>).<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">update_attributes</span> <span class="ruby-identifier">:sorting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">sorting</span><span class="ruby-operator">+</span><span class="ruby-value">1</span> }
+71:       
+72:       <span class="ruby-identifier">update_attributes</span> <span class="ruby-identifier">:parent_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">drop_page</span>.<span class="ruby-identifier">parent_id</span>, <span class="ruby-identifier">:sorting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">sorting</span>
+73:     <span class="ruby-keyword kw">end</span>
+74:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

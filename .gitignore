@@ -6,7 +6,6 @@
 tmp/**/*
 log/*
 log/**/*
-doc/**/*
 public/images/icons/.DS_Store
 vendor/gems/cucumber-0.3.99/*
 vendor/gems/rspec-1.2.8/*

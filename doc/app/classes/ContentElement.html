@@ -86,7 +86,7 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000003">delete</a>&nbsp;&nbsp;
+      <a href="#M000002">administration_partial</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -108,24 +108,35 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000003" class="method-detail">
-        <a name="M000003"></a>
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
 
         <div class="method-heading">
-          <a href="#M000003" class="method-signature">
-          <span class="method-name">delete</span><span class="method-args">()</span>
+          <a href="#M000002" class="method-signature">
+          <span class="method-name">administration_partial</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+defines the path to the partial, that gets rendered in the body part of a
+content element in the backend custom content elements should have a method
+&#8216;<a
+href="ContentElement.html#M000002">administration_partial</a>&#8217;
+returning the specific partial
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000003-source">
+            onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000002-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/content_element.rb, line 14</span>
-14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>
-15:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_attributes</span>( <span class="ruby-identifier">:deleted</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span> )
-16:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/content_element.rb, line 15</span>
+15:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">administration_partial</span>
+16:     <span class="ruby-keyword kw">unless</span>  <span class="ruby-identifier">element_type</span><span class="ruby-operator">==</span><span class="ruby-value str">&quot;ContentElement&quot;</span>
+17:       <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">element_type</span>).<span class="ruby-identifier">find_by_content_element_id</span>(<span class="ruby-identifier">id</span>).<span class="ruby-identifier">administration_partial</span>
+18:     <span class="ruby-keyword kw">else</span>  
+19:     <span class="ruby-value str">&quot;admin/content_elements/types/content_element/administration&quot;</span>
+20:     <span class="ruby-keyword kw">end</span>
+21:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

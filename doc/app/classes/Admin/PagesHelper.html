@@ -76,6 +76,14 @@
 
    </div>
 
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000020">page_types</a>&nbsp;&nbsp;
+      <a href="#M000021">render_settings</a>&nbsp;&nbsp;
+      </div>
+    </div>
 
   </div>
 
@@ -92,6 +100,58 @@
 
 
     <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">page_types</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+   <span class="ruby-comment cmt"># File app/helpers/admin/pages_helper.rb, line 3</span>
+3:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">page_types</span>
+4:     <span class="ruby-identifier">page_types</span> = <span class="ruby-constant">Settings</span>.<span class="ruby-identifier">backend</span>.<span class="ruby-identifier">pages</span>.<span class="ruby-identifier">to_a</span>
+5:     <span class="ruby-identifier">page_types</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">t</span> <span class="ruby-value str">&quot;admin.pages.edit.types.&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">p</span>[<span class="ruby-value">0</span>] }
+6:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name">render_settings</span><span class="method-args">(page)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/helpers/admin/pages_helper.rb, line 8</span>
+ 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_settings</span>(<span class="ruby-identifier">page</span>)
+ 9:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;/admin/pages/edit/settings&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:fields</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">edit_fields</span>, <span class="ruby-identifier">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">underscore</span> }
+10:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
 
   </div>

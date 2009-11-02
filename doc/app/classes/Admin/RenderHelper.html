@@ -80,12 +80,13 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000020">render_actions</a>&nbsp;&nbsp;
-      <a href="#M000021">render_ext_grids</a>&nbsp;&nbsp;
-      <a href="#M000019">render_main_menu</a>&nbsp;&nbsp;
-      <a href="#M000024">render_multi_select</a>&nbsp;&nbsp;
-      <a href="#M000023">render_notifications</a>&nbsp;&nbsp;
-      <a href="#M000022">render_right_col</a>&nbsp;&nbsp;
+      <a href="#M000025">render_actions</a>&nbsp;&nbsp;
+      <a href="#M000026">render_ext_grids</a>&nbsp;&nbsp;
+      <a href="#M000027">render_ext_panel</a>&nbsp;&nbsp;
+      <a href="#M000024">render_main_menu</a>&nbsp;&nbsp;
+      <a href="#M000030">render_multi_select</a>&nbsp;&nbsp;
+      <a href="#M000029">render_notifications</a>&nbsp;&nbsp;
+      <a href="#M000028">render_right_col</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -107,95 +108,89 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000020" class="method-detail">
-        <a name="M000020"></a>
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
 
         <div class="method-heading">
-          <a href="#M000020" class="method-signature">
+          <a href="#M000025" class="method-signature">
           <span class="method-name">render_actions</span><span class="method-args">(actions = [])</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+renders the action links
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000020-source">
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 18</span>
-18:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_actions</span>(<span class="ruby-identifier">actions</span> = [])
-19:     <span class="ruby-comment cmt">#actions &lt;&lt; { :name =&gt; t(&quot;back&quot;), :link_to =&gt; :back, :general =&gt; true }</span>
-20:     
-21:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/menu/actions&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:actions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">actions</span> } <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">actions</span>.<span class="ruby-identifier">empty?</span>
-22:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 17</span>
+17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_actions</span>(<span class="ruby-identifier">actions</span> = [])    
+18:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/menu/actions&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:actions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">actions</span> } <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">actions</span>.<span class="ruby-identifier">empty?</span>
+19:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000021" class="method-detail">
-        <a name="M000021"></a>
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
-          <a href="#M000021" class="method-signature">
-          <span class="method-name">render_ext_grids</span><span class="method-args">(title, fields, options = {})</span>
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">render_ext_grids</span><span class="method-args">(title, url, fields, options = {})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-renders the grid module of ExtJS and creates a new grid the title will be
-shown on top of the grids the fields will be user for creating the grid and
-for loading data from the json the url will be automatically generated from
-the current controller and action, format: JSON
+renders the grid module of ExtJS and creates a new grid the title is shown
+on top of the grids the fields are used for creating the grid and for
+loading data from the json
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000021-source">
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 28</span>
-28:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_ext_grids</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">options</span> = {})
-29:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/grids/list&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> {
-30:                           <span class="ruby-identifier">:remote_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url_for</span>(<span class="ruby-identifier">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:controller</span>], <span class="ruby-identifier">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:json</span>),
-31:                           <span class="ruby-identifier">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">title</span>,
-32:                           <span class="ruby-identifier">:fields</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fields</span>,
-33:                           <span class="ruby-identifier">:auto_expand</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:auto_expand</span>] }
-34:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 24</span>
+24:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_ext_grids</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">options</span> = {})
+25:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/extjs/list&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> {
+26:                           <span class="ruby-identifier">:remote_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">url</span>,
+27:                           <span class="ruby-identifier">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">title</span>,
+28:                           <span class="ruby-identifier">:fields</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fields</span>,
+29:                           <span class="ruby-identifier">:auto_expand</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:auto_expand</span>] }
+30:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000019" class="method-detail">
-        <a name="M000019"></a>
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
 
         <div class="method-heading">
-          <a href="#M000019" class="method-signature">
-          <span class="method-name">render_main_menu</span><span class="method-args">(current_controller)</span>
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">render_ext_panel</span><span class="method-args">(items = [])</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-renders the main navigation
+renders an Ext.panel object containing several items that can be sorted by
+drag an drop each item should have a title and a html part
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000019-source">
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 4</span>
- 4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_main_menu</span>(<span class="ruby-identifier">current_controller</span>)
- 5:     <span class="ruby-identifier">menu_items</span> = []
- 6:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;pages&quot;</span>, <span class="ruby-identifier">:controllers</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;admin/pages&quot;</span>], <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">root_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>  }
- 7:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;administration&quot;</span>, <span class="ruby-identifier">:controllers</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;admin/administration&quot;</span>,<span class="ruby-value str">&quot;admin/users&quot;</span>,<span class="ruby-value str">&quot;admin/user_groups&quot;</span>], 
- 8:                     <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edit_profile_admin_administration_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
- 9:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;help&quot;</span>, <span class="ruby-identifier">:controllers</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;admin/help&quot;</span>], <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">admin_help_index_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
-10:     
-11:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">menu_item</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">menu_items</span> <span class="ruby-keyword kw">do</span>
-12:       <span class="ruby-identifier">menu_item</span>[<span class="ruby-identifier">:current</span>] = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">menu_item</span>[<span class="ruby-identifier">:controllers</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">current_controller</span>
-13:     <span class="ruby-keyword kw">end</span>
-14:   
-15:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/menu/main_menu&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:menu_items</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">menu_items</span> }
-16:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_ext_panel</span>(<span class="ruby-identifier">items</span> = [])
+35:     <span class="ruby-identifier">items</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">item</span>[<span class="ruby-identifier">:html</span>] = <span class="ruby-identifier">item</span>[<span class="ruby-identifier">:html</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/&quot;/</span>,<span class="ruby-value str">'\&quot;'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\n/</span>,<span class="ruby-value str">''</span>) }
+36:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/extjs/panel&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> {
+37:                         <span class="ruby-identifier">:items</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">items</span>, <span class="ruby-identifier">:random_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">10000</span>)
+38:     }
+39:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -206,39 +201,87 @@ renders the main navigation
 
         <div class="method-heading">
           <a href="#M000024" class="method-signature">
+          <span class="method-name">render_main_menu</span><span class="method-args">(current_controller)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+renders the main navigation
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 4</span>
+ 4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_main_menu</span>(<span class="ruby-identifier">current_controller</span>)
+ 5:     <span class="ruby-identifier">menu_items</span> = []
+ 6:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;pages&quot;</span>, <span class="ruby-identifier">:controllers</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;admin/pages&quot;</span>], <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">root_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>  }
+ 7:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;administration&quot;</span>, <span class="ruby-identifier">:controllers</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;admin/administration&quot;</span>,<span class="ruby-value str">&quot;admin/users&quot;</span>,<span class="ruby-value str">&quot;admin/user_groups&quot;</span>], 
+ 8:                     <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edit_profile_admin_administration_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
+ 9:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;help&quot;</span>, <span class="ruby-identifier">:controllers</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;admin/help&quot;</span>], <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">admin_help_index_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
+10:     
+11:     <span class="ruby-identifier">menu_items</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">:current</span>] = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">:controllers</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">current_controller</span>) }
+12:   
+13:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/menu/main_menu&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:menu_items</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">menu_items</span> }
+14:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <a href="#M000030" class="method-signature">
           <span class="method-name">render_multi_select</span><span class="method-args">(remote_url, fields, options = {})</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
-renders a multi select box
+renders an ExtJS multi select box options:
 </p>
+<ul>
+<li>valueField - defines which JSON attribute contains the selections value
+
+</li>
+<li>showField - defines which JSON attribute contains the shown selection name
+
+</li>
+<li>name - is the multiselects name
+
+</li>
+<li>selected_values - is used for preselecting any values
+
+</li>
+</ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000024-source">
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 48</span>
-48:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_multi_select</span>(<span class="ruby-identifier">remote_url</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">options</span> = {})
-49:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/general/multi_select&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> {
-50:                         <span class="ruby-identifier">:remote_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">remote_url</span>,
-51:                         <span class="ruby-identifier">:fields</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fields</span>,
-52:                         <span class="ruby-identifier">:valueField</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:valueField</span>],
-53:                         <span class="ruby-identifier">:showField</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:showField</span>],
-54:                         <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>],
-55:                         <span class="ruby-identifier">:selected_values</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:selected_values</span>]
-56:     }
-57:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 58</span>
+58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_multi_select</span>(<span class="ruby-identifier">remote_url</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">options</span> = {})
+59:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/general/multi_select&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> {
+60:                         <span class="ruby-identifier">:remote_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">remote_url</span>,
+61:                         <span class="ruby-identifier">:fields</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fields</span>,
+62:                         <span class="ruby-identifier">:valueField</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:valueField</span>],
+63:                         <span class="ruby-identifier">:showField</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:showField</span>],
+64:                         <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:name</span>],
+65:                         <span class="ruby-identifier">:selected_values</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:selected_values</span>]
+66:     }
+67:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000023" class="method-detail">
-        <a name="M000023"></a>
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
 
         <div class="method-heading">
-          <a href="#M000023" class="method-signature">
+          <a href="#M000029" class="method-signature">
           <span class="method-name">render_notifications</span><span class="method-args">()</span>
           </a>
         </div>
@@ -248,23 +291,23 @@ renders a multi select box
 renders the notifications
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000023-source">
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 43</span>
-43:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_notifications</span>
-44:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/general/notifications&quot;</span>
-45:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 48</span>
+48:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_notifications</span>
+49:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/general/notifications&quot;</span>
+50:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000022" class="method-detail">
-        <a name="M000022"></a>
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
 
         <div class="method-heading">
-          <a href="#M000022" class="method-signature">
+          <a href="#M000028" class="method-signature">
           <span class="method-name">render_right_col</span><span class="method-args">(partial_file = &quot;&quot;, locals = {})</span>
           </a>
         </div>
@@ -274,14 +317,14 @@ renders the notifications
 renders the right col
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000022-source">
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 37</span>
-37:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_right_col</span>(<span class="ruby-identifier">partial_file</span> = <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-identifier">locals</span> = {})
-38:     <span class="ruby-identifier">partial_file</span> = <span class="ruby-value str">&quot;right_col&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">partial_file</span>.<span class="ruby-identifier">empty?</span>
-39:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">partial_file</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">locals</span>
-40:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/render_helper.rb, line 42</span>
+42:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_right_col</span>(<span class="ruby-identifier">partial_file</span> = <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-identifier">locals</span> = {})
+43:     <span class="ruby-identifier">partial_file</span> = <span class="ruby-value str">&quot;right_col&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">partial_file</span>.<span class="ruby-identifier">empty?</span>
+44:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">partial_file</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">locals</span>
+45:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

@@ -86,8 +86,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000006">all_users</a>&nbsp;&nbsp;
-      <a href="#M000007">for_user_groups</a>&nbsp;&nbsp;
+      <a href="#M000003">all_users</a>&nbsp;&nbsp;
+      <a href="#M000004">for_user_groups</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -109,31 +109,31 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000007" class="method-detail">
-        <a name="M000007"></a>
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
 
         <div class="method-heading">
-          <a href="#M000007" class="method-signature">
+          <a href="#M000004" class="method-signature">
           <span class="method-name">for_user_groups</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000007-source">
+            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000004-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/permission.rb, line 18</span>
-18:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">for_user_groups</span>
-19:     <span class="ruby-ivar">@permissions</span> = <span class="ruby-constant">Permission</span>.<span class="ruby-identifier">all</span>
-20:     <span class="ruby-ivar">@permissions</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
-21:       <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot; &quot;</span>,<span class="ruby-value str">&quot;_&quot;</span>)
-22:       
-23:     }
-24:     <span class="ruby-comment cmt"># remove permissions with public access</span>
-25:     <span class="ruby-ivar">@permissions</span>.<span class="ruby-identifier">delete_if</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span><span class="ruby-operator">==</span><span class="ruby-value str">&quot;login&quot;</span> }
-26:     <span class="ruby-ivar">@permissions</span>
-27:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/permission.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">for_user_groups</span>
+21:       <span class="ruby-ivar">@permissions</span> = <span class="ruby-constant">Permission</span>.<span class="ruby-identifier">all</span>
+22:       <span class="ruby-ivar">@permissions</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+23:         <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot; &quot;</span>,<span class="ruby-value str">&quot;_&quot;</span>)
+24: 
+25:       }
+26:       <span class="ruby-comment cmt"># remove permissions with public access</span>
+27:       <span class="ruby-ivar">@permissions</span>.<span class="ruby-identifier">delete_if</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span><span class="ruby-operator">==</span><span class="ruby-value str">&quot;login&quot;</span> }
+28:       <span class="ruby-ivar">@permissions</span>
+29:     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -141,19 +141,19 @@
 
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000006" class="method-detail">
-        <a name="M000006"></a>
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
 
         <div class="method-heading">
-          <a href="#M000006" class="method-signature">
+          <a href="#M000003" class="method-signature">
           <span class="method-name">all_users</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000006-source">
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
 <pre>
    <span class="ruby-comment cmt"># File app/models/permission.rb, line 7</span>
 7:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">all_users</span>

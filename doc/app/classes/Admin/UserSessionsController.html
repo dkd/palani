@@ -88,9 +88,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000043">create</a>&nbsp;&nbsp;
-      <a href="#M000044">destroy</a>&nbsp;&nbsp;
-      <a href="#M000042">new</a>&nbsp;&nbsp;
+      <a href="#M000052">create</a>&nbsp;&nbsp;
+      <a href="#M000053">destroy</a>&nbsp;&nbsp;
+      <a href="#M000051">new</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -112,88 +112,97 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000043" class="method-detail">
-        <a name="M000043"></a>
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
 
         <div class="method-heading">
-          <a href="#M000043" class="method-signature">
+          <a href="#M000052" class="method-signature">
           <span class="method-name">create</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+POST /admin/user_sessions
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000043-source">
+            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000052-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/user_sessions_controller.rb, line 17</span>
-17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
-18:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_user</span>
-19:       <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admin_pages_path</span>
-20:     <span class="ruby-keyword kw">else</span>
-21:       <span class="ruby-ivar">@user_session</span> = <span class="ruby-constant">UserSession</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_session</span>])
-22:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user_session</span>.<span class="ruby-identifier">save</span>
-23:         <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'succesful_login'</span>
-24:         <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admin_pages_path</span>
-25:       <span class="ruby-keyword kw">else</span>
-26:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;login&quot;</span>, <span class="ruby-identifier">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
-27:       <span class="ruby-keyword kw">end</span>
-28:     <span class="ruby-keyword kw">end</span>
-29:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/user_sessions_controller.rb, line 21</span>
+21:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
+22:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_user</span>
+23:       <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admin_pages_path</span>
+24:     <span class="ruby-keyword kw">else</span>
+25:       <span class="ruby-ivar">@user_session</span> = <span class="ruby-constant">UserSession</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_session</span>])
+26:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user_session</span>.<span class="ruby-identifier">save</span>
+27:         <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'succesful_login'</span>
+28:         <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admin_pages_path</span>
+29:       <span class="ruby-keyword kw">else</span>
+30:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;login&quot;</span>, <span class="ruby-identifier">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
+31:       <span class="ruby-keyword kw">end</span>
+32:     <span class="ruby-keyword kw">end</span>
+33:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000044" class="method-detail">
-        <a name="M000044"></a>
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
 
         <div class="method-heading">
-          <a href="#M000044" class="method-signature">
+          <a href="#M000053" class="method-signature">
           <span class="method-name">destroy</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+DELETE /admin/user_sessions/:id
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000044-source">
+            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000053-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/user_sessions_controller.rb, line 31</span>
-31:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
-32:     <span class="ruby-identifier">current_user_session</span>.<span class="ruby-identifier">destroy</span>
-33:     <span class="ruby-identifier">reset_lockdown_session</span>
-34:     <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'succesful_logout'</span>
-35:     <span class="ruby-identifier">redirect_back_or_default</span> <span class="ruby-identifier">root_path</span>
-36:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/user_sessions_controller.rb, line 37</span>
+37:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
+38:     <span class="ruby-identifier">current_user_session</span>.<span class="ruby-identifier">destroy</span>
+39:     <span class="ruby-identifier">reset_lockdown_session</span>
+40:     <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'succesful_logout'</span>
+41:     <span class="ruby-identifier">redirect_back_or_default</span> <span class="ruby-identifier">root_path</span>
+42:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000042" class="method-detail">
-        <a name="M000042"></a>
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
 
         <div class="method-heading">
-          <a href="#M000042" class="method-signature">
+          <a href="#M000051" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+GET /admin/user_sessions/new
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000042-source">
+            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000051-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/user_sessions_controller.rb, line 8</span>
- 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
- 9:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_user</span>
-10:       <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admin_pages_path</span>
-11:     <span class="ruby-keyword kw">else</span>
-12:       <span class="ruby-ivar">@user_session</span> = <span class="ruby-constant">UserSession</span>.<span class="ruby-identifier">new</span>
-13:       <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;login&quot;</span>, <span class="ruby-identifier">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
-14:     <span class="ruby-keyword kw">end</span>
-15:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/user_sessions_controller.rb, line 10</span>
+10:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
+11:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_user</span>
+12:       <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">admin_pages_path</span>
+13:     <span class="ruby-keyword kw">else</span>
+14:       <span class="ruby-ivar">@user_session</span> = <span class="ruby-constant">UserSession</span>.<span class="ruby-identifier">new</span>
+15:       <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;login&quot;</span>, <span class="ruby-identifier">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
+16:     <span class="ruby-keyword kw">end</span>
+17:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

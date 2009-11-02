@@ -88,13 +88,12 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000036">create</a>&nbsp;&nbsp;
-      <a href="#M000041">destroy</a>&nbsp;&nbsp;
-      <a href="#M000038">edit</a>&nbsp;&nbsp;
-      <a href="#M000039">index</a>&nbsp;&nbsp;
-      <a href="#M000035">new</a>&nbsp;&nbsp;
-      <a href="#M000037">show</a>&nbsp;&nbsp;
-      <a href="#M000040">update</a>&nbsp;&nbsp;
+      <a href="#M000046">create</a>&nbsp;&nbsp;
+      <a href="#M000050">destroy</a>&nbsp;&nbsp;
+      <a href="#M000047">edit</a>&nbsp;&nbsp;
+      <a href="#M000048">index</a>&nbsp;&nbsp;
+      <a href="#M000045">new</a>&nbsp;&nbsp;
+      <a href="#M000049">update</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -102,6 +101,16 @@
 
 
     <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">ActionView::Helpers::JavaScriptHelper</span>
+        <span class="include-name">ActionView::Helpers::TagHelper</span>
+        <span class="include-name">ActionController::UrlWriter</span>
+        <span class="include-name">ActionView::Helpers::AssetTagHelper</span>
+      </div>
+    </div>
 
     <div id="section">
 
@@ -116,226 +125,204 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000036" class="method-detail">
-        <a name="M000036"></a>
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
 
         <div class="method-heading">
-          <a href="#M000036" class="method-signature">
+          <a href="#M000046" class="method-signature">
           <span class="method-name">create</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+POST /admin/users AJAX
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000036-source">
+            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000046-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 20</span>
-20:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
-21:     <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>][<span class="ruby-identifier">:user_group_ids</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>]
-22:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>])
-23:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">save</span>
-24:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;index&quot;</span>
-25:     <span class="ruby-keyword kw">else</span>
-26:       <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:error</span>] = <span class="ruby-value str">'check_your_input'</span>
-27:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;new&quot;</span>
-28:     <span class="ruby-keyword kw">end</span>
-29:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
-30:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@partial_file</span>
-31:     <span class="ruby-keyword kw">end</span>
-32:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 18</span>
+18:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
+19:     <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>][<span class="ruby-identifier">:user_group_ids</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>]
+20:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>])
+21:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">save</span>
+22:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;index&quot;</span>
+23:     <span class="ruby-keyword kw">else</span>
+24:       <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:error</span>] = <span class="ruby-value str">'check_your_input'</span>
+25:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;new&quot;</span>
+26:     <span class="ruby-keyword kw">end</span>
+27:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+28:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@partial_file</span>
+29:     <span class="ruby-keyword kw">end</span>
+30:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000041" class="method-detail">
-        <a name="M000041"></a>
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
 
         <div class="method-heading">
-          <a href="#M000041" class="method-signature">
+          <a href="#M000050" class="method-signature">
           <span class="method-name">destroy</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+DELETE /admin/users/:id AJAX
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000041-source">
+            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000050-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 87</span>
-87:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
-88:     <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-89:     <span class="ruby-identifier">user</span>.<span class="ruby-identifier">destroy</span>
-90:     <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'deleted_succesfully'</span>
-91:     
-92:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
-93:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;index&quot;</span>
-94:     <span class="ruby-keyword kw">end</span>
-95:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 82</span>
+82:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
+83:     <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+84:     <span class="ruby-identifier">user</span>.<span class="ruby-identifier">destroy</span>
+85:     <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'deleted_succesfully'</span>
+86:     
+87:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+88:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;index&quot;</span>
+89:     <span class="ruby-keyword kw">end</span>
+90:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000038" class="method-detail">
-        <a name="M000038"></a>
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
 
         <div class="method-heading">
-          <a href="#M000038" class="method-signature">
+          <a href="#M000047" class="method-signature">
           <span class="method-name">edit</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+GET /admin/users/:id/edit AJAX
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000038-source">
+            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000047-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 38</span>
-38:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit</span>
-39:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-40:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-41:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;edit&quot;</span>
-42:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {
-43:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;index&quot;</span>
-44:       }
-45:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">js</span> {
-46:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
-47:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@partial_file</span>
-48:         <span class="ruby-keyword kw">end</span>
-49:       }
-50:     <span class="ruby-keyword kw">end</span>
-51:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit</span>
+35:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+36:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+37:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;edit&quot;</span>
+38:     <span class="ruby-keyword kw">end</span>
+39:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000039" class="method-detail">
-        <a name="M000039"></a>
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
 
         <div class="method-heading">
-          <a href="#M000039" class="method-signature">
+          <a href="#M000048" class="method-signature">
           <span class="method-name">index</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+GET /admin/users GET /admin/users AJAX GET /admin/users.json
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000039-source">
+            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000048-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 53</span>
-53:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
-54:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-55:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;admin/users/index&quot;</span>
-56:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span>
-57:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">js</span> {
-58:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
-59:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'left_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">render_administration_sub_menu</span>(<span class="ruby-value str">&quot;index&quot;</span>)
-60:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;index&quot;</span>
-61:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'right_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">render_right_col</span>
-62:         <span class="ruby-keyword kw">end</span>
-63:       }
-64:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> {
-65:           <span class="ruby-identifier">users</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">not_deleted</span>.<span class="ruby-identifier">grid_data</span>
-66:           <span class="ruby-identifier">users</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-identifier">u</span>[<span class="ruby-identifier">:actions</span>] = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">actions</span> }
-67:           <span class="ruby-identifier">render</span> <span class="ruby-identifier">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:root</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">users</span> }
-68:       }
-69:     <span class="ruby-keyword kw">end</span>
-70:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 45</span>
+45:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
+46:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+47:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;admin/users/index&quot;</span>
+48:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span>
+49:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">js</span> {
+50:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+51:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'left_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">render_administration_sub_menu</span>(<span class="ruby-value str">&quot;index&quot;</span>)
+52:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;index&quot;</span>
+53:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'right_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">render_right_col</span>
+54:         <span class="ruby-keyword kw">end</span>
+55:       }
+56:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> {
+57:           <span class="ruby-ivar">@users</span> = <span class="ruby-identifier">actionize</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">grid_data</span>
+58:           <span class="ruby-identifier">render</span> <span class="ruby-identifier">:json</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:root</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@users</span> }
+59:       }
+60:     <span class="ruby-keyword kw">end</span>
+61:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000035" class="method-detail">
-        <a name="M000035"></a>
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
 
         <div class="method-heading">
-          <a href="#M000035" class="method-signature">
+          <a href="#M000045" class="method-signature">
           <span class="method-name">new</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+GET /admin/users/new AJAX
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000035-source">
+            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000045-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 5</span>
- 5:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
- 6:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>      
- 7:       <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
- 8:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;new&quot;</span>
- 9:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> {
-10:           <span class="ruby-identifier">render</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:index</span>
-11:       }
-12:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">js</span> {
-13:         <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
-14:           <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@partial_file</span>
-15:         <span class="ruby-keyword kw">end</span>
-16:       }
-17:     <span class="ruby-keyword kw">end</span>
-18:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 9</span>
+ 9:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
+10:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>
+11:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+12:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;new&quot;</span>
+13:     <span class="ruby-keyword kw">end</span>
+14:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
       </div>
 
-      <div id="method-M000037" class="method-detail">
-        <a name="M000037"></a>
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
 
         <div class="method-heading">
-          <a href="#M000037" class="method-signature">
-          <span class="method-name">show</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000037-source">
-<pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 34</span>
-34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show</span>
-35:     <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">current_user</span>
-36:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000040" class="method-detail">
-        <a name="M000040"></a>
-
-        <div class="method-heading">
-          <a href="#M000040" class="method-signature">
+          <a href="#M000049" class="method-signature">
           <span class="method-name">update</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+PUT /admin/users/:id AJAX
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000040-source">
+            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000049-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 72</span>
-72:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
-73:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
-74:     <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>][<span class="ruby-identifier">:user_group_ids</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>]
-75:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>])
-76:       <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'changes_saved_succesfully'</span>
-77:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;/admin/users/index&quot;</span>
-78:     <span class="ruby-keyword kw">else</span>
-79:       <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:error</span>] = <span class="ruby-value str">'check_your_input'</span>
-80:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;edit&quot;</span>
-81:     <span class="ruby-keyword kw">end</span>
-82:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
-83:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@partial_file</span>
-84:     <span class="ruby-keyword kw">end</span>
-85:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/controllers/admin/users_controller.rb, line 65</span>
+65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
+66:     <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:id</span>])
+67:     <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>][<span class="ruby-identifier">:user_group_ids</span>] = <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user_groups</span>]
+68:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:user</span>])
+69:       <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'changes_saved_succesfully'</span>
+70:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;/admin/users/index&quot;</span>
+71:     <span class="ruby-keyword kw">else</span>
+72:       <span class="ruby-identifier">flash</span>.<span class="ruby-identifier">now</span>[<span class="ruby-identifier">:error</span>] = <span class="ruby-value str">'check_your_input'</span>
+73:       <span class="ruby-ivar">@partial_file</span> = <span class="ruby-value str">&quot;edit&quot;</span>
+74:     <span class="ruby-keyword kw">end</span>
+75:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:update</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+76:       <span class="ruby-identifier">page</span>[<span class="ruby-value str">'middle_col'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@partial_file</span>
+77:     <span class="ruby-keyword kw">end</span>
+78:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

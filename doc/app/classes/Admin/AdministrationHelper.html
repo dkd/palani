@@ -80,7 +80,7 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000017">render_administration_sub_menu</a>&nbsp;&nbsp;
+      <a href="#M000022">render_administration_sub_menu</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -102,33 +102,35 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000017" class="method-detail">
-        <a name="M000017"></a>
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
 
         <div class="method-heading">
-          <a href="#M000017" class="method-signature">
+          <a href="#M000022" class="method-signature">
           <span class="method-name">render_administration_sub_menu</span><span class="method-args">(current_action)</span>
           </a>
         </div>
       
         <div class="method-description">
+          <p>
+renders the sub navigation for the administration section
+</p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000017-source">
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/helpers/admin/administration_helper.rb, line 2</span>
- 2:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_administration_sub_menu</span>(<span class="ruby-identifier">current_action</span>)
- 3:     <span class="ruby-identifier">menu_items</span> = []
- 4:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;edit_profile&quot;</span>, <span class="ruby-identifier">:actions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;edit_profile&quot;</span>], 
- 5:                                              <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edit_profile_admin_administration_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
- 6:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;list_users&quot;</span>, <span class="ruby-identifier">:actions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;index&quot;</span>,<span class="ruby-value str">&quot;edit&quot;</span>,<span class="ruby-value str">&quot;new&quot;</span>], <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">admin_users_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
- 7:     
- 8:     <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">menu_item</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">menu_items</span>
- 9:       <span class="ruby-identifier">menu_item</span>[<span class="ruby-identifier">:current</span>] = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">menu_item</span>[<span class="ruby-identifier">:actions</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">current_action</span>)
-10:     <span class="ruby-keyword kw">end</span>
-11:     
-12:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/menu/sub_menu&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:menu_items</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">menu_items</span> }
-13:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/admin/administration_helper.rb, line 4</span>
+ 4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_administration_sub_menu</span>(<span class="ruby-identifier">current_action</span>)
+ 5:     <span class="ruby-identifier">menu_items</span> = []
+ 6:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;edit_profile&quot;</span>, <span class="ruby-identifier">:actions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;edit_profile&quot;</span>], 
+ 7:                                              <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edit_profile_admin_administration_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
+ 8:     <span class="ruby-identifier">menu_items</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;list_users&quot;</span>, <span class="ruby-identifier">:actions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;index&quot;</span>,<span class="ruby-value str">&quot;edit&quot;</span>,<span class="ruby-value str">&quot;new&quot;</span>], <span class="ruby-identifier">:link_to</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">admin_users_path</span>, <span class="ruby-identifier">:current</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span> }
+ 9:     
+10:     <span class="ruby-comment cmt"># check, which page is currently viewed</span>
+11:     <span class="ruby-identifier">menu_items</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">:current</span>] = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">:actions</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">current_action</span>) }
+12:     
+13:     <span class="ruby-identifier">render</span> <span class="ruby-identifier">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;admin/menu/sub_menu&quot;</span>, <span class="ruby-identifier">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:menu_items</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">menu_items</span> }
+14:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
