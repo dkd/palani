@@ -9,10 +9,10 @@ class Admin::PagesController < ApplicationController
   # GET /admin/pages/:id                                                    AJAX
   #-----------------------------------------------------------------------------
   def show
-    @partial_file = "show"
     @page = Page.find(params[:id])
+    @content_elements = @page.content_elements
     render :update do |page|
-      page['middle_content'].replace_html :partial => @partial_file
+      page['middle_content'].replace_html :partial => "show"
     end
   end
 
@@ -51,14 +51,14 @@ class Admin::PagesController < ApplicationController
       flash.now[:notice] = 'changes_saved_succesfully'
       render :update do |page|
         page['notifications'].replace_html render_notifications
-        page['middle_content'].replace_html :partial => "administration", 
+        page['administrate_page'].replace_html :partial => "administration", 
                                             :locals => { :collapsed => true }
       end
     else
       flash.now[:error] = 'check_your_input'
       render :update do |page|
         page['notifications'].replace_html render_notifications
-        page['middle_content'].replace_html :partial => "administration", 
+        page['administrate_page'].replace_html :partial => "administration", 
                                             :locals => { :collapsed => false }
       end
     end

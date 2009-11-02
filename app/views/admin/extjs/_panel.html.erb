@@ -13,7 +13,7 @@
       }];
       
       var viewport = new Ext.Panel({
-          renderTo : "panel",
+          renderTo : "panel_<%= random_id %>",
           items:[{
               xtype:'portal',
               margins:'35 5 5 0',
@@ -37,4 +37,4 @@
 
   
 </script>
-<div id="panel"></div>
+<div id="panel_<%= random_id %>" class="panel"></div>

@@ -74,11 +74,6 @@ describe Admin::PagesController do
         response.should_not be_success
       end
       
-      it "should render the show partial" do
-        get :show, :id => @page.id
-        controller.send(:instance_variable_get, :@partial_file).should eql "show"
-      end
-      
       it "should render the page having the id send as parameter" do
         get :show, :id => @page.id
         controller.send(:instance_variable_get, :@page).id.should eql @page.id

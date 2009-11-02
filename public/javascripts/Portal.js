@@ -146,6 +146,10 @@ Ext.extend(Ext.ux.Portal.DropZone, Ext.dd.DropTarget, {
     },
 
     notifyDrop : function(dd, e, data){
+	
+				alert(this.portal.id);
+				alert(e.getId);
+	
         delete this.grid;
         if(!this.lastPos){
             return;

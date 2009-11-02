@@ -6,7 +6,12 @@ class ContentElement < ActiveRecord::Base
   validates_associated :page
   validates_presence_of :type
   
+  acts_as_tree
   acts_as_taggable_on :tags
   acts_as_paranoid
+  
+  def administration_partial
+    "admin/content_elements/types/content_element/administration"
+  end
   
 end

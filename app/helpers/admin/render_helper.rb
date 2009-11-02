@@ -34,7 +34,7 @@ module Admin::RenderHelper
   def render_ext_panel(items = [])
     items.each { |item| item[:html] = item[:html].gsub(/"/,'\"').gsub(/\n/,'') }
     render :partial => "admin/extjs/panel", :locals => {
-                        :items => items
+                        :items => items, :random_id => rand(10000)
     }
   end
   

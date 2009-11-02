@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091027133328) do
+ActiveRecord::Schema.define(:version => 20091102091052) do
 
   create_table "content_element_htmls", :force => true do |t|
     t.integer  "content_element_id"
@@ -37,21 +37,23 @@ ActiveRecord::Schema.define(:version => 20091027133328) do
 
   create_table "content_elements", :force => true do |t|
     t.integer  "page_id"
-    t.integer  "parent_id",   :default => 0
-    t.string   "type",        :default => "ContentElement"
+    t.string   "element_type", :default => "ContentElement"
     t.string   "header"
     t.string   "header_type"
     t.datetime "starttime"
     t.datetime "endtime"
-    t.integer  "sort",        :default => 0
-    t.boolean  "hidden",      :default => true
+    t.integer  "sort",         :default => 0
+    t.boolean  "hidden",       :default => true
     t.integer  "column"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tags"
     t.integer  "element_id"
     t.datetime "deleted_at"
+    t.string   "ancestry"
   end
+
+  add_index "content_elements", ["ancestry"], :name => "index_content_elements_on_ancestry"
 
   create_table "notices", :force => true do |t|
     t.integer  "user_id"
@@ -66,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20091027133328) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.integer  "parent_id",        :default => 1,               :null => false
+    t.integer  "parent_id"
     t.datetime "starttime"
     t.datetime "endtime"
     t.integer  "sorting"

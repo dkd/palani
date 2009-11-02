@@ -1702,7 +1702,7 @@ body.x-body-masked .x-window-plain .x-window-mc {
 /**
  * Panel
  */
-#panel .x-panel-body {
+.panel .x-panel-body {
 	border: none !important;
 }
 
@@ -1741,17 +1741,17 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	border: none;
 }
 
-#panel .x-tool-close {
+.panel .x-tool-close {
 	background-image: url(../../../../images/icons/close.png);
 	background-position: 0 0;
 }
 
-#panel .x-tool-toggle {
+.panel .x-tool-toggle {
 	background-image: url(../../../../images/icons/up.png);
 	background-position: 0 0;
 }
 
-#panel .x-panel-collapsed .x-tool-toggle {
+.panel .x-panel-collapsed .x-tool-toggle {
 	background-image: url(../../../../images/icons/down.png) !important;
 }
 
@@ -1777,15 +1777,31 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	display: none;
 }
 
-#panel .x-panel-header-text {
+.panel .x-panel-header-text {
 	cursor: pointer !important;
 }
 
-#panel .x-portal-column {
+.panel .x-portal-column {
 	padding: 0 !important;
 	width: 100% !important;
 }
 
-#panel .x-portal-column .x-portlet {
+.panel .x-portal-column .x-portlet {
 	width: 100% !important;
+}
+
+.x-tree-node {
+	padding: 0 !important;
+}
+
+.x-tree-node .x-tree-node-el {
+	padding: 2px !important;
+}
+
+.x-tree-node .x-tree-selected {
+	background-color: #FF4F4F !important;
+}
+
+.x-tree-node .x-tree-selected a span {
+	color: #FFF !important;
 }
