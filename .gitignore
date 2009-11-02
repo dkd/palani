@@ -1,6 +1,7 @@
 .svn
 **/.svn
 .DS_STORE
+**/.DS_STORE
 .project
 .loadpath
 tmp/**/*
