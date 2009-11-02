@@ -1,27 +1,27 @@
 <% remote_form_for [:admin, user] do |f| %>
 	  	
 	<fieldset>
-		<%= f.label :username, t('.user')+':' %>
+		<%= f.label :username, t('.user') %>
 		<%= f.text_field :username %>
 	</fieldset>
 	
 	<fieldset>
-		<%= f.label :surname, t('.surname')+':' %>
+		<%= f.label :surname, t('.surname') %>
 		<%= f.text_field :surname %>
 	</fieldset>
 	
 	<fieldset>
-		<%= f.label :name, t('.name')+':' %>
+		<%= f.label :name, t('.name') %>
 		<%= f.text_field :name %>
 	</fieldset>
 	
 	<fieldset>
-		<%= f.label :email, t('.email')+':' %>
+		<%= f.label :email, t('.email') %>
 		<%= f.text_field :email %>
 	</fieldset>
 	
 	<fieldset>
-		<%= f.label :backend_language, t('.backend_language')+':' %>
+		<%= f.label :backend_language, t('.backend_language') %>
 		<%= f.select :backend_language, options_for_select(backend_languages,@user.backend_language) %>
 	</fieldset>
 	
@@ -33,7 +33,7 @@
 	<% end  %>
 	
 	<fieldset>
-	  <%= f.label :backend_language, t('.user_groups')+':' %>
+	  <%= f.label :backend_language, t('.user_groups') %>
 	  <%= render_multi_select(
 	    url_for( :controller => "admin/user_groups", :action => "index", :format => "json"  ),
 	    [{ :name => "name", :mapping => "user_group.name"  },
@@ -45,12 +45,12 @@
 	<%- if @user==current_user || current_user_is_admin? -%>
 	  
 	  <fieldset>
-	  <%= f.label :password, t(".#{context}.new_password")+':' %>
+	  <%= f.label :password, t(".#{context}.new_password") %>
 	  <%= f.password_field :password %>
 	  </fieldset>
 	  
 	  <fieldset>
-	  <%= f.label :password, t(".#{context}.confirm_new_password")+':' %>
+	  <%= f.label :password, t(".#{context}.confirm_new_password") %>
 	  <%= f.password_field :password_confirmation %>
 	  </fieldset>  	
 	<%- end -%>

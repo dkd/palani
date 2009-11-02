@@ -5,38 +5,38 @@
   <% form_for @user, :url => { :controller => "admin/administration/users" } do |f| %>
   	  	
   	<fieldset>
-  		<%= f.label :username, t('.user')+':' %>
+  		<%= f.label :username, t('.user') %>
   		<%= f.text_field :username %>
   	</fieldset>
   	
   	<fieldset>
-  		<%= f.label :surname, t('.surname')+':' %>
+  		<%= f.label :surname, t('.surname') %>
   		<%= f.text_field :surname %>
   	</fieldset>
   	
   	<fieldset>
-  		<%= f.label :name, t('.name')+':' %>
+  		<%= f.label :name, t('.name') %>
   		<%= f.text_field :name %>
   	</fieldset>
   	
   	<fieldset>
-  		<%= f.label :email, t('.email')+':' %>
+  		<%= f.label :email, t('.email') %>
   		<%= f.text_field :email %>
   	</fieldset>
   	
   	<fieldset>
-  		<%= f.label :backend_language, t('.backend_language')+':' %>
+  		<%= f.label :backend_language, t('.backend_language') %>
   		<%= f.select :backend_language, options_for_select(backend_languages,@user.backend_language) %>
   	</fieldset>
   	
   	<%- if @user==current_user -%>  	  
   	  <fieldset>
-  	  <%= f.label :password, t('.new_password')+':' %>
+  	  <%= f.label :password, t('.new_password') %>
   	  <%= f.password_field :password %>
   	  </fieldset>
   	  
   	  <fieldset>
-  	  <%= f.label :password, t('.confirm_new_password')+':' %>
+  	  <%= f.label :password, t('.confirm_new_password') %>
   	  <%= f.password_field :password_confirmation %>
   	  </fieldset>  	
   	<%- end -%>

@@ -4,11 +4,11 @@
   <h2><%= t('.headline') -%></h2>
 <% remote_form_for [:admin, @user_group] do |f|  %>
   <fieldset>
-		<%= f.label :name, t('.name')+':' %>
+		<%= f.label :name, t('.name') %>
 		<%= f.text_field :name %>
 	</fieldset>
 	<fieldset>
-	  <%= f.label :permissions, t('.permissions')+':' %>
+	  <%= f.label :permissions, t('.permissions') %>
 	  <div id="permissions">
 	  <%= render :partial => "permissions" %>
 	  </div>
