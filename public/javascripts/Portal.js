@@ -68,7 +68,13 @@ Ext.extend(Ext.ux.Portal.DropZone, Ext.dd.DropTarget, {
 
     notifyOver : function(dd, e, data){
         var xy = e.getXY(), portal = this.portal, px = dd.proxy;
-
+				var drop_element = this.portal.ownerCt.getId();
+				var drag_element = dd.panel.ownerCt.ownerCt.ownerCt.getId();
+				
+				if(drop_element!=drag_element) {
+					return;
+				}
+				
         // case column widths
         if(!this.grid){
             this.grid = this.getGrid();
@@ -147,9 +153,13 @@ Ext.extend(Ext.ux.Portal.DropZone, Ext.dd.DropTarget, {
 
     notifyDrop : function(dd, e, data){
 	
-				alert(this.portal.id);
-				alert(e.getId);
-	
+				var drop_element = this.portal.ownerCt.getId();
+				var drag_element = dd.panel.ownerCt.ownerCt.ownerCt.getId();
+				
+				if(drop_element!=drag_element) {
+					return;
+				}
+				
         delete this.grid;
         if(!this.lastPos){
             return;
