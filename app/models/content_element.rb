@@ -18,7 +18,7 @@ class ContentElement < ActiveRecord::Base
     self.page_id = page_id
     sort = 1
     
-    if content_element_id
+    if content_element_id.present?
       sort = ContentElement.find(content_element_id).sort
     end
     
