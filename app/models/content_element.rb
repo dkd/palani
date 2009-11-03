@@ -11,6 +11,7 @@ class ContentElement < ActiveRecord::Base
   acts_as_taggable_on :tags
   acts_as_paranoid
   
+  named_scope :sorted, :order => :sort
   named_scope :having_sort_bigger_than, lambda { |*args| { :conditions => ["sort >= ?", (args.first)] } }
   
   def from_content_element(page_id, content_element_id=nil)
@@ -19,10 +20,11 @@ class ContentElement < ActiveRecord::Base
     sort = 1
     
     if content_element_id.present?
-      sort = ContentElement.find(content_element_id).sort
+      sort = ContentElement.find(content_element_id).sort+1
     end
     
     Page.find(page_id).content_elements.having_sort_bigger_than(sort).each{ |c| c.update_attributes :sort => c.sort+1 }
+    update_attributes :sort => sort
   end
   
   # returns the icon, that is used for the backend

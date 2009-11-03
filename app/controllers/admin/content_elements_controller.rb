@@ -20,7 +20,7 @@ class Admin::ContentElementsController < ApplicationController
     end
     
     @page = Page.find(params[:page_id])
-    @content_elements = @page.content_elements
+    @content_elements = @page.content_elements.sorted
     render :update do |page|
       page['middle_content'].replace_html :partial => @partial_file
     end

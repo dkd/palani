@@ -10,7 +10,7 @@ class Admin::PagesController < ApplicationController
   #-----------------------------------------------------------------------------
   def show
     @page = Page.find(params[:id])
-    @content_elements = @page.content_elements
+    @content_elements = @page.content_elements.sorted
     render :update do |page|
       page['middle_content'].replace_html :partial => "show"
     end
