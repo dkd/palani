@@ -9,3 +9,4 @@ de:
         random_subpage: "Zufällige Unterseite"
         ext_url: URL
         shortcut_page_id: Seite
+        does_not_contain_content: Eine Verweis-Seite enthält keine Inhaltselemente.

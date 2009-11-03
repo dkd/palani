@@ -23,11 +23,22 @@
                   items:[
                   <% for item in items %>
                   {
+                      id: '<%= item[:id] %>',
                       title: '<%= item[:title] %>',
+                      <% if item[:static] %>
+                      collapsible : false,
+                      <% end %>
                       tools: tools,
                       html: "<%= item[:html] %>",
                       collapsed: <%= item[:collapsed] ? "true" : "false" %>,
-                      titleCollapse: true
+                      titleCollapse: <%= item[:static] ? "false" : "true" %>,
+                      <% if item[:toolbar] %>
+                      cls: 'x-portlet panel_with_toolbar',
+                      bbar: {
+                        xtype: 'panel',
+                        html: '<%= item[:toolbar] %>'
+                      }
+                      <% end %>
                   },
                   <% end %>]
               }]

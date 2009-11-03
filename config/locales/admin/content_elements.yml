@@ -1,0 +1,12 @@
+en:
+  admin:
+    content_elements:
+      add_new: Add a new content element
+      new:
+        headline: Add content element
+        general_options: General options
+        type_settings: Properties
+        tags: Tags
+        access: Access
+        header: Headline
+        submit_text: Add

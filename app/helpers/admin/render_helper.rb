@@ -32,7 +32,10 @@ module Admin::RenderHelper
   # renders an Ext.panel object containing several items that can be sorted by drag an drop
   # each item should have a title and a html part
   def render_ext_panel(items = [])
-    items.each { |item| item[:html] = item[:html].gsub(/"/,'\"').gsub(/\n/,'') }
+    items.each { |item| 
+        item[:html] = item[:html].gsub(/"/,'\"').gsub(/\n/,'')
+        item[:id] ||= rand(10000)
+    }
     render :partial => "admin/extjs/panel", :locals => {
                         :items => items, :random_id => rand(10000)
     }
@@ -47,6 +50,13 @@ module Admin::RenderHelper
   # renders the notifications
   def render_notifications
     render :partial => "admin/general/notifications"
+  end
+  
+  # renders the page path
+  def render_page_path
+    @page_path = ""
+    @page.ancestry.split("/").each { |p|  @page_path << Page.find(p).title+" / " } if @page.ancestry
+    render :partial => "admin/general/page_path", :locals => { :page_path => @page_path+@page.title  }
   end
   
   # renders an ExtJS multi select box

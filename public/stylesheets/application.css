@@ -247,3 +247,12 @@ a.add {
     margin: 10px 0 40px 0; }
     #welcome_page ul li {
       margin: 10px 0; }
+
+#top_buttons {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-right: 35px; }
+
+#page_path {
+  padding: 5px; }

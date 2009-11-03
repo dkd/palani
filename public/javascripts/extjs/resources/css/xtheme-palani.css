@@ -1796,6 +1796,33 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	width: 100% !important;
 }
 
+.panel .panel_with_toolbar {
+	margin-bottom: 50px !important;
+	margin-top: 0px !important;
+}
+
+.panel .panel_with_toolbar .x-panel-bbar {
+	float: left;
+	position: relative;
+	bottom: -22px;
+	text-align: center;
+}
+
+.panel .panel_with_toolbar .x-panel-bwrap {
+	overflow: visible !important;
+}
+
+.panel .panel_with_toolbar .x-panel-bbar .x-panel-bwrap {
+	border: none !important;
+}
+.x-panel-bwrap,
+.x-panel-body,
+.x-column-layout-ct,
+.x-column-inner,
+.x-column {
+	overflow: visible !important;
+}
+
 .x-tree-node {
 	padding: 0 !important;
 }

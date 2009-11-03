@@ -1,0 +1,12 @@
+de:
+  admin:
+    content_elements:
+      add_new: Ein neues Inhaltselement hinzufügen
+      new:
+        headline: Neues Inhaltselement hinzufügen
+        general_options: Allgemein
+        type_settings: Eigenschaften
+        tags: Tags
+        access: Zugriff
+        header: Überschrift
+        submit_text: Hinzufügen

@@ -1,0 +1,24 @@
+<div class ="standard_form">
+  <h2><%= t('.headline') -%></h2>
+  <div id="edit_element">
+    <% remote_form_for [:admin, :page, @content_element] do |f| %>
+      <ul class="simple_tabs">
+        <li class="current"><%= t(".general_options") %></li>
+        <li><%= t(".type_settings") %></li>
+        <li><%= t(".tags") %></li>
+        <li><%= t(".access") %></li>
+      </ul>
+      <div class="tab_content current">
+        <fieldset>
+          <legend><%= t(".header") %></legend>
+          <div class="clear">
+            <%= f.label :header, t(".header") %>
+            <%= f.text_field :header %>
+          </div>
+        </fieldset>
+      </div>
+      <%= f.label "" %>
+      <%= f.submit t(".submit_text"), :class => "submit" %>
+    <% end %>
+  </div>
+</div>

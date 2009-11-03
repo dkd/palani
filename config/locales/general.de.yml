@@ -25,3 +25,4 @@ de:
   backend_languages:
     german: Deutsch
     english: Englisch
+  page_path: Pfad zur Seite

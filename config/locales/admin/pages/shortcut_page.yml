@@ -9,3 +9,4 @@ en:
         random_subpage: Random subpage
         ext_url: URL
         shortcut_page_id: Page
+        does_not_contain_content: A shortcut page does not contain any content elements.

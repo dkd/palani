@@ -15,8 +15,10 @@ Ext.onReady(function(){
     // create the Grid
     var grid = new Ext.grid.GridPanel({
         store: store,
-        columns: <%= fields.collect{ |f| { :id => f[:name], :header => t('.'+f[:name]) , :width => f[:width], :name => f[:data_index], 
-											 :dataIndex => f[:data_index], :sortable => true } }.to_json -%>,
+        columns: <%= fields.collect{ |f| 
+                                      { :id => f[:name], :header => t('.'+f[:name]) , 
+                                        :width => f[:width], :name => f[:data_index], 
+											                  :dataIndex => f[:data_index], :sortable => true } }.to_json -%>,
         stripeRows: true,
 		    autoExpandColumn: '<%= auto_expand -%>',
 		    autoHeight: true,
