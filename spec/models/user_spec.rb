@@ -12,16 +12,6 @@ describe User do
     @user.user_groups << @user_group
   end
   
-  context "actions" do
-    it "should return something" do
-      @user.actions.should_not be_empty
-    end
-
-    it "should return a string" do
-      @user.actions.should be_a String
-    end
-  end
-  
   describe "named scopes" do
     
     it "should have a named scope called `grid_data`"

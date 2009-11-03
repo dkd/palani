@@ -18,13 +18,12 @@ describe ContentElement do
     end
 
     it "should not be valid without a page" do
-      @content_element.page_id = nil
       @content_element.page = nil
       @content_element.should_not be_valid
     end
     
     it "should not be valid without a type" do
-      @content_element.type = nil
+      @content_element.element_type = nil
       @content_element.should_not be_valid
     end
     

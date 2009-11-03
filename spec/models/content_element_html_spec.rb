@@ -14,7 +14,7 @@ describe ContentElementHtml do
 
     it "should not be valid without html" do
       @content_element.html = nil
-      @content_element.should be_valid
+      @content_element.should_not be_valid
     end
     
     it "should belong to a ContentElement"

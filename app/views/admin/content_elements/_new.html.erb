@@ -18,6 +18,8 @@
         </fieldset>
       </div>
       <%= f.label "" %>
+      <%= hidden_field_tag "page_id", params[:page] %>
+      <%= hidden_field_tag "content_element_id", params[:content_element]  %>
       <%= f.submit t(".submit_text"), :class => "submit" %>
     <% end %>
   </div>

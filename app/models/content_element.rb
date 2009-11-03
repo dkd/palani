@@ -3,12 +3,27 @@ class ContentElement < ActiveRecord::Base
   belongs_to :page
   has_many :notices
   
+  validates_presence_of :page_id
   validates_associated :page
-  validates_presence_of :type
+  validates_presence_of :element_type
   
   acts_as_tree
   acts_as_taggable_on :tags
   acts_as_paranoid
+  
+  named_scope :having_sort_bigger_than, lambda { |*args| { :conditions => ["sort >= ?", (args.first)] } }
+  
+  def from_content_element(page_id, content_element_id=nil)
+    element_type = "ContentElement"
+    self.page_id = page_id
+    sort = 1
+    
+    if content_element_id
+      sort = ContentElement.find(content_element_id).sort
+    end
+    
+    Page.find(page_id).content_elements.having_sort_bigger_than(sort).each{ |c| c.update_attributes :sort => c.sort+1 }
+  end
   
   # returns the icon, that is used for the backend
   def icon

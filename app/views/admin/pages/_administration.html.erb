@@ -1,6 +1,6 @@
 <%= render :partial => "admin/pages/tree/update_node", :locals => { :id => @page.id, :title => @page.title } %>
 <%= render_ext_panel([
-    { :title => t(".edit"), :html => render(:partial => "edit"), :collapsed => collapsed }
+    { :title => t(".edit"), :html => render(:partial => "admin/pages/edit"), :collapsed => collapsed }
   ]) %>
 <div id="simple_tabs_javascript">
   <%= render :partial => "admin/pages/edit/simple_tabs" %>

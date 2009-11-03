@@ -14,7 +14,7 @@ describe ContentElementText do
 
     it "should not be valid without a text" do
       @content_element.text = nil
-      @content_element.should be_valid
+      @content_element.should_not be_valid
     end
     
     it "should belong to a ContentElement"
