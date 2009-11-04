@@ -17,8 +17,8 @@ de:
   actions: Aktionen
   close: Schließen
   loading: Laden..
-  added_succesfully: The record has been inserted succesfully.
-  deleted_succesfully: The record has been deleted succesfully.
+  added_succesfully: Der Datensatz wurde erfolgreich eingefügt.
+  deleted_succesfully: Der Datensatz wurde erfolgreich gelöscht.
   clear_select: Auswahl löschen
   new_page: Neue Seite
   show: Anzeigen

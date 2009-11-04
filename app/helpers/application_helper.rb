@@ -8,7 +8,7 @@ module ApplicationHelper
   # returns all backend languages, that are defined in config/application.yml
   def backend_languages
     languages = Settings.backend.languages.to_a
-    languages.each { |r| r[0] = t "backend_languages."+r[0] }
+    languages.each { |r| r[0] = t("backend_languages."+r[0]) }
   end
   
   # renders the settings for a given item
@@ -22,8 +22,9 @@ module ApplicationHelper
     elsif item.is_a? ContentElement
       @type = Kernel.const_get(item.element_type)
       unless @type.edit_fields.empty?
-        render :partial => "/admin/content_elements/edit/settings", :locals => { :fields => @type.edit_fields,
-                                                            :type => "#{item.class.to_s.underscore}[]#{@type.class.to_s.underscore}"  }
+        render :partial => "admin/content_elements/types/#{element_type.underscore}/settings", 
+                            :locals => { :fields => @type.edit_fields, 
+                                         :type => "#{item.class.to_s.underscore}[]#{@type.class.to_s.underscore}"  }
       else
         render :partial => "/admin/content_elements/edit/no_settings"
       end

@@ -26,7 +26,7 @@ class ContentElement < ActiveRecord::Base
     end
     
     Page.find(page_id).content_elements.having_sort_bigger_than(sort).each{ |c| c.update_attributes :sort => c.sort+1 }
-    update_attributes :sort => sort
+    save
   end
   
   # creates the specified element type, e.g. ContentElementText

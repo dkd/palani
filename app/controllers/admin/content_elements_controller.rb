@@ -3,26 +3,31 @@ class Admin::ContentElementsController < ApplicationController
   # GET /admin/pages/:page_id/content_elements/new                        AJAX
   #----------------------------------------------------------------------------
   def new
-    @content_element = ContentElement.new #from_content_element params[:page], params[:content_element]
+    @content_element = ContentElement.create
+    @content_element.from_content_element(params[:page], params[:content_element])
+    @content_element.save
+    @page = Page.find(params[:page])
+    flash.now[:notice] = "added_succesfully"
+    
     render :update do |page|
-      page['middle_content'].replace_html :partial => "new"
+      page['notifications'].replace_html render_notifications
+      page['middle_content'].replace_html :partial => "edit"
     end
   end
   
-  # POST /admin/pages/:page_id/content_elements                            AJAX
+  # PUT /admin/pages/:page_id/content_elements/                            AJAX
   #-----------------------------------------------------------------------------
-  def create
-    @content_element = ContentElement.new(params[:content_element])
-    @content_element.from_content_element params[:page_id], params[:content_element_id]
+  def update
+    @content_element = ContentElement.find(params[:id])
     
-    if @content_element.save
+    if @content_element.update_attributes(params[:content_element])
       @partial_file = "admin/pages/show"
+      @page = Page.find(params[:page_id])
+      @content_elements = @page.content_elements.sorted
     else
-      @partial_file = "new"
+      @partial_file = "edit"
     end
     
-    @page = Page.find(params[:page_id])
-    @content_elements = @page.content_elements.sorted
     render :update do |page|
       page['middle_content'].replace_html :partial => @partial_file
     end
