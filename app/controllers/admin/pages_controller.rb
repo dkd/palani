@@ -100,7 +100,7 @@ class Admin::PagesController < ApplicationController
     render :update do |page|
       page['type_settings'].replace_html :partial => "/admin/pages/edit/settings", 
                                          :locals => { :fields => @page.edit_fields, :type => @page.type.underscore }
-      page['simple_tabs_javascript'].replace_html :partial => "/admin/pages/edit/simple_tabs"
+      page['simple_tabs_javascript'].replace_html :partial => "/admin/pages/edit/change_settings"
     end
   end
   

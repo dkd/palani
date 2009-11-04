@@ -1,4 +1,4 @@
-$("a.remote-link").live("click", function() {
+$("a.remote-link").livequery("click", function() {
 	
 	$.ajax({ method: "get", 
 	 	 dataType: "script",
