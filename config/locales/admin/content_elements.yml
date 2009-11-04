@@ -3,10 +3,18 @@ en:
     content_elements:
       add_new: Add a new content element
       new:
+        content_element: Contentelement
         headline: Add content element
         general_options: General options
         type_settings: Properties
         tags: Tags
-        access: Access
         header: Headline
         submit_text: Add
+        element_type: Content type
+        hidden: Hidden?
+        visibility: Visibility
+      types:
+        content_element: Container
+        content_element_text: Text
+        content_element_image: Images
+        content_element_html: HTML

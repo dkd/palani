@@ -3,10 +3,18 @@ de:
     content_elements:
       add_new: Ein neues Inhaltselement hinzufügen
       new:
+        content_element: Inhaltselement
         headline: Neues Inhaltselement hinzufügen
         general_options: Allgemein
         type_settings: Eigenschaften
         tags: Tags
-        access: Zugriff
         header: Überschrift
         submit_text: Hinzufügen
+        element_type: Inhaltstyp
+        hidden: Versteckt?
+        visibility: Sichtbarkeit
+      types:
+        content_element: Container
+        content_element_text: Textelement
+        content_element_image: Bilder
+        content_element_html: HTML

@@ -14,6 +14,8 @@ class ContentElement < ActiveRecord::Base
   named_scope :sorted, :order => :sort
   named_scope :having_sort_bigger_than, lambda { |*args| { :conditions => ["sort >= ?", (args.first)] } }
   
+  # defines the specified page and position on which the new content element should be created
+  # if there is no position definied, the new content element will be placed on top
   def from_content_element(page_id, content_element_id=nil)
     element_type = "ContentElement"
     self.page_id = page_id
@@ -25,6 +27,12 @@ class ContentElement < ActiveRecord::Base
     
     Page.find(page_id).content_elements.having_sort_bigger_than(sort).each{ |c| c.update_attributes :sort => c.sort+1 }
     update_attributes :sort => sort
+  end
+  
+  # creates the specified element type, e.g. ContentElementText
+  def create_element_type(attributes)
+    @element = Kernel.const_get(element_type).find_or_create_by_content_element_id(id)
+    @element.update_attributes attributes
   end
   
   # returns the icon, that is used for the backend

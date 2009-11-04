@@ -6,16 +6,26 @@
         <li class="current"><%= t(".general_options") %></li>
         <li><%= t(".type_settings") %></li>
         <li><%= t(".tags") %></li>
-        <li><%= t(".access") %></li>
       </ul>
       <div class="tab_content current">
         <fieldset>
-          <legend><%= t(".header") %></legend>
+          <legend><%= t(".content_element") %></legend>
           <div class="clear">
             <%= f.label :header, t(".header") %>
             <%= f.text_field :header %>
           </div>
+          <div class="clear">
+            <%= f.label :element_type, t(".element_type") %>
+            <%= f.select :element_type, options_for_select(content_element_types, @content_element.element_type) %>
+          </div>
         </fieldset>
+        <fieldset>
+          <legend><%= t(".visibility") %></legend>
+          <div class="clear">
+      	    <%= f.label :hidden, t(".hidden") %>
+      		  <%= f.check_box :hidden, :class => "checkbox" %>
+      		</div>
+      	</fieldset>
       </div>
       <%= f.label "" %>
       <%= hidden_field_tag "page_id", params[:page] %>

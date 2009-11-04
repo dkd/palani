@@ -1,6 +1,11 @@
 defaults: &defaults
   core:
   backend:
+    content_elements:
+      content_element: ContentElement
+      content_element_html: ContentElementHtml
+      content_element_text: ContentElementText
+      content_element_image: ContentElementImage
     pages:      
       content_page: ContentPage
       shortcut: ShortcutPage
