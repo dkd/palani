@@ -31,6 +31,12 @@
         <%= render_settings @content_element %>
       </div>
       <div class="tab_content">
+        <fieldset>
+          <legend><%= t(".tags") %></legend>
+          <div class="clear">
+        	  <%= f.label :hidden, t(".tags") %>
+      		</div>
+      	</fieldset>
       </div>
       <%= f.label "" %>
       <%= hidden_field_tag "page_id", params[:page] %>
