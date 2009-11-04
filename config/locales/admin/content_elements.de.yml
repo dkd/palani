@@ -2,7 +2,7 @@ de:
   admin:
     content_elements:
       add_new: Ein neues Inhaltselement hinzufügen
-      new:
+      new: &LABELS
         content_element: Inhaltselement
         headline: Neues Inhaltselement hinzufügen
         general_options: Allgemein
@@ -13,6 +13,11 @@ de:
         element_type: Inhaltstyp
         hidden: Versteckt?
         visibility: Sichtbarkeit
+        no_settings:
+          no_special_type_settings: Keine Eigenschaften
+          no_special_type_settings_text: Für diesen Inhaltselement-Typ sind keine Eigenschaften administrierbar.
+      edit:
+        <<: *LABELS
       types:
         content_element: Container
         content_element_text: Textelement

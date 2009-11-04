@@ -2,7 +2,7 @@ en:
   admin:
     content_elements:
       add_new: Add a new content element
-      new:
+      new: &LABELS
         content_element: Contentelement
         headline: Add content element
         general_options: General options
@@ -13,6 +13,11 @@ en:
         element_type: Content type
         hidden: Hidden?
         visibility: Visibility
+        no_settings:
+          no_special_type_settings: No properties
+          no_special_type_settings_text: This content element type does not have any properties for administration.
+      edit:
+        <<: *LABELS
       types:
         content_element: Container
         content_element_text: Text
