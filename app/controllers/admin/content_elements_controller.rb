@@ -34,6 +34,7 @@ class Admin::ContentElementsController < ApplicationController
   #-----------------------------------------------------------------------------
   def edit
     @content_element = ContentElement.find(params[:id])
+    @page = @content_element.page
     render :update do |page|
       page['middle_content'].replace_html :partial => "edit"
     end
