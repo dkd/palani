@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
       end
       admin.resources :help, :collection => { :faq => :get, :community => :get }
       admin.resources :trees, :collection => { :tree => :post, :refresh => :get  }
+      admin.resources :tags
       admin.resources :users
       admin.resources :user_groups
       admin.resources :user_sessions

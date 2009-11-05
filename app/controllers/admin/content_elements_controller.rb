@@ -3,29 +3,26 @@ class Admin::ContentElementsController < ApplicationController
   # GET /admin/pages/:page_id/content_elements/new                        AJAX
   #----------------------------------------------------------------------------
   def new
-    @content_element = ContentElement.create
-    @content_element.from_content_element(params[:page], params[:content_element])
-    @content_element.save
-    @page = Page.find(params[:page])
-    flash.now[:notice] = "added_succesfully"
+    @content_element = ContentElement.new
     
     render :update do |page|
-      page['notifications'].replace_html render_notifications
-      page['middle_content'].replace_html :partial => "edit"
+      page['middle_content'].replace_html :partial => "new"
     end
   end
   
-  # PUT /admin/pages/:page_id/content_elements/                            AJAX
+  # POST /admin/pages/:page_id/content_elements/                            AJAX
   #-----------------------------------------------------------------------------
-  def update
-    @content_element = ContentElement.find(params[:id])
+  def create
+    @content_element = ContentElement.new(params[:content_element])
+    @content_element.from_content_element params[:page_id], params[:content_element_id]
     
-    if @content_element.update_attributes(params[:content_element])
+    if @content_element.save
+      @content_element.create_element_type
       @partial_file = "admin/pages/show"
       @page = Page.find(params[:page_id])
       @content_elements = @page.content_elements.sorted
     else
-      @partial_file = "edit"
+      @partial_file = "new"
     end
     
     render :update do |page|

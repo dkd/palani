@@ -26,13 +26,12 @@ class ContentElement < ActiveRecord::Base
     end
     
     Page.find(page_id).content_elements.having_sort_bigger_than(sort).each{ |c| c.update_attributes :sort => c.sort+1 }
-    save
+    update_attributes :sort => sort
   end
   
   # creates the specified element type, e.g. ContentElementText
-  def create_element_type(attributes)
-    @element = Kernel.const_get(element_type).find_or_create_by_content_element_id(id)
-    @element.update_attributes attributes
+  def create_element_type
+    Kernel.const_get(element_type).find_or_create_by_content_element_id(id) unless element_type=="ContentElement"
   end
   
   # returns the icon, that is used for the backend
