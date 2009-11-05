@@ -16,17 +16,6 @@ class Admin::PagesController < ApplicationController
     end
   end
 
-  # GET /admin/pages/new                                                    AJAX
-  #-----------------------------------------------------------------------------
-  def new
-    @page = Page.new :title => t("new_page")
-    @page.update_sorting Page.find(params[:id]), "append"
-    @page.save
-    
-    render :update do |page|
-      page['middle_content'].replace_html :partial => "new"
-    end
-  end
   
   # if no position is given or position is not above or append, the node will 
   # be moved below

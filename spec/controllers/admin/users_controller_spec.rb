@@ -2,14 +2,14 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe Admin::UsersController do
   
+  before(:each) do
+    login_admin
+  end
+  
   describe "actions" do
     
     before(:all) do
       UserGroup.find_or_create_by_name "Administrators"
-    end
-    
-    before(:each) do
-      login_admin
     end
     
     describe "new" do
@@ -40,7 +40,11 @@ describe Admin::UsersController do
     describe "edit" do
       
       before(:all) do
-        @user = User.find_or_create_by_username "max", :backend_language => "en", :email => "max@power.hc", :password => "test", :password_confirmation => "test"
+        @user = Factory.create :user
+      end
+      
+      after(:all) do
+        @user.destroy
       end
       
       it "should not be accessible, if we are not authenticated" do
@@ -102,7 +106,7 @@ describe Admin::UsersController do
     describe "destroy" do
       
       before(:each) do
-        @user = User.find_or_create_by_username "max", :backend_language => "en", :email => "max@power.hc", :password => "test", :password_confirmation => "test"
+        @user = Factory.create :user
       end
       
       it "should not be accessible, if we are not authenticated" do

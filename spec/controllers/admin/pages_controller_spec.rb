@@ -33,30 +33,6 @@ describe Admin::PagesController do
       
     end
     
-    describe "new" do
-      
-      before(:all) do
-        @page = Page.create :title => "test", :sorting => 1, :type => "ContentPage"
-      end
-      
-      it "should be accessible when logged in" do
-        get :new, :id => @page.id   
-        response.should be_success
-      end
-      
-      it "should not be accessible when not logged in" do
-        public_user
-        get :new, :id => @page.id
-        response.should_not be_success
-      end
-      
-      it "should create a valid page" do
-        get :new, :id => @page.id
-        controller.send(:instance_variable_get, :@page).should be_valid
-      end
-      
-    end
-    
     describe "show" do
       
       before(:all) do

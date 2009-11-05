@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  include ActionView::Helpers::JavaScriptHelper
+  include ActionView::Helpers::TagHelper
+  include ActionController::UrlWriter
+  include ActionView::Helpers::AssetTagHelper
   
   has_and_belongs_to_many :user_groups
   
@@ -12,5 +16,14 @@ class User < ActiveRecord::Base
   acts_as_paranoid
   
   named_scope :grid_data, :select => 'id,username,surname,name'
+  
+  def actions
+    actions = link_to_remote( image_tag("icons/edit.png") , 
+                                  :url => { :controller => "admin/users", :action => "edit", :id => id, :only_path => true  }, 
+                                  :method => "get")
+    actions << link_to_remote( image_tag("icons/delete.png") , 
+                                  :url => { :controller => "admin/users", :action => "destroy", :id => id, :only_path => true  }, 
+                                  :method => "delete")
+  end
   
 end

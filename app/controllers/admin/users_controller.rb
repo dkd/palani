@@ -1,8 +1,4 @@
 class Admin::UsersController < ApplicationController
-  include ActionView::Helpers::JavaScriptHelper
-  include ActionView::Helpers::TagHelper
-  include ActionController::UrlWriter
-  include ActionView::Helpers::AssetTagHelper
 
   # GET /admin/users/new                                                    AJAX
   #-----------------------------------------------------------------------------
@@ -92,14 +88,7 @@ class Admin::UsersController < ApplicationController
   private
   
   def actionize(users)
-    users.each { |u|
-      u[:actions] = link_to_remote( image_tag("icons/edit.png") , 
-                                    :url => { :controller => "admin/users", :action => "edit", :id => u.id, :only_path => true  }, 
-                                    :method => "get")
-      u[:actions] << link_to_remote( image_tag("icons/delete.png") , 
-                                    :url => { :controller => "admin/users", :action => "destroy", :id => u.id, :only_path => true  }, 
-                                    :method => "delete")
-    }
+    users.each { |u| u[:actions] = u.actions }
   end
   
 end
