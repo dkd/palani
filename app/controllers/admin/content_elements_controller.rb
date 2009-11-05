@@ -30,6 +30,15 @@ class Admin::ContentElementsController < ApplicationController
     end
   end
   
+  # GET /admin/pages/:page_id/content_elements/:id/edit                     AJAX
+  #-----------------------------------------------------------------------------
+  def edit
+    @content_element = ContentElement.find(params[:id])
+    render :update do |page|
+      page['middle_content'].replace_html :partial => "edit"
+    end
+  end
+  
   # GET /admin/pages/:page_id/content_elements/render_type_settings        AJAX
   #-----------------------------------------------------------------------------
   def render_type_settings
