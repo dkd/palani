@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20091109121932) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.integer  "parent_id"
+    t.integer  "parent_id",        :default => 1,               :null => false
     t.datetime "starttime"
     t.datetime "endtime"
     t.integer  "sorting"
