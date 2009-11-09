@@ -18,7 +18,7 @@ class ContentElementText < ActiveRecord::Base
   end
   
   def create_clean_text
-    clean_text = text.gsub(/<\/?[^>]*>/, "")
+    self.clean_text = self.text.gsub(/<\/?[^>]*>/, "")
   end
    
 end
