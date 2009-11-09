@@ -2,6 +2,10 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 
 describe Admin::ContentElementsController do
   
+  before(:all) do
+    @page = Page.create :title => "test", :sorting => 1, :type => "ContentPage"
+  end
+  
   before(:each) do
     login_admin
   end
@@ -10,20 +14,66 @@ describe Admin::ContentElementsController do
     
     describe "new" do
       
+      it "should be accessible, if we are authenticated" do
+        get :new, :page_id => @page.id
+        response.should be_success
+      end
+      
+      it "should not be accessible, if we are authenticated" do
+        public_user
+        get :new, :page_id => @page.id
+        response.should_not be_success
+      end
+      
+      it "should render an invalid content element" do
+        get :new, :page_id => @page.id
+        controller.send(:instance_variable_get,:@content_element).should_not be_valid
+      end
+      
     end
     
     describe "create" do
       
+      it "should be accessible, if we are authenticated" do
+        post :create, :page_id => @page.id
+        response.should be_success
+      end
+      
+      it "should not be accessible, if we are authenticated" do
+        public_user
+        post :create, :page_id => @page.id
+        response.should_not be_success
+      end
+      
     end
     
     describe "render_type_settings" do
+      
+      before(:all) do
+        @content_element = ContentElement.create :element_type => "ContentElement", :page_id => @page.id
+      end
+      
+      it "should be accessible, if we are authenticated" do
+        get :render_type_settings, :id => @content_element.id, :type => "ContentElement"
+        response.should be_success
+      end
+      
+      it "should not be accessible, if we are authenticated" do
+        public_user
+        get :render_type_settings, :id => @content_element.id, :type => "ContentElement"
+        response.should_not be_success
+      end
+      
+      it "should update the type of the content element" do
+        get :render_type_settings, :id => @content_element.id, :type => "ContentElementText"
+        ContentElement.find(@content_element.id).element_type.should eql "ContentElementText"
+      end
       
     end
     
     describe "edit" do
       
       before(:all) do
-        @page = Page.create :title => "test", :sorting => 1, :type => "ContentPage"
         @content_element = ContentElement.create :element_type => "ContentElement", :page_id => @page.id
       end
       

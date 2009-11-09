@@ -45,7 +45,12 @@ class Admin::ContentElementsController < ApplicationController
   def render_type_settings
     @content_element = ContentElement.find(params[:id])
     @content_element.update_attributes :element_type => params[:type]
-    @type = Kernel.const_get(params[:type]).find_by_content_element_id(params[:id])
+    @content_element.create_element_type
+    unless params[:type]=="ContentElement"
+      @type = Kernel.const_get(params[:type]).find_by_content_element_id(params[:id])
+    else
+      @type = @content_element
+    end
     render :update do |page|
       page['type_settings'].replace_html :partial => "/admin/content_elements/edit/settings", 
                                          :locals => { :fields => @type.edit_fields, 
