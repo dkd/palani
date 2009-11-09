@@ -6,9 +6,19 @@ describe ContentElementText do
     @content_element = ContentElementText.new( :text => "acbcdskfjlajef" )
   end
   
+  describe "clean_text" do
+    
+    it "should not contain any html tags" do
+      @content_element.create_clean_text
+      @content_element.clean_text.should_not match /<\/?[^>]*>/
+    end
+    
+  end
+  
   describe "validations" do
     
-    it "should belong to a ContentElement"
+    it "should not be valid without being associated with a content element"
+    it "should be valid being associated with a content element"
     
   end
   
