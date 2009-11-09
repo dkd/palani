@@ -35,7 +35,7 @@ module Admin::ContentElementsHelper
   
   def content_element_types
     page_types = Settings.backend.content_elements.to_a
-    page_types.each { |p| p[0] = t "admin.content_elements.types."+p[0] }
+    page_types.each { |p| p[0] = t("admin.content_elements.type_names."+p[0]) }
   end
   
 end

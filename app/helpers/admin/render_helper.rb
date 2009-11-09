@@ -59,6 +59,10 @@ module Admin::RenderHelper
     render :partial => "admin/general/page_path", :locals => { :page_path => @page_path+@page.title  }
   end
   
+  def render_text_editor(name)
+    render :partial => "admin/forms/rte", :locals => { :name => name }
+  end
+  
   # renders an ExtJS multi select box
   # options:
   # * valueField - defines which JSON attribute contains the selections value

@@ -1838,3 +1838,14 @@ body.x-body-masked .x-window-plain .x-window-mc {
 .x-tree-node .x-tree-selected a span {
 	color: #FFF !important;
 }
+
+/* RTE Editor */
+.x-html-editor-wrap {
+	border-color: #CCC !important;
+}
+
+.x-html-editor-wrap .x-html-editor-tb .x-toolbar {
+	background-color: #DDD !important;
+	border-color: #CCC !important;
+	background-image: none !important;
+}

@@ -4,6 +4,7 @@
     <% remote_form_for [:admin, :page, @content_element], :url => admin_page_content_element_path(@page, @content_element) do |f| %>
       <ul class="simple_tabs">
         <li class="current"><%= t(".general_options") %></li>
+        <li><%= t(".type_settings") %></li>
         <li><%= t(".tags") %></li>
       </ul>
       <div class="tab_content current">
@@ -25,6 +26,9 @@
       		  <%= f.check_box :hidden, :class => "checkbox" %>
       		</div>
       	</fieldset>
+      </div>
+      <div class="tab_content">
+        <%= render_settings @content_element %>
       </div>
       <div class="tab_content">
         <fieldset>

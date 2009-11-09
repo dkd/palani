@@ -20,14 +20,10 @@ module ApplicationHelper
     if item.is_a? Page
       render :partial => "/admin/pages/edit/settings", :locals => { :fields => item.edit_fields, :type => item.class.to_s.underscore }
     elsif item.is_a? ContentElement
-      @type = Kernel.const_get(item.element_type)
-      unless @type.edit_fields.empty?
-        render :partial => "admin/content_elements/types/#{element_type.underscore}/settings", 
-                            :locals => { :fields => @type.edit_fields, 
-                                         :type => "#{item.class.to_s.underscore}[]#{@type.class.to_s.underscore}"  }
-      else
-        render :partial => "/admin/content_elements/edit/no_settings"
-      end
+      @type = (item.element_type=="ContentElement") ? item : Kernel.const_get(item.element_type).find_by_content_element_id(item.id)
+      render :partial => "admin/content_elements/types/#{@type.class.to_s.underscore}/settings", 
+                            :locals => { :element => item,
+                                         :type => @type  }
     end
   end
   

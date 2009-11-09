@@ -12,7 +12,7 @@
     padding: 2px 0; }
   .standard_form form label, .standard_form form input, .standard_form form select {
     padding: 3px; }
-  .standard_form form label {
+  .standard_form form #html_editor, .standard_form form label {
     float: left;
     padding-top: 5px;
     width: 230px; }

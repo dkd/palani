@@ -18,7 +18,9 @@ en:
           no_special_type_settings_text: This content element type does not have any properties for administration.
       edit:
         <<: *LABELS
-      types:
+        headline: Edit content element
+        submit_text: Edit
+      type_names:
         content_element: Container
         content_element_text: Text
         content_element_image: Images

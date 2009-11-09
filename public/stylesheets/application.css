@@ -306,6 +306,8 @@ a.add {
   background-color: white;
   overflow: hidden;
   z-index: 99999; }
+  .ac_results strong {
+    font-weight: bold; }
   .ac_results ul {
     width: 100%;
     list-style-position: outside;

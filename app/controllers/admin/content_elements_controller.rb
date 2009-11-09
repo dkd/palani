@@ -40,17 +40,31 @@ class Admin::ContentElementsController < ApplicationController
     end
   end
   
+  # PUT /admin/pages/:page_id/content_elements/:id                         AJAX
+  #-----------------------------------------------------------------------------
+  def update
+    @content_element = ContentElement.find(params[:id])
+    if @content_element.update_attributes(params[:content_element])
+      flash[:notice] = 'changes_saved_succesfully'
+      # redirect to reload locales
+    else
+      flash.now[:error] = 'check_your_input'
+    end
+    @page = @content_element.page
+    @content_elements = @page.content_elements
+    render :update do |page|
+      page['notifications'].replace_html :partial => render_notifications
+      page['middle_content'].replace_html :partial => "admin/pages/show"
+    end
+  end
+  
   # GET /admin/pages/:page_id/content_elements/render_type_settings        AJAX
   #-----------------------------------------------------------------------------
   def render_type_settings
     @content_element = ContentElement.find(params[:id])
     @content_element.update_attributes :element_type => params[:type]
     @content_element.create_element_type
-    unless params[:type]=="ContentElement"
-      @type = Kernel.const_get(params[:type]).find_by_content_element_id(params[:id])
-    else
-      @type = @content_element
-    end
+    @type =  (params[:type]=="ContentElement") ? @content_element : Kernel.const_get(params[:type]).find_by_content_element_id(params[:id])
     render :update do |page|
       page['type_settings'].replace_html :partial => "/admin/content_elements/edit/settings", 
                                          :locals => { :fields => @type.edit_fields, 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091102091052) do
+ActiveRecord::Schema.define(:version => 20091109121932) do
 
   create_table "content_element_htmls", :force => true do |t|
     t.integer  "content_element_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20091102091052) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "clean_text"
   end
 
   create_table "content_elements", :force => true do |t|

@@ -18,7 +18,9 @@ de:
           no_special_type_settings_text: Für diesen Inhaltselement-Typ sind keine Eigenschaften administrierbar.
       edit:
         <<: *LABELS
-      types:
+        headline: Inhaltselement bearbeiten
+        submit_text: Bearbeiten
+      type_names:
         content_element: Container
         content_element_text: Textelement
         content_element_image: Bilder

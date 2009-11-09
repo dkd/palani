@@ -1,0 +1,7 @@
+de:
+  admin:
+    content_elements:
+      types:
+        content_element_text:
+          settings:
+            text: Text
