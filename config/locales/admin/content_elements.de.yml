@@ -19,7 +19,7 @@ de:
       edit:
         <<: *LABELS
         headline: Inhaltselement bearbeiten
-        submit_text: Bearbeiten
+        submit_text: Speichern
       type_names:
         content_element: Container
         content_element_text: Textelement

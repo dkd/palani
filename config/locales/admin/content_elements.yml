@@ -19,7 +19,7 @@ en:
       edit:
         <<: *LABELS
         headline: Edit content element
-        submit_text: Edit
+        submit_text: Save
       type_names:
         content_element: Container
         content_element_text: Text

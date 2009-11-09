@@ -26,6 +26,7 @@ class Admin::ContentElementsController < ApplicationController
     end
     
     render :update do |page|
+      page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => @partial_file
     end
   end
@@ -53,7 +54,7 @@ class Admin::ContentElementsController < ApplicationController
     @page = @content_element.page
     @content_elements = @page.content_elements
     render :update do |page|
-      page['notifications'].replace_html :partial => render_notifications
+      page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => "admin/pages/show"
     end
   end
