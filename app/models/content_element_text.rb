@@ -1,5 +1,7 @@
 class ContentElementText < ActiveRecord::Base
 
+  before_save :create_clean_text
+
   belongs_to :content_element
   
   validates_associated :content_element
@@ -13,6 +15,10 @@ class ContentElementText < ActiveRecord::Base
   # custom content elements should have a method 'administration_partial' returning the specific partial
   def administration_partial
     "admin/content_elements/types/content_element_text/administration"
+  end
+  
+  def create_clean_text
+    clean_text = text.gsub(/<\/?[^>]*>/, "")
   end
    
 end

@@ -45,7 +45,7 @@ class Admin::ContentElementsController < ApplicationController
   #-----------------------------------------------------------------------------
   def update
     @content_element = ContentElement.find(params[:id])
-    if @content_element.update_attributes(params[:content_element])
+    if @content_element.update_attributes(params[:content_element]) && Kernel.const_get(@content_element.element_type).find_by_content_element_id(params[:id]).update_attributes(params[:type])
       flash[:notice] = 'changes_saved_succesfully'
       # redirect to reload locales
     else
