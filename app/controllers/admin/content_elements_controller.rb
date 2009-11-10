@@ -68,10 +68,8 @@ class Admin::ContentElementsController < ApplicationController
     @content_element.create_element_type
     @type =  (params[:type]=="ContentElement") ? @content_element : Kernel.const_get(params[:type]).find_by_content_element_id(params[:id])
     render :update do |page|
-      page['type_settings'].replace_html :partial => "/admin/content_elements/edit/settings", 
-                                         :locals => { :fields => @type.edit_fields, 
-                                            :type => "content_element[]#{@type.class.to_s.underscore}" }
-      page['simple_tabs_javascript'].replace_html :partial => "/admin/content_elements/edit/change_settings"
+      #page['type_settings'].replace_html
+      #page['simple_tabs_javascript'].replace_html :partial => "/admin/content_elements/edit/change_settings"
     end
   end
   
