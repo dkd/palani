@@ -16,10 +16,17 @@ de:
         no_settings:
           no_special_type_settings: Keine Eigenschaften
           no_special_type_settings_text: Für diesen Inhaltselement-Typ sind keine Eigenschaften administrierbar.
-      edit:
+      edit: &EDIT
         <<: *LABELS
         headline: Inhaltselement bearbeiten
         submit_text: Speichern
+      types:
+        content_element_text:
+          edit:
+            <<: *EDIT
+        content_element_image:
+          edit:
+            <<: *EDIT
       type_names:
         content_element: Container
         content_element_text: Textelement

@@ -1,5 +1,7 @@
 class ContentElementText < ActiveRecord::Base
 
+  include ActsAsContentElement
+
   before_save :create_clean_text
 
   belongs_to :content_element

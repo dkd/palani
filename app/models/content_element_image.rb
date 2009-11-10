@@ -1,5 +1,7 @@
 class ContentElementImage < ActiveRecord::Base
 
+  include ActsAsContentElement
+
   belongs_to :content_element
   has_many :images
   

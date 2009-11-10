@@ -3,7 +3,7 @@ en:
     content_elements:
       types:
         content_element_image:
-          settings:
+          edit:
             attributes: Attributes
             alt: Alternativ text
             image: Image

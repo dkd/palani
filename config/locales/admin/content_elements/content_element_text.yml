@@ -3,5 +3,5 @@ en:
     content_elements:
       types:
         content_element_text:
-          settings:
+          edit:
             text: Text

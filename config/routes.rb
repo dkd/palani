@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
       admin.resources :content_pages, :controller => "pages", :collection =>  { :render_type_settings => :get, :move => :get, :new_select_position => :get }, 
                               :member => { :update_new => :put } do |page|
         page.resources :content_elements
+        page.resources :content_element_texts
+        page.resources :content_element_images
       end
       admin.resources :pages, :collection =>  { :render_type_settings => :get, :move => :get, :new_select_position => :get }, 
                               :member => { :update_new => :put } do |page|

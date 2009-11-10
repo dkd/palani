@@ -60,6 +60,7 @@ class Admin::ContentElementsController < ApplicationController
       page['middle_content'].replace_html :partial => @partial_file
     end
   end
+  
   # DELETE /admin/pages/:page_id/content_elements/:id                      AJAX
   #-----------------------------------------------------------------------------
   def destroy

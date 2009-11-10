@@ -17,7 +17,7 @@ module Admin::ContentElementsHelper
                          :collapsed => false, :static => true,
                          :toolbar => new_content_element_button(c) }
       else
-        panel_items << { :title => get_title_of(c),
+        panel_items << { :title => get_title_of(Kernel.const_get(c.element_type).find_by_content_element_id(c.id)),
                          :id => c.id,
                          :html => render(:partial => c.administration_partial, :locals => 
                               { :content_element => c, :content_element_type => Kernel.const_get(c.element_type).find_by_content_element_id(c.id) }), 
