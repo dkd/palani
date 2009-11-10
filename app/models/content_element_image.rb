@@ -1,8 +1,11 @@
 class ContentElementImage < ActiveRecord::Base
 
   belongs_to :content_element
+  has_many :images
   
   validates_associated :content_element
+  
+  accepts_nested_attributes_for :images
 
   # returns the icon, that is used for the backend
   def icon

@@ -2,8 +2,8 @@ module Admin::ContentElementsHelper
 
   def get_title_of(item)
     link =  image_tag(item.icon) + (item.header||"") 
-    link << link_to(image_tag("icons/edit.png"), edit_admin_page_content_element_path(item.page_id,item), :class => "remote-link")
-    link << link_to(image_tag("icons/bin.png"), admin_page_content_element_path(item.page_id,item), :class => "remote-link-delete")
+    link << link_to(image_tag("icons/edit.png"), polymorphic_path([:edit, :admin, item.page, item]), :class => "remote-link")
+    link << link_to(image_tag("icons/bin.png"), polymorphic_path([:admin, item.page, item]), :class => "remote-link-delete")
     link
   end
   
@@ -36,6 +36,11 @@ module Admin::ContentElementsHelper
   def content_element_types
     page_types = Settings.backend.content_elements.to_a
     page_types.each { |p| p[0] = t("admin.content_elements.type_names."+p[0]) }
+  end
+  
+  def image_position_types
+    path = "admin.content_elements.types.content_element_image.positions."
+    { t(path+"above") => "above", t(path+"left") => "left", t(path+"right") => "right", t(path+"below") => "below" }
   end
   
 end

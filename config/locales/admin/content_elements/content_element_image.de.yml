@@ -1,0 +1,16 @@
+de:
+  admin:
+    content_elements:
+      types:
+        content_element_image:
+          settings:
+            attributes: Attribute
+            alt: Alternativ-Text
+            image: Bild
+            informations: Informationen
+            position: Position
+          positions:
+            above: Oben
+            below: Unten
+            left: Links
+            right: Rechts

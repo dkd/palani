@@ -22,7 +22,7 @@ de:
         template: Template
         meta_informations: Meta-Informationen
         access: Zugriff
-        submit_text: Editieren
+        submit_text: Speichern
         type: Seitentyp
         navigation_title: Navigationstitel
         author: Autor

@@ -50,14 +50,14 @@ class Admin::ContentElementsController < ApplicationController
       flash[:notice] = 'changes_saved_succesfully'
       @page = @content_element.page
       @content_elements = @page.content_elements
-      # @partial_file = "show"
+      @partial_file = "admin/pages/show"
     else
       flash.now[:error] = 'check_your_input'
-      # @partial_file = "edit"
+      @partial_file = "edit"
     end
     render :update do |page|
       page['notifications'].replace_html render_notifications
-      page['middle_content'].replace_html :partial => "admin/pages/show"
+      page['middle_content'].replace_html :partial => @partial_file
     end
   end
   # DELETE /admin/pages/:page_id/content_elements/:id                      AJAX
@@ -69,6 +69,7 @@ class Admin::ContentElementsController < ApplicationController
     @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'
     render :update do |page|
+      page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => "admin/pages/show"
     end
   end
