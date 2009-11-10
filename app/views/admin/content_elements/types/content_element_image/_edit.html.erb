@@ -1,7 +1,7 @@
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
   <div id="edit_element">
-    <% remote_form_for [:admin, :page, @content_element], :url => admin_page_content_element_path(@page, @content_element), :html => { :multipart => true } do |f| %>
+    <% remote_form_for [:admin, @page, @content_element], :html => { :multipart => true } do |f| %>
       <ul class="simple_tabs">
         <li><%= t(".general_options") %></li>
         <li class="current"><%= t(".type_settings") %></li>

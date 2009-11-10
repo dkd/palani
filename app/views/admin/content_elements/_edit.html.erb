@@ -28,7 +28,7 @@
       	</fieldset>
       </div>
       <div class="tab_content current">
-        <%= render_settings @content_element %>
+        <%= render :partial => "admin/content_elements/edit/no_settings" %>
       </div>
       <div class="tab_content">
         <fieldset>
@@ -46,5 +46,4 @@
     <% end %>
   </div>
 </div>
-<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
 <%= render :partial => "admin/content_elements/edit/auto_complete" %>

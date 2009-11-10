@@ -20,4 +20,25 @@ module ActsAsContentElement
     self.content_element.tag_list
   end
   
+  def header=(param)
+    self.content_element.update_attributes :header => param
+  end
+  
+  def page=(param)
+    self.content_element.update_attributes :page => param
+  end
+  
+  def element_type=(param)
+    self.content_element.update_attributes :element_type => param
+    self.content_element.create_element_type
+  end
+  
+  def hidden=(param)
+    self.content_element.update_attributes :hidden => param
+  end
+  
+  def tag_list=(param)
+    self.content_element.update_attributes :tag_list => param
+  end
+  
 end

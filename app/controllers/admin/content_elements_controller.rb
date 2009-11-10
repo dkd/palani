@@ -45,8 +45,8 @@ class Admin::ContentElementsController < ApplicationController
   #-----------------------------------------------------------------------------
   def update
     @content_element = ContentElement.find(params[:id])
-    if @content_element.update_attributes(params[:content_element]) && 
-      (@content_element.element_type=="ContentElement" || Kernel.const_get(@content_element.element_type).find_by_content_element_id(params[:id]).update_attributes(params[:type]))
+    if @content_element.update_attributes(params[:content_element])
+      @content_element.create_element_type
       flash[:notice] = 'changes_saved_succesfully'
       @page = @content_element.page
       @content_elements = @page.content_elements

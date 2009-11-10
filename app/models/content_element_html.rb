@@ -1,5 +1,7 @@
 class ContentElementHtml < ActiveRecord::Base
 
+  include ActsAsContentElement
+
   belongs_to :content_element
   
   validates_associated :content_element
