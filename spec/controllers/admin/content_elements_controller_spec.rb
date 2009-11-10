@@ -71,6 +71,30 @@ describe Admin::ContentElementsController do
       
     end
     
+    describe "destroy" do
+      
+      before(:each) do
+        @content_element_to_destroy = ContentElement.create :element_type => "ContentElement", :page_id => @page.id
+      end
+      
+      it "should be accessible, if we are authenticated" do
+        delete :destroy, :id => @content_element_to_destroy.id
+        response.should be_success
+      end
+      
+      it "should not be accessible, if we are authenticated" do
+        public_user
+        delete :destroy, :id => @content_element_to_destroy.id
+        response.should_not be_success
+      end
+      
+      it "should delete the content element" do
+        delete :destroy, :id => @content_element_to_destroy.id
+        lambda { ContentElement.find(@content_element_to_destroy.id)  }.should raise_error
+      end
+      
+    end
+    
     describe "edit" do
       
       before(:all) do
@@ -92,10 +116,6 @@ describe Admin::ContentElementsController do
         get :edit, :page_id => @page.id, :id => @content_element.id
         controller.send(:instance_variable_get, :@content_element).should == ContentElement.find(@content_element.id)
       end
-      
-    end
-    
-    describe "destroy" do
       
     end
     

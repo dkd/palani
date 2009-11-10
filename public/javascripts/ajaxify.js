@@ -8,3 +8,16 @@ $("a.remote-link").livequery("click", function() {
 	return false;
 	
 });
+
+$('a.remote-link-delete').livequery("click", function() {
+	
+	$.ajax({ method: "post", 
+		 dataType: "script", 
+	 	 url: $(this).attr("href"),
+		 data: '_method=delete',
+		 type: 'post'
+	});
+    
+ 	return false; 
+
+});

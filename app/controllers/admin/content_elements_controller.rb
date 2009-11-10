@@ -48,14 +48,27 @@ class Admin::ContentElementsController < ApplicationController
     if @content_element.update_attributes(params[:content_element]) && 
       (@content_element.element_type=="ContentElement" || Kernel.const_get(@content_element.element_type).find_by_content_element_id(params[:id]).update_attributes(params[:type]))
       flash[:notice] = 'changes_saved_succesfully'
-      # redirect to reload locales
+      @page = @content_element.page
+      @content_elements = @page.content_elements
+      # @partial_file = "show"
     else
       flash.now[:error] = 'check_your_input'
+      # @partial_file = "edit"
     end
-    @page = @content_element.page
-    @content_elements = @page.content_elements
     render :update do |page|
       page['notifications'].replace_html render_notifications
+      page['middle_content'].replace_html :partial => "admin/pages/show"
+    end
+  end
+  # DELETE /admin/pages/:page_id/content_elements/:id                      AJAX
+  #-----------------------------------------------------------------------------
+  def destroy
+    @content_element = ContentElement.find(params[:id])
+    @page = @content_element.page
+    @content_elements = @page.content_elements
+    @content_element.destroy
+    flash.now[:notice] = 'deleted_succesfully'
+    render :update do |page|
       page['middle_content'].replace_html :partial => "admin/pages/show"
     end
   end

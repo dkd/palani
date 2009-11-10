@@ -2,8 +2,8 @@ module Admin::ContentElementsHelper
 
   def get_title_of(item)
     link =  image_tag(item.icon) + (item.header||"") 
-    link << link_to(image_tag("icons/edit.png"), edit_admin_page_content_element_path(item.page_id,item), :class => "remote-link") 
-    link << image_tag("icons/bin.png")
+    link << link_to(image_tag("icons/edit.png"), edit_admin_page_content_element_path(item.page_id,item), :class => "remote-link")
+    link << link_to(image_tag("icons/bin.png"), admin_page_content_element_path(item.page_id,item), :class => "remote-link-delete")
     link
   end
   
