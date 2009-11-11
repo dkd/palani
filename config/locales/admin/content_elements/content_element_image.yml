@@ -9,6 +9,7 @@ en:
             image: Image
             informations: Informations
             position: Position
+            add_new_image: Add a new image
           positions:
             above: Above
             below: Below

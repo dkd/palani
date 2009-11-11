@@ -4,7 +4,6 @@ class Admin::ContentElementImagesController < Admin::ContentElementsController
   #-----------------------------------------------------------------------------
   def edit
     @content_element = ContentElementImage.find(params[:id])
-    @page = @content_element.page
     render :update do |page|
       page['middle_content'].replace_html :partial => "admin/content_elements/types/content_element_image/edit"
     end
@@ -40,6 +39,16 @@ class Admin::ContentElementImagesController < Admin::ContentElementsController
     render :update do |page|
       page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => "admin/pages/show"
+    end
+  end
+  
+  # GET /admin/content_element_images/:id/add_new_image                     AJAX
+  #-----------------------------------------------------------------------------
+  def add_new_image
+    @content_element = ContentElementImage.find(params[:id])
+    @content_element.image_attachments.create
+    render :update do |page|
+      page['middle_content'].replace_html :partial => "admin/content_elements/types/content_element_image/edit"
     end
   end
   

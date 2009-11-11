@@ -75,17 +75,4 @@ class Admin::ContentElementsController < ApplicationController
     end
   end
   
-  # GET /admin/pages/:page_id/content_elements/render_type_settings        AJAX
-  #-----------------------------------------------------------------------------
-  def render_type_settings
-    @content_element = ContentElement.find(params[:id])
-    @content_element.update_attributes :element_type => params[:type]
-    @content_element.create_element_type
-    @type =  (params[:type]=="ContentElement") ? @content_element : Kernel.const_get(params[:type]).find_by_content_element_id(params[:id])
-    render :update do |page|
-      #page['type_settings'].replace_html
-      #page['simple_tabs_javascript'].replace_html :partial => "/admin/content_elements/edit/change_settings"
-    end
-  end
-  
 end

@@ -1,4 +1,6 @@
 class Image < ActiveRecord::Base
+  
+  has_many :image_attachments
   has_attached_file :photo
   
   validates_attachment_presence :photo

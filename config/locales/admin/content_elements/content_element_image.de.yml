@@ -9,6 +9,7 @@ de:
             image: Bild
             informations: Informationen
             position: Position
+            add_new_image: Ein neues Bild hinzufügen
           positions:
             above: Oben
             below: Unten

@@ -1,7 +1,7 @@
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
   <div id="edit_element">
-    <% remote_form_for [:admin, @page, @content_element], :html => { :multipart => true } do |f| %>
+    <% form_for [:admin, @content_element.page, @content_element], :html => { :multipart => true } do |f| %>
       <ul class="simple_tabs">
         <li><%= t(".general_options") %></li>
         <li class="current"><%= t(".type_settings") %></li>
@@ -31,8 +31,14 @@
         <fieldset>
           <legend><%= t(".image") %></legend>
           <div class="clear">
-            <%= label_tag :image, t(".image") %>
-            <%= file_field_tag "type[images_attributes][0][photo]" %>
+            <%=f.label :image, t(".image") %>
+            <% f.fields_for :image_attachments do |i|  %>
+              <%= i.file_field :photo %> <br />
+            <% end %>
+          </div>
+          <div class="clear">
+            <%= f.label "" %>
+            <%= link_to t(".add_new_image"), add_new_image_admin_content_element_image_path(@content_element), :class => "remote-link" %>
           </div>
         </fieldset>
       </div>
