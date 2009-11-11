@@ -12,4 +12,18 @@ $(document).ready(function(){
     	$("#spinner").hide();
 	});
 
+	$("a.delete-image_attachment").livequery("click", function() {
+		
+		$(this).parent().remove();
+		
+		$.ajax({ 
+			 method: "get", 
+		 	 dataType: "script",
+		 	 url: $(this).attr("href")
+		});
+		
+		return false;
+		
+	});
+
 });

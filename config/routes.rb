@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :admin do |admin|
       admin.resources :administration, :collection => { :edit_profile => :get  }
-      admin.resources :content_element_images, :member => { :add_new_image => :get }
+      admin.resources :content_element_images, :member => { :add_new_image => :get, :remove_image => :get }
       admin.resources :content_pages, :controller => "pages", 
                                       :collection =>  { :render_type_settings => :get, :move => :get, :new_select_position => :get }, 
                                       :member => { :update_new => :put } do |page|

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091111093731) do
+ActiveRecord::Schema.define(:version => 20091111111336) do
 
   create_table "content_element_htmls", :force => true do |t|
     t.integer  "content_element_id"
@@ -57,13 +57,13 @@ ActiveRecord::Schema.define(:version => 20091111093731) do
     t.datetime "updated_at"
     t.integer  "content_element_image_id"
     t.integer  "image_id"
+    t.string   "width"
+    t.string   "height"
+    t.string   "position"
+    t.datetime "deleted_at"
   end
 
   create_table "images", :force => true do |t|
-    t.string   "filename"
-    t.string   "width"
-    t.string   "height"
-    t.string   "thumbnail"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20091111093731) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "content_element_image_id"
+    t.datetime "deleted_at"
   end
 
   create_table "notices", :force => true do |t|

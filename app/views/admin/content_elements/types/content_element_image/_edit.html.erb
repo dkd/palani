@@ -1,7 +1,7 @@
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
   <div id="edit_element">
-    <% form_for [:admin, @content_element.page, @content_element], :html => { :multipart => true } do |f| %>
+    <% remote_form_for [:admin, @content_element.page, @content_element], :html => { :multipart => true } do |f| %>
       <ul class="simple_tabs">
         <li><%= t(".general_options") %></li>
         <li class="current"><%= t(".type_settings") %></li>
@@ -29,11 +29,23 @@
       </div>
       <div class="tab_content current">
         <fieldset>
-          <legend><%= t(".image") %></legend>
-          <div class="clear">
-            <%=f.label :image, t(".image") %>
+          <legend><%= t(".images") %></legend>
+          <%=f.label :image, t(".images") %>
+          <div id="image_attachments">
             <% f.fields_for :image_attachments do |i|  %>
-              <%= i.file_field :photo %> <br />
+              <fieldset>
+                <% if i.object.image %>
+                <%= tag("legend", i.object.image.photo_file_name) %>
+                <%= tag("img", { :src => i.object.image.photo_file_name }) %>
+                <% end %>
+                <%= i.label :width, t(".width"), :class => "inline" %>
+                <%= i.text_field :width, :class => "small" %>
+                <%= i.label :height, t(".height"), :class => "inline" %>
+                <%= i.text_field :height, :class => "small" %><br /><br />
+                <%= i.label :position, t(".position"), :class => "inline" %>
+                <%= i.select :position, options_for_select(image_position_types, i.object.position) %><br /><br />
+                <%= link_to t(".choose_image"), "#" %> <%= link_to image_tag("icons/bin.png"), remove_image_admin_content_element_image_path(@content_element, :image_attachment => i.object), :class => "delete-image_attachment"  %>
+              </fieldset>
             <% end %>
           </div>
           <div class="clear">

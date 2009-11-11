@@ -47,8 +47,19 @@ class Admin::ContentElementImagesController < Admin::ContentElementsController
   def add_new_image
     @content_element = ContentElementImage.find(params[:id])
     @content_element.image_attachments.create
+    flash.now[:notice] = 'added_succesfully'
     render :update do |page|
+      page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => "admin/content_elements/types/content_element_image/edit"
+    end
+  end
+  
+  def remove_image
+    @image_attachment = ImageAttachment.find(params[:image_attachment])
+    @image_attachment.destroy
+    flash.now[:notice] = 'deleted_succesfully'
+    render :update do |page|
+      page['notifications'].replace_html render_notifications
     end
   end
   

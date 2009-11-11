@@ -7,9 +7,13 @@ de:
             attributes: Attribute
             alt: Alternativ-Text
             image: Bild
+            images: Bilder
             informations: Informationen
             position: Position
-            add_new_image: Ein neues Bild hinzufügen
+            width: Breite
+            height: Höhe
+            add_new_image: Ein neues Bildelement hinzufügen
+            choose_image: Bild auswählen
           positions:
             above: Oben
             below: Unten
