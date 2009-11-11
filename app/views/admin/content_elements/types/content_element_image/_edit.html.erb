@@ -44,9 +44,24 @@
                 <%= i.text_field :height, :class => "small" %><br /><br />
                 <%= i.label :position, t(".position"), :class => "inline" %>
                 <%= i.select :position, options_for_select(image_position_types, i.object.position) %><br /><br />
-                <%= link_to t(".choose_image"), "#" %> <%= link_to image_tag("icons/bin.png"), remove_image_admin_content_element_image_path(@content_element, :image_attachment => i.object), :class => "delete-image_attachment"  %>
+                <%= link_to t(".choose_image"), admin_content_element_image_path(@content_element), :class => "choose-image_attachment" %> 
+                <%= link_to image_tag("icons/bin.png"), remove_image_admin_content_element_image_path(@content_element, :image_attachment => i.object), :class => "delete-image_attachment"  %>
               </fieldset>
             <% end %>
+            <div id="upload-image_attachment" class="x-hidden">
+                <div class="x-window-header"><%= t("file_browser") %></div>
+                <div id="browse-tabs">
+                    <!-- Auto create tab 1 -->
+                    <div class="x-tab" title="<%= t("upload_new_file") %>">
+                        <p>Hello...</p>
+                    </div>
+                    <!-- Auto create tab 2 -->
+                    <div class="x-tab" title="<%= t("browse_files") %>">
+
+                        <p>... World!</p>
+                    </div>
+                </div>
+            </div>
           </div>
           <div class="clear">
             <%= f.label "" %>

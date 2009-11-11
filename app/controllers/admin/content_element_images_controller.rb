@@ -31,7 +31,7 @@ class Admin::ContentElementImagesController < Admin::ContentElementsController
   # DELETE /admin/pages/:page_id/content_element_images/:id                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    @content_element = ContentElementImage.find(params[:id])
+    @content_element = ContentElement.find(params[:id])
     @page = @content_element.page
     @content_elements = @page.content_elements
     @content_element.destroy

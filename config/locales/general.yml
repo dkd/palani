@@ -26,3 +26,6 @@ en:
     german: German
     english: English
   page_path: Page path
+  file_browser: File-Browser
+  upload_new_file: Upload file
+  browse_files: Existing files

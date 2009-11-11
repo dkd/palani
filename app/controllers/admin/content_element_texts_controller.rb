@@ -33,6 +33,7 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   #-----------------------------------------------------------------------------
   def destroy
     @content_element = ContentElementText.find(params[:id])
+    @content_element.content_element.destroy
     @page = @content_element.page
     @content_elements = @page.content_elements
     @content_element.destroy

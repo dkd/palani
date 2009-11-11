@@ -1,7 +1,6 @@
 class ContentElement < ActiveRecord::Base
   
   belongs_to :page
-  has_many :notices
   
   validates_presence_of :page_id
   validates_associated :page
