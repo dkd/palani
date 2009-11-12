@@ -37,43 +37,5 @@ $(document).ready(function(){
 		return false;
 		
 	});
-	
-	$("a.choose-image_attachment").livequery("click", function() {
-		
-		alert(test);
-		
-		if(!win) {
-			win = new Ext.Window({
-			                applyTo:'hello-win',
-			                layout:'fit',
-			                width:500,
-			                height:300,
-			                closeAction:'hide',
-			                plain: true,
-	
-			                items: new Ext.TabPanel({
-			                    applyTo: 'hello-tabs',
-			                    autoTabs:true,
-			                    activeTab:0,
-			                    deferredRender:false,
-			                    border:false
-			                }),
-	
-			                buttons: [{
-			                    text:'Submit',
-			                    disabled:true
-			                },{
-			                    text: 'Close',
-			                    handler: function(){
-			                        win.hide();
-			                    }
-			                }]
-			            });
-		}
-		
-		win.show();
-		
-		return false;
-	});
 
 });

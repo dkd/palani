@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe ContentPage do
   
   before(:each) do
-    @content_page = ContentPage.new( :title => "Test" )
+    @content_page = Factory.build(:content_page)
   end
   
   it "should be a child class of Page" do

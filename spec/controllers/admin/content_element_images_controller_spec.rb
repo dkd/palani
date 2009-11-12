@@ -28,10 +28,11 @@ describe Admin::ContentElementImagesController do
         response.should_not be_success
       end
       
-      it "should create a new image" do
-        image_count = @content_element.images.length
+      it "should create a new image attachment" do
+        image_count = @content_element.image_attachments.length
         get :add_new_image, :id => @content_element.id
-        @content_element.images.length.should > image_count
+        @content_element.reload
+        @content_element.image_attachments.length.should > image_count
       end
       
     end

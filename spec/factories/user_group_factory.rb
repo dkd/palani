@@ -1,3 +1,3 @@
-Factory.define :user_group do |u|
-  u.name "Administrators"
+Factory.define :user_group do |p|
+  p.name "Administrators"
 end

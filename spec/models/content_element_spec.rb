@@ -2,12 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe ContentElement do
 
-  before(:all) do
-    @page = Page.create( :title => "Test", :type => "ContentPage", :sorting => 1 )
-  end
-
   before(:each) do
-    @content_element = ContentElement.create( :element_type => "ContentElement", :page_id => @page.id )
+    @content_element = Factory(:content_element)
   end
   
   describe "from_content_element" do
@@ -21,13 +17,11 @@ describe ContentElement do
   describe "create_element_type" do
     
     before(:each) do
-      @content_element = ContentElement.create( :element_type => "ContentElementText", :page_id => @page.id )
+      @content_element = Factory(:content_element, :element_type => "ContentElementText")
     end
     
-    it "should create a new content element, if its element_type is not ContentElement" do
-      @content_element.create_element_type
-      ContentElementText.find_by_content_element_id(@content_element.id)
-    end
+    it "should create a new content element, if its element_type is not ContentElement"
+    it "should return a content element, if it already exists"
     
   end
   

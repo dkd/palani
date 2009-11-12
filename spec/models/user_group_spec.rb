@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe UserGroup do
   
   before(:each) do
-    @user_group = UserGroup.create( :name => "Admins" )
+    @user_group = Factory(:user_group, :name => "Admins")
   end
   
   describe "validations" do

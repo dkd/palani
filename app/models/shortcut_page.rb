@@ -5,8 +5,6 @@
 # * random subpage
 class ShortcutPage < Page
   
-  #include I18n
-  
   validates_presence_of :shortcut_page_id, :if => :is_internal_shortcut
   validates_format_of :ext_url,
                       :with => /^(ftp|http|https)[:]\/\/([\w]+(\.[\w]+){0,})[.](\w{2,})([:][0-9]{1,5}|)$/i,

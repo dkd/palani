@@ -3,12 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe User do
   
   before(:all) do
-    @user_group = UserGroup.new( :name => "Administrators 123"  )
+    @user_group = Factory.build(:user_group, :name => "Administrators 123")
   end
   
   before(:each) do
-    @user = User.new( :username => "testuser", :password => "test", :password_confirmation => "test", :email => "test@test321123.de",
-                      :backend_language => "en")
+    @user = Factory.build(:user)
     @user.user_groups << @user_group
   end
   

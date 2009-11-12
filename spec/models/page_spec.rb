@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Page do
   
   before(:each) do
-    @page = Page.create!( :title => "New page", :type => "ContentPage", :sorting => 1 )
+    @page = Factory(:page)
   end
   
   describe "interface" do
@@ -46,7 +46,7 @@ describe Page do
   describe "that appends another page" do
     
     before(:each) do
-      @appending_page = Page.create!( :title => "Appending page", :type => "ContentPage", :sorting => 2  )
+      @appending_page = Factory(:content_page)
       @page.update_sorting @appending_page, "append"
     end
     
@@ -59,7 +59,7 @@ describe Page do
   describe "that gets dropped" do
     
     before(:each) do
-      @drop_page = Page.create!( :title => "Drop page", :type => "ContentPage", :sorting => 3 )
+      @drop_page = Factory(:content_page)
     end
     
     context "above another page" do

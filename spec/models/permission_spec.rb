@@ -3,11 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Permission do
   
   before(:each) do
-    @permission = Permission.create( :name => "Administration"  )
+    @permission = Factory(:permission, :name => "Administration")
   end
   
   it "should belong to the PermissionGroup `others`, if no permission_group is given" do
-    PermissionGroup.create( :name => "others" )
+    Factory(:permission_group, :name => "others")
     @permission.permission_group = nil
     @permission.save
     @permission.permission_group.name.should be_eql "others"

@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe ContentElementText do
   
   before(:each) do
-    @content_element = ContentElementText.new( :text => "acbcdskfjlajef" )
+    @content_element = Factory.build(:content_element_text, :text => "acbcdskfjlajef")
   end
   
   describe "clean_text" do

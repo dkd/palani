@@ -47,30 +47,6 @@ describe Admin::ContentElementsController do
       
     end
     
-    describe "render_type_settings" do
-      
-      before(:all) do
-        @content_element = ContentElement.create :element_type => "ContentElement", :page_id => @page.id
-      end
-      
-      it "should be accessible, if we are authenticated" do
-        get :render_type_settings, :id => @content_element.id, :type => "ContentElement"
-        response.should be_success
-      end
-      
-      it "should not be accessible, if we are authenticated" do
-        public_user
-        get :render_type_settings, :id => @content_element.id, :type => "ContentElement"
-        response.should_not be_success
-      end
-      
-      it "should update the type of the content element" do
-        get :render_type_settings, :id => @content_element.id, :type => "ContentElementText"
-        ContentElement.find(@content_element.id).element_type.should eql "ContentElementText"
-      end
-      
-    end
-    
     describe "destroy" do
       
       before(:each) do

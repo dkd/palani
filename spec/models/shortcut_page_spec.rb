@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe ShortcutPage do
   
   before(:each) do
-    @shortcut_page = ShortcutPage.new( :title => "Test", :sorting => 1 )
+    @shortcut_page = Factory.build(:shortcut_page)
   end
   
   it "should be a child class of Page" do
