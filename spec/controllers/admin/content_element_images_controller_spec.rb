@@ -8,6 +8,35 @@ describe Admin::ContentElementImagesController do
 
   describe "actions" do
     
+    describe "edit" do
+      
+      it "should render the edit form"
+      it "should display a content element"
+      
+    end
+    
+    describe "update" do
+      
+      it "should update the attributes of a content element"
+      it "should render notifications"
+      
+    end
+    
+    describe "destroy" do
+      
+      it "should destroy the content element"
+      it "should render notifications"
+      it "should display a page"
+      
+    end
+    
+    describe "remove_image" do
+      
+      it "should destroy the image attachment"
+      it "should render notifications"
+      
+    end
+    
     describe "add_new_image" do
       
       before(:all) do

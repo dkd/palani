@@ -8,14 +8,18 @@ describe Admin::UserSessionsController do
       login_admin
     end
     
-    it "should redirect, if we call the root page" do
-      get :new
-      response.should be_redirect
-    end
+    describe "new" do
     
-    it "should redirect to the content view page, if we call the root page" do
-      get :new
-      response.should redirect_to admin_pages_path
+      it "should redirect, if we call the root page" do
+        get :new
+        response.should be_redirect
+      end
+    
+      it "should redirect to the content view page, if we call the root page" do
+        get :new
+        response.should redirect_to admin_pages_path
+      end
+    
     end
     
   end
