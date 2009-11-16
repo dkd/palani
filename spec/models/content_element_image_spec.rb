@@ -8,7 +8,9 @@ describe ContentElementImage do
 
   describe "validations" do
     
-    it "should belong to a ContentElement"
+    it "should belong to a ContentElement" do
+      @content_element.should be_valid
+    end
     
   end
   

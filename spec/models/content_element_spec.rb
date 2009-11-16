@@ -3,12 +3,16 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe ContentElement do
 
   before(:each) do
-    @content_element = Factory(:content_element)
+    @content_element = Factory.build(:content_element)
   end
   
   describe "from_content_element" do
     
-    it "should belong to the page, that is given as param"
+    before(:all) do
+      @page = Factory.build(:content_page)
+    end
+    
+    it "should belong to the page, that is given as param"    
     it "should have a sorting 1, if no other content element is given"
     it "should have a bigger sorting than the other content element, if the other it is given"
     
@@ -20,8 +24,14 @@ describe ContentElement do
       @content_element = Factory(:content_element, :element_type => "ContentElementText")
     end
     
-    it "should create a new content element, if its element_type is not ContentElement"
-    it "should return a content element, if it already exists"
+    it "should create a new content element, if its element_type is not ContentElement" do
+      @content_element.create_element_type.should be_a Kernel.const_get(@content_element.element_type)
+    end
+    
+    it "should return a content element, if it already exists" do
+      @content_element.create_element_type
+      Kernel.const_get(@content_element.element_type).find_by_content_element_id(@content_element).should == @content_element.create_element_type
+    end
     
   end
   
