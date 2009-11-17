@@ -1,5 +1,5 @@
 <ul>
 <% Image.all.each do |image| %>
-  <li><a href="#"><%= image_tag image.photo.url(:thumb) %></a></li>
+  <li><a href="#"><%= image_tag image.photo.url(:thumb), :title => image.id, :class => "thumb" %></a></li>
 <% end %>
 </ul>

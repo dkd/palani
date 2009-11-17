@@ -1,4 +1,3 @@
-<%= javascript_include_tag "extjs/examples/shared/examples","file-browser" %>
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
   <div id="edit_element">
@@ -36,9 +35,10 @@
             <% f.fields_for :image_attachments do |i|  %>
               <fieldset>
                 <% if i.object.image %>
-                <%= tag("legend", i.object.image.photo_file_name) %>
-                <%= tag("img", { :src => i.object.image.photo_file_name }) %>
+                <legend><%= truncate(i.object.image.name, :length => 40, :omission => ".." ) %></legend>
+                <%= tag("img", { :class => "thumb", :src => i.object.image.photo.url(:thumb) }) %>
                 <% end %>
+                <%= i.hidden_field :image_id, :class => "image_id" %>
                 <%= i.label :width, t(".width"), :class => "inline" %>
                 <%= i.text_field :width, :class => "small" %>
                 <%= i.label :height, t(".height"), :class => "inline" %>
@@ -86,4 +86,5 @@
     </div>
 </div>
 <iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
+<%= javascript_include_tag "extjs/examples/shared/examples","file-browser" %>
 <%= render :partial => "admin/content_elements/edit/auto_complete" %>

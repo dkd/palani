@@ -1,10 +1,10 @@
-Ext.onReady(function(){
+$(document).ready(function(){
 	
-    var win;
-    var button = Ext.select('.choose-image_attachment');
-		var image = Ext.select('#image_browser ul li a');
-
-    button.on('click', function(){
+		var win;
+		var element_position;
+	
+    //var button = Ext.select('.choose-image_attachment');
+    $(".choose-image_attachment").bind('click', function(){
         // create the window on the first click and reuse on subsequent clicks
         if(!win){
             win = new Ext.Window({
@@ -15,6 +15,7 @@ Ext.onReady(function(){
 								closeAction: 'hide',
                 plain: true,
 								modal: true,
+								id: 'test',
                 items: new Ext.TabPanel({
                     applyTo: 'browse-tabs',
                     autoTabs:true,
@@ -24,15 +25,27 @@ Ext.onReady(function(){
                 })
             });
         }
-
-        win.show();
+				
+				element_position = $(this).parent().parent().find("fieldset").index($(this).parent());
+				win.show();
     });
 
-		image.on('click', function() {
+    $("#image_browser ul li a").bind('click', function() {
 			
-			alert("click");
-			win.hide();
-			
-		});
+			if($("#image_attachments fieldset:eq("+element_position+") legend").length==0) {
+				$("#image_attachments fieldset:eq("+element_position+")").append("<legend></legend>");
+			}
+			if($("#image_attachments fieldset:eq("+element_position+") img").length > 0) {
+				$("#image_attachments fieldset:eq("+element_position+") img").remove();
+			}
 
+			$("#image_attachments fieldset:eq("+element_position+") legend").html($(this).find("img:first").attr("alt"));	
+			$(this).find("img:first").clone().prependTo("#image_attachments fieldset:eq("+element_position+")");
+
+			$("#image_attachments fieldset:eq("+element_position+") .image_id").val($(this).find("img:first").attr("title"));
+
+			win.hide();
+
+		});
+		
 });

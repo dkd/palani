@@ -10,13 +10,13 @@ ActionController::Routing::Routes.draw do |map|
       admin.resources :administration, :collection => { :edit_profile => :get, :update_profile => :put }
       admin.resources :content_element_images, :member => { :add_new_image => :get, :remove_image => :get }
       admin.resources :content_pages, :controller => "pages", 
-                                      :collection =>  { :render_type_settings => :get, :move => :get, :new_select_position => :get }, 
+                                      :collection =>  { :render_type_settings => :get, :move => :post, :new_select_position => :get }, 
                                       :member => { :update_new => :put } do |page|
         page.resources :content_elements
         page.resources :content_element_texts
         page.resources :content_element_images
       end
-      admin.resources :pages, :collection =>  { :render_type_settings => :get, :move => :get, :new_select_position => :get }, 
+      admin.resources :pages, :collection =>  { :render_type_settings => :get, :move => :post, :new_select_position => :get }, 
                               :member => { :update_new => :put } do |page|
         page.resources :content_elements
       end

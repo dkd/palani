@@ -289,6 +289,10 @@ a.add {
 #edit_element #image_attachments {
   margin-left: 235px;
   width: 400px; }
+  #edit_element #image_attachments .thumb {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px; }
   #edit_element #image_attachments label {
     float: none;
     width: 100px; }
