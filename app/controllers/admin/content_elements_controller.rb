@@ -1,5 +1,7 @@
 class Admin::ContentElementsController < ApplicationController
   
+  before_filter :find_element, :only => [:edit, :update, :destroy]
+  
   # GET /admin/pages/:page_id/content_elements/new                        AJAX
   #----------------------------------------------------------------------------
   def new
@@ -34,7 +36,6 @@ class Admin::ContentElementsController < ApplicationController
   # GET /admin/pages/:page_id/content_elements/:id/edit                     AJAX
   #-----------------------------------------------------------------------------
   def edit
-    @content_element = ContentElement.find(params[:id])
     @page = @content_element.page
     render :update do |page|
       page['middle_content'].replace_html :partial => "edit"
@@ -44,7 +45,6 @@ class Admin::ContentElementsController < ApplicationController
   # PUT /admin/pages/:page_id/content_elements/:id                         AJAX
   #-----------------------------------------------------------------------------
   def update
-    @content_element = ContentElement.find(params[:id])
     if @content_element.update_attributes(params[:content_element])
       @content_element.create_element_type
       flash[:notice] = 'changes_saved_succesfully'
@@ -64,7 +64,6 @@ class Admin::ContentElementsController < ApplicationController
   # DELETE /admin/pages/:page_id/content_elements/:id                      AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    @content_element = ContentElement.find(params[:id])
     @page = @content_element.page
     @content_elements = @page.content_elements
     @content_element.destroy
@@ -73,6 +72,12 @@ class Admin::ContentElementsController < ApplicationController
       page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => "admin/pages/show"
     end
+  end
+  
+  protected
+  
+  def find_element
+    @content_element = ContentElement.find(params[:id])
   end
   
 end

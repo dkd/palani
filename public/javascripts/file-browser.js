@@ -7,7 +7,7 @@ Ext.onReady(function(){
         // create the window on the first click and reuse on subsequent clicks
         if(!win){
             win = new Ext.Window({
-                el:'upload-image_attachment',
+                applyTo:'upload-image_attachment',
                 layout:'fit',
                 width:500,
                 height:300,
@@ -15,7 +15,7 @@ Ext.onReady(function(){
                 plain: true,
 								modal: true,
                 items: new Ext.TabPanel({
-                    el: 'browse-tabs',
+                    applyTo: 'browse-tabs',
                     autoTabs:true,
                     activeTab:0,
                     deferredRender:false,
@@ -24,6 +24,6 @@ Ext.onReady(function(){
             });
         }
 
-        win.show(this);
+        win.show();
     });
 });

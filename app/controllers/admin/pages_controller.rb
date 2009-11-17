@@ -1,4 +1,6 @@
 class Admin::PagesController < ApplicationController
+  
+  before_filter :find_page, :only => [:show, :update, :update_new, :render_type_settings, :destroy]
 
   # GET /admin/pages
   #-----------------------------------------------------------------------------
@@ -9,7 +11,6 @@ class Admin::PagesController < ApplicationController
   # GET /admin/pages/:id                                                    AJAX
   #-----------------------------------------------------------------------------
   def show
-    @page = Page.find(params[:id])
     @content_elements = @page.content_elements.sorted
     render :update do |page|
       page['middle_content'].replace_html :partial => "show"
@@ -34,8 +35,6 @@ class Admin::PagesController < ApplicationController
   # PUT /admin/pages/:id                                                    AJAX
   #-----------------------------------------------------------------------------
   def update
-    @page = Page.find(params[:id])
-    
     if @page.update_attributes(params[:page])
       flash.now[:notice] = 'changes_saved_succesfully'
       render :update do |page|
@@ -55,9 +54,7 @@ class Admin::PagesController < ApplicationController
   
   # PUT /admin/pages/:id/update_new                                         AJAX
   #-----------------------------------------------------------------------------
-  def update_new
-    @page = Page.find(params[:id])
-    
+  def update_new    
     if @page.update_attributes(params[:page])
       flash.now[:notice] = 'added_succesfully'
       @partial_file = "show"
@@ -74,16 +71,13 @@ class Admin::PagesController < ApplicationController
   # DELETE /admin/pages/:id                                                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    page = Page.find(params[:id])
-    page.delete
-    
+    @page.delete
     render :json => { :deleted => true }
   end
   
   # GET /admin/pages/render_type_settings                                   AJAX
   #-----------------------------------------------------------------------------
   def render_type_settings
-    @page = Page.find(params[:id])
     @page.update_attributes :dummy_type => params[:type]
     @page = Page.find(params[:id])
     render :update do |page|
@@ -103,6 +97,12 @@ class Admin::PagesController < ApplicationController
     @page.update_sorting Page.find(params[:drop_id]), params[:position]
     
     render :json => { :moved => true }
+  end
+  
+  protected
+  
+  def find_page
+    @page = Page.find(params[:id])
   end
   
 end

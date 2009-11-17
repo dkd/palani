@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  
+  before_filter :find_user, :only => [:edit, :update, :destroy]
 
   # GET /admin/users/new                                                    AJAX
   #-----------------------------------------------------------------------------
@@ -28,7 +30,6 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users/:id/edit                                               AJAX
   #-----------------------------------------------------------------------------
   def edit
-    @user = User.find(params[:id])
     render :update do |page|
       page['middle_col'].replace_html :partial => "edit"
     end
@@ -59,7 +60,6 @@ class Admin::UsersController < ApplicationController
   # PUT /admin/users/:id                                                    AJAX
   #-----------------------------------------------------------------------------
   def update
-    @user = User.find(params[:id])
     params[:user][:user_group_ids] = params[:user_groups].split(",") if params[:user_groups]
     if @user.update_attributes(params[:user])
       flash.now[:notice] = 'changes_saved_succesfully'
@@ -76,8 +76,7 @@ class Admin::UsersController < ApplicationController
   # DELETE /admin/users/:id                                                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    user = User.find(params[:id])
-    user.destroy
+    @user.destroy
     flash.now[:notice] = 'deleted_succesfully'
     
     render :update do |page|
@@ -89,6 +88,10 @@ class Admin::UsersController < ApplicationController
   
   def actionize(users)
     users.each { |u| u[:actions] = u.actions }
+  end
+  
+  def find_user
+    @user = User.find(params[:id])
   end
   
 end

@@ -1849,3 +1849,7 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	border-color: #CCC !important;
 	background-image: none !important;
 }
+
+.x-tab {
+	padding: 10px;
+}

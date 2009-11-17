@@ -1,5 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-
+  
+  map.namespace :palani do |palani|
+    palani.namespace :api do |api|
+      api.resources :pages, :controller => "v1/pages"
+    end
+  end
+  
   map.namespace :admin do |admin|
       admin.resources :administration, :collection => { :edit_profile => :get  }
       admin.resources :content_element_images, :member => { :add_new_image => :get, :remove_image => :get }
@@ -14,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
                               :member => { :update_new => :put } do |page|
         page.resources :content_elements
       end
+      admin.resources :images
       admin.resources :help, :collection => { :faq => :get, :community => :get }
       admin.resources :trees, :collection => { :tree => :post, :refresh => :get  }
       admin.resources :tags

@@ -1,9 +1,10 @@
 class Admin::ContentElementTextsController < Admin::ContentElementsController
+  
+  before_filter :find_element
 
   # GET /admin/pages/:page_id/content_element_texts/:id/edit                AJAX
   #-----------------------------------------------------------------------------
   def edit
-    @content_element = ContentElementText.find(params[:id])
     @page = @content_element.page
     render :update do |page|
       page['middle_content'].replace_html :partial => "admin/content_elements/types/content_element_text/edit"
@@ -13,7 +14,6 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   # PUT /admin/pages/:page_id/content_element_texts/:id                         AJAX
   #-----------------------------------------------------------------------------
   def update
-    @content_element = ContentElementText.find(params[:id])
     if @content_element.update_attributes(params[:content_element_text])
       flash[:notice] = 'changes_saved_succesfully'
       @page = @content_element.page
@@ -32,7 +32,6 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   # DELETE /admin/pages/:page_id/content_element_texts/:id                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    @content_element = ContentElementText.find(params[:id])
     @content_element.content_element.destroy
     @page = @content_element.page
     @content_elements = @page.content_elements
@@ -42,6 +41,12 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
       page['notifications'].replace_html render_notifications
       page['middle_content'].replace_html :partial => "admin/pages/show"
     end
+  end
+  
+  protected
+  
+  def find_element
+    @content_element = ContentElementText.find(params[:id])
   end
   
 end
