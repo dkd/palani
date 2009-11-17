@@ -1,9 +1,9 @@
 class Admin::AdministrationController < ApplicationController
   before_filter :setup
   
-  # PUT /admin/administration/:id
+  # PUT /admin/administration/update_profile
   #----------------------------------------------------------------------------
-  def update
+  def update_profile
     if @user.update_attributes(params[:user])
       flash[:notice] = 'changes_saved_succesfully'
       # redirect to reload locales
@@ -17,7 +17,7 @@ class Admin::AdministrationController < ApplicationController
   # GET /admin/administration/edit_profile
   # GET /admin/administration/edit_profile                                AJAX
   #----------------------------------------------------------------------------
-  def edit_profile    
+  def edit_profile
     respond_to do |format|
       format.html
       format.js {

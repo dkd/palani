@@ -49,7 +49,7 @@ describe Palani::Api::V1::PagesController do
     
   end
   
-  describe "GET /palani/api/pages/1.json" do
+  describe "GET /palani/api/pages/1.xml" do
     
     it "should render the page requested" do
       Page.should_receive(:find).and_return(@page)

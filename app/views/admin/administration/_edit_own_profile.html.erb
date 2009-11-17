@@ -2,7 +2,7 @@
 <%= render_actions %>
 <div class ="standard_form">
   <h2><%= t('.headline') -%></h2>
-  <% form_for @user, :url => { :controller => "admin/administration/users" } do |f| %>
+  <% form_for @user, :url => update_profile_admin_administration_path do |f| %>
   	  	
   	<fieldset>
   		<%= f.label :username, t('.user') %>
