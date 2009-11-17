@@ -19,3 +19,5 @@ en:
             below: Below
             left: Left
             right: Right
+          upload:
+            submit_text: Upload

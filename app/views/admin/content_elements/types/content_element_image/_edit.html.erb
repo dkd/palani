@@ -76,18 +76,12 @@
     <div class="x-window-header"><%= t("file_browser") %></div>
     <div id="browse-tabs">
         <!-- Auto create tab 1 -->
-        <div class="x-tab" title="<%= t("upload_new_file") %>">
-            <p>
-              <% remote_form_for [:admin, Image.new], :html => { :multipart => true } do |f| %>
-                <%= f.file_field :photo %>
-                <%= f.submit t(".submit_text"), :class => "submit" %>
-              <% end %>
-            </p>
+        <div id="image_upload" class="x-tab" title="<%= t("upload_new_file") %>">
+            <%= render :partial => "admin/content_elements/types/content_element_image/upload" %>
         </div>
         <!-- Auto create tab 2 -->
-        <div class="x-tab" title="<%= t("browse_files") %>">
-
-            <p>... World!</p>
+        <div id="image_browser" class="x-tab" title="<%= t("browse_files") %>">
+            <%= render :partial => "admin/content_elements/types/content_element_image/images" %>
         </div>
     </div>
 </div>

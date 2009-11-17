@@ -32,7 +32,7 @@ describe Admin::ContentElementImagesController do
   
   describe "DELETE /admin/pages/1/content_element_images/1" do
     
-    it "should" do
+    it "should be succesful" do
       xhr :delete, :destroy, :page_id => 1, :id => 1
       response.should be_success
     end

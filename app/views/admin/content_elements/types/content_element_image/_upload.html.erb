@@ -1,0 +1,4 @@
+<% form_for [:admin, Image.new], :html => { :multipart => true, :target => "upload_frame" } do |f| %>
+  <%= f.file_field :photo %>
+  <%= f.submit t(".submit_text"), :class => "submit" %>
+<% end %>
