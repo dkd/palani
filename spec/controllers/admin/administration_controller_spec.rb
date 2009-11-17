@@ -15,7 +15,6 @@ describe Admin::AdministrationController do
     it "should set the current user as user" do
       controller.send :setup
       controller.send(:instance_variable_get, :@user).should_not be_nil
-      puts controller.send(:instance_variable_get, :@user).class.to_s
     end
     
     it "should a partial" do
