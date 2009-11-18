@@ -1,14 +1,69 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../../../spec_helper')
+require File.expand_path(RAILS_ROOT + '/lib/palani/api/exceptions')
 
 describe Palani::Api::V1::PagesController do
 
   before(:each) do
     @page = mock_model(Page, :id => 1)
+    @page.stub!(:save).and_return(true)
     @page.stub!(:to_json).and_return({})
     @page.stub!(:to_xml).and_return({})
     Page.stub!(:all).and_return([@page])
     Page.stub!(:find).and_return(@page)
+    Page.stub!(:new).and_return(@page)
     login_admin
+  end
+  
+  describe "POST /palani/api/pages.json" do
+    
+    it "should create a new page" do
+      Page.should_receive(:new).and_return(@page)
+      post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
+    end
+    
+    it "should try to save the page" do
+      @page.should_receive(:save)
+      post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
+    end
+    
+    it "should send 201 HTTP Status, if the page was created" do
+      post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
+      response.should be_success
+    end
+    
+    it "should throw a Exception, if the page is not valid" do
+      @page.stub!(:save).and_return(false)
+      lambda {
+        post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
+      }.should raise_error(Palani::Api::InvalidRecordJSONException)
+    end
+    
+  end
+  
+  describe "POST /palani/api/pages.xml" do
+    
+    it "should create a new page" do
+      Page.should_receive(:new).and_return(@page)
+      post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "xml"
+    end
+    
+    it "should save the page" do
+      @page.should_receive(:save)
+      post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "xml"
+    end
+    
+    it "should send 201 HTTP Status, if the page was created" do
+      post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "xml"
+      response.should be_success
+    end
+    
+    it "should throw a Exception, if the page is not valid" do
+      @page.stub!(:save).and_return(false)
+      lambda {
+        post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "xml"
+      }.should raise_error(Palani::Api::InvalidRecordXMLException)
+    end
+    
   end
   
   describe "GET /palani/api/pages.json" do
