@@ -1,6 +1,8 @@
 <i><%= t(".headline") %>:</i>
 <ul>
 <% content_element_type.image_attachments.each do |i|  %>
-  <li><%= i.image.name %> <%= t(".file_size") %>: <%= i.image.file_size %></li>
+  <% if i.image %>
+    <li><%= i.image.name %> <%= t(".file_size") %>: <%= i.image.file_size %></li>
+  <% end %>
 <% end %>
 </ul>

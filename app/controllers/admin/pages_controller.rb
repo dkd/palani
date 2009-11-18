@@ -11,7 +11,7 @@ class Admin::PagesController < ApplicationController
   # GET /admin/pages/:id                                                    AJAX
   #-----------------------------------------------------------------------------
   def show
-    @content_elements = @page.content_elements.sorted
+    @content_elements = @page.content_elements
     render :update do |page|
       page['middle_content'].replace_html :partial => "show"
     end

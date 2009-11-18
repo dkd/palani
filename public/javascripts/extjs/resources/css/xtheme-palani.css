@@ -1853,3 +1853,75 @@ body.x-body-masked .x-window-plain .x-window-mc {
 .x-tab {
 	padding: 10px;
 }
+
+/* Window Dialog */
+.x-window .x-window-mc,
+.x-window .x-window-ml,
+.x-window .x-window-tl {
+	background-image: none;
+	background-color: #FF4F4F;
+}
+
+.x-window .x-window-mc {
+	border: none;
+}
+
+.x-window .x-window-body {
+	border: 1px solid #FF4F4F;
+}
+
+.x-window .x-window-br,
+.x-window .x-window-mr,
+.x-window .x-window-tc,
+.x-window .x-window-tr {
+	background-image: none;
+}
+
+.x-window .x-window-header span {
+	color: #FFF;
+	padding-left: 5px;
+}
+
+.x-window .x-window-bl {
+	background-image: none;
+	background-color: #FF4F4F;
+}
+
+.x-window .x-window-bl .x-window-br .x-window-bc {
+	background-image: none;
+	background-color: #FF4F4F;
+}
+
+.x-window ul.x-tab-strip-top {
+	background-image: none;
+	background-color: #FFF;
+	padding-top: 5px;
+	border-bottom-color: #FFF;
+}
+
+.x-window .x-tab-strip-wrap .x-tab-right .x-tab-left .x-tab-strip-inner,
+.x-window .x-tab-strip-wrap .x-tab-right .x-tab-left,
+.x-window .x-tab-strip-wrap .x-tab-right {
+	background-image: none;
+	background-color: #FF4F4F;
+}
+
+.x-window .x-tab-strip span.x-tab-strip-text,
+.x-window .x-tab-strip-over span.x-tab-strip-text,
+.x-window .x-tab-strip-active span.x-tab-strip-text {
+	color: #FFF;
+}
+
+.x-window .x-tab-strip-active span.x-tab-strip-text {
+	text-decoration: underline;
+}
+
+.x-window .x-tab-panel-header {
+	background-color: #FF4F4F;
+	border-color: #FFF;
+}
+
+.x-window .x-tool-close {
+	background-image: url(../../../../images/icons/close.png);
+	background-position: 0 0;
+}
