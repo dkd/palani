@@ -262,6 +262,8 @@ a.add {
   font-size: 120%;
   padding: 5px;
   width: 300px; }
+#edit_element form textarea.big {
+  width: 99%; }
 #edit_element form fieldset {
   border: 2px solid #CCC;
   clear: none;

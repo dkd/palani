@@ -5,3 +5,5 @@ de:
         content_element_text:
           edit:
             text: Text
+          administration:
+            headline: Text

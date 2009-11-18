@@ -1,1 +1,2 @@
-<i>Text:</i> <%= truncate content_element_type.clean_text, :length => 250 %>
+<i><%= t(".headline") %>:</i><br />
+<%= truncate content_element_type.clean_text, :length => 250 %>

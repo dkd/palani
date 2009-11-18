@@ -14,4 +14,13 @@ class Image < ActiveRecord::Base
     self.photo_file_name.gsub(/[.][a-zA-Z]*/,"")
   end
   
+  def file_size
+    file_size = self.photo_file_size
+    if (file_size/1024) < 1024
+      (file_size/1024).to_s + " KB"
+    else
+      (file_size/(1024*1024)).to_s + " MB"
+    end
+  end
+  
 end

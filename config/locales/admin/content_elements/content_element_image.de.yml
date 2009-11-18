@@ -21,3 +21,6 @@ de:
             right: Rechts
           upload:
             submit_text: Hochladen
+          administration:
+            headline: Bilder
+            file_size: Dateigröße

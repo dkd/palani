@@ -16,10 +16,20 @@ en:
         no_settings:
           no_special_type_settings: No properties
           no_special_type_settings_text: This content element type does not have any properties for administration.
-      edit:
+      edit: &EDIT
         <<: *LABELS
         headline: Edit content element
         submit_text: Save
+      types:
+        content_element_text:
+          edit:
+            <<: *EDIT
+        content_element_image:
+          edit:
+            <<: *EDIT
+        content_element_html:
+          edit:
+            <<: *EDIT
       type_names:
         content_element: Container
         content_element_text: Text

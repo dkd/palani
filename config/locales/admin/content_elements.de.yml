@@ -27,6 +27,9 @@ de:
         content_element_image:
           edit:
             <<: *EDIT
+        content_element_html:
+          edit:
+            <<: *EDIT
       type_names:
         content_element: Container
         content_element_text: Textelement

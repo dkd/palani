@@ -1,0 +1,9 @@
+en:
+  admin:
+    content_elements:
+      types:
+        content_element_html:
+          edit:
+            attributes: Attributes
+          administration:
+            headline: HTML

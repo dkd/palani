@@ -21,3 +21,6 @@ en:
             right: Right
           upload:
             submit_text: Upload
+          administration:
+            headline: Images
+            file_size: Filesize
