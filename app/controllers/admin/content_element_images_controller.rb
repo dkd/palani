@@ -1,6 +1,6 @@
 class Admin::ContentElementImagesController < Admin::ContentElementsController
   
-  before_filter :find_element, :only => [:edit, :update, :add_new_image]
+  before_filter :find_element, :only => [:edit, :update, :add_new_image, :destroy]
   
   # GET /admin/pages/:page_id/content_element_images/:id/edit              AJAX
   #-----------------------------------------------------------------------------
@@ -31,8 +31,7 @@ class Admin::ContentElementImagesController < Admin::ContentElementsController
   # DELETE /admin/pages/:page_id/content_element_images/:id                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    @content_element = ContentElement.find(params[:id])
-    @page = @content_element.page
+    @page = @content_element.content_element.page
     @content_elements = @page.content_elements
     @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'

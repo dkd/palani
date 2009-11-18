@@ -3,11 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe Admin::ContentElementImagesController do
 
   before(:each) do
-    @page = mock_model(Page, :id => 1)
-    @content_element = mock_model(ContentElement, :id => 1, :page => @page, :destroy => true)
-    @content_element_image = mock_model(ContentElementImage)
-    @page.stub!(:content_elements).and_return([@content_element])
-    ContentElement.stub!(:find).and_return(@content_element)
+    controller.stub!(:render).and_return(nil)
+    @page = mock_model(Page, :content_elements => [])
+    @content_element = mock_model(ContentElement, :page => @page)
+    @content_element_image = mock_model(ContentElementImage, :content_element => @content_element, :destroy => true)
     ContentElementImage.stub!(:find).and_return(@content_element_image)
     login_admin
   end
@@ -32,9 +31,15 @@ describe Admin::ContentElementImagesController do
   
   describe "DELETE /admin/pages/1/content_element_images/1" do
     
-    it "should be succesful" do
+    it "should be accessible, if we are authenticated" do
       xhr :delete, :destroy, :page_id => 1, :id => 1
       response.should be_success
+    end
+    
+    it "should not be accessible, if we are authenticated" do
+      public_user
+      xhr :delete, :destroy, :page_id => 1, :id => 1
+      response.should_not be_success
     end
     
   end
