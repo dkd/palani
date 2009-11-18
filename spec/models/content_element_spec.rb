@@ -9,12 +9,19 @@ describe ContentElement do
   describe "from_content_element" do
     
     before(:all) do
-      @page = Factory.build(:content_page)
+      @page = Factory(:content_page)
     end
     
-    it "should belong to the page, that is given as param"    
-    it "should have a sorting 1, if no other content element is given"
-    it "should have a bigger sorting than the other content element, if the other it is given"
+    it "should have a sorting 1, if no other content element is given" do
+      @content_element.from_content_element(@page.id)
+      @content_element.sort.should == 1
+    end
+    
+    it "should have a bigger sorting than the other content element, if the other it is given" do
+      @new_content_element = Factory(:content_element)
+      @content_element.from_content_element(@page.id, @new_content_element.id)
+      @content_element.sort.should > @new_content_element.sort
+    end
     
   end
   
@@ -59,6 +66,11 @@ describe ContentElement do
       File.basename(RAILS_ROOT+"/app/views/"+@content_element.administration_partial).should eql "administration"
     end
     
+    it "should return the partial name of the content element type, if its type is not ContentElement" do
+      @content_element_text = Factory(:content_element_text)
+      @content_element_text.content_element.administration_partial.should eql @content_element_text.administration_partial
+    end
+    
   end
   
   describe "icon" do
@@ -69,6 +81,11 @@ describe ContentElement do
     
     it "should be named page" do
       File.basename(RAILS_ROOT+"/public/images/"+@content_element.icon).should eql "content_element.png"
+    end
+    
+    it "should return the icon of the content element type, if its type is not ContentElement" do
+      @content_element_text = Factory(:content_element_text)
+      @content_element_text.content_element.icon.should eql @content_element_text.icon
     end
     
   end

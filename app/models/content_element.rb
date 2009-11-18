@@ -17,7 +17,7 @@ class ContentElement < ActiveRecord::Base
   # if there is no position definied, the new content element will be placed on top
   def from_content_element(page_id, content_element_id=nil)
     element_type = "ContentElement"
-    self.page_id = page_id
+    page_id = page_id
     sort = 1
     
     if content_element_id.present?
@@ -25,7 +25,7 @@ class ContentElement < ActiveRecord::Base
     end
     
     Page.find(page_id).content_elements.having_sort_bigger_than(sort).each{ |c| c.update_attributes :sort => c.sort+1 }
-    update_attributes :sort => sort
+    update_attributes :sort => sort, :page_id => page_id
   end
   
   # creates the specified element type, e.g. ContentElementText

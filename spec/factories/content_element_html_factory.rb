@@ -1,3 +1,3 @@
 Factory.define :content_element_html do |p|
-  p.association :content_element
+  p.content_element { |c| c.association(:content_element, :element_type => "ContentElementHtml") }
 end
