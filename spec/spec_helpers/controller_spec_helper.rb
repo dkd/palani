@@ -1,3 +1,7 @@
+module DisableFlashSweeping
+  def sweep
+  end
+end
 module ControllerSpecHelper
  
   def get_action
