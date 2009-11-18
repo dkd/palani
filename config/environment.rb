@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "authlogic"
-  config.gem "lockdown", :version => "1.6.0"
+  config.gem "lockdown", :version => "1.3.1"
   config.gem "mbleigh-acts-as-taggable-on", :source => "http://gems.github.com", :lib => "acts-as-taggable-on"
   config.gem "settingslogic"
   config.gem "haml"
