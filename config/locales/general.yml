@@ -29,3 +29,4 @@ en:
   file_browser: File-Browser
   upload_new_file: Upload file
   browse_files: Existing files
+  uploading_failed: Uploading the file failed.

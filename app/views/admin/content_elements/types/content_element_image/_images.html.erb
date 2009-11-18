@@ -1,3 +1,4 @@
+<%= t(".description") %><br /><br />
 <ul>
 <% Image.all.each do |image| %>
   <li><a href="#"><%= image_tag image.photo.url(:thumb), :title => image.id, :class => "thumb" %></a></li>

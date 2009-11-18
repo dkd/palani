@@ -5,9 +5,11 @@
 *.log
 .project
 .loadpath
-tmp/**/*
+tmp/*
 log/*
-log/**/*
+doc/*
+log/*
+.yardoc
 db/schema.rb
 public/images/icons/.DS_Store
 vendor/gems/cucumber-0.3.99/*

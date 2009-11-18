@@ -17,7 +17,6 @@ class ContentElement < ActiveRecord::Base
   # if there is no position definied, the new content element will be placed on top
   def from_content_element(page_id, content_element_id=nil)
     element_type = "ContentElement"
-    page_id = page_id
     sort = 1
     
     if content_element_id.present?

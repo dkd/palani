@@ -153,8 +153,22 @@ a.add {
   color: #FFF;
   margin-top: 5px;
   margin-bottom: 10px;
-  padding: 10px; }
+  padding: 10px;
+  z-index: 20000; }
   #error a {
+    color: #FFF; }
+
+#error_top {
+  background-color: #B22525;
+  color: #FFF;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  z-index: 20000;
+  position: absolute;
+  right: 0;
+  top: 25px; }
+  #error_top a {
     color: #FFF; }
 
 #notice {
@@ -166,7 +180,8 @@ a.add {
   background-color: #63CC2B;
   position: absolute;
   right: 0;
-  top: 25px; }
+  top: 25px;
+  z-index: 20000; }
   #notice a {
     color: #FFF; }
 

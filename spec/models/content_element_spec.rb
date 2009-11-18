@@ -9,7 +9,7 @@ describe ContentElement do
   describe "from_content_element" do
     
     before(:all) do
-      @page = Factory(:content_page)
+      @page = Factory(:page)
     end
     
     it "should have a sorting 1, if no other content element is given" do

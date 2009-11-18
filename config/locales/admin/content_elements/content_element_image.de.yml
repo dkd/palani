@@ -19,8 +19,11 @@ de:
             below: Unten
             left: Links
             right: Rechts
-          upload:
-            submit_text: Hochladen
           administration:
             headline: Bilder
             file_size: Dateigröße
+          images:
+            description: 'Wählen Sie ein Bild per Klick aus.'
+          upload:
+            submit_text: Hochladen
+            description: 'Hier können Sie ein neues Bild hochladen. Nach dem das Bild hochgeladen wurde, können Sie es im Datei-Browser("Vorhandene Dateien") auswählen.'

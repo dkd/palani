@@ -29,3 +29,4 @@ de:
   file_browser: Datei-Browser
   upload_new_file: Datei hochladen
   browse_files: Vorhandene Dateien
+  uploading_failed: Das Hochladen konnte nicht erfolgreich abgeschlossen werden.

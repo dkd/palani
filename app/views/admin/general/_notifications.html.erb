@@ -1,6 +1,6 @@
 <div id="notifications">
   <%- if flash[:error] -%>
-    <div id="error">
+    <div id="<%= error_id %>">
       <%= t(flash[:error]) %>
     </div>
   <%- end -%>

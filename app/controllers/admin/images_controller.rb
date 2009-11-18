@@ -4,19 +4,16 @@ class Admin::ImagesController < ApplicationController
     @image = Image.new(params[:image])
     
     if @image.save
-      flash[:notice] = "added_succesfully"
-      responds_to_parent do
-        render :update do |page|
-          page['notifications'].replace_html render_notifications
-          page['image_browser'].replace_html :partial => "admin/content_elements/types/content_element_image/images"
-          page['image_upload'].replace_html :partial => "admin/content_elements/types/content_element_image/upload"
-        end
-      end
+      flash.now[:notice] = "added_succesfully"
     else
-      responds_to_parent do
-        render :update do |page|
-          page['new_image'].replace_html "Bild nicht gespeichert."
-        end
+      flash.now[:error] = "uploading_failed"
+    end
+    
+    responds_to_parent do
+      render :update do |page|
+        page['image_upload'].replace_html :partial => "admin/content_elements/types/content_element_image/upload"
+        page['notifications'].replace_html render_notifications(true)
+        page['image_browser'].replace_html :partial => "admin/content_elements/types/content_element_image/images"
       end
     end
     

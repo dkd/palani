@@ -48,8 +48,8 @@ module Admin::RenderHelper
   end
   
   # renders the notifications
-  def render_notifications
-    render :partial => "admin/general/notifications"
+  def render_notifications(on_top = nil)
+    render :partial => "admin/general/notifications", :locals => { :error_id => (on_top ? "error_top" : "error")  }
   end
   
   # renders the page path
