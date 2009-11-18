@@ -26,16 +26,25 @@ describe Palani::Api::V1::PagesController do
       post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
     end
     
-    it "should send 201 HTTP Status, if the page was created" do
+    it "should send HTTP Status 201, if the page was created" do
       post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
       response.should be_success
     end
     
-    it "should throw a Exception, if the page is not valid" do
-      @page.stub!(:save).and_return(false)
-      lambda {
-        post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
-      }.should raise_error(Palani::Api::InvalidRecordJSONException)
+    context "with invalid data" do
+      
+      before(:each) do
+        @page.stub!(:save).and_return(false)
+      end
+      
+      it "should throw a Exception" do
+        lambda {
+          post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "json"
+        }.should raise_error(Palani::Api::InvalidRecordJSONException)
+      end
+      
+      it "should send HTTP Status 400"
+      
     end
     
   end
@@ -57,11 +66,20 @@ describe Palani::Api::V1::PagesController do
       response.should be_success
     end
     
-    it "should throw a Exception, if the page is not valid" do
-      @page.stub!(:save).and_return(false)
-      lambda {
-        post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "xml"
-      }.should raise_error(Palani::Api::InvalidRecordXMLException)
+    context "with invalid data" do
+      
+      before(:each) do
+        @page.stub!(:save).and_return(false)
+      end
+      
+      it "should throw a Exception" do
+        lambda {
+          post :create, :page => { :title => "Testpage", :type => "ContentPage", :sorting => 1 }, :format => "xml"
+        }.should raise_error(Palani::Api::InvalidRecordXMLException)
+      end
+      
+      it "should send HTTP Status 400"
+      
     end
     
   end
