@@ -7,13 +7,29 @@ describe User do
   end
   
   before(:each) do
-    @user = Factory.build(:user)
+    @user = Factory.build(:user, :id => 1)
     @user.user_groups << @user_group
   end
   
   describe "named scopes" do
     
     it "should have a named scope called `grid_data`"
+    
+  end
+  
+  describe "actions" do
+    
+    it "should return anything" do
+      @user.actions.should_not be_nil
+    end
+    
+    it "should return the edit icon" do
+      @user.actions.should match(/[icons\/edit.png]/)
+    end
+    
+    it "should return the delete icon" do
+      @user.actions.should match(/[icons\/delete.png]/)
+    end
     
   end
   

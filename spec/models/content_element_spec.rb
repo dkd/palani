@@ -79,7 +79,7 @@ describe ContentElement do
       File.exists?(RAILS_ROOT+"/public/images/"+@content_element.icon).should be_true
     end
     
-    it "should be named page" do
+    it "should be named content_element" do
       File.basename(RAILS_ROOT+"/public/images/"+@content_element.icon).should eql "content_element.png"
     end
     

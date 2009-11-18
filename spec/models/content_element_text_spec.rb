@@ -22,4 +22,24 @@ describe ContentElementText do
     
   end
   
+  describe "administration_partial" do
+    
+    it "should be named administration" do
+      File.basename(RAILS_ROOT+"/app/views/"+@content_element.administration_partial).should eql "administration"
+    end
+    
+  end
+  
+  describe "icon" do
+    
+    it "should exist" do
+      File.exists?(RAILS_ROOT+"/public/images/"+@content_element.icon).should be_true
+    end
+    
+    it "should be named content_element_text" do
+      File.basename(RAILS_ROOT+"/public/images/"+@content_element.icon).should eql "content_element_text.png"
+    end
+    
+  end
+  
 end
