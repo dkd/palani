@@ -81,12 +81,6 @@ describe Admin::ContentElementsController do
       xhr :post, :create, :page_id => 1
     end
     
-    it "should render the pages show page" do
-      @content_element.stub!(:save).and_return(true)
-      xhr :post, :create, :page_id => 1
-      controller.send(:instance_variable_get, :@partial_file).should eql "admin/pages/show"
-    end
-    
     it "should render the new form again, if the content element submitted is invalid" do
       @content_element.stub!(:save).and_return(false)
       xhr :post, :create, :page_id => 1
