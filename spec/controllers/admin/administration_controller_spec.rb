@@ -36,6 +36,17 @@ describe Admin::AdministrationController do
       controller.stub!(:current_user).and_return(@user)
     end
     
+    it "should be accessible, if we are authenticated" do
+      put :update_profile, :user => { :username => "Test" }
+      response.should be_redirect
+    end
+    
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      put :update_profile, :user => { :username => "Test" }
+      response.should_not be_success
+    end
+    
     it "should update the attributes" do
       @user.should_receive(:update_attributes)
       put :update_profile, :user => { :username => "Test" }
@@ -57,6 +68,12 @@ describe Admin::AdministrationController do
   
   describe "GET /admin/administration/edit_profile" do
     
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      get :edit_profile, :format => "html"
+      response.should_not be_success
+    end
+    
     it "should be accessible as html" do
       get :edit_profile, :format => "html"
       response.should be_success
@@ -65,6 +82,17 @@ describe Admin::AdministrationController do
   end
   
   describe "GET /admin/administration" do
+    
+    it "should be accessible, if we are authenticated" do
+      get :index
+      response.should be_redirect
+    end
+    
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      get :index
+      response.should_not be_success
+    end
     
     it "should redirect to admin_users_path" do
       get :index

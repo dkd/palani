@@ -1855,6 +1855,16 @@ body.x-body-masked .x-window-plain .x-window-mc {
 }
 
 /* Window Dialog */
+.x-shadow,
+.x-window {
+	position: fixed !important;
+	top: 50px !important;
+}
+
+.x-shadow {
+	height: 437px !important;
+}
+
 .x-window .x-window-mc,
 .x-window .x-window-ml,
 .x-window .x-window-tl {
@@ -1868,6 +1878,7 @@ body.x-body-masked .x-window-plain .x-window-mc {
 
 .x-window .x-window-body {
 	border: 1px solid #FF4F4F;
+	height: 400px !important;
 }
 
 .x-window .x-window-br,

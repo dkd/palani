@@ -18,6 +18,8 @@ $(document).ready(function(){
 			$("#image_attachments fieldset:eq("+element_position+") .image_id").val($(this).find("img:first").attr("title"));
 
 			win.hide();
+			
+			return false;
 
 		});
 		
@@ -28,7 +30,7 @@ $(document).ready(function(){
                 applyTo:'upload-image_attachment',
                 layout:'fit',
                 width:600,
-                height:500,
+                height:300,
 								closeAction: 'hide',
                 plain: true,
 								modal: true,
@@ -45,6 +47,8 @@ $(document).ready(function(){
 
 				element_position = $(this).parent().parent().find("fieldset").index($(this).parent());
 				win.show();
+				
+				return false;
     });
 
 });

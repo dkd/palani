@@ -5,7 +5,6 @@ class Admin::ContentElementHtmlsController < ApplicationController
   # GET /admin/pages/:page_id/content_element_htmls/:id/edit                AJAX
   #-----------------------------------------------------------------------------
   def edit
-    @page = @content_element.page
     render :update do |page|
       page['middle_content'].replace_html :partial => "admin/content_elements/types/content_element_html/edit"
     end
@@ -16,7 +15,7 @@ class Admin::ContentElementHtmlsController < ApplicationController
   def update
     if @content_element.update_attributes(params[:content_element_html])
       flash[:notice] = 'changes_saved_succesfully'
-      @page = @content_element.page
+      @page = @content_element.content_element.page
       @content_elements = @page.content_elements
       @partial_file = "admin/pages/show"
     else
@@ -33,7 +32,7 @@ class Admin::ContentElementHtmlsController < ApplicationController
   #-----------------------------------------------------------------------------
   def destroy
     @content_element.content_element.destroy
-    @page = @content_element.page
+    @page = @content_element.content_element.page
     @content_elements = @page.content_elements
     @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'
