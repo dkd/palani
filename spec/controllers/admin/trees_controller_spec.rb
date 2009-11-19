@@ -5,37 +5,38 @@ describe Admin::TreesController do
   before(:each) do
     login_admin
   end
-
-  describe "actions" do
+  
+  describe "POST /admin/trees/tree" do
     
-    describe "refresh" do
-      
-     it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :refresh
-        response.should_not be_success
-      end
-
-      it "should be accessible, if we are authenticated" do
-        get :refresh
-        response.should be_success
-      end
-      
+    it "should be accessible, if we are authenticated" do
+      xhr :post, :tree
+      response.should be_success
     end
     
-    describe "tree" do
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :refresh
-        response.should_not be_success
-      end
-
-      it "should be accessible, if we are authenticated" do
-        get :refresh
-        response.should be_success
-      end
-      
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      xhr :post, :tree
+      response.should_not be_success
+    end
+    
+  end
+  
+  describe "GET /admin/trees/refresh" do
+    
+    it "should be accessible, if we are authenticated" do
+      xhr :get, :refresh
+      response.should be_success
+    end
+    
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      xhr :get, :refresh
+      response.should_not be_success
+    end
+    
+    it "should render an update" do
+      controller.should_receive(:render).with(:update)
+      xhr :get, :refresh
     end
     
   end
