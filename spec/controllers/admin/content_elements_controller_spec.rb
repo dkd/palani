@@ -4,9 +4,10 @@ describe Admin::ContentElementsController do
 
   before(:each) do
     controller.stub!(:render).and_return(nil)
-    @page = mock_model(Page, :content_elements => [])
+    @page = mock_model(Page)
     Page.stub!(:find).and_return(@page)
     @content_element = mock_model(ContentElement, :page => @page, :destroy => true, :save => false)
+    @page.stub!(:content_elements).and_return([@content_element])
     ContentElement.stub!(:find).and_return(@content_element)
     ContentElement.stub!(:new).and_return(@content_element)
     @content_element.stub!(:from_content_element).and_return(nil)
