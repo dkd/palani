@@ -134,6 +134,11 @@ describe Admin::ContentElementImagesController do
       response.should_not be_success
     end
     
+    it "should delete the content element requested" do
+      @content_element_image.should_receive(:destroy)
+      xhr :delete, :destroy, :content_page_id => 1, :id => 1
+    end
+    
   end
 
 end

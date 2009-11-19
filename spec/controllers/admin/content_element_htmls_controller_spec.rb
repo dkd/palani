@@ -66,13 +66,13 @@ describe Admin::ContentElementHtmlsController do
       xhr :put, :update, :content_page_id => 1, :id => 1
     end
     
-    it "should add /added_succesfully/ as flash, if the image got saved" do
+    it "should add /added_succesfully/ as flash, if the html got saved" do
       @controller.instance_eval { flash.extend(DisableFlashSweeping) }
       xhr :put, :update, :content_page_id => 1, :id => 1
       flash.now[:notice].should eql "changes_saved_succesfully"
     end
     
-    it "should add /uploading_failed/ as flash, if the image did not get saved" do
+    it "should add /uploading_failed/ as flash, if the html did not get saved" do
       @content_element_html.stub!(:update_attributes).and_return(false)
       @controller.instance_eval { flash.extend(DisableFlashSweeping) }
       xhr :put, :update, :content_page_id => 1, :id => 1

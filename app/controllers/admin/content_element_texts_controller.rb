@@ -15,7 +15,7 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   def update
     if @content_element.update_attributes(params[:content_element_text])
       flash[:notice] = 'changes_saved_succesfully'
-      @page = @content_element.page
+      @page = @content_element.content_element.page
       @content_elements = @page.content_elements
       @partial_file = "admin/pages/show"
     else
@@ -32,7 +32,7 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   #-----------------------------------------------------------------------------
   def destroy
     @content_element.content_element.destroy
-    @page = @content_element.page
+    @page = @content_element.content_element.page
     @content_elements = @page.content_elements
     @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'
