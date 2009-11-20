@@ -50,7 +50,7 @@
               nodeType: 'async',
               text: 'Palani',
               draggable: false,
-              id: 0
+              id: "root"
           }
       });
       
@@ -104,12 +104,14 @@
       });
       
       tree.on('click', function(e){
-        jQuery.ajax({
-            dataType :'script',
-            type : 'get',
-            url : '<%= url_for admin_pages_path %>/'+e.id,
-            async : true
-        });
+        if(e.id!="root"){
+          jQuery.ajax({
+              dataType :'script',
+              type : 'get',
+              url : '<%= url_for admin_pages_path %>/'+e.id,
+              async : true
+          });
+        }
       });
       
       // render the tree

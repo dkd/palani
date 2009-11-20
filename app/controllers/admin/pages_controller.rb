@@ -25,7 +25,7 @@ class Admin::PagesController < ApplicationController
   #-----------------------------------------------------------------------------
   def create
     @page = ContentPage.new :title => t("new_page")
-    @page.update_sorting Page.find(params[:drop_id]), params[:position]
+    @page.update_sorting params[:drop_id], params[:position]
     
     render :json => { :text => @page.title, :id => @page.id, :icon => @page.icon, 
                       :cls => @page.type, :leaf => false, :expanded => true, :allowDrag => true, 

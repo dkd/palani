@@ -59,18 +59,27 @@ class Page < ActiveRecord::Base
   # * above
   # * append
   # * below
-  def update_sorting(drop_page, position)
-    # if the page gets appended by another, it will get sorting=1
-    if position=="append"
-      update_attributes :parent_id => drop_page.id, :sorting => 1
+  def update_sorting(drop_page_id, position)
+    drop_page = (drop_page_id=="root") ? nil : Page.find(drop_page_id)
+    if drop_page
+      # if the page gets appended by another, it will get sorting=1
+      if position=="append"
+        update_attributes :parent_id => drop_page.id, :sorting => 1
+      else
+        drop_page.sorting += 1 if position=="below"
+        sorting = drop_page.sorting
+        
+        pages = drop_page.parent_id ? Page.children_of(drop_page.parent_id) : Page.roots
+        pages.having_sorting_bigger_than(drop_page.sorting).each{ |page| page.update_attributes :sorting => page.sorting+1 }
+        
+        update_attributes :parent_id => drop_page.parent_id, :sorting => sorting
+      end
     else
-      drop_page.sorting += 1 if position=="below"
-      sorting = drop_page.sorting
+      sorting = 1
+      pages = Page.roots
+      pages.having_sorting_bigger_than(sorting).each{ |page| page.update_attributes :sorting => page.sorting+1 }
       
-      pages = drop_page.parent_id ? Page.children_of(drop_page.parent_id) : Page.roots
-      pages.having_sorting_bigger_than(drop_page.sorting).each{ |page| page.update_attributes :sorting => page.sorting+1 }
-      
-      update_attributes :parent_id => drop_page.parent_id, :sorting => sorting
+      update_attributes :parent_id => nil, :sorting => sorting
     end
   end
   
