@@ -1857,8 +1857,8 @@ body.x-body-masked .x-window-plain .x-window-mc {
 /* Window Dialog */
 .x-shadow,
 .x-window {
-	position: fixed !important;
-	top: 50px !important;
+	position: absolute !important;
+	top: 50px;
 }
 
 .x-shadow {

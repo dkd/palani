@@ -48,7 +48,7 @@ class Admin::UserGroupsController < ApplicationController
     end
   end
 
-  # GET /admin/user_groups/:id/edi                                          AJAX
+  # GET /admin/user_groups/:id/edit                                        AJAX
   #-----------------------------------------------------------------------------  
   def edit
     @user_group = UserGroup.find(params[:id])

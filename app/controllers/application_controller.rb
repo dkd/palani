@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :logged_in?, :current_user_is_admin?
   
   before_filter :set_backend_language
-  before_filter :require_user
 
   protect_from_forgery
   
