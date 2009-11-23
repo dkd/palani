@@ -7,10 +7,6 @@ describe ApplicationController do
     ApplicationController.filter_chain.find(:set_backend_language).should_not be_nil
   end
   
-  it "should require an user" do
-    ApplicationController.filter_chain.find(:require_user).should_not be_nil
-  end
-  
   it "should have set a backend language after calling the filter method" do
     login_admin
     controller.send :set_backend_language
