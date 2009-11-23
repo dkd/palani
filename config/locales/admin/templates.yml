@@ -1,0 +1,19 @@
+en:
+  admin:
+    page_templates:
+      edit:
+        headline: Edit page template
+      new:
+        headline: Add page template
+      form:
+        title: Title
+        code: Source code
+        template_parts: Template parts
+        key: Key
+        is_column: Is a column?
+        edit:
+          submit_text: Save
+        new:
+          submit_text: Add
+      index:
+        add: Add new template

@@ -1,0 +1,19 @@
+de:
+  admin:
+    page_templates:
+      edit:
+        headline: Seitentemplate bearbeiten
+      new:
+        headline: Seitentemplate hinzufügen
+      form:
+        title: Titel
+        code: Quellcode
+        template_parts: Templateelemente
+        key: Schlüssel
+        is_column: Ist eine Spalte?
+        edit:
+          submit_text: Speichern
+        new:
+          submit_text: Hinzufügen
+      index:
+        add: Neues Template hinzufügen

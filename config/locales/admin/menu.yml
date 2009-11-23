@@ -6,10 +6,12 @@ en:
         administration: Administration
         extensions: Extensions
         help: Help
+        templates: Templates
       sub_menu:
         edit_profile: Edit settings
         list_users: Administrate users
         community: Community
         first_steps: First steps
         faq: Frequently asked questions
-    
+        page_templates: Pages
+        content_element_templates: Content elements

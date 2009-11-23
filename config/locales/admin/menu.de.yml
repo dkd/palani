@@ -6,10 +6,13 @@ de:
         administration: Administration
         extensions: Erweiterungen
         help: Hilfe
+        templates: Templates
       sub_menu:
         edit_profile: Einstellungen bearbeiten
         list_users: Benutzer verwalten
         community: Community
         first_steps: Erste Schritte
-        faq: HÃ¤ufig gestellte Fragen
+        faq: Häufig gestellte Fragen
+        page_templates: Seiten
+        content_element_templates: Inhaltselemente
     

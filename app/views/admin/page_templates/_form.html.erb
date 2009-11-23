@@ -1,0 +1,35 @@
+<% remote_form_for [:admin, page_template] do |f| %>	  	
+	<fieldset>
+		<%= f.label :title, t('.title') %>
+		<%= f.text_field :title %>
+	</fieldset>
+	
+	<fieldset>
+		<%= f.label :code, t('.code') %>
+		<%= f.text_area :code, :class => "big" %>
+	</fieldset>
+	
+	<fieldset>
+	  <%= f.label :template_parts, t('.template_parts') %>
+	  <div id="template_parts">
+	    <ul>
+	      <% f.fields_for :template_parts do |t|  %>
+	        <li>
+           <%= t.label :key, t(".key") %>
+	         <%= t.text_field :key, :disabled => true %>
+	         <%= t.label :title, t(".title") %>
+	         <%= t.text_field :title %>
+	         <%= t.label :is_column, t(".is_column") %>
+	         <%= t.check_box :is_column %>
+	        </li>
+	      <% end %>
+	    </ul>
+	  </div>
+	</fieldset>
+	
+	<fieldset>
+	  <%= label_tag "" %>
+	  <%= f.submit t(".#{context}.submit_text"), :class => "submit" %>
+	</fielset>
+	
+<% end %>

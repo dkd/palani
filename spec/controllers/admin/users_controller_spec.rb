@@ -3,123 +3,91 @@ require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
 describe Admin::UsersController do
   
   before(:each) do
+    @user = mock_model(User, :save => true)
+    User.stub!(:find).and_return(@user)
+    controller.stub!(:render).with(:update)
     login_admin
   end
   
-  describe "actions" do
+  describe "find_user" do
     
-    before(:all) do
-      UserGroup.find_or_create_by_name "Administrators"
+    it "should exist" do
+      Admin::UsersController.filter_chain.find(:find_user).should_not be_nil
     end
     
-    describe "new" do
-      
-      it "should be accessible, if we are authenticated" do
-        get :new
-        response.should be_success
-      end
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :new
-        response.should_not be_success
-      end
-      
+    it "should find the content element requested" do
+      User.should_receive(:find)
+      controller.send :find_user
     end
     
-    describe "create" do
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        post :create
-        response.should_not be_success
-      end
-      
+    it "should save the content element requested in a instance variable" do
+      controller.send :find_user
+      controller.send(:instance_variable_get, :@user).should equal @user
     end
     
-    describe "edit" do
-      
-      before(:all) do
-        @user = Factory.create :user
-      end
-      
-      after(:all) do
-        @user.destroy
-      end
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :edit, :id => @user.id
-        response.should_not be_success
-      end
-      
-      it "should be accessible, if we are authenticated" do
-        get :edit, :id => @user.id
-        response.should be_success
-      end
-      
-      it "should display the user having the id that is used as parameter" do
-        get :edit, :id => @user.id
-        controller.send(:instance_variable_get, :@user).id.should eql @user.id
-      end
-      
+  end
+  
+  describe "actionize" do
+    
+    before(:each) do
+      @user.stub!(:actions).and_return("Test actions")
+      @user.stub!(:[]=).with(:actions, "Test actions")
+      @user.stub!(:[]).with(:actions).and_return("Test actions")
+      @users = [@user]
     end
     
-    describe "index" do
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        get :index
-        response.should_not be_success
-      end
-      
-      it "should be accessible, if we are authenticated" do
-        get :index
-        response.should be_success
-      end
-      
-      it "should render the index partial" do
-        get :index
-        controller.send(:instance_variable_get, :@partial_file).should eql "admin/users/index"
-      end
-      
-      context ".json" do
-        
-        before(:each) do
-          get :index, :format => "json"
-          @users = User.grid_data
-          @users.each { |u| u[:actions] = u.actions }
-        end
-        
-        it "should render the grid_data of User" do
-          controller.send(:instance_variable_get, :@users).should == @users
-        end
-        
-        it "should render valid json" do
-          response.body.should == { :root => @users }.to_json
-        end
-        
-      end
-      
+    it "should return actionized actions" do
+      controller.send :actionize, @users
+      @users.each { |u| u[:actions].should eql @user.actions }
     end
     
-    describe "destroy" do
-      
-      before(:each) do
-        @user = Factory.create :user
-      end
-      
-      it "should not be accessible, if we are not authenticated" do
-        public_user
-        delete :destroy, :id => @user.id
-        response.should_not be_success
-      end
-      
-      it "should be accessible, if we are authenticated" do
-        delete :destroy, :id => @user.id
-        response.should be_success
-      end
-      
+  end
+  
+  describe "GET /admin/users/new" do
+    
+    before(:each) do
+      User.stub!(:new).and_return(@user)
+    end
+    
+    it "should be accessible, if we are authenticated" do
+      xhr :get, :new
+      response.should be_success
+    end
+    
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      xhr :get, :new
+      response.should_not be_success
+    end
+    
+    it "should create a new User" do
+      User.should_receive(:new).and_return(@user)
+      xhr :get, :new
+    end
+    
+    it "should render an update" do
+      controller.should_receive(:render).with(:update)
+      xhr :get, :new
+    end
+    
+  end
+  
+  describe "POST /admin/users" do
+    
+    it "should be accessible, if we are authenticated" do
+      xhr :post, :create
+      response.should be_success
+    end
+    
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      xhr :post, :create
+      response.should_not be_success
+    end
+    
+    it "should create a new User" do
+      User.should_receive(:new).and_return(@user)
+      xhr :post, :create
     end
     
   end

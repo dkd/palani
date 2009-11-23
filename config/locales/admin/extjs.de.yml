@@ -7,3 +7,6 @@ de:
         name: Nachname
         actions: Aktionen
         show_all_users: Benutzer verwalten
+        show_templates: Templates verwalten
+        title: Titel
+        code: Quellcode

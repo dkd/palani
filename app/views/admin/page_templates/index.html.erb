@@ -1,0 +1,9 @@
+<div id="left_col">
+	<%= render_template_sub_menu(params[:controller]) %>
+</div>
+<div id="middle_col">
+	<%= render :partial => @partial_file, :locals => @locals, :layout => false %>
+</div>
+<div id="right_col">
+	<%= render_right_col %>
+</div>

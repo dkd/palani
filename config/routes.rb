@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
       admin.resources :administration, :collection => { :edit_profile => :get, :update_profile => :put }
       admin.resources :content_element_images, :member => { :add_new_image => :get, :remove_image => :get }
+      admin.resources :content_element_templates
       admin.resources :content_pages, :controller => "pages", 
                                       :collection =>  { :render_type_settings => :get, :move => :post, :new_select_position => :get }, 
                                       :member => { :update_new => :put } do |page|
@@ -21,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
                               :member => { :update_new => :put } do |page|
         page.resources :content_elements
       end
+      admin.resources :page_templates
       admin.resources :images
       admin.resources :help, :collection => { :faq => :get, :community => :get }
       admin.resources :trees, :collection => { :tree => :post, :refresh => :get  }

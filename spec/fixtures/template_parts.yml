@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  template_id: 1
+  key: MyString
+  title: MyString
+
+two:
+  template_id: 1
+  key: MyString
+  title: MyString

@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
   # avoid logging passwords
   filter_parameter_logging :password, :password_confirmation
   
+  protected
+
+  def clear_authlogic_session
+    sess = current_user_session
+    sess.destroy if sess
+  end
+    
   private
   
     # looks for the backend language, the current user has choosen, and passes it to the I18n module
@@ -18,22 +25,18 @@ class ApplicationController < ActionController::Base
     
     # returns the session of the currently logged in user
     def current_user_session
-      return @current_user_session if defined?(@current_user_session)
+      if defined?(@current_user_session) && !@current_user_session.nil?
+        return @current_user_session 
+      end
       @current_user_session = UserSession.find
     end
     
     # returns the currently logged in user
     def current_user
-      return @current_user if defined?(@current_user)
-      @current_user = current_user_session && current_user_session.record
-    end
-
-    def require_user
-      unless current_user
-        store_location
-        redirect_to new_admin_user_session_url
-        false
+      if defined?(@current_user) && !@current_user.nil?
+        return @current_user 
       end
+      @current_user = current_user_session && current_user_session.user
     end
 
     def store_location

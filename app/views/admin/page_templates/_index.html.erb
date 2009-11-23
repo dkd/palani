@@ -1,0 +1,9 @@
+<%= render_notifications %>
+<%= render_actions [{ :name => t('.add'), :link_to => new_admin_page_template_path, :class => "add" }] %>
+<%= render_ext_grids(
+		"show_templates",
+		"/admin/page_templates.json",
+		[ { :name => 'title', :data_index => 'page_template.title', :width => 200 },
+		  { :name => 'code', :data_index => 'page_template.code', :width => 150 },
+		  { :name => 'actions', :data_index => 'page_template.actions', :width => 100 } ],
+		{ :auto_expand => "code" }) %>

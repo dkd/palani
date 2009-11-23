@@ -26,6 +26,14 @@
   .standard_form form .checkbox {
     width: 20px; }
 
+#template_parts {
+  margin-left: 235px;
+  width: 300px; }
+  #template_parts label {
+    width: auto; }
+  #template_parts input {
+    float: left; }
+
 #permissions {
   margin-left: 235px;
   width: 300px; }
@@ -55,3 +63,6 @@
   display: block;
   margin-top: 30px;
   font-size: 120%; }
+
+textarea.big {
+  width: 500px; }

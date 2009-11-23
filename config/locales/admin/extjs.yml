@@ -7,3 +7,6 @@ en:
         name: Name
         actions: Actions
         show_all_users: Administrate users
+        show_templates: Show Templates
+        title: Title
+        code: Source code

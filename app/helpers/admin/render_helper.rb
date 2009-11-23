@@ -4,6 +4,8 @@ module Admin::RenderHelper
   def render_main_menu(current_controller)
     menu_items = []
     menu_items << { :name => "pages", :controllers => ["admin/pages"], :link_to => root_path, :current => false  }
+    menu_items << { :name => "templates", :controllers => ["admin/page_templates","admin/content_element_templates"], 
+                    :link_to => admin_page_templates_path, :current => false  }
     menu_items << { :name => "administration", :controllers => ["admin/administration","admin/users","admin/user_groups"], 
                     :link_to => edit_profile_admin_administration_path, :current => false }
     menu_items << { :name => "help", :controllers => ["admin/help"], :link_to => admin_help_index_path, :current => false }
@@ -11,6 +13,20 @@ module Admin::RenderHelper
     menu_items.each { |m| m[:current] = true if m[:controllers].include?(current_controller) }
   
     render :partial => "admin/menu/main_menu", :locals => { :menu_items => menu_items }
+  end
+  
+  # renders the sub navigation for the templates section
+  def render_template_sub_menu(current_controller)
+    menu_items = []
+    menu_items << { :name => "page_templates", :controllers => ["admin/page_templates"], 
+                              :link_to => admin_page_templates_path, :current => false }
+    menu_items << { :name => "content_element_templates", :controllers => ["admin/content_elements"], 
+                              :link_to => admin_content_element_templates_path, :current => false }
+    
+    # check, which page is currently viewed
+    menu_items.each { |m| m[:current] = true if m[:controllers].include?(current_controller) }
+    
+    render :partial => "admin/menu/sub_menu", :locals => { :menu_items => menu_items }
   end
   
   # renders the action links
