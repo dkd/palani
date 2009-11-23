@@ -33,6 +33,10 @@ describe ContentPage do
       it "should return an hash" do
         @content_page.edit_fields.should be_an Array
       end
+      
+      it "should include subtitle" do
+        @content_page.edit_fields.should include({ :label => "subtitle", :field_type => "text_field", :value => @content_page.subtitle })
+      end
     
     end
     
