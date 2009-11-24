@@ -66,6 +66,9 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
+  def parse_elements
+  end
+  
   private
   
   def find_template

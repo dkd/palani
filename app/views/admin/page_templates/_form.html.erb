@@ -1,3 +1,4 @@
+<%= javascript_include_tag "palani/codemirror/codemirror"  %>
 <% remote_form_for [:admin, page_template] do |f| %>	  	
 	<fieldset>
 		<%= f.label :title, t('.title') %>
@@ -7,6 +8,8 @@
 	<fieldset>
 		<%= f.label :code, t('.code') %>
 		<%= f.text_area :code, :class => "big" %>
+		<br />
+		<%= link_to t(".refresh_parsing"), parse_elements_admin_page_template_path(page_template), :class => "float_right remote-link" %><br /><br />
 	</fieldset>
 	
 	<% if page_template.template_parts.present? %>
@@ -32,7 +35,28 @@
 	
 	<fieldset>
 	  <%= label_tag "" %>
-	  <%= f.submit t(".#{context}.submit_text"), :class => "submit" %>
+	  <%= f.submit t(".#{context}.submit_text"), :id => "submit_code",:class => "submit" %>
 	</fielset>
-	
 <% end %>
+<script type="text/javascript">
+    var editor;
+    function fancyEditor(){
+      editor = CodeMirror.fromTextArea('page_template_code', {
+        height: "350px",
+        parserfile: ["parsexml.js", "parsecss.js", "tokenizejavascript.js", "parsejavascript.js", "parsehtmlmixed.js"],
+        stylesheet: ["/stylesheets/palani/codemirror/xmlcolors.css",
+                     "/stylesheets/palani/codemirror/jscolors.css",
+                     "/stylesheets/palani/codemirror/csscolors.css"],
+        path: "/javascripts/palani/codemirror/",
+        continuousScanning: 500,
+        lineNumbers: true
+      });
+    }
+    setTimeout(fancyEditor, 1);
+    
+    $(document).ready(function(){
+      $("#submit_code").bind("click", function() {
+        $("#page_template_code").val(editor.getCode());
+      });
+    });
+</script>

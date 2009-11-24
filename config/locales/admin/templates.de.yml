@@ -11,6 +11,7 @@ de:
         template_parts: Template-Elemente
         key: Schlüssel
         is_column: Ist eine Spalte?
+        refresh_parsing: Template-Elemente parsen
         edit:
           submit_text: Speichern
         new:
