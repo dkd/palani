@@ -10,6 +10,8 @@ class ContentElement < ActiveRecord::Base
   acts_as_taggable_on :tags
   acts_as_paranoid
   
+  belongs_to :template_part
+  
   named_scope :sorted, :order => :sort
   named_scope :having_sort_bigger_than, lambda { |*args| { :conditions => ["sort >= ?", (args.first)] } }
   

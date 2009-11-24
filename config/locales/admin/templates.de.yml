@@ -8,7 +8,7 @@ de:
       form:
         title: Titel
         code: Quellcode
-        template_parts: Templateelemente
+        template_parts: Template-Elemente
         key: Schlüssel
         is_column: Ist eine Spalte?
         edit:

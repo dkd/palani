@@ -9,23 +9,26 @@
 		<%= f.text_area :code, :class => "big" %>
 	</fieldset>
 	
+	<% if page_template.template_parts.present? %>
 	<fieldset>
 	  <%= f.label :template_parts, t('.template_parts') %>
 	  <div id="template_parts">
 	    <ul>
 	      <% f.fields_for :template_parts do |t|  %>
 	        <li>
-           <%= t.label :key, t(".key") %>
-	         <%= t.text_field :key, :disabled => true %>
-	         <%= t.label :title, t(".title") %>
-	         <%= t.text_field :title %>
-	         <%= t.label :is_column, t(".is_column") %>
-	         <%= t.check_box :is_column %>
+	          <fieldset>
+              <legend><%= t.object.key %></legend>
+	            <%= t.label :title, t(".title") %>
+	            <%= t.text_field :title %><br />
+	            <%= t.label :is_column, t(".is_column") %>
+	            <%= t.check_box :is_column, :class => "checkbox" %>
+	          </fieldset>
 	        </li>
 	      <% end %>
 	    </ul>
 	  </div>
 	</fieldset>
+	<% end %>
 	
 	<fieldset>
 	  <%= label_tag "" %>

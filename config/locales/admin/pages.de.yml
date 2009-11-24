@@ -1,6 +1,7 @@
 de:
   admin:
     pages:
+      no_template_found: "Sie müssen ein Template in den Seiteneigenschaften auswählen, bevor Sie Inhaltselemente einpflegen können."
       new_select_position:
         headline: "Bitte wählen Sie eine Position für die Seite, die Sie einfügen möchten, aus:"
         above: "Über der Seite <strong>{{sitename}}</strong>"

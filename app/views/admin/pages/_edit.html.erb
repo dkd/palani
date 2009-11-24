@@ -39,6 +39,8 @@
         <%= render_settings @page %>
     </div>
     <div class="tab_content">
+        <%= f.label :template, t(".template") %>
+        <%= f.select :template_id, PageTemplate.all.collect { |t| [t.title, t.id]  }, { :include_blank => true } %>
     </div>
     <div class="tab_content">
       <fieldset>

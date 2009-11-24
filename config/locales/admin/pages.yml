@@ -1,6 +1,7 @@
 en:
   admin:
     pages:
+      no_template_found: "You have to choose a template at page properties before inserting new content elements."
       new_select_position:
         headline: "Please select a position for the page, you want to insert:"
         above: "Above <strong>{{sitename}}</strong>"
@@ -24,7 +25,7 @@ en:
         access: Access
         submit_text: Save
         type: Page type
-        navigation_title: Navigationstitel
+        navigation_title: Navigation title
         author: Author
         author_email: Authors E-Mail
         abstract: Abstract

@@ -1,6 +1,7 @@
 class Page < ActiveRecord::Base
   
   has_many :content_elements
+  belongs_to :template
   
   validates_presence_of :title
   validates_presence_of :type

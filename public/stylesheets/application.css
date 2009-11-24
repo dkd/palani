@@ -376,3 +376,12 @@ a.add {
 
 #image_browser ul li {
   display: inline; }
+
+#content_elements table {
+  width: 100%; }
+  #content_elements table th {
+    font-weight: bold;
+    text-align: center; }
+  #content_elements table td {
+    padding: 0 5px;
+    vertical-align: top; }

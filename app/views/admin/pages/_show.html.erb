@@ -5,6 +5,27 @@
 <% if @page.type=="ShortcutPage" %>
 <%= t("admin.pages.shortcut_page.does_not_contain_content") %>
 <% else %>
-<%= render :partial => "admin/content_elements/index" %>
+<% if @page.template %>
+  <table>
+    <colgroup>
+      <col width="50%">
+      <col width="50%">
+    </colgroup>
+    <tr>
+      <% for template_part in @page.template.template_parts.find(:all, :conditions => { :is_column => true} ) %>
+      <th><%= template_part.title %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% for template_part in @page.template.template_parts.find(:all, :conditions => { :is_column => true} ) %>
+      <td>
+        <%= render :partial => "admin/content_elements/index", :locals => { :template_part_id => template_part.id } %>
+      </td>
+      <% end %>
+    </tr>
+  </table>
+<% else %>
+<%= t("admin.pages.no_template_found") %>
+<% end %>
 <% end %>
 </div>
