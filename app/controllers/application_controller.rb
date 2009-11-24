@@ -25,9 +25,7 @@ class ApplicationController < ActionController::Base
     
     # returns the session of the currently logged in user
     def current_user_session
-      if defined?(@current_user_session) && !@current_user_session.nil?
-        return @current_user_session 
-      end
+      return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
     end
     

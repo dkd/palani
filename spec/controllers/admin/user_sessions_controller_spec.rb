@@ -45,7 +45,7 @@ describe Admin::UserSessionsController do
     
     before(:each) do
       @user = mock_model(User, :backend_language => "en")
-      @user_session = mock_model(UserSession, :user => true, :persisting? => true, :record => @user)
+      @user_session = mock_model(UserSession, :user => @user, :persisting? => true, :record => @user)
       @user_session.stub!(:save).and_return(true)
       @user_session.stub!(:priority_record=)
       controller.stub!(:set_lockdown_values)
