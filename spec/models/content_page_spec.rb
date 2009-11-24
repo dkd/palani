@@ -9,7 +9,7 @@ describe ContentPage do
   it "should be a child class of Page" do
     @content_page.should be_a_kind_of Page
   end
-  
+
   describe "interface" do
     
     context "icon" do
@@ -41,5 +41,5 @@ describe ContentPage do
     end
     
   end
-  
+
 end

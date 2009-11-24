@@ -7,7 +7,6 @@ describe Admin::PagesController do
     @content_page = mock_model(ContentPage, :content_elements => [], :id => 1, :icon => '', :title => '', :type => 'ContentPage')
     Page.stub!(:find).and_return(@page)
     Page.stub!(:new).and_return(@page)
-    ContentPage.stub!(:new).and_return(@content_page)
     controller.stub!(:render).and_return(nil)
     login_admin
   end
@@ -73,6 +72,7 @@ describe Admin::PagesController do
   describe "POST /admin/pages" do
     
     before(:each) do
+      ContentPage.stub!(:new).and_return(@content_page)
       @content_page.stub!(:update_sorting).and_return(nil)
     end
     

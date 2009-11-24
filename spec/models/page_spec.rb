@@ -46,7 +46,7 @@ describe Page do
   describe "that appends another page" do
     
     before(:each) do
-      @appending_page = Factory(:content_page)
+      @appending_page = Factory(:page)
       @page.update_sorting @appending_page, "append"
     end
     
@@ -59,7 +59,7 @@ describe Page do
   describe "that gets dropped" do
     
     before(:each) do
-      @drop_page = Factory(:content_page)
+      @drop_page = Factory(:page)
     end
     
     context "above another page" do

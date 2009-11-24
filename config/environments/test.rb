@@ -4,7 +4,7 @@ config.gem 'rspec-rails', :lib => false
 config.gem 'rspec', :lib => false 
 config.gem 'cucumber' 
 config.gem 'webrat'
-config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
+config.gem "factory_girl"
 config.gem 'jscruggs-metric_fu', :version => '1.1.5', :lib => 'metric_fu', :source => 'http://gems.github.com'
 
 config.i18n.default_locale = :en
