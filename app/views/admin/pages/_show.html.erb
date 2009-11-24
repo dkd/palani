@@ -8,16 +8,16 @@
 <% if @page.template %>
   <table>
     <colgroup>
-      <col width="50%">
-      <col width="50%">
+      <col width="<%= (1.0/@page.template.template_parts.backend_columns.length)*100 %>%">
+      <col width="<%= (1.0/@page.template.template_parts.backend_columns.length)*100 %>%">
     </colgroup>
     <tr>
-      <% for template_part in @page.template.template_parts.find(:all, :conditions => { :is_column => true} ) %>
+      <% for template_part in @page.template.template_parts.backend_columns %>
       <th><%= template_part.title %></th>
       <% end %>
     </tr>
     <tr>
-      <% for template_part in @page.template.template_parts.find(:all, :conditions => { :is_column => true} ) %>
+      <% for template_part in @page.template.template_parts.backend_columns %>
       <td>
         <%= render :partial => "admin/content_elements/index", :locals => { :template_part_id => template_part.id } %>
       </td>

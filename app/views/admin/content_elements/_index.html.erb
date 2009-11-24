@@ -1,4 +1,4 @@
 <div id="top_buttons">
   <%= new_content_element_button %>
 </div>
-<%= render_ext_panel convert_for_panel(TemplatePart.find(template_part_id).content_elements) %>
+<%= render_ext_panel convert_for_panel(@page.content_elements.of_column(template_part_id)) %>

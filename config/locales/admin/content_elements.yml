@@ -1,7 +1,7 @@
 en:
   admin:
     content_elements:
-      add_new: Add a new content element
+      add_new: Add
       new: &LABELS
         content_element: Contentelement
         headline: Add content element

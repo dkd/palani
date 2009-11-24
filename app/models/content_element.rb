@@ -14,6 +14,7 @@ class ContentElement < ActiveRecord::Base
   
   named_scope :sorted, :order => :sort
   named_scope :having_sort_bigger_than, lambda { |*args| { :conditions => ["sort >= ?", (args.first)] } }
+  named_scope :of_column, lambda { |*args| { :conditions => ["template_part_id = ?", (args.first)] } }
   
   # defines the specified page and position on which the new content element should be created
   # if there is no position definied, the new content element will be placed on top

@@ -381,7 +381,8 @@ a.add {
   width: 100%; }
   #content_elements table th {
     font-weight: bold;
-    text-align: center; }
+    text-align: center;
+    padding-right: 30px; }
   #content_elements table td {
     padding: 0 5px;
     vertical-align: top; }
