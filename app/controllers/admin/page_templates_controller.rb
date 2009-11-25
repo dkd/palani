@@ -2,6 +2,8 @@ class Admin::PageTemplatesController < ApplicationController
   
   before_filter :find_template, :only => [:edit, :update, :destroy]
   
+  # GET /admin/page_templates                                              AJAX
+  #----------------------------------------------------------------------------
   def index
     @partial_file = "index"
     respond_to do |format|
@@ -19,6 +21,8 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
+  # GET /admin/page_templates/new                                          AJAX
+  #----------------------------------------------------------------------------
   def new
     @page_template = PageTemplate.new
     
@@ -27,6 +31,8 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
+  # POST /admin/page_templates                                            AJAX
+  #----------------------------------------------------------------------------
   def create
     @page_template = PageTemplate.new(params[:page_template])
     
@@ -41,12 +47,16 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
+  # GET /admin/page_templates/1/edit                                      AJAX
+  #----------------------------------------------------------------------------
   def edit
     render :update do |page|
       page['middle_col'].replace_html :partial => "edit"
     end
   end
   
+  # PUT /admin/page_templates/1                                           AJAX
+  #----------------------------------------------------------------------------
   def update
     if @page_template.update_attributes(params[:page_template])
       @partial_file = "index"
@@ -59,6 +69,8 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
+  # DELETE /admin/page_templates/1                                         AJAX
+  #----------------------------------------------------------------------------
   def destroy
     @page_template.destroy
     render :update do |page|
@@ -66,6 +78,8 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
+  # GET /admin/page_templates/1/parse_elements                             AJAX
+  #----------------------------------------------------------------------------
   def parse_elements
   end
   

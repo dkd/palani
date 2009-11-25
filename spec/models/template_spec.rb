@@ -3,10 +3,9 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Template do
   
   before(:all) do
-    @page_template = Factory.build(:page_template, :id => 1, 
-                                   :code => "<html><head><title>{{title}}</title></head><body>{{description}}</body></html>")
+    @page_template = Factory.build(:page_template, :id => 1, :code => "<html><head><title>{{title}}</title></head><body>{{description}}</body></html>")
   end
-  
+
   describe "actions" do
     
     it "should return anything" do
@@ -22,7 +21,7 @@ describe Template do
     end
     
   end
-  
+
   describe "clean_code" do
     
     it "should not be longer than 60 chars" do
@@ -42,5 +41,5 @@ describe Template do
     end
     
   end
-  
+
 end

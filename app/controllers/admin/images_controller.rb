@@ -1,5 +1,7 @@
 class Admin::ImagesController < ApplicationController
   
+  # POST /admin/images/                                                   AJAX
+  #----------------------------------------------------------------------------
   def create
     @image = Image.new(params[:image])
     
