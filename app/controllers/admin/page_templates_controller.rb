@@ -2,7 +2,9 @@ class Admin::PageTemplatesController < ApplicationController
   
   before_filter :find_template, :only => [:edit, :update, :destroy]
   
+  # GET /admin/page_templates
   # GET /admin/page_templates                                              AJAX
+  # GET /admin/page_templates.json
   #----------------------------------------------------------------------------
   def index
     @partial_file = "index"

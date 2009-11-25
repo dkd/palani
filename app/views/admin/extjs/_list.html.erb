@@ -24,7 +24,7 @@ Ext.onReady(function(){
 		    autoHeight: true,
         title:"<%= t('.'+title) -%>"
     });
-    grid.render('grids');
+    grid.render('grids_<%= random_id %>');
 });
 </script>
-<div id="grids"></div>
+<div id="grids_<%= random_id %>"></div>

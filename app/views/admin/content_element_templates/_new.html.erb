@@ -1,0 +1,6 @@
+<%= render_notifications %>
+<%= render_actions %>
+<div class ="standard_form">
+  <h2><%= t('.headline') -%></h2>
+  <%= render :partial => "form", :locals => { :content_element_template => @content_element_template, :context => "new" } %>
+</div>

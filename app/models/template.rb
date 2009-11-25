@@ -13,10 +13,11 @@ class Template < ActiveRecord::Base
   before_save :parse_parts
   
   validates_presence_of :title
+  validates_uniqueness_of :title
   
   accepts_nested_attributes_for :template_parts
   
-  named_scope :grid_data, :select => 'id,title,code'
+  acts_as_paranoid
   
   def actions
     actions = link_to_remote( image_tag("icons/edit.png") , 

@@ -20,7 +20,7 @@ module Admin::RenderHelper
     menu_items = []
     menu_items << { :name => "page_templates", :controllers => ["admin/page_templates"], 
                               :link_to => admin_page_templates_path, :current => false }
-    menu_items << { :name => "content_element_templates", :controllers => ["admin/content_elements"], 
+    menu_items << { :name => "content_element_templates", :controllers => ["admin/content_element_templates"], 
                               :link_to => admin_content_element_templates_path, :current => false }
     
     # check, which page is currently viewed
@@ -42,7 +42,8 @@ module Admin::RenderHelper
                           :remote_url => url,
                           :title => title,
                           :fields => fields,
-                          :auto_expand => options[:auto_expand] }
+                          :auto_expand => options[:auto_expand],
+                          :random_id => rand(10000) }
   end
   
   # renders an Ext.panel object containing several items that can be sorted by drag an drop

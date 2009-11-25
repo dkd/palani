@@ -1,5 +1,20 @@
 de:
   admin:
+    content_element_templates:
+      edit:
+        headline: Seitentemplate bearbeiten
+      new:
+        headline: Seitentemplate hinzufügen
+      form:
+        title: Titel
+        content_element_type: Inhaltselement-Typ
+        code: Quellcode
+        edit:
+          submit_text: Speichern
+        new:
+          submit_text: Hinzufügen
+      index:
+        add: Neues Template hinzufügen
     page_templates:
       edit:
         headline: Seitentemplate bearbeiten

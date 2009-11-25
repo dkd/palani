@@ -7,6 +7,8 @@ en:
         name: Name
         actions: Actions
         show_all_users: Administrate users
-        show_templates: Show Templates
+        show_templates: Show page templates
+        show_content_element_templates: Show content element templates
         title: Title
         code: Source code
+        content_element_type: Content element type

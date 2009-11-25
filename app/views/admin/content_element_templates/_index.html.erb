@@ -1,0 +1,10 @@
+<%= render_notifications %>
+<%= render_actions [{ :name => t('.add'), :link_to => new_admin_content_element_template_path, :class => "add" }] %>
+<%= render_ext_grids(
+		"show_content_element_templates",
+		"/admin/content_element_templates.json",
+		[ { :name => 'title', :data_index => 'content_element_template.title', :width => 200 },
+		  { :name => 'content_element_type', :data_index => 'content_element_template.content_element_type', :width => 200 },
+		  { :name => 'code', :data_index => 'content_element_template.code', :width => 100 },
+		  { :name => 'actions', :data_index => 'content_element_template.actions', :width => 100 } ],
+		{ :auto_expand => "code" }) %>
