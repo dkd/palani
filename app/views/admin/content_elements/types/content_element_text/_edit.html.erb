@@ -5,6 +5,7 @@
       <ul class="simple_tabs">
         <li><%= t(".general_options") %></li>
         <li class="current"><%= t(".type_settings") %></li>
+        <li><%= t(".template") %></li>
         <li><%= t(".tags") %></li>
       </ul>
       <div class="tab_content">
@@ -33,6 +34,13 @@
           <div class="clear">
             <%= render_text_editor "content_element_text[text]", @content_element.text %>
           </div>
+        </fieldset>
+      </div>
+      <div class="tab_content">
+        <fieldset>
+          <legend><%= t(".template") %></legend>
+          <%= f.label :template, t(".template") %>
+          <%= f.select :template_id, ContentElementTemplate.all.collect { |t| [t.title, t.id]  }, { :include_blank => true } %>
         </fieldset>
       </div>
       <div class="tab_content">

@@ -13,6 +13,7 @@ de:
         element_type: Inhaltstyp
         hidden: Versteckt?
         visibility: Sichtbarkeit
+        template: Template
         no_settings:
           no_special_type_settings: Keine Eigenschaften
           no_special_type_settings_text: Für diesen Inhaltselement-Typ sind keine Eigenschaften administrierbar.

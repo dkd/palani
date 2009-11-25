@@ -20,6 +20,10 @@ module ActsAsContentElement
     self.content_element.tag_list
   end
   
+  def template_id
+    self.content_element.template_id
+  end
+  
   def header=(param)
     self.content_element.update_attributes :header => param
   end
@@ -39,6 +43,10 @@ module ActsAsContentElement
   
   def tag_list=(param)
     self.content_element.update_attributes :tag_list => param
+  end
+  
+  def template_id=(param)
+    self.content_element.update_attributes :template_id => param
   end
   
 end

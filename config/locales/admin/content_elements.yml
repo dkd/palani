@@ -13,6 +13,7 @@ en:
         element_type: Content type
         hidden: Hidden?
         visibility: Visibility
+        template: Template
         no_settings:
           no_special_type_settings: No properties
           no_special_type_settings_text: This content element type does not have any properties for administration.
