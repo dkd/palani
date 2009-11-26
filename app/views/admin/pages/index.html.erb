@@ -4,16 +4,14 @@
 	  <%= render :partial => "/admin/trees/tree" %>
 	</div>
 </div>
-
+<div id="right_col">
+<%= render_right_col %>
+</div>
 <div id="middle_col">
   <%= render_notifications %>
   <div id="middle_content">
     <%= render :partial => @partial_file, :locals => @locals, :layout => false %>
   </div>
-</div>
-
-<div id="right_col">
-<%= render_right_col %>
 </div>
 
 <%= render :partial => "admin/general/filebrowser" %>

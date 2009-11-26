@@ -106,16 +106,16 @@ a.add {
   width: 215px; }
 
 #middle_col {
-  float: left;
+  margin-left: 215px;
+  margin-right: 250px;
   overflow: hidden;
-  padding: 0 10px 0 20px;
-  width: 65%; }
+  padding: 0 10px 0 20px; }
 
 #right_col {
   float: right;
   overflow: hidden;
   padding: 0 5px;
-  width: 17%; }
+  width: 250px; }
 
 #left_col li {
   list-style-type: none;

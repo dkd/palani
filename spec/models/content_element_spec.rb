@@ -8,7 +8,7 @@ describe ContentElement do
   
   describe "from_content_element" do
     
-    before(:all) do
+    before(:each) do
       @page = Factory(:page)
     end
     
