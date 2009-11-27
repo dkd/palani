@@ -5,4 +5,8 @@ module Admin::PagesHelper
     page_types.each { |p| p[0] = t "admin.pages.edit.types."+p[0] }
   end
   
+  def render_tags(page_id)
+    
+  end
+  
 end

@@ -1,0 +1,4 @@
+<% remote_form_for [:admin, tag] do |f| %>
+  <%= t.text_field :tag %>
+  <%= hidden_field_tag :page_id, page_id %>
+<% end %>
