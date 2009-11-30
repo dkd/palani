@@ -111,6 +111,9 @@ a.add {
   overflow: hidden;
   padding: 0 10px 0 20px; }
 
+#middle_content {
+  width: 100%; }
+
 #right_col {
   float: right;
   overflow: hidden;
@@ -336,7 +339,7 @@ a.add {
       margin: 10px 0; }
 
 #top_buttons {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 20px;
   padding-left: 10px;
   text-align: center; }
@@ -377,15 +380,16 @@ a.add {
 #image_browser ul li {
   display: inline; }
 
-#content_elements .column_tabs li {
-  cursor: pointer;
-  display: inline;
-  margin-right: 10px; }
-#content_elements .column_tabs .current {
-  font-weight: bold; }
+#content_elements .column_tabs {
+  margin-top: 10px; }
+  #content_elements .column_tabs li {
+    cursor: pointer;
+    display: inline;
+    margin-right: 10px; }
+  #content_elements .column_tabs .current {
+    font-weight: bold; }
 #content_elements .column_content {
-  display: none;
-  margin: 15px 0; }
+  display: none; }
 #content_elements .current {
   display: block; }
 #content_elements table {
