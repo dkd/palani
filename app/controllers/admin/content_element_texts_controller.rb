@@ -15,9 +15,9 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   def update
     if @content_element.update_attributes(params[:content_element_text])
       flash[:notice] = 'changes_saved_succesfully'
-      @page = @content_element.content_element.page
-      @content_elements = @page.content_elements
+      @page = @content_element.page
       @partial_file = "admin/pages/show"
+      @template_part_id = @content_element.template_part_id
     else
       flash.now[:error] = 'check_your_input'
       @partial_file = "edit"
@@ -32,8 +32,8 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   #-----------------------------------------------------------------------------
   def destroy
     @content_element.content_element.destroy
-    @page = @content_element.content_element.page
-    @content_elements = @page.content_elements
+    @page = @content_element.page
+    @template_part_id = @content_element.template_part_id
     @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'
     render :update do |page|

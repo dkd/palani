@@ -16,6 +16,10 @@ class PageTemplate < Template
     keys.delete_if { |e|  ALLOCATED_TAGS.include?(e) }
     # remove duplicates
     keys.uniq
+    # remove not existing parts
+    current_keys = TemplatePart.find_all_by_template_id(self.id).collect { |t| t.key  }
+    not_existing_parts = current_keys - keys
+    not_existing_parts.each { |part| TemplatePart.find_by_template_id_and_key(self.id, part).destroy }
     # create new markers
     keys.each { |key| self.template_parts.find_or_create_by_key(key)  }
   end

@@ -8,7 +8,7 @@
 <% if @page.template %>
   <ul class="column_tabs">
     <% @page.template.template_parts.backend_columns.each do |template_part| %>
-    <% if template_part == @page.template.template_parts.backend_columns.first %>
+    <% if is_current_template_part(template_part, @page.template.template_parts.backend_columns.first, @template_part_id) %>
     <li class="current"><%= template_part.title %></li>
     <% else %>
     <li><%= template_part.title %></li>
@@ -16,7 +16,7 @@
     <% end %>
   </ul>
   <% @page.template.template_parts.backend_columns.each do |template_part| %>
-  <% if template_part == @page.template.template_parts.backend_columns.first %>
+  <% if is_current_template_part(template_part, @page.template.template_parts.backend_columns.first, @template_part_id) %>
   <div class="column_content current">
     <%= render :partial => "admin/content_elements/index", :locals => { :template_part_id => template_part.id } %>
   </div>
