@@ -35,6 +35,7 @@
       <%= f.label "" %>
       <%= hidden_field_tag "page_id", params[:page] %>
       <%= hidden_field_tag "content_element_id", params[:content_element]  %>
+      <%= f.hidden_field :template_part_id %>
       <%= f.submit t(".submit_text"), :class => "submit" %>
     <% end %>
   </div>

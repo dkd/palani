@@ -338,8 +338,8 @@ a.add {
 #top_buttons {
   margin-top: 10px;
   margin-bottom: 20px;
-  text-align: center;
-  padding-right: 35px; }
+  padding-left: 10px;
+  text-align: center; }
 
 #page_path {
   padding: 5px; }
@@ -377,6 +377,17 @@ a.add {
 #image_browser ul li {
   display: inline; }
 
+#content_elements .column_tabs li {
+  cursor: pointer;
+  display: inline;
+  margin-right: 10px; }
+#content_elements .column_tabs .current {
+  font-weight: bold; }
+#content_elements .column_content {
+  display: none;
+  margin: 15px 0; }
+#content_elements .current {
+  display: block; }
 #content_elements table {
   width: 100%; }
   #content_elements table th {

@@ -28,10 +28,10 @@ module Admin::ContentElementsHelper
     panel_items
   end
   
-  def new_content_element_button(content_element = nil)
-    link_to t("admin.content_elements.add_new"), new_admin_page_content_element_path(@page, 
+  def new_content_element_button(content_element = nil, template_part = nil)
+    link_to t("admin.content_elements.add_new"), new_admin_page_content_element_path(@page,
                    :content_element => (content_element ? content_element.id : nil), :page => @page.id,
-                   :template_part => (content_element ? content_element.template_part_id : nil)),
+                   :template_part => (content_element ? content_element.template_part_id : template_part)),
                    :class => "add remote-link"
   end
   

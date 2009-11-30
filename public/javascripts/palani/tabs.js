@@ -16,4 +16,15 @@ $(document).ready(function(){
 
 	});
 	
+	$(".column_tabs li").livequery("click",function() {
+
+		$(".column_tabs > .current").removeClass("current");
+		$(this).addClass("current");
+		var index = $(this).parent().find("li").index($(this));
+
+		$("div.column_content.current").removeClass("current");
+		$("div.column_content:eq("+index+")").addClass("current");
+
+	});
+	
 });

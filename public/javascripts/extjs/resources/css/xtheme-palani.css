@@ -1806,6 +1806,13 @@ body.x-body-masked .x-window-plain .x-window-mc {
 	position: relative;
 	bottom: -22px;
 	text-align: center;
+	width: 100% !important;
+}
+
+.panel .panel_with_toolbar .x-panel-bbar .x-panel,
+.panel .panel_with_toolbar .x-panel-bbar .x-panel .x-panel-bwrap,
+.panel .panel_with_toolbar .x-panel-bbar .x-panel .x-panel-bwrap .x-panel-body {
+	width: 100% !important;
 }
 
 .panel .panel_with_toolbar .x-panel-bwrap {
