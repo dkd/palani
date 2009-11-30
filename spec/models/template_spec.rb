@@ -29,17 +29,5 @@ describe Template do
     end
     
   end
-  
-  describe "parse_parts" do
-    
-    it "should return an Array" do
-      @page_template.parse_parts.should be_an Array
-    end
-    
-    it "should return the given marker keys" do
-      @page_template.parse_parts.should include("title","description")
-    end
-    
-  end
 
 end
