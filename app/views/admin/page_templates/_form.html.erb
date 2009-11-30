@@ -9,7 +9,9 @@
 		<%= f.label :code, t('.code') %>
 		<%= f.text_area :code, :class => "big" %>
 		<br />
+		<% unless context == "new" %>
 		<%= link_to t(".refresh_parsing"), parse_elements_admin_page_template_path(page_template), :class => "float_right remote-link" %><br /><br />
+		<% end %>
 	</fieldset>
 	
 	<% if page_template.template_parts.present? %>
