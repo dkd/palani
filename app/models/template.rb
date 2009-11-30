@@ -10,8 +10,6 @@ class Template < ActiveRecord::Base
   
   has_many :template_parts
   
-  before_save :parse_parts
-  
   validates_presence_of :title
   validates_uniqueness_of :title
   
@@ -31,22 +29,6 @@ class Template < ActiveRecord::Base
   # returns a html escaped code with a maximum of 60 chars
   def clean_code
     truncate(html_escape(code), :length => 60, :omission => "...")
-  end
-  
-  # parses the given template code to offer several markers, that can be used for cols
-  def parse_parts(code = nil)
-    code ||= self.code
-    # parse the given code
-    t = Liquid::Template.parse(code)
-    keys = []
-    # add the several markers to keys = []
-    t.root.nodelist.each { |part| keys << part.name if part.is_a? Liquid::Variable }
-    # remove allocated tags
-    keys.delete_if { |e|  ALLOCATED_TAGS.include?(e) }
-    # remove duplicates
-    keys.uniq
-    # create new markers
-    keys.each { |key| self.template_parts.find_or_create_by_key(key)  }
   end
   
 end

@@ -20,5 +20,7 @@ task :cruise do
            end 
          end 
     
-         CruiseControl::invoke_rake_task 'spec'
+         CruiseControl::invoke_rake_task 'spec:controllers'
+         CruiseControl::invoke_rake_task 'spec:helpers'
+         CruiseControl::invoke_rake_task 'spec:models'
 end

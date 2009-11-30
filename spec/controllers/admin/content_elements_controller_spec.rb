@@ -9,7 +9,6 @@ describe Admin::ContentElementsController do
     @content_element = mock_model(ContentElement, :page => @page, :destroy => true, :save => false)
     @page.stub!(:content_elements).and_return([@content_element])
     ContentElement.stub!(:find).and_return(@content_element)
-    ContentElement.stub!(:new).and_return(@content_element)
     @content_element.stub!(:from_content_element).and_return(nil)
     @content_element.stub!(:create_element_type).and_return(nil)
     login_admin
@@ -35,6 +34,10 @@ describe Admin::ContentElementsController do
   
   describe "GET /admin/pages/1/content_elements/new" do
     
+    before(:each) do
+      ContentElement.stub!(:new).and_return(@content_element)
+    end
+    
     it "should be accessible, if we are authenticated" do
       xhr :get, :new, :page_id => 1
       response.should be_success
@@ -59,6 +62,10 @@ describe Admin::ContentElementsController do
   end
 
   describe "POST /admin/pages/1/content_elements/" do
+    
+    before(:each) do
+      ContentElement.stub!(:new).and_return(@content_element)
+    end
     
     it "should be accessible, if we are authenticated" do
       xhr :post, :create, :page_id => 1
