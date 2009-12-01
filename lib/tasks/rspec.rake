@@ -63,6 +63,7 @@ namespace :spec do
     Rake::Task["spec:models"].invoke
     Rake::Task["spec:controllers"].invoke
     Rake::Task["spec:helpers"].invoke
+    Rake::Task["spec:lib"].invoke
   end
 
   desc "Print Specdoc for all specs (excluding plugin specs)"
