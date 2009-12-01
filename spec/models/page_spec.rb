@@ -6,6 +6,19 @@ describe Page do
     @page = Factory(:page)
   end
   
+  describe "dummy_type" do
+    
+    it "should return the type" do
+      @page.dummy_type.should eql @page.type
+    end
+    
+    it "should change the type" do
+      @page.dummy_type = "ShortcutPage"
+      @page.type.should eql "ShortcutPage"
+    end
+    
+  end
+  
   describe "interface" do
     
     context "icon" do
@@ -60,6 +73,18 @@ describe Page do
     
     before(:each) do
       @drop_page = Factory(:page)
+    end
+    
+    context "on the root line" do
+      
+      before(:each) do
+        @page.update_sorting("root", "above")
+      end
+      
+      it "should have no parent_id" do
+        @page.parent_id.should be_nil
+      end
+      
     end
     
     context "above another page" do
