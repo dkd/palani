@@ -22,6 +22,7 @@ class Admin::ContentElementHtmlsController < ApplicationController
         page['middle_content'].replace_html :partial => "admin_pages_show"
       end
     else
+      flash[:error] = 'check_your_input'
       render :update do |page|
         page['notifications'].replace_html render_notifications
         page['middle_content'].replace_html :partial => "edit"

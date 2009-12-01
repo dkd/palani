@@ -6,7 +6,7 @@ describe Admin::ContentElementHtmlsController do
     controller.stub!(:render).and_return(nil)
     @page = mock_model(Page, :content_elements => [])
     @content_element = mock_model(ContentElement, :page => @page, :destroy => true)
-    @content_element_html = mock_model(ContentElementHtml, :content_element => @content_element, :destroy => true)
+    @content_element_html = mock_model(ContentElementHtml, :content_element => @content_element, :destroy => true, :page => @page, :template_part_id => 1)
     ContentElementHtml.stub!(:find).and_return(@content_element_html)
     login_admin
   end

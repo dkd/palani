@@ -57,6 +57,13 @@ namespace :spec do
       IO.readlines("#{RAILS_ROOT}/spec/rcov.opts").map {|l| l.chomp.split " "}.flatten
     end
   end
+  
+  desc "Run all specs isolated"
+  task :all do
+    Rake::Task["spec:models"].invoke
+    Rake::Task["spec:controllers"].invoke
+    Rake::Task["spec:helpers"].invoke
+  end
 
   desc "Print Specdoc for all specs (excluding plugin specs)"
   Spec::Rake::SpecTask.new(:doc) do |t|

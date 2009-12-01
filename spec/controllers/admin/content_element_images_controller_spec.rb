@@ -6,7 +6,7 @@ describe Admin::ContentElementImagesController do
     controller.stub!(:render).and_return(nil)
     @page = mock_model(Page, :content_elements => [])
     @content_element = mock_model(ContentElement, :page => @page, :destroy => true)
-    @content_element_image = mock_model(ContentElementImage, :content_element => @content_element, :destroy => true)
+    @content_element_image = mock_model(ContentElementImage, :content_element => @content_element, :destroy => true, :page => @page, :template_part_id => 1)
     ContentElementImage.stub!(:find).and_return(@content_element_image)
     login_admin
   end
