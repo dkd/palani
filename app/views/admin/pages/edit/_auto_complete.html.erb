@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#page_tag_list').autocomplete('<%= admin_tags_url %>', {
+        dataType: 'json',
+        parse: function(data) {
+            var rows = new Array();
+            for(var i=0; i<data.length; i++){
+                rows[i] = { data: data[i], value:data[i].tag_name, result:data[i].tag_name };
+            }
+            return rows;
+        },
+        formatItem: function(row, i, n) {
+            return row.tag_name;
+        },
+        width: 310,
+        multiple: true,
+        scroll: false,
+        selectFirst: false
+    });
+  });
+</script>

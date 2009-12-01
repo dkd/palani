@@ -37,6 +37,7 @@ de:
         visibility: Sichtbarkeit
         access_time: Zugriffszeit
         saved_type_succesfully: Sie haben den Seitentyp erfolgreich geändert.
+        tags: Tags
         settings:
           special_type_settings: Seitentyp-Eigenschaften
         types:

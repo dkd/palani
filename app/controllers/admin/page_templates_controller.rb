@@ -80,9 +80,15 @@ class Admin::PageTemplatesController < ApplicationController
     end
   end
   
-  # GET /admin/page_templates/1/parse_elements                             AJAX
+  # PUT /admin/page_templates/1/parse_elements                             AJAX
   #----------------------------------------------------------------------------
   def parse_elements
+    @page_template = PageTemplate.find(params[:id])
+    
+    @page_template.update_attributes(params[:page_template])
+    render :update do |page|
+      page['middle_col'].replace_html :partial => "edit"
+    end
   end
   
   private

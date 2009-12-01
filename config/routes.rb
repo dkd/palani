@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
                               :member => { :update_new => :put } do |page|
         page.resources :content_elements
       end
-      admin.resources :page_templates, :member =>  { :parse_elements => :get  }
+      admin.resources :page_templates, :member =>  { :parse_elements => :put  }
       admin.resources :images
       admin.resources :help, :collection => { :faq => :get, :community => :get }
       admin.resources :trees, :collection => { :tree => :post, :refresh => :get  }

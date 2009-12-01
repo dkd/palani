@@ -5,7 +5,7 @@
       <li><%= t(".type_settings") %></li>
       <li><%= t(".template") %></li>
       <li><%= t(".meta_informations") %></li>
-      <li><%= t(".access") %></li>
+      <li><%= t(".tags") %></li>
     </ul>
     <div class="tab_content current">
       <fieldset>
@@ -74,15 +74,11 @@
     </div>
     <div class="tab_content">
       <fieldset>
-        <legend><%= t(".access_time") %></legend>
+        <legend><%= t(".tags") %></legend>
         <div class="clear">
-          <%= f.label :starttime, t(".starttime") %>
-          <%= f.text_field :starttime %>
-        </div>
-        <div class="clear">
-          <%= f.label :endtime, t(".endtime") %>
-          <%= f.text_field :endtime %>
-        </div>
+      	  <%= f.label :tag_list, t(".tags") %>
+      	  <%= f.text_field :tag_list, :id => "page_tag_list" %>
+    		</div>
       </fieldset>
     </div>
     <%= f.label "" %>

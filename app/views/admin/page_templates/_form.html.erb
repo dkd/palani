@@ -8,9 +8,9 @@
 	<fieldset>
 		<%= f.label :code, t('.code') %>
 		<%= f.text_area :code, :class => "big" %>
-		<br />
 		<% unless context == "new" %>
-		<%= link_to t(".refresh_parsing"), parse_elements_admin_page_template_path(page_template), :class => "float_right remote-link" %><br /><br />
+		<br /><br />
+		<%= link_to t(".refresh_parsing"), "#", :id => "parse_parts", :class => "float_right remote-link" %><br /><br />
 		<% end %>
 	</fieldset>
 	
@@ -60,6 +60,22 @@
     $(document).ready(function(){
       $("#submit_code").bind("click", function() {
         $("#page_template_code").val(editor.getCode());
+      });
+      
+      $("#parse_parts").bind("click", function() {
+        
+        $("#page_template_code").val(editor.getCode());
+        var params = $(".standard_form form").serialize();
+        
+        $.ajax({ method: "put", 
+  				 	     dataType: "script", 
+  						 	 url: "<%= parse_elements_admin_page_template_url(page_template) %>",
+  							 data: params,
+  							 type: "put",
+  							 async: false
+  			});
+        
+        return false;
       });
     });
 </script>

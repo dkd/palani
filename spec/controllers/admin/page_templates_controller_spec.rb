@@ -192,5 +192,34 @@ describe Admin::PageTemplatesController do
     end
     
   end
+  
+  describe "PUT /admin/page_templates/1/parse_elements" do
+    
+    before(:each) do
+      @page_template.stub!(:update_attributes).and_return(true)
+    end
+    
+    it "should be accessible, if we are authenticated" do
+      xhr :put, :parse_elements, :id => 1
+      response.should be_success 
+    end
+    
+    it "should not be accessible, if we are not authenticated" do
+      public_user
+      xhr :put, :parse_elements, :id => 1
+      response.should_not be_success
+    end
+    
+    it "should update the attributes of the page template requested" do
+      @page_template.should_receive(:update_attributes)
+      xhr :put, :parse_elements, :id => 1
+    end
+    
+    it "should render an update" do
+      controller.should_receive(:render).with(:update)
+      xhr :put, :parse_elements, :id => 1
+    end
+    
+  end
 
 end

@@ -2,6 +2,7 @@
 <%= render_ext_panel([
     { :title => t(".edit"), :html => render(:partial => "admin/pages/edit"), :collapsed => collapsed }
   ]) %>
+<%= render :partial => "admin/pages/edit/auto_complete" %>
 <div id="simple_tabs_javascript">
   <%= render :partial => "admin/pages/edit/change_settings" %>
 </div>
