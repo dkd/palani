@@ -197,6 +197,7 @@ describe Admin::PageTemplatesController do
     
     before(:each) do
       @page_template.stub!(:update_attributes).and_return(true)
+      @page_template.stub!(:reload)
     end
     
     it "should be accessible, if we are authenticated" do
@@ -217,6 +218,11 @@ describe Admin::PageTemplatesController do
     
     it "should render an update" do
       controller.should_receive(:render).with(:update)
+      xhr :put, :parse_elements, :id => 1
+    end
+    
+    it "should reload the page template requested" do
+      @page_template.should_receive(:reload)
       xhr :put, :parse_elements, :id => 1
     end
     

@@ -86,6 +86,7 @@ class Admin::PageTemplatesController < ApplicationController
     @page_template = PageTemplate.find(params[:id])
     
     @page_template.update_attributes(params[:page_template])
+    @page_template.reload
     render :update do |page|
       page['middle_col'].replace_html :partial => "edit"
     end
