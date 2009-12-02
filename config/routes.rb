@@ -38,5 +38,10 @@ ActionController::Routing::Routes.draw do |map|
   map.admin "admin", :controller => "admin/user_sessions", :action => "new"
   map.login "login", :controller => "admin/user_sessions", :action => "new"
   map.logout "logout", :controller => "admin/user_sessions", :action => "destroy"
+  
+  map.connect 'tags/:tag', :controller => 'pages', :action => 'show' 
+  map.connect '*url', :controller => 'pages', :action => 'show'
+  map.connect ':page_url', :controller => 'pages', :action => 'show'
+  map.connect '', :controller => 'pages', :action => 'show'
 
 end

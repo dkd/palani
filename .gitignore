@@ -1,7 +1,6 @@
 .svn
 **/.svn
 .DS_Store
-**/.DS_Store
 *.log
 .project
 .loadpath

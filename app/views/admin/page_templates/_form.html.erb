@@ -62,6 +62,7 @@
         $("#page_template_code").val(editor.getCode());
       });
       
+      <% unless context == "new" %>
       $("#parse_parts").bind("click", function() {
         
         $("#page_template_code").val(editor.getCode());
@@ -77,5 +78,6 @@
         
         return false;
       });
+      <% end %>
     });
 </script>

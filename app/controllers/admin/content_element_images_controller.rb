@@ -32,9 +32,8 @@ class Admin::ContentElementImagesController < Admin::ContentElementsController
   #-----------------------------------------------------------------------------
   def destroy
     @page = @content_element.page
-    @content_element.content_element.destroy
-    @content_element.destroy
     @template_part_id = @content_element.template_part_id
+    @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'
     render :update do |page|
       page['notifications'].replace_html render_notifications

@@ -2,7 +2,7 @@ class ContentElementImage < ActiveRecord::Base
 
   include ActsAsContentElement
 
-  belongs_to :content_element
+  belongs_to :content_element, :dependent => :destroy
   has_many :images, :through => :image_attachments
   has_many :image_attachments
   

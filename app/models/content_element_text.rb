@@ -4,7 +4,7 @@ class ContentElementText < ActiveRecord::Base
 
   before_save :create_clean_text
 
-  belongs_to :content_element
+  belongs_to :content_element, :dependent => :destroy
   
   validates_associated :content_element
   

@@ -31,7 +31,6 @@ class Admin::ContentElementTextsController < Admin::ContentElementsController
   # DELETE /admin/pages/:page_id/content_element_texts/:id                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    @content_element.content_element.destroy
     @page = @content_element.page
     @template_part_id = @content_element.template_part_id
     @content_element.destroy

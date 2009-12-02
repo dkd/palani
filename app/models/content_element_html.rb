@@ -2,7 +2,7 @@ class ContentElementHtml < ActiveRecord::Base
 
   include ActsAsContentElement
 
-  belongs_to :content_element
+  belongs_to :content_element, :dependent => :destroy
   
   validates_associated :content_element
   

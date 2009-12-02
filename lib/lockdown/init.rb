@@ -123,6 +123,7 @@ Lockdown::System.configure do
   
   # Login
   set_permission(:login).with_controller(:admin__user_sessions)
+  set_permission(:frontend).with_controller(:pages)
   
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Built-in user groups

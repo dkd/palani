@@ -33,10 +33,9 @@ class Admin::ContentElementHtmlsController < ApplicationController
   # DELETE /admin/pages/:page_id/content_element_htmls/:id                 AJAX
   #-----------------------------------------------------------------------------
   def destroy
-    @content_element.content_element.destroy
     @page = @content_element.page
-    @content_element.destroy
     @template_part_id = @content_element.template_part_id
+    @content_element.destroy
     flash.now[:notice] = 'deleted_succesfully'
     render :update do |page|
       page['notifications'].replace_html render_notifications

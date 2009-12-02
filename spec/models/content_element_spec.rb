@@ -35,11 +35,6 @@ describe ContentElement do
       @content_element.create_element_type.should be_a Kernel.const_get(@content_element.element_type)
     end
     
-    it "should return a content element, if it already exists" do
-      @content_element.create_element_type
-      Kernel.const_get(@content_element.element_type).find_by_content_element_id(@content_element).should == @content_element.create_element_type
-    end
-    
   end
   
   describe "validations" do
