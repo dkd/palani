@@ -3,7 +3,7 @@ module Admin::RenderHelper
   # renders the main navigation
   def render_main_menu(current_controller)
     menu_items = []
-    menu_items << { :name => "pages", :controllers => ["admin/pages"], :link_to => root_path, :current => false  }
+    menu_items << { :name => "pages", :controllers => ["admin/pages"], :link_to => admin_pages_path, :current => false  }
     menu_items << { :name => "templates", :controllers => ["admin/page_templates","admin/content_element_templates"], 
                     :link_to => admin_page_templates_path, :current => false  }
     menu_items << { :name => "administration", :controllers => ["admin/administration","admin/users","admin/user_groups"], 

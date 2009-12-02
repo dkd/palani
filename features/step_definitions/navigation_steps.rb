@@ -3,7 +3,7 @@ Given /^a logged in user$/ do
   @user_group = Factory.create(:user_group, :name => "Administrators")
   @user.user_groups << @user_group
   visit logout_path
-  visit root_path
+  visit admin_pages_path
   fill_in "Username", :with => "admin"
   fill_in "Password", :with => "test"
   click_button "Login"
@@ -17,7 +17,7 @@ Given /^a logged in admin$/ do
   @user_group = Factory.create(:user_group, :name => "Administrators")
   @user.user_groups << @user_group
   visit logout_path
-  visit root_path
+  visit admin_pages_path
   fill_in "Username", :with => "admin"
   fill_in "Password", :with => "test"
   click_button "Login"

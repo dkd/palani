@@ -37,7 +37,7 @@ class Admin::UserSessionsController < ApplicationController
     current_user_session.destroy
     reset_lockdown_session
     flash.now[:notice] = 'succesful_logout'
-    redirect_to root_path
+    redirect_to login_path
   end
   
   private

@@ -5,7 +5,7 @@ Given /^a valid user$/ do
 end
 
 When /^I put his username and correct password into the form$/ do
-  visit root_path
+  visit admin_pages_path
   fill_in "Username", :with => @user.username
   fill_in "Password", :with => @user.password
   click_button "Login"
@@ -20,7 +20,7 @@ Given /^a invalid user$/ do
 end
 
 When /^I put his username and incorrect password into the form$/ do
-  visit root_path
+  visit admin_pages_path
   fill_in "Username", :with => @invalid_user.username
   fill_in "Password", :with => @invalid_user.password
   click_button "Login"
@@ -31,7 +31,7 @@ Then /^I should get redirected to the login page$/ do
 end
 
 Given /^the user is logged in$/ do
-  visit root_path
+  visit admin_pages_path
   fill_in "Username", :with => @user.username
   fill_in "Password", :with => @user.password
   click_button "Login"

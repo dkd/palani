@@ -14,6 +14,24 @@ class Page < ActiveRecord::Base
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
+  class << self
+    
+    # returns nil if the page could not be found
+    # return the page object requested by the path
+    def find_by_url(url)
+      # return the first page on the root level, if the url is empty
+      return Page.roots.first if url.empty?
+      
+      # get the first page of the path
+      @current_page = Page.roots.find_by_title(url.shift)
+      # go through each path segment
+      url.each { |page_title| @current_page = @current_page.children.find_by_title(page_title) }
+      
+      @current_page
+    end
+    
+  end
+  
   # is getting used, because type is a Rails keyword
   def dummy_type=(type)
     self[:type] = type

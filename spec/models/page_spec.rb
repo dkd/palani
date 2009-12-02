@@ -3,7 +3,31 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Page do
   
   before(:each) do
-    @page = Factory(:page)
+    @page = Factory(:content_page)
+  end
+  
+  describe "find_by_url" do
+    
+    context "page does not exist" do
+      
+      it "should return nil" do
+        Page.find_by_url(["abcdefghijklmnopqrstuvwxyz"]).should be_nil
+      end
+      
+    end
+    
+    context "page does exist" do
+      
+      before(:each) do
+        @page.update_attributes(:title => "home")
+      end
+      
+      it "should return the page requested" do
+        Page.find_by_url(["home"]).should == @page
+      end
+      
+    end
+    
   end
   
   describe "dummy_type" do
@@ -28,7 +52,7 @@ describe Page do
       end
       
       it "should be named page" do
-        File.basename(RAILS_ROOT+"/public"+@page.icon).should eql "page.png"
+        File.basename(RAILS_ROOT+"/public"+@page.icon).should eql "content_page.png"
       end
       
     end

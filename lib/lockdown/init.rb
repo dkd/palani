@@ -121,7 +121,7 @@ Lockdown::System.configure do
   set_permission(:faq_help).with_controller(:admin__help).only_methods(:faq)
   set_permission(:community_help).with_controller(:admin__help).only_methods(:community)
   
-  # Login
+  # Pages, that don't need any authorization
   set_permission(:login).with_controller(:admin__user_sessions)
   set_permission(:frontend).with_controller(:pages)
   
@@ -139,6 +139,7 @@ Lockdown::System.configure do
   #
   # Define the built-in user groups here:
   set_public_access :login
+  set_public_access :frontend
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Define user groups
