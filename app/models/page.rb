@@ -1,3 +1,21 @@
+# available methods for templating:
+# * title (Page title)
+# * type (Page type - e.g. ShortcutPage, ContentPage)
+# * starttime
+# * endtime
+# * hidden
+# * hidden_in_menu
+# * subtitle
+# * navigation_title
+# * description
+# * abstract
+# * author
+# * author_email
+# * target
+# * created_at
+# * updated_at
+# * ancestry
+# * tags
 class Page < ActiveRecord::Base
   
   has_many :content_elements
@@ -14,13 +32,16 @@ class Page < ActiveRecord::Base
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
   
+  liquid_methods :title, :type, :starttime, :endtime, :hidden, :hidden_in_menu, :subtitle, :navigation_title, :description, 
+                 :abstract, :author, :author_email, :target, :created_at, :updated_at, :ancestry, :tags
+  
   class << self
     
     # returns nil if the page could not be found
     # return the page object requested by the path
     def find_by_url(url)
       # return the first page on the root level, if the url is empty
-      return Page.roots.first if url.empty?
+      return Page.roots.sorted.first if url.empty?
       
       # get the first page of the path
       @current_page = Page.roots.find_by_title(url.shift)

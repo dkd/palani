@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   #   /:page_url
   #   /
   def show
-    render :json => { :success => true }
+    @template = Liquid::Template.parse(@page.template.code)
+    @template.render('page' => @page)
   end
   
   private
