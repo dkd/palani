@@ -6,16 +6,16 @@ module PagesHelper
     collected_parts = { "page" => page }
     # go through each template part and add it to the collected parts
     page.template.template_parts.backend_columns.each { |part|
-      collected_parts[part.key] = render_template_part(part)
+      collected_parts[part.key] = render_template_part(part, page)
     }
     
     frontend_template.render(collected_parts)
   end
   
   # renders the given template part and its content elements
-  def render_template_part(template_part)
+  def render_template_part(template_part, page)
     part = ""
-    ContentElement.find_all_by_template_part_id(template_part.id).each { |content_element|
+    page.content_elements.find_all_by_template_part_id(template_part.id).each { |content_element|
       part += render_content_element(content_element)
     }
     part
