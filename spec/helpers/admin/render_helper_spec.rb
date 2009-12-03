@@ -36,7 +36,7 @@ describe Admin::RenderHelper do
   describe "render_page_path" do
     
     it "should render the partial" do
-      helper.instance_variable_set(:@page, Factory.build(:page))
+      helper.instance_variable_set(:@page, Factory(:page))
       helper.should_receive(:render)
       helper.render_page_path
     end
