@@ -11,17 +11,19 @@ describe PagesController do
     
     context "valid page url" do
       
+      before(:each) do
+        @frontend_template = mock_model(PageTemplate, :code => "<html></html>")
+        @page = mock_model(Page, :title => "Test", :template => @frontend_template)
+        Page.stub!(:find_by_path).and_return(@page)
+      end
+      
       it "should be accessible without any authorization" do
-        @page = mock_model(Page, :title => "Test")
-        Page.stub!(:find_by_url).and_return(@page)
         get :show, :url => ["Test"]
         response.should be_success
       end
 
       it "should look for the page requested" do
-        @page = mock_model(Page, :title => "Test")
-        Page.stub!(:find_by_url).and_return(@page)
-        Page.should_receive(:find_by_url)
+        Page.should_receive(:find_by_path)
         get :show, :url => ["Test"]
       end
       

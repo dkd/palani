@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
   
   before_filter :find_page, :only => [:show]
+  layout nil
   
   #   /tags/:tag
   #   /:page_url
   #   /
   def show
-    @template = Liquid::Template.parse(@page.template.code)
-    @template.render('page' => @page)
+    @frontend_template = Liquid::Template.parse(@page.template.code)
   end
   
   private
