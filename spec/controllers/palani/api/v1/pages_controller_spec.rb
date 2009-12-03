@@ -135,5 +135,117 @@ describe Palani::Api::V1::PagesController do
     end
     
   end
+  
+  describe "PUT /palani/api/pages/1.json" do
+    
+    before(:each) do
+      @page.stub!(:update_attributes).and_return(true)
+    end
+    
+    context "with valid data" do
+    
+      it "should update the attributes of the page requested" do
+        @page.should_receive(:update_attributes)
+        put :update, :id => 1, :format => "json"
+      end
+      
+      it "should send HTTP Status 200" do
+        put :update, :id => 1, :format => "json"
+        response.should be_success
+      end
+    
+    end
+    
+    context "with invalid data" do
+      
+      before(:each) do
+        @page.stub!(:update_attributes).and_return(false)
+      end
+      
+      it "should throw a Exception" do
+        lambda {
+          put :update, :id => 1, :format => "json"
+        }.should raise_error(Palani::Api::InvalidUpdateOfRecordJSONException)
+      end
+      
+      it "should send HTTP Status 400"
+      
+    end
+    
+  end
+  
+  describe "PUT /palani/api/pages/1.xml" do
+    
+    before(:each) do
+      @page.stub!(:update_attributes).and_return(true)
+    end
+    
+    context "with valid data" do
+    
+      it "should update the attributes of the page requested" do
+        @page.should_receive(:update_attributes)
+        put :update, :id => 1, :format => "xml"
+      end
+      
+      it "should send HTTP Status 200" do
+        put :update, :id => 1, :format => "xml"
+        response.should be_success
+      end
+    
+    end
+    
+    context "with invalid data" do
+      
+      before(:each) do
+        @page.stub!(:update_attributes).and_return(false)
+      end
+      
+      it "should throw a Exception" do
+        lambda {
+          put :update, :id => 1, :format => "xml"
+        }.should raise_error(Palani::Api::InvalidUpdateOfRecordXMLException)
+      end
+      
+      it "should send HTTP Status 400"
+      
+    end
+    
+  end
+  
+  describe "DELETE /palani/api/pages/1.json" do
+    
+    before(:each) do
+      @page.stub!(:destroy)
+    end
+    
+    it "should destroy the page requested" do
+      @page.should_receive(:destroy)
+      delete :destroy, :id => 1, :format => "json"
+    end
+      
+    it "should send HTTP Status 200" do
+      delete :destroy, :id => 1, :format => "json"
+      response.should be_success
+    end
+  
+  end
+  
+  describe "DELETE /palani/api/pages/1.XML" do
+    
+    before(:each) do
+      @page.stub!(:destroy)
+    end
+    
+    it "should destroy the page requested" do
+      @page.should_receive(:destroy)
+      delete :destroy, :id => 1, :format => "xml"
+    end
+      
+    it "should send HTTP Status 200" do
+      delete :destroy, :id => 1, :format => "xml"
+      response.should be_success
+    end
+  
+  end
 
 end

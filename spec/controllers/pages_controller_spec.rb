@@ -37,6 +37,8 @@ describe PagesController do
       
     end
     
+    context "no template"
+    
   end
 
 end
