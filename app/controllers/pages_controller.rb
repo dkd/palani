@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   private
   
   def find_page
-    @page = Page.find_by_url(params[:url])
+    @page = Page.find_by_path(params[:url])
     raise Palani::Rendering::NoPageFoundException unless @page
   end
   

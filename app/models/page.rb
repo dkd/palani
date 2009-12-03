@@ -28,6 +28,7 @@ class Page < ActiveRecord::Base
   acts_as_tree
   acts_as_taggable_on :tags
   acts_as_paranoid
+  acts_as_url :title, :sync_url => true
   
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
@@ -39,14 +40,14 @@ class Page < ActiveRecord::Base
     
     # returns nil if the page could not be found
     # return the page object requested by the path
-    def find_by_url(url)
+    def find_by_path(url)
       # return the first page on the root level, if the url is empty
       return Page.roots.sorted.first if url.empty?
       
       # get the first page of the path
-      @current_page = Page.roots.find_by_title(url.shift)
+      @current_page = Page.roots.find_by_url(url.shift)
       # go through each path segment
-      url.each { |page_title| @current_page = @current_page.children.find_by_title(page_title) }
+      url.each { |page_title| @current_page = @current_page.children.find_by_url(page_title) }
       
       @current_page
     end

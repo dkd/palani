@@ -6,12 +6,12 @@ describe Page do
     @page = Factory(:content_page)
   end
   
-  describe "find_by_url" do
+  describe "find_by_path" do
     
     context "page does not exist" do
       
       it "should return nil" do
-        Page.find_by_url(["abcdefghijklmnopqrstuvwxyz"]).should be_nil
+        Page.find_by_path(["abcdefghijklmnopqrstuvwxyz"]).should be_nil
       end
       
     end
@@ -23,7 +23,7 @@ describe Page do
       end
       
       it "should return the page requested" do
-        Page.find_by_url(["home"]).should == @page
+        Page.find_by_path(["home"]).should == @page
       end
       
     end

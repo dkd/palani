@@ -35,6 +35,7 @@ Rails::Initializer.run do |config|
   config.gem "ancestry"
   config.gem "searchlogic"
   config.gem "liquid"
+  config.gem "stringex"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
