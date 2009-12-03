@@ -2,7 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.namespace :palani do |palani|
     palani.namespace :api do |api|
-      api.resources :pages, :controller => "v1/pages"
+      api.resources :pages, :controller => "v1/pages" do |page|
+        page.resources :content_elements, :controller => "v1/content_elements"
+      end
     end
   end
   
