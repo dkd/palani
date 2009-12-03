@@ -9,6 +9,8 @@ class ContentElementImage < ActiveRecord::Base
   validates_associated :content_element
   
   accepts_nested_attributes_for :image_attachments
+  
+  liquid_methods :image_attachments, :header, :element_type, :hidden, :created_at, :updated_at, :tags, :page
 
   # returns the icon, that is used for the backend
   def icon

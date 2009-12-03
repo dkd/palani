@@ -3,4 +3,6 @@ class ImageAttachment < ActiveRecord::Base
   
   acts_as_paranoid
   
+  liquid_methods :image, :width, :height, :position
+  
 end

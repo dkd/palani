@@ -6,6 +6,8 @@ class ContentElementHtml < ActiveRecord::Base
   
   validates_associated :content_element
   
+  liquid_methods :html, :created_at, :updated_at, :header, :element_type, :hidden, :created_at, :updated_at, :tags, :page
+  
   # returns the icon, that is used for the backend
   def icon
     "icons/content_elements/content_element_html.png"
