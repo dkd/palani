@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   def find_page
     @page = Page.find_by_path(params[:url])
     raise Palani::Rendering::NoPageFoundException unless @page
+    raise Palani::Rendering::NoTemplateFoundException unless @page.template
   end
   
 end

@@ -6,6 +6,18 @@ describe Page do
     @page = Factory(:content_page)
   end
   
+  describe "path" do
+    
+    it "should return a path with a beginning and ending slash" do
+      @page.path.should match(/[\/][a-zA-Z0-9\/]*[\/]/)
+    end
+    
+    it "should only contain escaped characters, numbers or slashes" do
+      @page.path.should match(/[a-zA-Z0-9\/]*/)
+    end
+    
+  end
+  
   describe "find_by_path" do
     
     context "page does not exist" do

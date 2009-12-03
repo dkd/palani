@@ -14,7 +14,7 @@ defaults: &defaults
       english: en
   frontend:
   website:
-
+    base_url: http://localhost:3000
 development:
   <<: *defaults
 

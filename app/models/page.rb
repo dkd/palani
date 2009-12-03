@@ -54,6 +54,13 @@ class Page < ActiveRecord::Base
     
   end
   
+  # returns the path to the page
+  # for example: /home/about-us/
+  def path
+    @path = path_ids.collect{ |id| Page.find(id).url  }
+    "/#{@path.join('/')}/"
+  end
+  
   # is getting used, because type is a Rails keyword
   def dummy_type=(type)
     self[:type] = type

@@ -71,9 +71,11 @@ module Admin::RenderHelper
   
   # renders the page path
   def render_page_path
-    @page_path = ""
-    @page.ancestry.split("/").each { |p|  @page_path << Page.find(p).title+" / " } if @page.ancestry
-    render :partial => "admin/general/page_path", :locals => { :page_path => @page_path+@page.title  }
+    if Settings.website.base_url.present?
+      render :partial => "admin/general/page_path", :locals => { :page_path => Settings.website.base_url+@page.path  }
+    else
+      render :partial => "admin/general/page_path", :locals => { :page_path => @page.path  }
+    end
   end
   
   def render_text_editor(name,value="")
