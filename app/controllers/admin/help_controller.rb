@@ -1,4 +1,4 @@
-class Admin::HelpController < ApplicationController
+class Admin::HelpController < Palani::BackendController
   
   # GET /admin/help
   #----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-class Admin::UserGroupsController < ApplicationController
+class Admin::UserGroupsController < Palani::BackendController
 
   # GET /admin/user_groups
   # GET /admin/user_groups.json

@@ -1,4 +1,4 @@
-class Admin::PageTemplatesController < ApplicationController
+class Admin::PageTemplatesController < Palani::BackendController
   
   before_filter :find_template, :only => [:edit, :update, :destroy]
   

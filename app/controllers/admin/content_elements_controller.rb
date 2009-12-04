@@ -1,4 +1,4 @@
-class Admin::ContentElementsController < ApplicationController
+class Admin::ContentElementsController < Palani::BackendController
   
   before_filter :find_element, :only => [:edit, :update, :destroy]
   

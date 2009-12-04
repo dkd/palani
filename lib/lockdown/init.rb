@@ -123,7 +123,7 @@ Lockdown::System.configure do
   
   # Pages, that don't need any authorization
   set_permission(:login).with_controller(:admin__user_sessions)
-  set_permission(:frontend).with_controller(:pages)
+  set_permission(:frontend).with_controller(:palani__frontend__pages)
   
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Built-in user groups

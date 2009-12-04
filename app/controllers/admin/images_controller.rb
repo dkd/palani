@@ -1,4 +1,4 @@
-class Admin::ImagesController < ApplicationController
+class Admin::ImagesController < Palani::BackendController
   
   # POST /admin/images/                                                   AJAX
   #----------------------------------------------------------------------------

@@ -1,5 +1,4 @@
 .svn
-**/.svn
 .DS_Store
 *.log
 .project
@@ -10,11 +9,6 @@ doc/*
 log/*
 .yardoc
 db/schema.rb
-public/images/icons/.DS_Store
-vendor/gems/cucumber-0.3.99/*
-vendor/gems/rspec-1.2.8/*
-vendor/gems/rspec-rails-1.2.7.1/*
-vendor/gems/thoughtbot-factory_girl-1.2.2/*
-vendor/gems/webrat-0.5.3/*
+vendor/gems/*
 scratch_directory/*
 public/uploads/**/*

@@ -1,7 +1,7 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 require File.expand_path(RAILS_ROOT + '/lib/palani/rendering/exceptions')
 
-describe PagesController do
+describe Palani::Frontend::PagesController do
 
   before(:each) do
     public_user

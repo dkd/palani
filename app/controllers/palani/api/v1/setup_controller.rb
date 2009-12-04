@@ -1,2 +1,2 @@
-class Palani::Api::V1::SetupController < ApplicationController
+class Palani::Api::V1::SetupController < Palani::BackendController
 end

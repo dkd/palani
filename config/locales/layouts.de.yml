@@ -1,6 +1,7 @@
 de:
   layouts:
-    application:
-      logged_in_as: Eingeloggt als
-    welcome:
-      about_palani: Über Palani
+    palani:
+      backend:
+        logged_in_as: Eingeloggt als
+      welcome:
+        about_palani: Über Palani

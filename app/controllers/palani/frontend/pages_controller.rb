@@ -1,7 +1,6 @@
-class PagesController < ApplicationController
+class Palani::Frontend::PagesController < Palani::FrontendController
   
   before_filter :find_page, :only => [:show]
-  layout nil
   
   #   /tags/:tag
   #   /:page_url

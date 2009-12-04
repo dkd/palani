@@ -1,4 +1,4 @@
-class Admin::ContentElementHtmlsController < ApplicationController
+class Admin::ContentElementHtmlsController < Admin::ContentElementsController
 
   before_filter :find_element
   

@@ -1,4 +1,4 @@
-module PagesHelper
+module Palani::Frontend::PagesHelper
   
   # renders the given page object and its template parts into the given template
   def render_template(frontend_template, page)

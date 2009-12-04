@@ -1,4 +1,4 @@
-class Admin::TreesController < ApplicationController
+class Admin::TreesController < Palani::BackendController
 
   # POST /admin/trees/tree                                                  AJAX
   #-----------------------------------------------------------------------------

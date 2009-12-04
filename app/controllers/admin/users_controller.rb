@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Palani::BackendController
   
   before_filter :find_user, :only => [:edit, :update, :destroy]
 

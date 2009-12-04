@@ -1,2 +1,2 @@
-class Palani::Api::V1::ContentElementsController < ApplicationController
+class Palani::Api::V1::ContentElementsController < Palani::BackendController
 end

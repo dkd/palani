@@ -1,4 +1,4 @@
-class Admin::AdministrationController < ApplicationController
+class Admin::AdministrationController < Palani::BackendController
   before_filter :setup
   
   # PUT /admin/administration/update_profile

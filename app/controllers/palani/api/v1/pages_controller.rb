@@ -1,4 +1,4 @@
-class Palani::Api::V1::PagesController < ApplicationController
+class Palani::Api::V1::PagesController < Palani::BackendController
   
   before_filter :find_page, :only => [:show, :update,:destroy]
   

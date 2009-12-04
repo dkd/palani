@@ -1,8 +1,8 @@
-class Admin::UserSessionsController < ApplicationController
+class Admin::UserSessionsController < Palani::BackendController
 
   after_filter :set_lockdown_values, :only => :create
 
-  layout 'welcome'
+  layout 'palani/welcome'
 
   # GET /admin/user_sessions/new
   #-----------------------------------------------------------------------------  

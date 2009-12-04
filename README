@@ -1,6 +1,6 @@
 == Welcome to Palani
 
-Rails is a Content Management System(CMS) that is written in Ruby on Rails.
+Palani is a Content Management System(CMS) that is written in Ruby on Rails.
 
 
 == Getting Started
@@ -9,3 +9,12 @@ Rails is a Content Management System(CMS) that is written in Ruby on Rails.
 2. rake db:schema:load
 3. rake db:seed
 4. script/server
+
+== Features
+- A easy to extend page and content element architecture
+- User and role management
+- Templating of pages and content elements using Liquid Markup
+- Unicode encoding of URIs
+- Ext JS Interface with rich features
+
+== Contribution
