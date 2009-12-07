@@ -10,7 +10,7 @@ class Image < ActiveRecord::Base
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg','image/png','image/gif']
   
-  liquid_methods :name, :file_size
+  liquid_methods :photo, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
   
   def name
     self.photo_file_name.gsub(/[.][a-zA-Z]*/,"")
