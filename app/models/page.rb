@@ -32,6 +32,7 @@ class Page < ActiveRecord::Base
   
   named_scope :sorted, :order => :sorting
   named_scope :having_sorting_bigger_than, lambda { |*args| { :conditions => ["sorting >= ?", (args.first)] } }
+  named_scope :visible, :conditions => ["hidden = ? AND hidden_in_menu = ? AND template_id <> ''", false, false]
   
   liquid_methods :title, :type, :starttime, :endtime, :hidden, :hidden_in_menu, :subtitle, :navigation_title, :description, 
                  :abstract, :author, :author_email, :target, :created_at, :updated_at, :ancestry, :tags

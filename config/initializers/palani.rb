@@ -1,0 +1,1 @@
+require "lib/palani/frontend/templating/register_tags"
