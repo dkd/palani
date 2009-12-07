@@ -13,7 +13,7 @@ describe Palani::Frontend::PagesController do
       
       before(:each) do
         @frontend_template = mock_model(PageTemplate, :code => "<html></html>")
-        @page = mock_model(Page, :title => "Test", :template => @frontend_template)
+        @page = mock_model(Page, :title => "Test", :template => @frontend_template, :hidden => false)
         Page.stub!(:find_by_path).and_return(@page)
       end
       
