@@ -19,7 +19,7 @@ class Admin::ContentElementHtmlsController < Admin::ContentElementsController
       @template_part_id = @content_element.template_part_id
       render :update do |page|
         page['notifications'].replace_html render_notifications
-        page['middle_content'].replace_html :partial => "admin_pages_show"
+        page['middle_content'].replace_html :partial => "admin/pages/show"
       end
     else
       flash[:error] = 'check_your_input'

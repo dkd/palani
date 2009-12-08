@@ -61,7 +61,7 @@
         <fieldset>
           <legend><%= t(".template") %></legend>
           <%= f.label :template, t(".template") %>
-          <%= f.select :template_id, ContentElementTemplate.of_type(@content_element.element_type).collect { |t| [t.title, t.id]  }, { :include_blank => true } %>
+          <%= f.select :template_id, ContentElementTemplate.of_type(@content_element.element_type).collect { |t| [t.title, t.id]  } %>
         </fieldset>
       </div>
       <div class="tab_content">
