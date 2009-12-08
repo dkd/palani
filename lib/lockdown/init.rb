@@ -39,10 +39,10 @@ Lockdown::System.configure do
   #       options[:logout_on_access_violation] = false
   #
   # Set redirect to path on unauthorized access attempt:
-  #       options[:access_denied_path] = "/"
+         options[:access_denied_path] = "/admin/"
   #
   # Set redirect to path on successful login:
-  #       options[:successful_login_path] = "/"
+         options[:successful_login_path] = "/admin/"
   #
   # Set separator on links call
   #       options[:links_separator] = "|"
@@ -120,6 +120,18 @@ Lockdown::System.configure do
   set_permission(:help).with_controller(:admin__help).only_methods(:index)
   set_permission(:faq_help).with_controller(:admin__help).only_methods(:faq)
   set_permission(:community_help).with_controller(:admin__help).only_methods(:community)
+  
+  # admin/page_templates
+  set_permission(:page_templates).with_controller(:admin__page_templates).only_methods(:index)
+  set_permission(:create_page_template).with_controller(:admin__page_templates).only_methods(:new, :create)
+  set_permission(:edit_page_template).with_controller(:admin__page_templates).only_methods(:edit, :update)
+  set_permission(:delete_page_template).with_controller(:admin__page_templates).only_methods(:destroy)
+  
+  # admin/content_element_templates
+  set_permission(:content_element_templates).with_controller(:admin__content_element_templates).only_methods(:index)
+  set_permission(:create_content_element_template).with_controller(:admin__content_element_templates).only_methods(:new, :create)
+  set_permission(:edit_content_element_template).with_controller(:admin__content_element_templates).only_methods(:edit, :update)
+  set_permission(:delete_content_element_template).with_controller(:admin__content_element_templates).only_methods(:destroy)
   
   # Pages, that don't need any authorization
   set_permission(:login).with_controller(:admin__user_sessions)
