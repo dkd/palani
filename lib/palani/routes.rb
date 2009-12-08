@@ -36,8 +36,8 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.admin "admin", :controller => "admin/user_sessions", :action => "new"
-  map.login "login", :controller => "admin/user_sessions", :action => "new"
-  map.logout "logout", :controller => "admin/user_sessions", :action => "destroy"
+  map.login "admin/login", :controller => "admin/user_sessions", :action => "new"
+  map.logout "admin/logout", :controller => "admin/user_sessions", :action => "destroy"
   
   map.connect '*url', :controller => 'palani/frontend/pages', :action => 'show'
   map.connect ':page_url', :controller => 'palani/frontend/pages', :action => 'show'

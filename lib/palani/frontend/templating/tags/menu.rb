@@ -1,6 +1,9 @@
 require "lib/palani/frontend/templating/require_tags"
 
-class Menu < Liquid::Block
+class Palani::Frontend::Templating::Tags::Menu < Liquid::Block
+  
+  TagStart                    = /\{\%/
+  TagEnd                      = /\%\}/
   
   def initialize(tag_name, markup, tokens)
     super

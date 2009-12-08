@@ -1,4 +1,4 @@
-class LinkTo < Liquid::Tag
+class Palani::Frontend::Templating::Tags::LinkTo < Liquid::Tag
   
   def initialize(tag_name, page_id, tokens)
     super
