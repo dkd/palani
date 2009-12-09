@@ -18,7 +18,7 @@
 # * tags
 class Page < ActiveRecord::Base
   
-  has_many :content_elements
+  has_many :content_elements, :dependent => :destroy
   belongs_to :template
   
   validates_presence_of :title

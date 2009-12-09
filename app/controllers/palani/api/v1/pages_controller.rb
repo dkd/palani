@@ -87,6 +87,7 @@ class Palani::Api::V1::PagesController < Palani::Api::ApiController
   
   def find_page
     @page = Page.find(params[:id])
+    raise Palani::Api::PageNotFoundException unless @page
   end
   
 end

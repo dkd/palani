@@ -15,6 +15,20 @@ describe Palani::Api::V1::PagesController do
     login_admin
   end
   
+  describe "find_page" do
+    
+    it "should find the page requested" do
+      Page.should_receive(:find)
+      controller.send :find_page
+    end
+    
+    it "should raise a Palani::Api::PageNotFoundException if the page requested does not exist" do
+      Page.stub!(:find).and_return(nil)
+      lambda { controller.send :find_page }.should raise_error(Palani::Api::PageNotFoundException)
+    end
+    
+  end
+  
   describe "POST /palani/api/pages.json" do
     
     it "should create a new page" do
@@ -255,7 +269,7 @@ describe Palani::Api::V1::PagesController do
   
   end
   
-  describe "DELETE /palani/api/pages/1.XML" do
+  describe "DELETE /palani/api/pages/1.xml" do
     
     before(:each) do
       @page.stub!(:destroy)
