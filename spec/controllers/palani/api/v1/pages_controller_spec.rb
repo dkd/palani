@@ -8,6 +8,7 @@ describe Palani::Api::V1::PagesController do
     @page.stub!(:save).and_return(true)
     @page.stub!(:to_json).and_return({})
     @page.stub!(:to_xml).and_return({})
+    @page.stub!(:children).and_return([])
     Page.stub!(:all).and_return([@page])
     Page.stub!(:find).and_return(@page)
     Page.stub!(:new).and_return(@page)
@@ -104,6 +105,30 @@ describe Palani::Api::V1::PagesController do
 
     it "should render all pages" do
       Page.should_receive(:all).and_return([@page])
+    end
+    
+  end
+  
+  describe "GET /palani/api/pages/1/children.json" do
+    
+    after(:each) do
+      get :children, :id => 1, :format => "json"
+    end
+
+    it "should render all children of the page requested" do
+      @page.should_receive(:children)
+    end
+    
+  end
+  
+  describe "GET /palani/api/pages/1/children.xml" do
+    
+    after(:each) do
+      get :children, :id => 1, :format => "xml"
+    end
+
+    it "should render all children of the page requested" do
+      @page.should_receive(:children)
     end
     
   end

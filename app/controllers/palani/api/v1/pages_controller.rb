@@ -1,6 +1,6 @@
-class Palani::Api::V1::PagesController < Palani::BackendController
+class Palani::Api::V1::PagesController < Palani::Api::ApiController
   
-  before_filter :find_page, :only => [:show, :update,:destroy]
+  before_filter :find_page, :only => [:show, :update, :destroy, :children]
   
   # POST   /palani/api/pages.json
   # POST   /palani/api/pages.xml
@@ -26,6 +26,18 @@ class Palani::Api::V1::PagesController < Palani::BackendController
   #----------------------------------------------------------------------------
   def index
     @pages = Page.all
+    
+    respond_to do |format|
+      format.json { render :json => @pages }
+      format.xml { render :xml => @pages }
+    end
+  end
+  
+  # GET   /palani/api/pages/1/children.json
+  # GET   /palani/api/pages/1/children.xml
+  #----------------------------------------------------------------------------
+  def children
+    @pages = @page.children
     
     respond_to do |format|
       format.json { render :json => @pages }
