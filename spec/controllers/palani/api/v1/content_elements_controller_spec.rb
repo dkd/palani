@@ -4,10 +4,11 @@ require File.expand_path(RAILS_ROOT + '/lib/palani/api/exceptions')
 describe Palani::Api::V1::ContentElementsController do
   
   before(:each) do
-    @page = mock_model(Page)
     @content_element = mock_model(ContentElement)
+    @page = mock_model(Page)
     @content_element.stub!(:to_json).and_return({})
     @content_element.stub!(:to_xml).and_return({})
+    Page.stub!(:find).and_return(@page)
     ContentElement.stub!(:find_by_page_id_and_id).and_return(@content_element)
     login_admin
   end
@@ -117,6 +118,150 @@ describe Palani::Api::V1::ContentElementsController do
         response.should be_success
       end
 
+    end
+    
+  end
+  
+  describe "create" do
+    
+    before(:each) do
+      @content_element.stub!(:page).and_return(@page)
+      @content_element.stub!(:page=)
+      @content_element.stub!(:save).and_return(true)
+      @page.stub!(:content_elements).and_return(ContentElement)
+      ContentElement.stub!(:new).and_return(@content_element)
+    end
+    
+    describe "POST /palani/api/pages/1/content_elements.json" do
+      
+      it "should create a new content element" do
+        ContentElement.should_receive(:new)
+        post :create, :page_id => 1, :format => "json"
+      end
+      
+      it "should try to save the content element" do
+        @content_element.should_receive(:save)
+        post :create, :page_id => 1, :format => "json"
+      end
+      
+      context "invalid data" do
+        
+        before(:each) do
+          @content_element.stub!(:save).and_return(false)
+        end
+        
+        it "should raise a Palani::Api::InvalidRecordJSONException" do
+          lambda{ post :create, :page_id => 1, :format => "json" }.should raise_error
+        end
+        
+      end
+      
+    end
+    
+    describe "POST /palani/api/pages/1/content_elements.xml" do
+      
+      it "should create a new content element" do
+        ContentElement.should_receive(:new)
+        post :create, :page_id => 1, :format => "xml"
+      end
+      
+      it "should try to save the content element" do
+        @content_element.should_receive(:save)
+        post :create, :page_id => 1, :format => "xml"
+      end
+      
+      context "invalid data" do
+        
+        before(:each) do
+          @content_element.stub!(:save).and_return(false)
+        end
+        
+        it "should raise a Palani::Api::InvalidRecordXMLException" do
+          lambda{ post :create, :page_id => 1, :format => "xml" }.should raise_error(Palani::Api::InvalidRecordXMLException)
+        end
+        
+      end
+      
+    end
+    
+  end
+  
+  describe "update" do
+    
+    describe "PUT /palani/api/pages/1/content_elements.json" do
+      
+      context "with valid data" do
+        
+        before(:each) do
+          @content_element.stub!(:update_attributes).and_return(true)
+        end
+
+        it "should update the attributes of the page requested" do
+          @content_element.should_receive(:update_attributes)
+          put :update, :page_id => 1, :id => 1, :format => "json"
+        end
+
+        it "should send HTTP Status 200" do
+          put :update, :page_id => 1, :id => 1, :format => "json"
+          response.should be_success
+        end
+
+      end
+
+      context "with invalid data" do
+
+        before(:each) do
+          @content_element.stub!(:update_attributes).and_return(false)
+        end
+
+        it "should throw a Exception" do
+          lambda {
+            put :update, :page_id => 1, :id => 1, :format => "json"
+          }.should raise_error(Palani::Api::InvalidUpdateOfRecordJSONException)
+        end
+
+        it "should send HTTP Status 400"
+
+      end
+      
+    end
+    
+    describe "PUT /palani/api/pages/1/content_elements.xml" do
+      
+      context "with valid data" do
+        
+        before(:each) do
+          @content_element.stub!(:update_attributes).and_return(true)
+        end
+
+        it "should update the attributes of the page requested" do
+          @content_element.should_receive(:update_attributes)
+          put :update, :page_id => 1, :id => 1, :format => "xml"
+        end
+
+        it "should send HTTP Status 200" do
+          put :update, :page_id => 1, :id => 1, :format => "xml"
+          response.should be_success
+        end
+
+      end
+
+      context "with invalid data" do
+
+        before(:each) do
+          @content_element.stub!(:update_attributes).and_return(false)
+        end
+
+        it "should throw a Exception" do
+          lambda {
+            put :update, :page_id => 1, :id => 1, :format => "xml"
+          }.should raise_error(Palani::Api::InvalidUpdateOfRecordXMLException)
+        end
+
+        it "should send HTTP Status 400"
+
+      end
+         
     end
     
   end
