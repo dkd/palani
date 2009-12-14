@@ -35,7 +35,7 @@ class Page < ActiveRecord::Base
   named_scope :visible, :conditions => ["hidden = ? AND hidden_in_menu = ? AND template_id <> ''", false, false]
   
   liquid_methods :title, :type, :starttime, :endtime, :hidden, :hidden_in_menu, :subtitle, :navigation_title, :description, 
-                 :abstract, :author, :author_email, :target, :created_at, :updated_at, :ancestry, :tags
+                 :abstract, :author, :author_email, :target, :created_at, :updated_at, :ancestry, :tags, :absolute_url, :id, :link, :path
   
   class << self
     
@@ -58,8 +58,16 @@ class Page < ActiveRecord::Base
   # returns the path to the page
   # for example: /home/about-us/
   def path
-    @path = path_ids.collect{ |id| Page.find(id).url  }
-    "/#{@path.join('/')}/"
+    path = path_ids.collect{ |id| Page.find(id).url  }
+    "/#{path.join('/')}/"
+  end
+  
+  def absolute_url
+    "#{Settings.website.base_url}#{path}"
+  end
+  
+  def link
+    "<a href='#{path}'>#{title}</a>"
   end
   
   # is getting used, because type is a Rails keyword

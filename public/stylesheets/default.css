@@ -131,6 +131,10 @@ input, textarea, select {
 	color: #FFFFFF;
 }
 
+#menu .last a {
+	background: none;
+}
+
 /** LOGO */
 
 #logo {
