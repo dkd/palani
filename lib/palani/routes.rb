@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
         page.resources :content_element_htmls
       end
       admin.resources :pages, :collection =>  { :render_type_settings => :get, :move => :post, :new_select_position => :get }, 
-                              :member => { :update_new => :put } do |page|
+                              :member => { :update_new => :put, :absolute_url => :get } do |page|
         page.resources :content_elements
       end
       admin.resources :page_templates, :member =>  { :parse_elements => :put  }

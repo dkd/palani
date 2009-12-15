@@ -99,6 +99,15 @@ class Admin::PagesController < Palani::BackendController
     render :json => { :moved => true }
   end
   
+  # returns the absolute url of the page requested including the host
+  #
+  # GET /admin/pages/1/absolute_url                                         AJAX
+  #-----------------------------------------------------------------------------
+  def absolute_url
+    @page = Page.find(params[:id])
+    render :json => { :absolute_url => @page.absolute_url }
+  end
+  
   protected
   
   def find_page
