@@ -12,3 +12,4 @@ db/schema.rb
 vendor/gems/*
 scratch_directory/*
 public/uploads/**/*
+.idea/*
