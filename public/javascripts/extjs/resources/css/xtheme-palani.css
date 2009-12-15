@@ -1884,8 +1884,10 @@ body.x-body-masked .x-window-plain .x-window-mc {
 }
 
 .x-window .x-window-body {
+	background: #FFF !important;
 	border: 1px solid #FF4F4F;
 	height: 400px !important;
+	overflow-y: auto;
 }
 
 .x-window .x-window-br,
@@ -1942,4 +1944,9 @@ body.x-body-masked .x-window-plain .x-window-mc {
 .x-window .x-tool-close {
 	background-image: url(../../../../images/icons/close.png);
 	background-position: 0 0;
+}
+
+.x-window .x-tab-panel-body,
+.x-window .x-tab-panel-body .x-panel-body {
+	height: auto !important;
 }

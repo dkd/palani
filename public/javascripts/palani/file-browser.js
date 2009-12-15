@@ -29,8 +29,8 @@ $(document).ready(function(){
             win = new Ext.Window({
                 applyTo:'upload-image_attachment',
                 layout:'fit',
-                width:600,
-                height:300,
+                width:  600,
+                height: 450,
 								closeAction: 'hide',
                 plain: true,
 								modal: true,
