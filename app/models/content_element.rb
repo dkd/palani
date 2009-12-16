@@ -1,3 +1,18 @@
+# A content element consists of a general and a specific type object
+#
+# for example a Text object got a ContentElement object and a ContentElementText object
+# both are connected via the content_element relationship defined in the specific type class(ContentElementText)
+#
+# a Container Element does not have any specific type object - it is the default content type(="ContentElement")
+#
+# In the templates the following methods/attributes are available:
+# * header
+# * element_type
+# * hidden
+# * created_at
+# * updated_at
+# * tags
+# * page
 class ContentElement < ActiveRecord::Base
   
   belongs_to :page
@@ -19,6 +34,8 @@ class ContentElement < ActiveRecord::Base
   
   liquid_methods :header, :element_type, :hidden, :created_at, :updated_at, :tags, :page
   
+  # this methods gets called when a new ContentElement gets created for creating the correct sort etc.
+  #
   # defines the specified page and position on which the new content element should be created
   # if there is no position definied, the new content element will be placed on top
   def from_content_element(page_id, content_element_id=nil)
@@ -33,7 +50,7 @@ class ContentElement < ActiveRecord::Base
     update_attributes :sort => sort, :page_id => page_id
   end
   
-  # creates the specified element type, e.g. ContentElementText
+  # creates the specified element type, e.g. ContentElementText, if its type is not ContentElement(Container)
   def create_element_type
     Kernel.const_get(element_type).find_or_create_by_content_element_id(id) unless element_type=="ContentElement"
   end
