@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: permissions
+#
+#  id                  :integer(4)      not null, primary key
+#  name                :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  permission_group_id :integer(4)
+#
+
 class Permission < ActiveRecord::Base
   has_and_belongs_to_many :user_groups
   belongs_to :permission_group

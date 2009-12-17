@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: content_elements
+#
+#  id                   :integer(4)      not null, primary key
+#  page_id              :integer(4)
+#  element_type         :string(255)     default("ContentElement")
+#  header               :string(255)
+#  header_type          :string(255)
+#  starttime            :datetime
+#  endtime              :datetime
+#  sort                 :integer(4)      default(0)
+#  hidden               :boolean(1)      default(TRUE)
+#  template_part_id     :integer(4)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  tags                 :string(255)
+#  element_id           :integer(4)
+#  deleted_at           :datetime
+#  ancestry             :string(255)
+#  template_id          :integer(4)
+#  content_element_id   :integer(4)
+#  content_element_type :string(255)
+#
+
 # A content element consists of a general and a specific type object
 #
 # for example a Text object got a ContentElement object and a ContentElementText object

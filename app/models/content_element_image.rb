@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: content_element_images
+#
+#  id                 :integer(4)      not null, primary key
+#  content_element_id :integer(4)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
 class ContentElementImage < ActiveRecord::Base
 
   include ActsAsContentElement
