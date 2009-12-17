@@ -9,7 +9,7 @@
 #  updated_at         :datetime
 #  clean_text         :text
 #
-
+#
 class ContentElementText < ActiveRecord::Base
 
   include ActsAsContentElement

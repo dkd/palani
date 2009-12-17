@@ -7,7 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
-
+#
 class PermissionGroup < ActiveRecord::Base
 
   has_many :permissions

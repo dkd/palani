@@ -30,7 +30,7 @@
 #  tags             :string(255)
 #  url              :string(255)
 #
-
+#
 class ContentPage < Page
   
   # the labels will be used as locale keys

@@ -11,7 +11,7 @@
 #  updated_at           :datetime
 #  content_element_type :string(255)
 #
-
+#
 class ContentElementTemplate < Template
   validates_presence_of :content_element_type
   

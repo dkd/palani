@@ -30,7 +30,6 @@
 #  tags             :string(255)
 #  url              :string(255)
 #
-
 # available methods for templating:
 # * title (Page title)
 # * type (Page type - e.g. ShortcutPage, ContentPage)

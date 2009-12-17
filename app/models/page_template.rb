@@ -11,7 +11,7 @@
 #  updated_at           :datetime
 #  content_element_type :string(255)
 #
-
+#
 class PageTemplate < Template
   
   before_save :parse_parts

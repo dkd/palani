@@ -12,7 +12,7 @@
 #  content_element_image_id :integer(4)
 #  deleted_at               :datetime
 #
-
+#
 class Image < ActiveRecord::Base
   
   has_many :image_attachments

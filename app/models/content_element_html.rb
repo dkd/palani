@@ -8,7 +8,7 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #
-
+#
 class ContentElementHtml < ActiveRecord::Base
 
   include ActsAsContentElement

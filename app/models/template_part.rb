@@ -10,7 +10,7 @@
 #  updated_at  :datetime
 #  is_column   :boolean(1)      default(FALSE)
 #
-
+#
 class TemplatePart < ActiveRecord::Base
   
   belongs_to :template

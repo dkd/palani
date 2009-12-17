@@ -30,7 +30,7 @@
 #  tags             :string(255)
 #  url              :string(255)
 #
-
+#
 # available modes(shortcut_modes):
 # * external url
 # * internal page(via id)

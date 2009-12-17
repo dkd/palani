@@ -12,7 +12,7 @@
 #  position                 :string(255)
 #  deleted_at               :datetime
 #
-
+#
 class ImageAttachment < ActiveRecord::Base
   belongs_to :image
   

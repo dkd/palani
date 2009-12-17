@@ -22,7 +22,7 @@
 #  content_element_id   :integer(4)
 #  content_element_type :string(255)
 #
-
+#
 # A content element consists of a general and a specific type object
 #
 # for example a Text object got a ContentElement object and a ContentElementText object

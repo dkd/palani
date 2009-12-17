@@ -11,7 +11,7 @@
 #  updated_at           :datetime
 #  content_element_type :string(255)
 #
-
+#
 class Template < ActiveRecord::Base
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper

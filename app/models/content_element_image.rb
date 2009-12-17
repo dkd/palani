@@ -7,7 +7,7 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #
-
+#
 class ContentElementImage < ActiveRecord::Base
 
   include ActsAsContentElement

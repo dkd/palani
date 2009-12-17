@@ -19,7 +19,7 @@
 #  backend_language  :string(255)     default("en")
 #  deleted_at        :datetime
 #
-
+#
 class User < ActiveRecord::Base
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper
