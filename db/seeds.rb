@@ -17,19 +17,20 @@ Lockdown::System.make_user_administrator(user)
 @users_group = PermissionGroup.create :name => "users"
 @administration_group = PermissionGroup.create :name => "administration"
 @help_group = PermissionGroup.create :name => "help"
+@content_template_group = PermissionGroup.create :name => "content_templates"
 
 # assign groups to permissions
-Permission.find(1).update_attributes :permission_group => @content_group
-Permission.find(3).update_attributes :permission_group => @content_group
-Permission.find(10).update_attributes :permission_group => @content_group
-Permission.find(12).update_attributes :permission_group => @content_group
-Permission.find(2).update_attributes :permission_group => @users_group
-Permission.find(5).update_attributes :permission_group => @users_group
-Permission.find(8).update_attributes :permission_group => @users_group
-Permission.find(9).update_attributes :permission_group => @users_group
-Permission.find(7).update_attributes :permission_group => @administration_group
-Permission.find(4).update_attributes :permission_group => @help_group
-Permission.find(6).update_attributes :permission_group => @help_group
-Permission.find(11).update_attributes :permission_group => @help_group
+Permission.find_by_name("Create Content").update_attributes :permission_group => @content_group
+Permission.find_by_name("Content").update_attributes :permission_group => @content_group
+Permission.find_by_name("Edit Content").update_attributes :permission_group => @content_group
+Permission.find_by_name("Delete Content").update_attributes :permission_group => @content_group
+Permission.find_by_name("Users").update_attributes :permission_group => @users_group
+Permission.find_by_name("Create User").update_attributes :permission_group => @users_group
+Permission.find_by_name("Edit User").update_attributes :permission_group => @users_group
+Permission.find_by_name("Delete User").update_attributes :permission_group => @users_group
+Permission.find_by_name("Edit Profile").update_attributes :permission_group => @administration_group
+Permission.find_by_name("Help").update_attributes :permission_group => @help_group
+Permission.find_by_name("Faq Help").update_attributes :permission_group => @help_group
+Permission.find_by_name("Community Help").update_attributes :permission_group => @help_group
 
 Page.create :title => "Rootpage", :type => "ContentPage", :sorting => 1
