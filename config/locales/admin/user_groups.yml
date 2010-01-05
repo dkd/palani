@@ -22,3 +22,11 @@ en:
         faq_help: FAQ
         community_help: Community
         administration: Administration
+        content_element_templates: Contentelement templates
+        delete_content_element_template: Delete template
+        create_content_element_template: Insert template
+        edit_content_element_template: Edit template
+        page_templates: Page templates
+        delete_page_template: Delete templates
+        create_page_template: Insert template
+        edit_page_template: Edit template

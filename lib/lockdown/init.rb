@@ -39,10 +39,10 @@ Lockdown::System.configure do
   #       options[:logout_on_access_violation] = false
   #
   # Set redirect to path on unauthorized access attempt:
-         options[:access_denied_path] = "/admin/"
+  options[:access_denied_path] = "/admin/"
   #
   # Set redirect to path on successful login:
-         options[:successful_login_path] = "/admin/"
+  options[:successful_login_path] = "/admin/"
   #
   # Set separator on links call
   #       options[:links_separator] = "|"
