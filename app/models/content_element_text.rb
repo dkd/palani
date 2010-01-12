@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: content_element_texts
+#
+#  id                 :integer(4)      not null, primary key
+#  content_element_id :integer(4)
+#  text               :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#  clean_text         :text
+#
+#
 class ContentElementText < ActiveRecord::Base
 
   include ActsAsContentElement

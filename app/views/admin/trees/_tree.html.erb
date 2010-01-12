@@ -75,12 +75,23 @@
       });
       
       function showSiteHandler() {
-        
+        var n = sm.getSelectedNode();
+        if(n) {
+          jQuery.ajax({
+             dataType :'json',
+             type : 'get',
+             url : '/admin/pages/'+ n.id +'/absolute_url',
+             async : false,
+             success: function(data, status) {
+               window.open(data.absolute_url, "_blank");
+             }
+          });
+        }
       }
       
       function deleteHandler() {
         var n = sm.getSelectedNode();
-        if(n){
+        if(n) {
         	tree.getSelectionModel().selectPrevious();
         	n.parentNode.removeChild(n);
         	jQuery.ajax({

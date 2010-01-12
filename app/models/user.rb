@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                :integer(4)      not null, primary key
+#  username          :string(255)
+#  crypted_password  :string(255)
+#  password_salt     :string(255)
+#  surname           :string(255)
+#  name              :string(255)
+#  email             :string(255)
+#  last_login_ip     :string(255)
+#  last_login_at     :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#  persistence_token :string(255)     not null
+#  current_login_ip  :string(255)
+#  current_login_at  :datetime
+#  backend_language  :string(255)     default("en")
+#  deleted_at        :datetime
+#
+#
 class User < ActiveRecord::Base
   include ActionView::Helpers::JavaScriptHelper
   include ActionView::Helpers::TagHelper

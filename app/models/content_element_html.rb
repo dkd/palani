@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: content_element_htmls
+#
+#  id                 :integer(4)      not null, primary key
+#  content_element_id :integer(4)
+#  html               :text
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+#
 class ContentElementHtml < ActiveRecord::Base
 
   include ActsAsContentElement

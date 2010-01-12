@@ -127,7 +127,9 @@ input, textarea, select {
 	color: #FFFFFF;
 }
 
+#menu .current a,
 #menu .current_page_item a {
+	font-weight: bold;
 	color: #FFFFFF;
 }
 
