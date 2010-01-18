@@ -11,7 +11,7 @@ Palani is a Content Management System(CMS) that is written in Ruby on Rails.
 4. script/server
 
 == Features
-- A easy to extend page and content element architecture
+- An easy to extend page and content element architecture
 - User and role management
 - Templating of pages and content elements using Liquid Markup
 - Unicode encoding of URIs
