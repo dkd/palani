@@ -4,6 +4,7 @@ en:
       headline: Welcome to Palani!
       teaser: "Palani is an Open-Source Content Management System, that is developed for Ruby on Rails applications.<br /><br />The main modules of Palani are:"
       content_description: "Using the content administration you are able to manage your pages and contents. There are several page and content types, that you can configure and extend. The dynamic site tree is build for creating a hierarchical structure of your website. Furthermore, you can tag each page and content element to group them or make them indexable."
+      templates_description: "You can define the layout of your pages and content elements.<br />Palani makes use of the well-known template engine Liquid and extends it with own helpers, that will help you with your daily work.<br /><br />"
       administration_description: "The main topic of the administration subpart is user management. On the one side you can edit your own user account and on the other side you are able to administrate users and usergroups, if you own admin permissions."
       help_description: "Using help you can find answers on frequently asked questions and you can get help for the first steps using <i>Palani</i>. You can help <i>Palani</i> writing tutorials for other users."
       footer: "Thank you for choosing Palani."
