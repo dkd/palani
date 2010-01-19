@@ -2,6 +2,9 @@ namespace :palani do
   
   desc "Install Palani in your current Rails application"
   task :install => :environment do
+    
+    Rake::Task["gems:install"].invoke
+    
     puts ""
     puts "Beginning the installation of Palani..."
     puts ""
@@ -13,7 +16,7 @@ namespace :palani do
     puts ""
     puts "(2/4) Loading the database schema"
     
-    Rake::Task["db:schema:load"].invoke
+    Rake::Task["db:migrate"].invoke
     
     puts "... Loaded!"
     puts ""
