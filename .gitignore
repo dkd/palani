@@ -5,8 +5,6 @@
 .loadpath
 tmp/*
 log/*
-doc/*
-log/*
 .yardoc
 db/schema.rb
 vendor/gems/*
