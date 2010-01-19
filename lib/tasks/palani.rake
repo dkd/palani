@@ -3,14 +3,11 @@ namespace :palani do
   desc "Install Palani in your current Rails application"
   task :install => :environment do
     
-    Rake::Task["gems:install"].invoke
-    
     puts ""
     puts "Beginning the installation of Palani..."
     puts ""
-    puts "(1/4) Creating the database"
-    
-    Rake::Task["db:create"].invoke
+    puts "(1/4) Installing missing gems"
+    Rake::Task["gems:install"].invoke
     
     puts "... Created!"
     puts ""
@@ -31,7 +28,7 @@ namespace :palani do
     system "curl -o #{RAILS_ROOT}/public/javascripts/extjs.zip http://www.extjs.com/deploy/ext-3.1.0.zip"
     system "cd #{RAILS_ROOT}/public/javascripts"
     system "unzip #{RAILS_ROOT}/public/javascripts/extjs.zip -d #{RAILS_ROOT}/public/javascripts"
-    system "mv #{RAILS_ROOT}/public/javascripts/ext-3.1.0 #{RAILS_ROOT}/public/javascripts/extjs1"
+    system "mv #{RAILS_ROOT}/public/javascripts/ext-3.1.0 #{RAILS_ROOT}/public/javascripts/extjs"
     
     puts "... Loaded!"
     puts ""
