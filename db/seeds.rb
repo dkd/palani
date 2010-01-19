@@ -15,6 +15,7 @@ user = User.create(:username => "admin", :password => "password", :password_conf
                    :surname => "Max", :name => "Power")
 # This will create the 'Administrator' user group and 
 # associate it to the user.
+Lockdown::Database.sync_with_db
 Lockdown::System.make_user_administrator(user)
 puts "Administrator added"
 puts "User: admin  Password: password"
