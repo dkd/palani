@@ -3,8 +3,9 @@
 *.log
 .project
 .loadpath
-tmp/*
-log/*
+tmp
+log
+doc
 .yardoc
 db/schema.rb
 vendor/gems/*
