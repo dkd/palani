@@ -9,6 +9,8 @@ Palani is a Content Management System(CMS) written in Ruby on Rails.
 
 1. sudo rake palani:install
 2. script/server
+3. The admin interface is available via http://localhost:3000/admin/
+4. Start creating templates and pages.
 
 == Features
 - An easy to extend page and content element architecture
