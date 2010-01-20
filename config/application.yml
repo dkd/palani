@@ -18,6 +18,9 @@ defaults: &defaults
 development:
   <<: *defaults
 
+cucumber:
+  <<: *defaults
+
 test:
   <<: *defaults
 

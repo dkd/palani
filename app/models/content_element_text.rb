@@ -9,7 +9,16 @@
 #  updated_at         :datetime
 #  clean_text         :text
 #
-#
+# In the templates the following methods/attributes are available:
+# * text
+# * clean_text
+# * header
+# * element_type
+# * hidden
+# * created_at
+# * updated_at
+# * tags
+# * page
 class ContentElementText < ActiveRecord::Base
 
   include ActsAsContentElement
