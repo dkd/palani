@@ -1,5 +1,7 @@
 = Palani
 
+* http://palani.lighthouseapp.com/projects/45009-palani/overview
+
 == Welcome to Palani
 
 Palani is a Content Management System(CMS) written in Ruby on Rails.
@@ -13,14 +15,16 @@ Palani is a Content Management System(CMS) written in Ruby on Rails.
 4. Start creating templates and pages.
 
 == Features
-- An easy to extend page and content element architecture
-- User and role management
-- Templating of pages and content elements using Liquid Markup
-- Unicode encoding of URIs
-- Ext JS Interface with rich features
+* An easy to extend page and content element architecture
+* User and role management
+* Templating of pages and content elements using Liquid Markup
+* Unicode encoding of URIs
+* Ext JS Interface with rich features
 
 == Bugs
 
 - The layout is only tested in Firefox
 
 == Contribution
+
+* Submit your tickets via our lighthouseapp account(http://palani.lighthouseapp.com/projects/45009-palani/overview)
