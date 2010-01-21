@@ -21,7 +21,8 @@
 # * page
 class ContentElementText < ActiveRecord::Base
 
-  include ActsAsContentElement
+  acts_as_content_element :icon => "icons/content_elements/content_element_text.png",
+                          :administration_partial => "admin/content_elements/types/content_element_text/administration"
 
   before_save :create_clean_text
 
@@ -30,17 +31,6 @@ class ContentElementText < ActiveRecord::Base
   validates_associated :content_element
   
   liquid_methods :text, :clean_text, :created_at, :updated_at, :header, :element_type, :hidden, :created_at, :updated_at, :tags, :page
-  
-  # returns the icon, that is used for the backend
-  def icon
-    "icons/content_elements/content_element_text.png"
-  end
-  
-  # defines the path to the partial, that gets rendered in the body part of a content element in the backend
-  # custom content elements should have a method 'administration_partial' returning the specific partial
-  def administration_partial
-    "admin/content_elements/types/content_element_text/administration"
-  end
   
   def create_clean_text
     self.clean_text = self.text.gsub(/<\/?[^>]*>/, "") if self.text
