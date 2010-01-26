@@ -6,6 +6,7 @@
 
 Palani is a Content Management System(CMS) written in Ruby on Rails.
 
+An API Documentation is available via http://api.palani-cms.org/
 
 == Getting Started
 
