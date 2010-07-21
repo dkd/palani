@@ -12,8 +12,5 @@ vendor/gems/*
 scratch_directory/*
 public/uploads/**/*
 .idea/*
-<<<<<<< HEAD
 *.sqlite3
-=======
 .bundle
->>>>>>> Rails3
