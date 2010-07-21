@@ -12,3 +12,4 @@ vendor/gems/*
 scratch_directory/*
 public/uploads/**/*
 .idea/*
+.bundle
