@@ -1,12 +1,5 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-config.gem 'rspec-rails', :lib => false 
-config.gem 'rspec', :lib => false 
-config.gem 'cucumber' 
-config.gem 'webrat'
-config.gem "factory_girl"
-config.gem 'jscruggs-metric_fu', :version => '1.1.5', :lib => 'metric_fu', :source => 'http://gems.github.com'
-
 config.i18n.default_locale = :en
 
 # The test environment is used exclusively to run your application's
