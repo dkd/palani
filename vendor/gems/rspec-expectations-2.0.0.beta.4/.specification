@@ -1,0 +1,254 @@
+--- !ruby/object:Gem::Specification 
+name: rspec-expectations
+version: !ruby/object:Gem::Version 
+  prerelease: true
+  segments: 
+  - 2
+  - 0
+  - 0
+  - beta
+  - 4
+  version: 2.0.0.beta.4
+platform: ruby
+authors: 
+- David Chelimsky
+- Chad Humphries
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-03-15 00:00:00 +01:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: cucumber
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        - 6
+        - 2
+        version: 0.6.2
+  type: :development
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: aruba
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        - 1
+        - 1
+        version: 0.1.1
+  type: :development
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: rspec-core
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 2
+        - 0
+        - 0
+        - beta
+        - 4
+        version: 2.0.0.beta.4
+  type: :development
+  version_requirements: *id003
+- !ruby/object:Gem::Dependency 
+  name: rspec-mocks
+  prerelease: false
+  requirement: &id004 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 2
+        - 0
+        - 0
+        - beta
+        - 4
+        version: 2.0.0.beta.4
+  type: :development
+  version_requirements: *id004
+description: rspec expectations (should[_not] and matchers)
+email: dchelimsky@gmail.com;chad.humphries@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.markdown
+files: 
+- .document
+- .gitignore
+- License.txt
+- README.markdown
+- Rakefile
+- Upgrade.markdown
+- VERSION
+- cucumber.yml
+- features/expectations/customized_message.feature
+- features/expectations/implicit_docstrings.feature
+- features/matchers/access_running_example.feature
+- features/matchers/define_diffable_matcher.feature
+- features/matchers/define_matcher.feature
+- features/matchers/define_matcher_outside_rspec.feature
+- features/matchers/define_matcher_with_fluent_interface.feature
+- features/matchers/expect_change.feature
+- features/matchers/expect_error.feature
+- features/support/env.rb
+- lib/rspec/expectations.rb
+- lib/rspec/expectations/differs/default.rb
+- lib/rspec/expectations/differs/load-diff-lcs.rb
+- lib/rspec/expectations/errors.rb
+- lib/rspec/expectations/extensions.rb
+- lib/rspec/expectations/extensions/kernel.rb
+- lib/rspec/expectations/extensions/rspec/core/example_group.rb
+- lib/rspec/expectations/fail_with.rb
+- lib/rspec/expectations/handler.rb
+- lib/rspec/expectations/version.rb
+- lib/rspec/matchers.rb
+- lib/rspec/matchers/be.rb
+- lib/rspec/matchers/be_close.rb
+- lib/rspec/matchers/be_instance_of.rb
+- lib/rspec/matchers/be_kind_of.rb
+- lib/rspec/matchers/change.rb
+- lib/rspec/matchers/compatibility.rb
+- lib/rspec/matchers/dsl.rb
+- lib/rspec/matchers/eq.rb
+- lib/rspec/matchers/eql.rb
+- lib/rspec/matchers/equal.rb
+- lib/rspec/matchers/errors.rb
+- lib/rspec/matchers/exist.rb
+- lib/rspec/matchers/extensions/instance_exec.rb
+- lib/rspec/matchers/generated_descriptions.rb
+- lib/rspec/matchers/has.rb
+- lib/rspec/matchers/have.rb
+- lib/rspec/matchers/include.rb
+- lib/rspec/matchers/match.rb
+- lib/rspec/matchers/match_array.rb
+- lib/rspec/matchers/matcher.rb
+- lib/rspec/matchers/method_missing.rb
+- lib/rspec/matchers/operator_matcher.rb
+- lib/rspec/matchers/pretty.rb
+- lib/rspec/matchers/raise_error.rb
+- lib/rspec/matchers/respond_to.rb
+- lib/rspec/matchers/satisfy.rb
+- lib/rspec/matchers/throw_symbol.rb
+- rspec-expectations.gemspec
+- spec/rspec/expectations/differs/default_spec.rb
+- spec/rspec/expectations/extensions/kernel_spec.rb
+- spec/rspec/expectations/fail_with_spec.rb
+- spec/rspec/expectations/handler_spec.rb
+- spec/rspec/matchers/be_close_spec.rb
+- spec/rspec/matchers/be_instance_of_spec.rb
+- spec/rspec/matchers/be_kind_of_spec.rb
+- spec/rspec/matchers/be_spec.rb
+- spec/rspec/matchers/change_spec.rb
+- spec/rspec/matchers/compatibility_spec.rb
+- spec/rspec/matchers/description_generation_spec.rb
+- spec/rspec/matchers/dsl_spec.rb
+- spec/rspec/matchers/eq_spec.rb
+- spec/rspec/matchers/eql_spec.rb
+- spec/rspec/matchers/equal_spec.rb
+- spec/rspec/matchers/exist_spec.rb
+- spec/rspec/matchers/has_spec.rb
+- spec/rspec/matchers/have_spec.rb
+- spec/rspec/matchers/include_spec.rb
+- spec/rspec/matchers/match_array_spec.rb
+- spec/rspec/matchers/match_spec.rb
+- spec/rspec/matchers/matcher_spec.rb
+- spec/rspec/matchers/matchers_spec.rb
+- spec/rspec/matchers/operator_matcher_spec.rb
+- spec/rspec/matchers/raise_error_spec.rb
+- spec/rspec/matchers/respond_to_spec.rb
+- spec/rspec/matchers/satisfy_spec.rb
+- spec/rspec/matchers/throw_symbol_spec.rb
+- spec/spec_helper.rb
+- spec/suite.rb
+- spec/support/classes.rb
+- specs.watchr
+has_rdoc: true
+homepage: http://github.com/rspec/expectations
+licenses: []
+
+post_install_message: |
+  **************************************************
+  
+    Thank you for installing rspec-expectations-2.0.0.beta.4
+  
+    This is beta software. If you are looking
+    for a supported production release, please
+    "gem install rspec" (without --pre).
+  
+  **************************************************
+
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">"
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 1
+      - 3
+      - 1
+      version: 1.3.1
+requirements: []
+
+rubyforge_project: rspec
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 3
+summary: rspec-expectations-2.0.0.beta.4
+test_files: 
+- spec/rspec/expectations/differs/default_spec.rb
+- spec/rspec/expectations/extensions/kernel_spec.rb
+- spec/rspec/expectations/fail_with_spec.rb
+- spec/rspec/expectations/handler_spec.rb
+- spec/rspec/matchers/be_close_spec.rb
+- spec/rspec/matchers/be_instance_of_spec.rb
+- spec/rspec/matchers/be_kind_of_spec.rb
+- spec/rspec/matchers/be_spec.rb
+- spec/rspec/matchers/change_spec.rb
+- spec/rspec/matchers/compatibility_spec.rb
+- spec/rspec/matchers/description_generation_spec.rb
+- spec/rspec/matchers/dsl_spec.rb
+- spec/rspec/matchers/eq_spec.rb
+- spec/rspec/matchers/eql_spec.rb
+- spec/rspec/matchers/equal_spec.rb
+- spec/rspec/matchers/exist_spec.rb
+- spec/rspec/matchers/has_spec.rb
+- spec/rspec/matchers/have_spec.rb
+- spec/rspec/matchers/include_spec.rb
+- spec/rspec/matchers/match_array_spec.rb
+- spec/rspec/matchers/match_spec.rb
+- spec/rspec/matchers/matcher_spec.rb
+- spec/rspec/matchers/matchers_spec.rb
+- spec/rspec/matchers/operator_matcher_spec.rb
+- spec/rspec/matchers/raise_error_spec.rb
+- spec/rspec/matchers/respond_to_spec.rb
+- spec/rspec/matchers/satisfy_spec.rb
+- spec/rspec/matchers/throw_symbol_spec.rb
+- spec/spec_helper.rb
+- spec/suite.rb
+- spec/support/classes.rb

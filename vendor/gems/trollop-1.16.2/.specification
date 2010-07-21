@@ -1,0 +1,72 @@
+--- !ruby/object:Gem::Specification 
+name: trollop
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 1
+  - 16
+  - 2
+  version: 1.16.2
+platform: ruby
+authors: 
+- William Morgan
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-04-06 00:00:00 +02:00
+default_executable: 
+dependencies: []
+
+description: |-
+  Trollop is a commandline option parser for Ruby that just
+  gets out of your way. One line of code per option is all you need to write.
+  For that, you get a nice automatically-generated help page, robust option
+  parsing, command subcompletion, and sensible defaults for everything you don't
+  specify.
+email: wmorgan-trollop@masanjin.net
+executables: []
+
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- lib/trollop.rb
+- test/test_trollop.rb
+- README.txt
+- release-script.txt
+- FAQ.txt
+- History.txt
+has_rdoc: true
+homepage: http://trollop.rubyforge.org
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: trollop
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 3
+summary: Trollop is a commandline option parser for Ruby that just gets out of your way.
+test_files: []
+

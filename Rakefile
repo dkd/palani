@@ -8,7 +8,6 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
-=begin
 require 'metric_fu'
 
 MetricFu::Configuration.run do |config|
@@ -36,4 +35,3 @@ MetricFu::Configuration.run do |config|
                                            "--rails",
                                            "--exclude /gems/,/Library/,spec"]}
 end
-=end
