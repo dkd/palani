@@ -1,6 +1,6 @@
 = Palani
 
-* http://palani.lighthouseapp.com/projects/45009-palani/overview
+Development has ceased. We no longer support this application.
 
 == Welcome to Palani
 
